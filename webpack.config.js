@@ -43,12 +43,12 @@ const distAssets =  path.resolve(distDir, 'assets');
 // Start configuring webpack.
 var webpackConfig = {
   // What am i?
-  name: 'stanford_starter',
+  name: 'chem_h_subtheme',
   // Allows for map files.
   devtool: 'source-map',
   // What build?
   entry: {
-    "stanford_starter":  path.resolve(srcSass, "config/index.scss"),
+    "chem_h_subtheme":  path.resolve(srcSass, "config/index.scss"),
     "scripts":       path.resolve(srcJS,   "scripts.js"),
   },
   // Where put build?
