@@ -1,0 +1,31 @@
+@charset "UTF-8";
+
+h1,
+.su-type-a {
+  @include type-a;
+}
+
+h2,
+.su-type-d {
+  @include type-b;
+}
+
+h3,
+.su-type-e {
+  @include type-b;
+}
+
+h4,
+.su-type-f {
+  @include type-c;
+}
+
+h5,
+.su-type-f {
+  @include type-d;
+}
+
+h6,
+.su-type-f {
+  @include type-e;
+}

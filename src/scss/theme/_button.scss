@@ -7,3 +7,48 @@
 //    include button mixins here
 //  }
 //}
+
+// WYSIWYG BUTTONS
+
+.su-wysiwyg-text {
+  .su-button,
+  .su-button--big {
+    background-color: $chemh-color-purple;
+
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: $su-color-black;
+    }
+  }
+
+  .su-button--secondary {
+    box-shadow: 0 0 0 2px $chemh-color-purple;
+    color: $chemh-color-purple;
+  }
+}
+
+// Banner buttons 
+.overlay-left {
+  .su-button {
+    background-color: $chemh-color-teal;
+
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: $su-color-black;
+    }
+  }
+}
+
+.overlay-right {
+  .su-button {
+    background-color: $chemh-color-purple;
+
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: $su-color-black;
+    }
+  }
+}
