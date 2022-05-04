@@ -7,3 +7,59 @@
 //    include button mixins here
 //  }
 //}
+
+// WYSIWYG BUTTONS
+
+.su-wysiwyg-text {
+  .su-button,
+  .su-button--big {
+    background-color: $chemh-color-purple;
+
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: $su-color-black;
+    }
+  }
+
+  .su-button--secondary {
+    box-shadow: 0 0 0 2px $chemh-color-purple;
+    color: $chemh-color-purple;
+  }
+}
+
+.su-button {
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: $su-color-black;
+  }
+}
+
+// Card & Banner buttons 
+.su-wrapper--button-purple {
+  .su-button,
+  .su-card__button {
+    a {
+      background-color: $chemh-color-purple;
+    }
+  }
+}
+
+.su-wrapper--button-teal {
+  .su-button,
+  .su-card__button  {
+    a {
+      background-color: $chemh-color-teal;
+    }
+  }
+}
+
+.su-wrapper--button-red {
+  .su-button,
+  .su-card__button  {
+    a {
+      background-color: $chemh-color-red;
+    }
+  }
+}
