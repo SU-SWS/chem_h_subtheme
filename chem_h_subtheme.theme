@@ -10,7 +10,7 @@
 function chem_h_subtheme_preprocess_html(&$variables) {
   $variables['stanford_basic_path'] = drupal_get_path('theme', 'stanford_basic');
 
-$twittercard = [
+  $twittercard = [
     '#tag' => 'meta',
     '#attributes' => [
       'name' => 'twitter:card',
@@ -58,12 +58,16 @@ $twittercard = [
     ],
   ];
 
-  $variables['page']['#attached']['html_head'][] = [$twittercard, 'twitter:card'];
-  $variables['page']['#attached']['html_head'][] = [$twittersite, 'twitter:site'];
-  $variables['page']['#attached']['html_head'][] = [$twittercreator, 'twitter:creator'];
-  $variables['page']['#attached']['html_head'][] = [$twittertitle, 'twitter:title'];
-  $variables['page']['#attached']['html_head'][] = [$twitterdesc, 'twitter:description'];
-  $variables['page']['#attached']['html_head'][] = [$twitterimg, 'twitter:image'];
+  // Is front page variable 
+  // set the front variable to add meta tags to on the homepage.
+  if (\Drupal::service('path.matcher')->isFrontPage()) {
+    $variables['page']['#attached']['html_head'][] = [$twittercard, 'twitter:card'];
+    $variables['page']['#attached']['html_head'][] = [$twittersite, 'twitter:site'];
+    $variables['page']['#attached']['html_head'][] = [$twittercreator, 'twitter:creator'];
+    $variables['page']['#attached']['html_head'][] = [$twittertitle, 'twitter:title'];
+    $variables['page']['#attached']['html_head'][] = [$twitterdesc, 'twitter:description'];
+    $variables['page']['#attached']['html_head'][] = [$twitterimg, 'twitter:image'];
+  }
 }
 
 /**
@@ -99,6 +103,10 @@ function chem_h_subtheme_preprocess_ds_entity_view(&$variables) {
   }
 }
 
+
+/**
+ * Implements hook_preprocess_card().
+ */
 function chem_h_subtheme_preprocess_card(&$variables) {
 
   $paragraph = $variables['content']['#paragraph'];
@@ -120,6 +128,9 @@ function chem_h_subtheme_preprocess_card(&$variables) {
   }  
 }
 
+/**
+ * Implements hook_preprocess_banner().
+ */
 function chem_h_subtheme_preprocess_banner(&$variables) {
 
   $paragraph = $variables['content']['#paragraph'];
