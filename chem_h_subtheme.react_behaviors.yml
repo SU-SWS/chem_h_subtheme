@@ -6,45 +6,52 @@ card_variant_info:  # part of the key after the :
   bundles:
     - paragraphs_type|stanford_card
   config:
-    card_type:    # the setting
+    card_button_style:
       type: select
-      title: 'Card Type'
-      description: Select the style for displaying this card000.
-#      default_value: su-card-wrapper--icon
-      options:
-        su-card-wrapper--icon: Icon Card
-        su-card-wrapper--horizontal: Horizontal Card
-        su-card-wrapper--vertical: Vertical Card
-    card_border_style:
-      type: select
-      title: 'Card Border Style'
-      description: Select the style for displaying this card. Do note all Icon Cards will always have drop shadow and border.
+      title: 'Card Button Style'
+      description: Select the button color for displaying this card. 
 #      default_value: su-card-wrapper--border-regular
       options:
-        su-card-wrapper--border-none: Minimal (no border)
-        su-card-wrapper--border-regular: Border and Drop Shadow
-    card_list_style:
+        su-wrapper--button-purple: Purple (Pantone 269C Purple  HEX 512D6D)
+        su-wrapper--button-teal: Teal (Pantone 2461C Teal  HEX 259591)
+        su-wrapper--button-red: Stanford Red ( HEX 8C1515)
+banner_variant_info:  # part of the key after the :
+  id: banner_type
+  label: 'Banner Paragraphs Type'
+  bundles:
+    - paragraphs_type|stanford_banner
+  config:
+    banner_button_style:
       type: select
-      title: 'Card List Style'
-      description: 'Select the style for list format. First paragraph tag will appear regular and all following paragraphs will be styled as a list.'
+      title: 'Banner Button Style'
+      description: Select the button color for displaying this banner. 
+#      default_value: su-card-wrapper--border-regular
       options:
-        su-card-wrapper--no-style: No List Style
-        su-card-wrapper--simple-list: Simple List
-        su-card-wrapper--bordered-list: Bordered List
-    horizontal_card_image_style:
-      type: select
-      title: 'Horizontal Card: Image Style'
-      description: If this is a horizontal card, Select the image style for this card.
-      options:
-        su-horizontal-card-wrapper--small-circle: Small Circle (220px)
-        su-horizontal-card-wrapper--large-rectangle: Large Rectangle (2:1 ratio)
-    horizontal_card_image_position:
-      type: select
-      title: 'Horizontal Card: Image Position'
-      description: If this is a horizontal card, Select the image style for this card. (Currently only used for Large Rectangle Image Style.)
-      options:
-        su-horizontal-card-wrapper--image-left: Image on Left
-        su-horizontal-card-wrapper--image-right: Image on Right
+        su-wrapper--button-purple: Purple (Pantone 269C Purple  HEX 512D6D)
+        su-wrapper--button-teal: Teal (Pantone 2461C Teal  HEX 259591)
+        su-wrapper--button-red: Stanford Red ( HEX 8C1515)        
+    # card_list_style:
+    #   type: select
+    #   title: 'Card List Style'
+    #   description: 'Select the style for list format. First paragraph tag will appear regular and all following paragraphs will be styled as a list.'
+    #   options:
+    #     su-card-wrapper--no-style: No List Style
+    #     su-card-wrapper--simple-list: Simple List
+    #     su-card-wrapper--bordered-list: Bordered List
+    # horizontal_card_image_style:
+    #   type: select
+    #   title: 'Horizontal Card: Image Style'
+    #   description: If this is a horizontal card, Select the image style for this card.
+    #   options:
+    #     su-horizontal-card-wrapper--small-circle: Small Circle (220px)
+    #     su-horizontal-card-wrapper--large-rectangle: Large Rectangle (2:1 ratio)
+    # horizontal_card_image_position:
+    #   type: select
+    #   title: 'Horizontal Card: Image Position'
+    #   description: If this is a horizontal card, Select the image style for this card. (Currently only used for Large Rectangle Image Style.)
+    #   options:
+    #     su-horizontal-card-wrapper--image-left: Image on Left
+    #     su-horizontal-card-wrapper--image-right: Image on Right
 #card_style:
 #  id: card_style
 #  label: 'Card Paragraph Style'
@@ -52,69 +59,3 @@ card_variant_info:  # part of the key after the :
 #    - paragraphs_type|stanford_card
 #  config:
 
-#first:
-#  id: first
-#  label: 'Card Paragraphs and all Rows'
-#  bundles:
-#    - paragraphs_type|card
-#    - paragraphs_row_type|*
-#  config:
-#    select:
-#      type: select
-#      title: 'Foo Select'
-#      description: Foo Bar Baz
-#      options:
-#        foo: Foo
-#        bar: Bar
-#        baz: Baz
-#    multiple_select:
-#      type: select
-#      title: 'Multiple Select'
-#      description: Foo Bar Baz
-#      multiple: true
-#      options:
-#        foo: Foo
-#        bar: Bar
-#        baz: Baz
-#    textfield:
-#      type: textfield
-#      title: 'Text Field'
-#      description: 'Bar Foo Baz Only used for Icon cards etc. for example'
-#      default_value: 'This is my value'
-#    checkbox:
-#      type: checkbox
-#      title: 'Baz Checkbox'
-#      description: 'Baz Foo Bar'
-#      default_value: true
-#    checkboxes:
-#      type: checkboxes
-#      title: 'Checkboxes'
-#      descriptin: 'this is a set of checkboxes'
-#      options:
-#        foo: FOO
-#        bar: BAR
-#        baz: BAZ
-#      default_value:
-#        - baz
-#  id: second
-#  label: 'Foo Paragraphs only'
-#  bundles:
-#    - paragraph_type|foo
-#  config:
-#    foo:
-#      type: select
-#      title: 'Foo Select'
-#      description: Foo Bar Baz
-#      options:
-#        foo: Foo
-#        bar: Bar
-#        baz: Baz
-#    bar:
-#      type: textfield
-#      title: 'Bar Text Field'
-#      description: 'Bar Foo Baz'
-#    baz:
-#      type: checkbox
-#      title: 'Baz Checkbox'
-#      description: 'Baz Foo Bar'
-#      default_value: true

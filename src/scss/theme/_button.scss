@@ -28,27 +28,38 @@
   }
 }
 
-// Banner buttons 
-.overlay-left {
-  .su-button {
-    background-color: $chemh-color-teal;
+.su-button {
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: $su-color-black;
+  }
+}
 
-    &:hover,
-    &:focus,
-    &:active {
-      background-color: $su-color-black;
+// Card & Banner buttons 
+.su-wrapper--button-purple {
+  .su-button,
+  .su-card__button {
+    a {
+      background-color: $chemh-color-purple;
     }
   }
 }
 
-.overlay-right {
-  .su-button {
-    background-color: $chemh-color-purple;
+.su-wrapper--button-teal {
+  .su-button,
+  .su-card__button  {
+    a {
+      background-color: $chemh-color-teal;
+    }
+  }
+}
 
-    &:hover,
-    &:focus,
-    &:active {
-      background-color: $su-color-black;
+.su-wrapper--button-red {
+  .su-button,
+  .su-card__button  {
+    a {
+      background-color: $chemh-color-red;
     }
   }
 }
