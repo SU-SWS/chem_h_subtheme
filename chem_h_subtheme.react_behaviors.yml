@@ -15,6 +15,14 @@ card_variant_info:  # part of the key after the :
         su-wrapper--button-purple: Purple (Pantone 269C Purple  HEX 512D6D)
         su-wrapper--button-teal: Teal (Pantone 2461C Teal  HEX 259591)
         su-wrapper--button-red: Stanford Red ( HEX 8C1515)
+    card_border_style:
+      type: select
+      title: 'Card Border Style'
+      description: Select the border style for displaying this card.
+#      default_value: su-card-wrapper--border-regular
+      options:
+        su-card-wrapper--border-none: Minimal (no border)
+        su-card-wrapper--border-regular: Border and Drop Shadow
 banner_variant_info:  # part of the key after the :
   id: banner_type
   label: 'Banner Paragraphs Type'

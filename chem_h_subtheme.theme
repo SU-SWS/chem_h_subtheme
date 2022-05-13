@@ -54,7 +54,7 @@ function chem_h_subtheme_preprocess_html(&$variables) {
     '#tag' => 'meta',
     '#attributes' => [
       'name' => 'twitter:image',
-      'content' => 'https://pbs.twimg.com/profile_banners/988654859296493568/1568849430/1500x500',
+      'content' => 'https://chemh.stanford.edu/sites/g/files/sbiybj25016/files/styles/breakpoint_2xl_2x/public/media/image/building_dedication_0.jpg?itok=PZmd5ipP',
     ],
   ];
 
@@ -111,13 +111,16 @@ function chem_h_subtheme_preprocess_card(&$variables) {
 
   $paragraph = $variables['content']['#paragraph'];
 
+  // Add border style class to card wrapper.
+  $variables['attributes']['class'][] = $paragraph->getBehaviorSetting('react_paragraphs:card_variant_info', 'card_border_style', 'su-card-wrapper--border-regular');
+
   // Add button color style class to card wrapper.
   $variables['attributes']['class'][] = $paragraph->getBehaviorSetting('react_paragraphs:card_variant_info', 'card_button_style', 'su-wrapper--button-red');
 
   $card_info = [];
 
   // Add card type class to card wrapper. 3rd variable provides the default card type.
-  $card_info['card_type'] = $paragraph->getBehaviorSetting('react_paragraphs:card_variant_info', 'card_type', 'su-card-wrapper--icon');
+  $card_info['card_type'] = $paragraph->getBehaviorSetting('react_paragraphs:card_variant_info', 'card_type', 'su-card-wrapper--default');
   $variables['attributes']['class'][] = $card_info['card_type'];
 
   $imageCount = $paragraph->get('su_card_media')->count();
