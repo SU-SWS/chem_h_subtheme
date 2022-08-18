@@ -1,0 +1,11 @@
+@charset "UTF-8";
+
+.news {
+  .su-wysiwyg-text {
+    h2 {
+      @include type_d;
+
+    }
+  }
+
+}
