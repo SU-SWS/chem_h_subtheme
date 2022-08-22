@@ -15,22 +15,6 @@
     color: $su-color-white;
   }
 
-  .su-lockup__cell1 {
-    border-right: none;
-
-    @include grid-media-min('md') {
-      border-right: 1px solid $su-color-white;
-    }
-  }
-
-  .su-lockup__cell2 {
-    border-left: none;
-
-    @include grid-media-min('md') {
-      border-left: 1px solid $su-color-white;
-    }
-  }
-
   .su-lockup__line1,
   .su-lockup__line2,
   .su-lockup__line3,
