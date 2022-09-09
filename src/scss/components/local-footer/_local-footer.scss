@@ -69,6 +69,43 @@
       }
     }
   }
+
+  .su-local-footer__action-links {
+    a {
+      color: $su-color-white;
+
+      &:hover,
+      &:active,
+      &:focus {
+        color: $su-color-foggy;
+      }
+    }
+  }
+
+  a,
+  .su-link--external {
+
+    &.su-button,
+    &.su-button,
+    &.su-button--big {
+      color: $su-color-white;
+      fill: $su-color-white;
+
+      &:hover,
+      &:active,
+      &:focus {
+        fill: $su-color-white;
+
+        &:after {
+          background-color: $su-color-white;
+        }
+      }
+
+      &:after {
+        background-color: $su-color-white;
+      }
+    }
+  }
 }
 
 nav[aria-label^='footer'] {
