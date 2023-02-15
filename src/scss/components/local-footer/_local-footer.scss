@@ -1,11 +1,45 @@
 @charset "UTF-8";
 
 .su-local-footer  {
+  background-color: $su-color-white;
   color: $su-color-black;
 
+  // Footer header - lockup and email sign up
+  .su-local-footer__header {
+    display: grid;
+    grid-template-columns: 25% 75%;
+  }
+
+  .su-signup-form {
+    display: flex;
+
+    form {
+      width: 100%;
+
+      input {
+        display: inline;
+      }
+    }
+  }
+
+  .su-lockup__wordmark {
+    color: $su-color-black;
+  }
+
+  .su-lockup__line1,
+  .su-lockup__line2,
+  .su-lockup__line3,
+  .su-lockup__line4,
+  .su-lockup__line5 {
+    color: $su-color-black;
+  }
+
+
+  // Link column setup
   .su-local-footer__columns {
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-areas: "A B C D E F";
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-areas: "A B C D E F"
+    "G . . . . .";
 
     .su-local-footer__cell1 {
       grid-area: A;
@@ -30,41 +64,51 @@
     .su-local-footer__cell6 {
       grid-area: F;
     }
+
+    .su-local-footer__cell7 {
+      grid-area: G;
+    }
   }
 
-  .su-lockup__wordmark {
-    color: $su-color-black;
-  }
-
-  .su-local-footer__header {
-    display: grid;
-    grid-template-columns: 25% 75%;
-  }
-
-  .su-lockup__line1,
-  .su-lockup__line2,
-  .su-lockup__line3,
-  .su-lockup__line4,
-  .su-lockup__line5 {
-    color: $su-color-black;
-  }
-
+  // Social links
   .su-local-footer__social-links {
+    li {
+      float: unset;
+    }
+
+    a {
+      span {
+        border: unset;
+        clip: unset;
+        height: unset;
+        margin: unset;
+        overflow: unset;
+        padding: unset;
+        position: unset;
+        width: unset;
+      }
+    }
+
     i {
+      padding-right: .5em;
+
       &:before {
         color: $su-color-black;
       }
     }
   }
 
+  // Link colors
   a,
   .su-link {
     color: $su-color-black;
+    text-decoration: underline;
 
     &:hover,
     &:active,
     &:focus {
       color: $su-color-foggy;
+      text-decoration: none;
 
       &:after {
         background-color: $su-color-black;
@@ -136,13 +180,16 @@
 
 nav[aria-label^='footer'] {
   a,
-  a.su-link--external {
+  a.su-link--external,
+  a.su-link {
     color: $su-color-black;
+    text-decoration: underline;
 
     &:hover,
     &:active,
     &:focus {
       color: $su-color-foggy;
+      text-decoration: none;
 
       &:after {
         background-color: $su-color-black;
