@@ -98,7 +98,7 @@
     }
   }
 
-  // Link colors
+  // Link colors, size
   a,
   .su-link {
     color: $su-color-black;
@@ -143,11 +143,15 @@
   .su-local-footer__action-links {
     a {
       color: $su-color-black;
+      font-size: 1.19em;
+      font-weight: normal;
+      text-decoration: underline;
 
       &:hover,
       &:active,
       &:focus {
         color: $su-color-foggy;
+        text-decoration: none;
       }
     }
   }
