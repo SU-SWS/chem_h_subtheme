@@ -14,3 +14,18 @@
   // Include the correct icon color mixin inside your mixins here
   //@include example--black-icons
 //}
+
+.su-button,
+.su-button.su-link,
+[type=button],
+[type=image],
+[type=reset],
+[type=submit],
+button {
+  border: 5px solid transparent;
+  border-image: linear-gradient(to right, #2b6cb0 0%, #6a324f 25%, #97385d 50%, #d7c4c8 100%);
+  border-image-slice: 1;
+  background-color: transparent;
+  color: #000;
+}
+

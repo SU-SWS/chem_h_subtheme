@@ -13,17 +13,29 @@
   .su-signup-form {
     display: flex;
 
+    .su-intro-text {
+      @include type_c;
+
+      font-weight: $su-font-black;
+      line-height: 1;
+    }
+
     form {
       width: 100%;
 
       input {
         display: inline;
       }
+
+      input[type="email"] {
+        border-radius: 5px;
+        box-shadow: inset 0 3px 6px lightblue;
+      }
     }
   }
 
   .su-lockup__wordmark {
-    color: $su-color-black;
+    color: $chemh-color-black;
   }
 
   .su-lockup__line1,
@@ -31,7 +43,7 @@
   .su-lockup__line3,
   .su-lockup__line4,
   .su-lockup__line5 {
-    color: $su-color-black;
+    color: $chemh-color-black;
   }
 
 
@@ -93,7 +105,7 @@
       padding-right: .5em;
 
       &:before {
-        color: $su-color-black;
+        color: $chemh-color-black;
       }
     }
   }
@@ -101,7 +113,7 @@
   // Link colors, size
   a,
   .su-link {
-    color: $su-color-black;
+    color: $chemh-color-black;
     text-decoration: underline;
 
     &:hover,
@@ -111,18 +123,18 @@
       text-decoration: none;
 
       &:after {
-        background-color: $su-color-black;
+        background-color: $chemh-color-black;
       }
     }
 
     &:after {
-      background-color: $su-color-black;
+      background-color: $chemh-color-black;
     }
 
     &.su-link--external,
     &.mailto svg {
-      color: $su-color-black;
-      fill: $su-color-black;
+      color: $chemh-color-black;
+      fill: $chemh-color-black;
 
       &:hover,
       &:active,
@@ -135,14 +147,14 @@
       }
 
       &:after {
-        background-color: $su-color-black;
+        background-color: $chemh-color-black;
       }
     }
   }
 
   .su-local-footer__action-links {
     a {
-      color: $su-color-black;
+      color: $chemh-color-black;
       font-size: 1.19em;
       font-weight: normal;
       text-decoration: underline;
@@ -162,21 +174,21 @@
     &.su-button,
     &.su-button,
     &.su-button--big {
-      color: $su-color-black;
-      fill: $su-color-black;
+      color: $chemh-color-black;
+      fill: $chemh-color-black;
 
       &:hover,
       &:active,
       &:focus {
-        fill: $su-color-black;
+        fill: $chemh-color-black;
 
         &:after {
-          background-color: $su-color-black;
+          background-color: $chemh-color-black;
         }
       }
 
       &:after {
-        background-color: $su-color-black;
+        background-color: $chemh-color-black;
       }
     }
   }
@@ -186,7 +198,7 @@ nav[aria-label^='footer'] {
   a,
   a.su-link--external,
   a.su-link {
-    color: $su-color-black;
+    color: $chemh-color-black;
     text-decoration: underline;
 
     &:hover,
@@ -196,12 +208,12 @@ nav[aria-label^='footer'] {
       text-decoration: none;
 
       &:after {
-        background-color: $su-color-black;
+        background-color: $chemh-color-black;
       }
     }
 
     &:after {
-      background-color: $su-color-black;
+      background-color: $chemh-color-black;
     }
   }
 }
