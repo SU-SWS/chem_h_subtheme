@@ -1,0 +1,26 @@
+@charset "UTF-8";
+
+
+// Removing the main navigation animations
+.su-multi-menu {
+  .su-multi-menu__menu {
+    .su-nav-toggle {
+      &[aria-expanded=false],
+      &[aria-expanded=true] {
+        transition: none;
+      }
+    }
+  }
+}
+
+.su-multi-menu.su-multi-menu--dropdowns {
+  .su-multi-menu__menu {
+    >.su-multi-menu__item--parent {
+      >.su-nav-toggle:hover[aria-expanded=false] {
+        transform: none;
+        transition: none;
+      }
+    }
+  }
+}
+// End removal.

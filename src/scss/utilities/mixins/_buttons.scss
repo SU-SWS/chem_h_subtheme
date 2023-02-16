@@ -15,17 +15,30 @@
   //@include example--black-icons
 //}
 
-.su-button,
-.su-button.su-link,
-[type=button],
-[type=image],
-[type=reset],
-[type=submit],
-button {
-  border: 5px solid transparent;
-  border-image: linear-gradient(to right, #2b6cb0 0%, #6a324f 25%, #97385d 50%, #d7c4c8 100%);
-  border-image-slice: 1;
+@mixin chemh-button--gradiant {
   background-color: transparent;
-  color: #000;
+  color: #313149;
+  padding: 10px 20px;
+  display: inline-block;
+  position: relative;
+  z-index: 0;
+
+  &::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    padding: 3px;
+    border-radius: 10px;
+    background: linear-gradient(to right, #017b9d 10%, #14478b 30%, #b7323b 50%, #ecaf94 85%);
+    -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+  }
 }
 
