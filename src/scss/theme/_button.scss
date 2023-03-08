@@ -10,6 +10,7 @@ footer {
   [type=submit],
   button {
     @include chemh-button--gradiant;
+    @include modular-spacing('padding', 1);
 
     &:hover,
     &:focus,
