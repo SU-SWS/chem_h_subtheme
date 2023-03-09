@@ -14,10 +14,11 @@
     display: flex;
 
     .su-intro-text {
-      @include type_c;
-
-      font-weight: $su-font-black;
-      line-height: 1;
+      font-size: 2.5rem;
+      font-weight: $su-font-bold;
+      line-height: 112%;
+      letter-spacing: -0.02em;
+      margin-right: 0.4em;
     }
 
     form {
@@ -28,8 +29,15 @@
       }
 
       input[type="email"] {
-        border-radius: 5px;
-        box-shadow: inset 0 3px 6px lightblue;
+        border-radius: 6px;
+        background-color: $chemh-color-light-grey;
+        box-shadow: inset 0px 3px 5px rgba(0, 0, 0, 0.12);
+        height: 5.9rem;
+        margin-right: 1.5rem;
+      }
+
+      .gradient-wrapper {
+        @include chemh-button--gradient;
       }
     }
   }
@@ -113,7 +121,7 @@
   // Link colors, size
   a,
   .su-link {
-    color: $chemh-color-black;
+    color: $chemh-color-digital-blue;
     text-decoration: underline;
 
     &:hover,
@@ -123,18 +131,19 @@
       text-decoration: none;
 
       &:after {
-        background-color: $chemh-color-black;
+        @include chemh-icon--gradient;
       }
     }
 
     &:after {
-      background-color: $chemh-color-black;
+      @include chemh-icon--gradient;
     }
 
     &.su-link--external,
     &.mailto svg {
-      color: $chemh-color-black;
-      fill: $chemh-color-black;
+      color: $chemh-color-digital-blue;
+      fill: $chemh-color-digital-blue;
+
 
       &:hover,
       &:active,
@@ -142,19 +151,19 @@
         fill: $su-color-foggy;
 
         &:after {
-          background-color: $su-color-foggy;
+          @include chemh-icon--gradient;
         }
       }
 
       &:after {
-        background-color: $chemh-color-black;
+        background-color: $chemh-color-digital-blue;
       }
     }
   }
 
   .su-local-footer__action-links {
     a {
-      color: $chemh-color-black;
+      color: $chemh-color-digital-blue;
       font-size: 1.19em;
       font-weight: normal;
       text-decoration: underline;
@@ -174,21 +183,21 @@
     &.su-button,
     &.su-button,
     &.su-button--big {
-      color: $chemh-color-black;
-      fill: $chemh-color-black;
+      color: $chemh-color-digital-blue;
+      fill: $chemh-color-digital-blue;
 
       &:hover,
       &:active,
       &:focus {
-        fill: $chemh-color-black;
+        fill: $chemh-color-digital-blue;
 
         &:after {
-          background-color: $chemh-color-black;
+          background-color: $chemh-color-digital-blue;
         }
       }
 
       &:after {
-        background-color: $chemh-color-black;
+        background-color: $chemh-color-digital-blue;
       }
     }
   }
@@ -198,7 +207,7 @@ nav[aria-label^='footer'] {
   a,
   a.su-link--external,
   a.su-link {
-    color: $chemh-color-black;
+    color: $chemh-color-digital-blue;
     text-decoration: underline;
 
     &:hover,
@@ -208,12 +217,12 @@ nav[aria-label^='footer'] {
       text-decoration: none;
 
       &:after {
-        background-color: $chemh-color-black;
+        background-color: $chemh-color-digital-blue;
       }
     }
 
     &:after {
-      background-color: $chemh-color-black;
+      background-color: $chemh-color-digital-blue;
     }
   }
 }

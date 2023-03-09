@@ -6,10 +6,8 @@ main,
 footer {
   .su-button.su-link,
   .su-button,
-  [type=button],
-  [type=submit],
   button {
-    @include chemh-button--gradiant;
+    @include chemh-button--gradient;
     @include modular-spacing('padding', 1);
 
     &:hover,
@@ -19,13 +17,20 @@ footer {
       color: #000;
     }
   }
+
+  [type=button],
+  [type=submit] {
+    background-color: transparent;
+    color: $su-color-black;
+    display: inline-block;
+  }
 }
 
 // WYSIWYG BUTTONS
 .su-wysiwyg-text {
   .su-button,
   .su-button--big {
-    @include chemh-button--gradiant;
+    @include chemh-button--gradient;
 
     &:hover,
     &:focus,
@@ -52,7 +57,7 @@ footer {
   .su-button,
   .su-card__button {
     a {
-      @include chemh-button--gradiant;
+      @include chemh-button--gradient;
     }
   }
 }
@@ -61,7 +66,7 @@ footer {
   .su-button,
   .su-card__button  {
     a {
-      @include chemh-button--gradiant;
+      @include chemh-button--gradient;
     }
   }
 }
@@ -70,7 +75,7 @@ footer {
   .su-button,
   .su-card__button  {
     a {
-      @include chemh-button--gradiant;
+      @include chemh-button--gradient;
     }
   }
 }

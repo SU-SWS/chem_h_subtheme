@@ -68,7 +68,7 @@
 {# Sanitize the weblogin text. #}
 {%- set weblogin_text = weblogin_text|render_clean-%}
 {%- if weblogin_text is empty -%}
-  {%- set weblogin_url = '' -%}
+  {%- set weblogin_url = 'hello' -%}
 {%- endif -%}
 
 {# Work with Drupal and format it for this template. #}
@@ -141,7 +141,7 @@
 {%- endif %}
 
 {%- if template_path_signup_form is empty -%}
-  {%- set template_path_signup_form = "@decanter/components/signup-form/signup-form.twig" -%}
+  {%- set template_path_signup_form = "@chem_h_subtheme/components/signup-form/signup-form.html.twig" -%}
 {%- endif %}
 
 {%- if template_path_macro is empty -%}
