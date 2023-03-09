@@ -6,12 +6,25 @@
 
   // Footer header - lockup and email sign up
   .su-local-footer__header {
+    @include modular-spacing('padding-bottom', 1);
+
     display: grid;
-    grid-template-columns: 25% 75%;
+    grid-template-columns: 35% 1fr;
+    grid-gap: 0;
+    align-items: flex-start;
+    border-bottom: 2px solid $chemh-color-light-grey;
+
+    @include grid-media-max('md') {
+      grid-template-columns: 95%;
+    }
   }
 
   .su-signup-form {
     display: flex;
+
+    @include grid-media-max('md') {
+      display: block;
+    }
 
     .su-intro-text {
       font-size: 2.5rem;
@@ -22,7 +35,7 @@
     }
 
     form {
-      width: 100%;
+      width: 91%;
 
       input {
         display: inline;
@@ -43,7 +56,7 @@
   }
 
   .su-lockup__wordmark {
-    color: $chemh-color-black;
+    color: $chemh-color-true-black;
   }
 
   .su-lockup__line1,
@@ -51,7 +64,7 @@
   .su-lockup__line3,
   .su-lockup__line4,
   .su-lockup__line5 {
-    color: $chemh-color-black;
+    color: $chemh-color-true-black;
   }
 
 
@@ -88,6 +101,12 @@
     .su-local-footer__cell7 {
       grid-area: G;
     }
+
+    @include grid-media-max('lg') {
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-areas: "A B C D"
+      "E F G .";
+    }
   }
 
   // Social links
@@ -113,7 +132,7 @@
       padding-right: .5em;
 
       &:before {
-        color: $chemh-color-black;
+        color: $chemh-color-true-black;
       }
     }
   }
@@ -131,12 +150,12 @@
       text-decoration: none;
 
       &:after {
-        @include chemh-icon--gradient;
+        color: $chemh-color-digital-blue;
       }
     }
 
     &:after {
-      @include chemh-icon--gradient;
+      color: $chemh-color-digital-blue;
     }
 
     &.su-link--external,
@@ -151,7 +170,7 @@
         fill: $su-color-foggy;
 
         &:after {
-          @include chemh-icon--gradient;
+          color: $chemh-color-digital-blue;
         }
       }
 

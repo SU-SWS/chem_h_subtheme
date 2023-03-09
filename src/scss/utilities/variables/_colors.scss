@@ -6,6 +6,9 @@
 // define colors here in the format of:
 //$abbreviation-color-pink: #ff0099; // like $saa-color-pink
 
+// The true black ($chemh-color-true-black) is used for the background headers, background for secondary nav
+// selected state. The Stanford black ($su-color-black) is being used for the body copy and header text.
+
 // colors on this theme.
 $chemh-color-dark-purple: #2A2B81;
 $chemh-color-mid-purple: #652561;
@@ -13,17 +16,18 @@ $chemh-color-purple: #512D6D;
 
 $chemh-color-teal: #259591;
 
-$chemh-color-black: #000;
+$chemh-color-dark-blue: #15438A;
+$chemh-color-light-blue: #007C9D;
+$chemh-color-digital-blue: #006CB8;
+
+$chemh-color-true-black: #000;
 $chemh-color-light-grey: #F2F1F1;
 
-$chemh-color-light-peach2: #E9A286;
 $chemh-color-light-peach: #ECAF94;
 $chemh-color-mid-peach: #E28B6D;
 
 $chemh-color-red: $su-color-bright-red; //#B1040E
 $chemh-color-mid-red: #B32A35;
 
-$chemh-color-dark-blue: #15438A;
-$chemh-color-light-blue: #007C9D;
-$chemh-color-digital-blue: #006CB8;
+
 
