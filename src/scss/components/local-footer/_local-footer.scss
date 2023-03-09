@@ -203,7 +203,6 @@
   .su-local-footer__action-links {
     a {
       color: $chemh-color-digital-blue;
-      font-size: 1.19em;
       font-weight: normal;
       text-decoration: underline;
 
@@ -239,6 +238,25 @@
         background-color: $chemh-color-digital-blue;
       }
     }
+  }
+
+  // Font sizes
+  .su-local-footer__list-heading {
+    color: $chemh-color-true-black;
+    font-size: 2rem;
+  }
+
+  .su-local-footer__address {
+    font-weight: $su-font-semi-bold;
+  }
+
+  .su-local-footer__action-links,
+  .su-local-footer__address,
+  .su-local-footer__primary-links,
+  .su-local-footer__secondary-links,
+  .su-local-footer__social-links {
+    font-size: 2.0rem;
+    font-weight: $su-font-semi-bold;
   }
 }
 
