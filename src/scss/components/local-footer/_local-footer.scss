@@ -123,6 +123,10 @@
       "E F"
       "G .";
     }
+
+    .su-button--login {
+      @include chemh-button--plain;
+    }
   }
 
   // Social links
