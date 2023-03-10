@@ -243,7 +243,7 @@
     </div>
     {# Content Cell 3 - For primary and secondary link lists. #}
     <div class="su-local-footer__cell3">
-    {% block contentcell2 %}
+      {% block contentcell2 %}
       {#
         Primary Links - left or top list.
       #}
@@ -311,16 +311,16 @@
       <h2 class="su-local-footer__list-heading">Make a Gift</h2>
       {{ cell3 }}
     </div>
+  </div>
 
   <div class="su-local-footer__cell7">
-  {# Web login button #}
-    {% if weblogin_url is not empty %}
-      {% include template_path_link with {
-        "modifier_class": "su-link--internal su-button su-button--login",
-        "link_href": weblogin_url,
-        "link_content": weblogin_text|default('Web Login')
-      } only %}
-    {% endif %}
+      {# Web login button #}
+      {% if weblogin_url is not empty %}
+        {% include template_path_link with {
+          "modifier_class": "su-link--internal su-button su-button--login",
+          "link_href": weblogin_url,
+          "link_content": weblogin_text|default('Web Login')
+        } only %}
+      {% endif %}
     </div>
-  </div>
 </div>
