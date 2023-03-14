@@ -36,7 +36,7 @@
     }
 
     form {
-      width: 91%;
+      width: 100%;
 
       input {
         display: inline;
@@ -48,10 +48,22 @@
         box-shadow: inset 0px 3px 5px rgba(0, 0, 0, 0.12);
         height: 5.9rem;
         margin-right: 1.5rem;
+        width: 65%;
       }
 
       .gradient-wrapper {
         @include chemh-button--gradient;
+
+        &:hover,
+        &:active,
+        &:focus {
+
+          input {
+            @include chemh-button--hover-gradient;
+            color: #fff;
+            margin: 4px;
+          }
+        }
       }
     }
   }
@@ -180,11 +192,11 @@
     &:hover,
     &:active,
     &:focus {
-      color: $su-color-foggy;
+      color: $su-color-black;
       text-decoration: none;
 
       &:after {
-        color: $chemh-color-digital-blue;
+        color: $su-color-black;
       }
     }
 
@@ -194,17 +206,15 @@
 
     &.su-link--external,
     &.mailto svg {
-      color: $chemh-color-digital-blue;
       fill: $chemh-color-digital-blue;
 
 
       &:hover,
       &:active,
       &:focus {
-        fill: $su-color-foggy;
 
         &:after {
-          color: $chemh-color-digital-blue;
+          background-color: $su-color-black;
         }
       }
 
@@ -223,7 +233,7 @@
       &:hover,
       &:active,
       &:focus {
-        color: $su-color-foggy;
+        color: $su-color-black;
         text-decoration: none;
       }
     }
@@ -244,7 +254,7 @@
         fill: $chemh-color-digital-blue;
 
         &:after {
-          background-color: $chemh-color-digital-blue;
+          background-color: $su-color-black;
         }
       }
 
@@ -286,11 +296,11 @@ nav[aria-label^='footer'] {
     &:hover,
     &:active,
     &:focus {
-      color: $su-color-foggy;
+      color: $su-color-black;
       text-decoration: none;
 
       &:after {
-        background-color: $chemh-color-digital-blue;
+        background-color: $su-color-black;
       }
     }
 
