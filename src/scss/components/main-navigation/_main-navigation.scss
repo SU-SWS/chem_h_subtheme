@@ -55,6 +55,7 @@
 
 // Font sizes, colors, hovers
 .su-multi-menu.su-multi-menu--dropdowns {
+
   .su-multi-menu__menu-lv1 {
     >.su-multi-menu__item.su-multi-menu__item--current {
       >.su-multi-menu__link {
@@ -81,6 +82,14 @@
     }
 
     >.su-multi-menu__item--parent {
+      >.su-multi-menu__menu {
+        @include chemh--shadow-big-button;
+
+        min-width: 300px;
+        border-radius: 0 0 20px 20px;
+        border-top: 4px solid $chemh-color-red;
+      }
+
       >.su-multi-menu__link {
         &::after {
           border-right: 0;
@@ -100,3 +109,22 @@
 
 }
 
+// Search
+// Search icon.
+.su-site-search__submit {
+  padding: 0;
+  margin-top: 0;
+  margin-right: 0;
+  margin-bottom: 0;
+  background: url("#{$su-image-path}/magnifying-glass-24px.svg") no-repeat 0 0;
+  opacity: .6;
+  position: absolute;
+  top: 1.1rem;
+  right: 1.2rem;
+  width: 24px;
+  height: 25px;
+
+  &:hover {
+    background: transparent url("#{$su-image-path}/magnifying-glass-24px.svg") no-repeat 0 0;
+  }
+}

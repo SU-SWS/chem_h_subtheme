@@ -1,0 +1,59 @@
+@charset "UTF-8";
+
+// For all headers.
+.su-brand-bar__container {
+  display: flex;
+
+  .su-brand-bar__logo {
+    width: 10%;
+  }
+}
+
+@include grid-media-min('lg') {
+
+    .su-masthead {
+      //chemh-masthead
+      >section:last-of-type {
+        // Grid setup.
+        display: grid;
+        grid-template-columns: 310px 1fr 60px;
+        grid-template-areas: "lockup main-nav search";
+        align-items: center;
+
+        padding-bottom: 1rem;
+
+        .su-lockup {
+          grid-area: lockup;
+        }
+
+        #chemh-button--search-link {
+          grid-area: search;
+          width: 24px;
+          height: 24px;
+          // position: relative;
+          top: 30px;
+          transform: scaleX(-1);
+        }
+
+        .su-multi-menu {
+          grid-area: main-nav;
+        }
+      }
+
+      nav+.su-site-search, ul li .su-site-search {
+        display: none; // need to hide extra search that we use for mobile.
+      }
+
+      // add color to the drop down nav bar.
+      .su-multi-menu__menu {
+        &.su-multi-menu__menu-lv1 {
+          // background-color: pink;
+        }
+      }
+    }
+
+    // Header color outside in the margins.
+    section {
+      position: relative; /* child absolute */
+    }
+}
