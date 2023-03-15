@@ -53,7 +53,50 @@
 // }
 
 
-// Font sizes
-.su-multi-menu .su-multi-menu__menu-lv1>.su-multi-menu__item>.su-multi-menu__link {
-  font-size: 1.8rem;
+// Font sizes, colors, hovers
+.su-multi-menu.su-multi-menu--dropdowns {
+  .su-multi-menu__menu-lv1 {
+    >.su-multi-menu__item.su-multi-menu__item--current {
+      >.su-multi-menu__link {
+        &::before {
+          @include chemh-main-nav--gradient;
+
+          height: 0.25em;
+        }
+      }
+    }
+
+    >.su-multi-menu__item {
+      >.su-multi-menu__link {
+        color: $su-color-black;
+        font-size: 1.8rem;
+
+        &:hover,
+        &:focus,
+        &:active {
+          color: $chemh-color-red;
+          text-decoration: none;
+        }
+      }
+    }
+
+    >.su-multi-menu__item--parent {
+      >.su-multi-menu__link {
+        &::after {
+          border-right: 0;
+        }
+
+        >.su-nav-toggle {
+          &:hover,
+          &:focus,
+          &:active {
+            border-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+
+
 }
+
