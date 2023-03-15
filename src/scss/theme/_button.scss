@@ -1,30 +1,46 @@
 @charset "UTF-8";
 
-// override default button styles here and add additional button classes as needed.
-//.su-button {
-//    include button mixins here
-//  &:hover, &:focus {
-//    include button mixins here
-//  }
-//}
-
-// WYSIWYG BUTTONS
-
-.su-wysiwyg-text {
+// override default button styles here and add
+// additional button classes as needed.
+main,
+footer {
+  .su-button.su-link,
   .su-button,
-  .su-button--big {
-    background-color: $chemh-color-purple;
+  button {
+    @include chemh-button--gradient;
+    @include modular-spacing('padding', 1);
 
     &:hover,
     &:focus,
     &:active {
-      background-color: $su-color-black;
+      background-color: transparent;
+      color: #000;
+    }
+  }
+
+  [type=button],
+  [type=submit] {
+    background-color: transparent;
+    color: $su-color-black;
+    display: inline-block;
+  }
+}
+
+// WYSIWYG BUTTONS
+.su-wysiwyg-text {
+  .su-button,
+  .su-button--big {
+    @include chemh-button--gradient;
+
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: transparent
     }
   }
 
   .su-button--secondary {
     box-shadow: 0 0 0 2px $chemh-color-purple;
-    color: $chemh-color-purple;
   }
 }
 
@@ -32,16 +48,16 @@
   &:hover,
   &:focus,
   &:active {
-    background-color: $su-color-black;
+    background-color: transparent;
   }
 }
 
-// Card & Banner buttons 
+// Card & Banner buttons
 .su-wrapper--button-purple {
   .su-button,
   .su-card__button {
     a {
-      background-color: $chemh-color-purple;
+      @include chemh-button--gradient;
     }
   }
 }
@@ -50,7 +66,7 @@
   .su-button,
   .su-card__button  {
     a {
-      background-color: $chemh-color-teal;
+      @include chemh-button--gradient;
     }
   }
 }
@@ -59,7 +75,7 @@
   .su-button,
   .su-card__button  {
     a {
-      background-color: $chemh-color-red;
+      @include chemh-button--gradient;
     }
   }
 }

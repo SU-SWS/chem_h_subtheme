@@ -1,0 +1,59 @@
+@charset "UTF-8";
+
+
+// Removing the main navigation animations
+.su-multi-menu {
+  .su-multi-menu__menu {
+    .su-nav-toggle {
+      &[aria-expanded=false],
+      &[aria-expanded=true] {
+        transition: none;
+      }
+    }
+  }
+}
+
+.su-multi-menu.su-multi-menu--dropdowns {
+  .su-multi-menu__menu {
+    >.su-multi-menu__item--parent {
+      >.su-nav-toggle:hover[aria-expanded=false] {
+        transform: none;
+        transition: none;
+      }
+    }
+  }
+}
+// End removal.
+
+
+// // What the up and down caret look like.
+// > .su-nav-toggle {
+
+//   &[aria-expanded=true]{
+//     &:focus {
+//         &::before {
+//           background: $sdss-color-green-link url("#{$su-image-path}/caret-down-white.svg") no-repeat center / 50%;
+//         }
+//       }
+//     }
+
+//   // Mobile toggle - circle background color.
+//   @include grid-media-max('md') {
+//     &::before {
+//       background: $sdss-color-green-link url("#{$su-image-path}/caret-down-white.svg") no-repeat center / 50%;
+//     }
+
+//     &:focus,
+//     &:hover {
+//       &::before {
+//         background: $sdss-color-green-link url("#{$su-image-path}/caret-down-white.svg") no-repeat center / 50%;
+//       }
+//     }
+//   }
+// }
+
+
+// Font sizes
+.su-multi-menu .su-multi-menu__menu-lv1>.su-multi-menu__item>.su-multi-menu__link {
+  font-size: 1.8rem;
+}

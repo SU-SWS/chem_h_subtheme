@@ -1,0 +1,52 @@
+@charset "UTF-8";
+
+// Headings
+h1, h2, h3, h4, h5 {
+  font-family: 'Source Sans Pro';
+}
+
+h1 {
+  font-weight: $su-font-black;
+  font-size: 5.5rem;
+  line-height: 110%;
+  /* identical to box height, or 61px */
+  color: $su-color-white;
+  @include chemh-button--gradient;
+  letter-spacing: -0.03em;
+}
+
+h2 {
+  font-weight: $su-font-black;
+  font-size: 5rem;
+  line-height: 110%;
+  /* identical to box height, or 55px */
+  letter-spacing: -0.05em;
+  color: $su-color-black;
+}
+
+h3 {
+  font-weight: $su-font-bold;
+  font-size: 3.5rem;
+  line-height: 5.2rem;
+  /* identical to box height, or 149% */
+  letter-spacing: -1.5px;
+  color: $chemh-color-true-black;
+}
+
+h4 {
+  font-weight: $su-font-bold;
+  font-size: 2.8rem;
+  line-height: 3.8rem;
+  /* identical to box height, or 136% */
+  letter-spacing: -1px;
+  color: $chemh-color-true-black;
+}
+
+h5 {
+  font-weight: $su-font-bold;
+  font-size: 2.8rem;
+  line-height: 3.8rem;
+  /* identical to box height, or 136% */
+  letter-spacing: -1px;
+  color: $chemh-color-true-black;
+}

@@ -1,0 +1,12 @@
+@charset "UTF-8";
+
+@mixin chemh-heading--badge {
+  &::before {
+    content: '';
+    background: $chemh-color-red;
+    height: 3px;
+    width: 60px;
+    display: block;
+    margin-bottom: 2.4rem;
+  }
+}
