@@ -25,88 +25,84 @@
 }
 // End removal.
 
-
-// // What the up and down caret look like.
-// > .su-nav-toggle {
-
-//   &[aria-expanded=true]{
-//     &:focus {
-//         &::before {
-//           background: $sdss-color-green-link url("#{$su-image-path}/caret-down-white.svg") no-repeat center / 50%;
-//         }
-//       }
-//     }
-
-//   // Mobile toggle - circle background color.
-//   @include grid-media-max('md') {
-//     &::before {
-//       background: $sdss-color-green-link url("#{$su-image-path}/caret-down-white.svg") no-repeat center / 50%;
-//     }
-
-//     &:focus,
-//     &:hover {
-//       &::before {
-//         background: $sdss-color-green-link url("#{$su-image-path}/caret-down-white.svg") no-repeat center / 50%;
-//       }
-//     }
-//   }
-// }
-
-
 // Font sizes, colors, hovers
-.su-multi-menu.su-multi-menu--dropdowns {
-
-  .su-multi-menu__menu-lv1 {
-    >.su-multi-menu__item.su-multi-menu__item--current {
-      >.su-multi-menu__link {
-        &::before {
-          @include chemh-main-nav--gradient;
-
-          height: 0.25em;
-        }
-      }
+.su-multi-menu {
+  &.su-multi-menu--dropdowns {
+    .su-multi-menu__menu-lv2 {
+      top: 78px; // moving the menu lower
     }
 
-    >.su-multi-menu__item {
-      >.su-multi-menu__link {
-        color: $su-color-black;
-        font-size: 1.8rem;
+    .su-multi-menu__menu-lv1 {
+      >.su-multi-menu__item {
+        &.su-multi-menu__item--current,
+        &.su-multi-menu__item--active-trail {
+          >.su-multi-menu__link {
+            &::before {
+              @include chemh-main-nav--gradient;
 
-        &:hover,
-        &:focus,
-        &:active {
-          color: $chemh-color-red;
-          text-decoration: none;
+              height: 0.25em;
+              top: 78px; // move it lower.  must match the open menu 'to
+            }
+          }
+
+          &.su-multi-menu__item--expanded a:before {
+            background: none;
+          }
+
+          >.su-multi-menu__item {
+            &.su-multi-menu__item--active-trail {
+              >.su-multi-menu__link {
+                &::before {
+                  @include chemh-main-nav--gradient;
+                }
+              }
+            }
+          }
         }
       }
-    }
 
-    >.su-multi-menu__item--parent {
-      >.su-multi-menu__menu {
-        @include chemh--shadow-big-button;
 
-        min-width: 300px;
-        border-radius: 0 0 20px 20px;
-        border-top: 4px solid $chemh-color-red;
-      }
+      >.su-multi-menu__item {
+        >.su-multi-menu__link {
+          color: $su-color-black;
+          font-size: 1.8rem;
 
-      >.su-multi-menu__link {
-        &::after {
-          border-right: 0;
-        }
-
-        >.su-nav-toggle {
           &:hover,
           &:focus,
           &:active {
-            border-bottom: 0;
+            color: $chemh-color-red;
+            text-decoration: none;
+          }
+        }
+      }
+
+      >.su-multi-menu__item--parent {
+        >.su-multi-menu__menu {
+          @include chemh--shadow-big-button;
+
+          min-width: 300px;
+          border-radius: 0 0 20px 20px;
+          border-top: 4px solid $chemh-color-red;
+        }
+
+        >.su-multi-menu__link {
+          &::after {
+            border-right: 0;
+          }
+
+          >.su-nav-toggle {
+            &:hover,
+            &:focus,
+            &:active {
+              border-bottom: 0;
+            }
           }
         }
       }
     }
+
+
   }
-
-
 }
 
 // Search

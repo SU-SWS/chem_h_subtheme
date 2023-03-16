@@ -313,14 +313,14 @@
     </div>
   </div>
 
-  <div class="su-local-footer__cell7">
+  {% if weblogin_url is not empty %}
+    <div class="su-local-footer__cell7">
       {# Web login button #}
-      {% if weblogin_url is not empty %}
         {% include template_path_link with {
           "modifier_class": "su-link--internal su-button su-button--login",
           "link_href": weblogin_url,
           "link_content": weblogin_text|default('Web Login')
         } only %}
-      {% endif %}
     </div>
+  {% endif %}
 </div>
