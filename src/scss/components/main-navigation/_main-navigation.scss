@@ -32,21 +32,35 @@
       top: 78px; // moving the menu lower
     }
 
+    .su-multi-menu__menu>.su-multi-menu__item--parent>.su-nav-toggle[aria-expanded=true]:active,
+    .su-multi-menu__menu>.su-multi-menu__item--parent>.su-nav-toggle[aria-expanded=true]:focus {
+      border-bottom: 0;
+    }
+    .su-multi-menu__menu>.su-multi-menu__item--parent>.su-nav-toggle:hover[aria-expanded=false] {
+      border-bottom: 0;
+    }
+
     .su-multi-menu__menu-lv1 {
       >.su-multi-menu__item {
         &.su-multi-menu__item--current,
         &.su-multi-menu__item--active-trail {
           >.su-multi-menu__link {
-            &::before {
-              @include chemh-main-nav--gradient;
+            @include grid-media-min('lg') {
+              &::before {
+                @include chemh-main-nav--gradient;
 
-              height: 0.25em;
-              top: 78px; // move it lower.  must match the open menu 'to
+                height: 0.25em;
+                top: 78px; // move it lower.  must match the open menu 'to
+              }
             }
           }
 
-          &.su-multi-menu__item--expanded a:before {
-            background: none;
+          &.su-multi-menu__item--expanded {
+            a {
+              &::before {
+                background: none;
+              }
+            }
           }
 
           >.su-multi-menu__item {
@@ -61,11 +75,24 @@
         }
       }
 
-
       >.su-multi-menu__item {
         >.su-multi-menu__link {
           color: $su-color-black;
           font-size: 1.8rem;
+          text-transform: uppercase;
+
+          @include grid-media-max('md') {
+            color: $su-color-white;
+
+            &:hover,
+            &:focus,
+            &:active {
+              span {
+                color: $su-color-white;
+                text-decoration: underline;
+              }
+            }
+          }
 
           &:hover,
           &:focus,
@@ -76,29 +103,32 @@
         }
       }
 
-      >.su-multi-menu__item--parent {
-        >.su-multi-menu__menu {
-          @include chemh--shadow-big-button;
+      @include grid-media-min('lg') {
+        >.su-multi-menu__item--parent {
+          >.su-multi-menu__menu {
+            @include chemh--shadow-big-button;
 
-          min-width: 300px;
-          border-radius: 0 0 20px 20px;
-          border-top: 4px solid $chemh-color-red;
-        }
-
-        >.su-multi-menu__link {
-          &::after {
-            border-right: 0;
+            min-width: 300px;
+            border-radius: 0 0 20px 20px;
+            border-top: 4px solid $chemh-color-red;
           }
 
-          >.su-nav-toggle {
-            &:hover,
-            &:focus,
-            &:active {
-              border-bottom: 0;
+          >.su-multi-menu__link {
+            &::after {
+              border-right: 0;
+            }
+
+            >.su-nav-toggle {
+              &:hover,
+              &:focus,
+              &:active {
+                border-bottom: 0;
+              }
             }
           }
         }
       }
+
     }
 
 
@@ -124,3 +154,55 @@
     background: transparent url("#{$su-image-path}/magnifying-glass-24px.svg") no-repeat 0 0;
   }
 }
+
+// Mobile menu
+@include grid-media-max('md') {
+  .su-multi-menu {
+    .su-multi-menu__menu {
+      background-color: $chemh-color-true-black;
+
+      .su-multi-menu__link {
+        &:focus,
+        &:hover {
+          &::before {
+            background-color: $chemh-color-red;
+          }
+        }
+      }
+    }
+
+    .su-multi-menu__menu-lv1 {
+      >.su-multi-menu__item {
+        >.su-multi-menu__link {
+          color: $su-color-white;
+        }
+      }
+    }
+  }
+
+  .su-nav-toggle {
+
+  // What the up and down caret look like.
+    &[aria-expanded=true] {
+      &:focus {
+          &::before {
+            background: transparent url("#{$su-image-path}/caret-down-white.svg") no-repeat center / 50%;
+          }
+        }
+      }
+
+    // Mobile toggle - circle background color.
+    &::before {
+      background: transparent url("#{$su-image-path}/caret-down-white.svg") no-repeat center / 50%;
+    }
+
+    &:focus,
+    &:hover {
+      &::before {
+        background: transparent url("#{$su-image-path}/caret-down-white.svg") no-repeat center / 50%;
+      }
+    }
+
+  }
+}
+
