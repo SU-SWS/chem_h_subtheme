@@ -184,82 +184,18 @@
   }
 
   // Link colors, size
-  a,
-  .su-link {
-    color: $chemh-color-digital-blue;
-    text-decoration: none;
-
-    &:hover,
-    &:active,
-    &:focus {
-      color: $su-color-black;
-      text-decoration: underline;
-
-      &:after {
-        color: $su-color-black;
-      }
-    }
-
-    &:after {
-      color: $chemh-color-digital-blue;
-    }
-
-    &.su-link--external,
-    &.mailto svg {
-      fill: $chemh-color-digital-blue;
-
-
-      &:hover,
-      &:active,
-      &:focus {
-
-        &:after {
-          background-color: $su-color-black;
-        }
-      }
-
-      &:after {
-        background-color: $chemh-color-digital-blue;
-      }
-    }
-  }
-
   .su-local-footer__action-links {
     a {
       color: $chemh-color-digital-blue;
       font-weight: normal;
-      text-decoration: none;
+      text-decoration: underline;
 
       &:hover,
       &:active,
       &:focus {
-        color: $su-color-black;
-        text-decoration: underline;
-      }
-    }
-  }
-
-  a,
-  .su-link--external {
-
-    &.su-button,
-    &.su-button,
-    &.su-button--big {
-      color: $chemh-color-digital-blue;
-      fill: $chemh-color-digital-blue;
-
-      &:hover,
-      &:active,
-      &:focus {
-        fill: $chemh-color-digital-blue;
-
         &:after {
-          background-color: $su-color-black;
+          background-color: $chemh-color-digital-blue;
         }
-      }
-
-      &:after {
-        background-color: $chemh-color-digital-blue;
       }
     }
   }
@@ -291,21 +227,22 @@ nav[aria-label^='footer'] {
   a.su-link--external,
   a.su-link {
     color: $chemh-color-digital-blue;
-    text-decoration: none;
+    text-decoration: underline;
 
     &:hover,
-    &:active,
     &:focus {
-      color: $su-color-black;
+      background-color: $chemh-color-hover-blue;
+      color: $chemh-color-digital-blue;
       text-decoration: underline;
-
-      &:after {
-        background-color: $su-color-black;
-      }
     }
 
     &:after {
       background-color: $chemh-color-digital-blue;
+    }
+
+    &:active {
+      color: $chemh-color-red;
+      text-decoration: underline;
     }
   }
 }

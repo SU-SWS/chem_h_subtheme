@@ -2,25 +2,34 @@
 
 // override default button styles here and add
 // additional button classes as needed.
+.su-button,
+.su-button.su-link,
+[type=button],
+[type=image],
+[type=reset],
+[type=submit],
+button  {
+  background-color: transparent;
+}
+
 main,
 footer {
   .su-button.su-link,
   .su-button,
   button {
     @include chemh-button--gradient;
-    @include modular-spacing('padding', 1);
+    @include modular-spacing('padding', 0);
 
     &:hover,
     &:focus,
     &:active {
-      background-color: transparent;
-      color: #000;
+      color: $su-color-white;
     }
   }
 
   [type=button],
   [type=submit] {
-    background-color: transparent;
+    // background-color: transparent;
     color: $su-color-black;
     display: inline-block;
   }
@@ -35,7 +44,7 @@ footer {
     &:hover,
     &:focus,
     &:active {
-      background-color: transparent
+      // background-color: transparent
     }
   }
 
@@ -48,7 +57,7 @@ footer {
   &:hover,
   &:focus,
   &:active {
-    background-color: transparent;
+    // background-color: transparent;
   }
 }
 
