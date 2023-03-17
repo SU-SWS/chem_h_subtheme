@@ -58,7 +58,7 @@ function chem_h_subtheme_preprocess_html(&$variables) {
     ],
   ];
 
-  // Is front page variable 
+  // Is front page variable
   // set the front variable to add meta tags to on the homepage.
   if (\Drupal::service('path.matcher')->isFrontPage()) {
     $variables['page']['#attached']['html_head'][] = [$twittercard, 'twitter:card'];
@@ -128,7 +128,7 @@ function chem_h_subtheme_preprocess_card(&$variables) {
   // Check for media in a card then set classes.
   if (!$imageCount) {
     return;
-  }  
+  }
 }
 
 /**
@@ -140,5 +140,6 @@ function chem_h_subtheme_preprocess_banner(&$variables) {
 
   // Add button color style class to card wrapper.
   $variables['attributes']['class'][] = $paragraph->getBehaviorSetting('react_paragraphs:banner_variant_info', 'banner_button_style', 'su-wrapper--button-red');
+  $variables['attributes']['class'][] = $paragraph->getBehaviorSetting('react_paragraphs:banner_variant_info', 'banner_style', 'chemh-wrapper--banner-default');
 }
 

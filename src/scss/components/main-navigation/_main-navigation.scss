@@ -32,13 +32,29 @@
       top: 78px; // moving the menu lower
     }
 
-    .su-multi-menu__menu>.su-multi-menu__item--parent>.su-nav-toggle[aria-expanded=true]:active,
-    .su-multi-menu__menu>.su-multi-menu__item--parent>.su-nav-toggle[aria-expanded=true]:focus {
-      border-bottom: 0;
+    // Removing line on arrow.
+    .su-multi-menu__menu {
+      >.su-multi-menu__item--parent {
+        >.su-nav-toggle {
+          &:hover,
+          &:focus,
+          &:active {
+            &[aria-expanded=false] {
+              border: 0;
+            }
+          }
+
+          &[aria-expanded=true] {
+            &:active,
+            &:focus,
+            &:hover {
+              border: 0;
+            }
+          }
+        }
+      }
     }
-    .su-multi-menu__menu>.su-multi-menu__item--parent>.su-nav-toggle:hover[aria-expanded=false] {
-      border-bottom: 0;
-    }
+
 
     .su-multi-menu__menu-lv1 {
       >.su-multi-menu__item {

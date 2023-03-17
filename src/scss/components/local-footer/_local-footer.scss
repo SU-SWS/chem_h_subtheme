@@ -187,13 +187,13 @@
   a,
   .su-link {
     color: $chemh-color-digital-blue;
-    text-decoration: underline;
+    text-decoration: none;
 
     &:hover,
     &:active,
     &:focus {
       color: $su-color-black;
-      text-decoration: none;
+      text-decoration: underline;
 
       &:after {
         color: $su-color-black;
@@ -228,13 +228,13 @@
     a {
       color: $chemh-color-digital-blue;
       font-weight: normal;
-      text-decoration: underline;
+      text-decoration: none;
 
       &:hover,
       &:active,
       &:focus {
         color: $su-color-black;
-        text-decoration: none;
+        text-decoration: underline;
       }
     }
   }
@@ -291,13 +291,13 @@ nav[aria-label^='footer'] {
   a.su-link--external,
   a.su-link {
     color: $chemh-color-digital-blue;
-    text-decoration: underline;
+    text-decoration: none;
 
     &:hover,
     &:active,
     &:focus {
       color: $su-color-black;
-      text-decoration: none;
+      text-decoration: underline;
 
       &:after {
         background-color: $su-color-black;

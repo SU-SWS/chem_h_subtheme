@@ -1,9 +1,21 @@
 @charset "UTF-8";
 
 
-// On desktop views, remove the search input field.
+// On desktop views, show/hide the search input with focus or hover.
 @include grid-media-min('lg') {
+  // #chemh-button--search-link {
+  //   &:hover,
+  //   &:focus,
+  //   &:focus-within {
+  //     + .su-site-search form {
+  //       display: block;
+  //     }
+  //   }
+  // }
+
   .su-site-search {
+    grid-area: search-field;
+
     form {
       display: none;
     }
