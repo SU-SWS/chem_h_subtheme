@@ -13,17 +13,90 @@
   }
 }
 
-.su-multi-menu.su-multi-menu--dropdowns {
-  .su-multi-menu__menu {
-    >.su-multi-menu__item--parent {
-      >.su-nav-toggle:hover[aria-expanded=false] {
+// Removing the arrow transform on top only.
+.su-multi-menu {
+  .su-multi-menu__menu-lv1 {
+    .su-nav-toggle {
+      &[aria-expanded=true] {
         transform: none;
-        transition: none;
       }
     }
   }
 }
-// End removal.
+
+.su-multi-menu.su-multi-menu--dropdowns {
+  .su-multi-menu__menu {
+    >.su-multi-menu__item--parent {
+      // Removed animations
+      >.su-nav-toggle:hover[aria-expanded=false] {
+        transform: none;
+        transition: none;
+      }
+
+      // Carets and toggles and carrots.
+      @include grid-media-min('lg') {
+        >.su-nav-toggle {
+        // What the up and down caret look like.
+          &[aria-expanded=true] {
+            &::before {
+              background: transparent url("../../assets/svg/icon_arrow_down_red.svg") no-repeat center / 50%;
+            }
+          }
+
+          // Top nav.
+          &::before {
+            background: transparent url("../../assets/svg/icon_arrow_down_stone.svg") no-repeat center / 50%;
+          }
+
+          &:focus,
+          &:hover {
+            &::before {
+              background: transparent url("../../assets/svg/icon_arrow_down_red.svg") no-repeat center / 50%;
+            }
+          }
+        }
+      }
+      @include grid-media-max('md') {
+        .su-nav-toggle {
+          // What the up and down caret look like.
+          &[aria-expanded=true] {
+            &:focus {
+              &::before {
+                background: transparent url("../../assets/svg/icon_expand_more_red.svg") no-repeat center / 50%;
+              }
+            }
+          }
+
+          &::before {
+            background: transparent url("../../assets/svg/icon_expand_more_white.svg") no-repeat center / 50%;
+          }
+
+          &:focus,
+          &:hover {
+            &::before {
+              background: transparent url("../../assets/svg/icon_expand_more_red.svg") no-repeat center / 50%;
+            }
+          }
+
+        }
+      }
+    }
+  }
+}
+
+// Override for a before hover.
+.su-multi-menu {
+  .su-multi-menu__menu-lv1 {
+    >.su-multi-menu__item.su-multi-menu__item--expanded {
+      >a {
+        &::before {
+          height: 0;
+          background: transparent;
+        }
+      }
+    }
+  }
+}
 
 // Font sizes, colors, hovers
 .su-multi-menu {
@@ -62,11 +135,22 @@
         &.su-multi-menu__item--active-trail {
           >.su-multi-menu__link {
             @include grid-media-min('lg') {
+              color: $chemh-color-red;
+
               &::before {
                 @include chemh-main-nav--gradient;
 
                 height: 0.25em;
                 top: 78px; // move it lower.  must match the open menu 'to
+              }
+            }
+          }
+
+          @include grid-media-min('lg') {
+            // Active arrow red.
+            >.su-nav-toggle {
+              &::before {
+                background: transparent url("../../assets/svg/icon_arrow_down_red.svg") no-repeat center / 50%;
               }
             }
           }
@@ -113,6 +197,7 @@
           &:hover,
           &:focus,
           &:active {
+            background-color: transparent; // override for general links.
             color: $chemh-color-red;
             text-decoration: none;
           }
@@ -147,7 +232,6 @@
 
     }
 
-
   }
 }
 
@@ -171,6 +255,24 @@
   }
 }
 
+@include grid-media-min('lg') {
+  .su-multi-menu .su-multi-menu__menu-lv2>.su-multi-menu__item>.su-multi-menu__link,
+  .su-multi-menu .su-multi-menu__menu-lv3>.su-multi-menu__item>.su-multi-menu__link,
+  .su-multi-menu .su-multi-menu__menu-lv4>.su-multi-menu__item>.su-multi-menu__link,
+  .su-multi-menu .su-multi-menu__menu-lv5>.su-multi-menu__item>.su-multi-menu__link {
+    padding-bottom: 1.4rem;
+    padding-top: 1.4rem;
+  }
+
+  .su-multi-menu {
+    .su-multi-menu__menu {
+      .su-multi-menu__link  {
+        border-bottom: none;
+      }
+    }
+  }
+}
+
 // Mobile menu
 @include grid-media-max('md') {
   .su-multi-menu {
@@ -178,6 +280,8 @@
       background-color: $chemh-color-true-black;
 
       .su-multi-menu__link {
+        border-bottom: 1px solid #5A635F;
+
         &:focus,
         &:hover {
           &::before {
@@ -196,29 +300,5 @@
     }
   }
 
-  .su-nav-toggle {
-
-  // What the up and down caret look like.
-    &[aria-expanded=true] {
-      &:focus {
-          &::before {
-            background: transparent url("#{$su-image-path}/caret-down-white.svg") no-repeat center / 50%;
-          }
-        }
-      }
-
-    // Mobile toggle - circle background color.
-    &::before {
-      background: transparent url("#{$su-image-path}/caret-down-white.svg") no-repeat center / 50%;
-    }
-
-    &:focus,
-    &:hover {
-      &::before {
-        background: transparent url("#{$su-image-path}/caret-down-white.svg") no-repeat center / 50%;
-      }
-    }
-
-  }
 }
 

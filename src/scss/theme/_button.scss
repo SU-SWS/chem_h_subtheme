@@ -35,6 +35,13 @@ footer {
   }
 }
 
+// Gradient override for authoring.
+.contextual .trigger {
+  &::before {
+    content: none;
+  }
+}
+
 // WYSIWYG BUTTONS
 .su-wysiwyg-text {
   .su-button,
