@@ -1,6 +1,5 @@
 @charset "UTF-8";
 
-
 // Removing the main navigation animations
 .su-multi-menu {
   .su-multi-menu__menu {
@@ -84,22 +83,28 @@
   }
 }
 
-// Override for a before hover.
+// Font sizes, colors, hovers
 .su-multi-menu {
-  .su-multi-menu__menu-lv1 {
-    >.su-multi-menu__item.su-multi-menu__item--expanded {
-      >a {
-        &::before {
-          height: 0;
-          background: transparent;
+
+  @include grid-media-min('lg') {
+    // top menu hovers
+    .su-multi-menu__menu {
+      .su-multi-menu__link {
+        &:hover,
+        &:focus {
+          &::before {
+            background-color: $chemh-color-red;
+          }
+
+          span {
+            color: $chemh-color-red;
+          }
+
         }
       }
     }
   }
-}
 
-// Font sizes, colors, hovers
-.su-multi-menu {
   &.su-multi-menu--dropdowns {
     .su-multi-menu__menu-lv2 {
       top: 78px; // moving the menu lower
@@ -136,6 +141,7 @@
           >.su-multi-menu__link {
             @include grid-media-min('lg') {
               color: $chemh-color-red;
+              font-weight: $su-font-semi-bold;
 
               &::before {
                 @include chemh-main-nav--gradient;
@@ -158,7 +164,7 @@
           &.su-multi-menu__item--expanded {
             a {
               &::before {
-                background: none;
+                // background: none;
               }
             }
           }

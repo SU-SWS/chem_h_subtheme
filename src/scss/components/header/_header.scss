@@ -43,9 +43,9 @@
         grid-area: search;
         width: 24px;
         height: 24px;
-        // position: relative;
         top: 30px;
         transform: scaleX(-1);
+        right: 0;
       }
 
       .su-multi-menu {
@@ -55,13 +55,6 @@
 
     nav+.su-site-search, ul li .su-site-search {
       display: none; // need to hide extra search that we use for mobile.
-    }
-
-    // add color to the drop down nav bar.
-    .su-multi-menu__menu {
-      &.su-multi-menu__menu-lv1 {
-        // background-color: pink;
-      }
     }
   }
 
