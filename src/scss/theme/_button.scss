@@ -75,10 +75,17 @@ footer {
   }
 }
 
-// Gradient override for authoring.
+// Background overrides for authoring.
 .contextual .trigger {
   &::before {
     content: none;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-repeat: no-repeat;
+    background-position: center;
   }
 }
 
