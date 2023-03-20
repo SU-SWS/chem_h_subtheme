@@ -1,6 +1,5 @@
 @charset "UTF-8";
 
-
 // Removing the main navigation animations
 .su-multi-menu {
   .su-multi-menu__menu {
@@ -13,47 +12,299 @@
   }
 }
 
-.su-multi-menu.su-multi-menu--dropdowns {
-  .su-multi-menu__menu {
-    >.su-multi-menu__item--parent {
-      >.su-nav-toggle:hover[aria-expanded=false] {
+// Removing the arrow transform on top only.
+.su-multi-menu {
+  .su-multi-menu__menu-lv1 {
+    .su-nav-toggle {
+      &[aria-expanded=true] {
         transform: none;
-        transition: none;
       }
     }
   }
 }
-// End removal.
 
+.su-multi-menu.su-multi-menu--dropdowns {
+  .su-multi-menu__menu {
+    >.su-multi-menu__item--parent {
+      // Removed animations
+      >.su-nav-toggle:hover[aria-expanded=false] {
+        transform: none;
+        transition: none;
+      }
 
-// // What the up and down caret look like.
-// > .su-nav-toggle {
+      // Carets and toggles and carrots.
+      @include grid-media-min('lg') {
+        >.su-nav-toggle {
+        // What the up and down caret look like.
+          &[aria-expanded=true] {
+            &::before {
+              background: transparent url("../../assets/svg/icon_arrow_down_red.svg") no-repeat center / 50%;
+            }
+          }
 
-//   &[aria-expanded=true]{
-//     &:focus {
-//         &::before {
-//           background: $sdss-color-green-link url("#{$su-image-path}/caret-down-white.svg") no-repeat center / 50%;
-//         }
-//       }
-//     }
+          // Top nav.
+          &::before {
+            background: transparent url("../../assets/svg/icon_arrow_down_stone.svg") no-repeat center / 50%;
+          }
 
-//   // Mobile toggle - circle background color.
-//   @include grid-media-max('md') {
-//     &::before {
-//       background: $sdss-color-green-link url("#{$su-image-path}/caret-down-white.svg") no-repeat center / 50%;
-//     }
+          &:focus,
+          &:hover {
+            &::before {
+              background: transparent url("../../assets/svg/icon_arrow_down_red.svg") no-repeat center / 50%;
+            }
+          }
+        }
+      }
+      @include grid-media-max('md') {
+        .su-nav-toggle {
+          // What the up and down caret look like.
+          &[aria-expanded=true] {
+            &:focus {
+              &::before {
+                background: transparent url("../../assets/svg/icon_expand_more_red.svg") no-repeat center / 50%;
+              }
+            }
+          }
 
-//     &:focus,
-//     &:hover {
-//       &::before {
-//         background: $sdss-color-green-link url("#{$su-image-path}/caret-down-white.svg") no-repeat center / 50%;
-//       }
-//     }
-//   }
-// }
+          &::before {
+            background: transparent url("../../assets/svg/icon_expand_more_white.svg") no-repeat center / 50%;
+          }
 
+          &:focus,
+          &:hover {
+            &::before {
+              background: transparent url("../../assets/svg/icon_expand_more_red.svg") no-repeat center / 50%;
+            }
+          }
 
-// Font sizes
-.su-multi-menu .su-multi-menu__menu-lv1>.su-multi-menu__item>.su-multi-menu__link {
-  font-size: 1.8rem;
+        }
+      }
+    }
+  }
 }
+
+// Font sizes, colors, hovers
+.su-multi-menu {
+
+  @include grid-media-min('lg') {
+    // top menu hovers
+    .su-multi-menu__menu {
+      .su-multi-menu__link {
+        &:hover,
+        &:focus {
+          &::before {
+            background-color: $chemh-color-red;
+          }
+
+          span {
+            color: $chemh-color-red;
+          }
+
+        }
+      }
+    }
+  }
+
+  &.su-multi-menu--dropdowns {
+    .su-multi-menu__menu-lv2 {
+      top: 78px; // moving the menu lower
+    }
+
+    // Removing line on arrow.
+    .su-multi-menu__menu {
+      >.su-multi-menu__item--parent {
+        >.su-nav-toggle {
+          &:hover,
+          &:focus,
+          &:active {
+            &[aria-expanded=false] {
+              border: 0;
+            }
+          }
+
+          &[aria-expanded=true] {
+            &:active,
+            &:focus,
+            &:hover {
+              border: 0;
+            }
+          }
+        }
+      }
+    }
+
+
+    .su-multi-menu__menu-lv1 {
+      >.su-multi-menu__item {
+        &.su-multi-menu__item--current,
+        &.su-multi-menu__item--active-trail {
+          >.su-multi-menu__link {
+            @include grid-media-min('lg') {
+              color: $chemh-color-red;
+              font-weight: $su-font-semi-bold;
+
+              &::before {
+                @include chemh-main-nav--gradient;
+
+                height: 0.25em;
+                top: 78px; // move it lower.  must match the open menu 'to
+              }
+            }
+          }
+
+          @include grid-media-min('lg') {
+            // Active arrow red.
+            >.su-nav-toggle {
+              &::before {
+                background: transparent url("../../assets/svg/icon_arrow_down_red.svg") no-repeat center / 50%;
+              }
+            }
+          }
+
+          &.su-multi-menu__item--expanded {
+            a {
+              &::before {
+                // background: none;
+              }
+            }
+          }
+
+          >.su-multi-menu__item {
+            &.su-multi-menu__item--active-trail {
+              >.su-multi-menu__link {
+                &::before {
+                  @include chemh-main-nav--gradient;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      >.su-multi-menu__item {
+        >.su-multi-menu__link {
+          color: $su-color-black;
+          font-size: 1.8rem;
+          text-transform: uppercase;
+
+          @include grid-media-max('md') {
+            color: $su-color-white;
+
+            &:hover,
+            &:focus,
+            &:active {
+              span {
+                color: $su-color-white;
+                text-decoration: underline;
+              }
+            }
+          }
+
+          &:hover,
+          &:focus,
+          &:active {
+            background-color: transparent; // override for general links.
+            color: $chemh-color-red;
+            text-decoration: none;
+          }
+        }
+      }
+
+      @include grid-media-min('lg') {
+        >.su-multi-menu__item--parent {
+          >.su-multi-menu__menu {
+            @include chemh--shadow-custom-button-hover;
+
+            min-width: 300px;
+            border-radius: 0 0 20px 20px;
+            border-top: 4px solid $chemh-color-red;
+          }
+
+          >.su-multi-menu__link {
+            &::after {
+              border-right: 0;
+            }
+
+            >.su-nav-toggle {
+              &:hover,
+              &:focus,
+              &:active {
+                border-bottom: 0;
+              }
+            }
+          }
+        }
+      }
+
+    }
+
+  }
+}
+
+// Search
+// Search icon.
+.su-site-search__submit {
+  padding: 0;
+  margin-top: 0;
+  margin-right: 0;
+  margin-bottom: 0;
+  background: url("#{$su-image-path}/magnifying-glass-24px.svg") no-repeat 0 0;
+  opacity: .6;
+  position: absolute;
+  top: 1.1rem;
+  right: 1.2rem;
+  width: 24px;
+  height: 25px;
+
+  &:hover {
+    background: transparent url("#{$su-image-path}/magnifying-glass-24px.svg") no-repeat 0 0;
+  }
+}
+
+@include grid-media-min('lg') {
+  .su-multi-menu .su-multi-menu__menu-lv2>.su-multi-menu__item>.su-multi-menu__link,
+  .su-multi-menu .su-multi-menu__menu-lv3>.su-multi-menu__item>.su-multi-menu__link,
+  .su-multi-menu .su-multi-menu__menu-lv4>.su-multi-menu__item>.su-multi-menu__link,
+  .su-multi-menu .su-multi-menu__menu-lv5>.su-multi-menu__item>.su-multi-menu__link {
+    padding-bottom: 1.4rem;
+    padding-top: 1.4rem;
+  }
+
+  .su-multi-menu {
+    .su-multi-menu__menu {
+      .su-multi-menu__link  {
+        border-bottom: none;
+      }
+    }
+  }
+}
+
+// Mobile menu
+@include grid-media-max('md') {
+  .su-multi-menu {
+    .su-multi-menu__menu {
+      background-color: $chemh-color-true-black;
+
+      .su-multi-menu__link {
+        border-bottom: 1px solid #5A635F;
+
+        &:focus,
+        &:hover {
+          &::before {
+            background-color: $chemh-color-red;
+          }
+        }
+      }
+    }
+
+    .su-multi-menu__menu-lv1 {
+      >.su-multi-menu__item {
+        >.su-multi-menu__link {
+          color: $su-color-white;
+        }
+      }
+    }
+  }
+
+}
+

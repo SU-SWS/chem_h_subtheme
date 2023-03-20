@@ -1,0 +1,36 @@
+@charset "UTF-8";
+
+// Header color outside in the margins.
+.node-stanford-page-su-page-banner {
+  margin-bottom: 0;
+}
+
+.block--page-title,
+.node-stanford-page-title {
+  padding-top: 9.5rem;
+  margin-top: 0;
+}
+
+.block--page-title,
+.node-stanford-page-title {
+  background: $chemh-color-true-black;
+  position: relative; /* child absolute */
+
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      /* fill vertically */
+      top: 0;
+      bottom: 0;
+      width: 9600px;
+      right: 100%;
+      background: $chemh-color-true-black;
+    }
+
+    &::after {
+      left: 100%;
+      background: $chemh-color-true-black;
+    }
+}

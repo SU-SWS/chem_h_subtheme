@@ -18,6 +18,14 @@
     @include grid-media-max('md') {
       grid-template-columns: 95%;
     }
+
+    a {
+      &:hover,
+      &:focus,
+      &:active {
+        background-color: transparent; // override for general links.
+      }
+    }
   }
 
   .su-signup-form {
@@ -152,6 +160,15 @@
 
     .su-button--login {
       @include chemh-button--plain;
+
+      background: transparent;
+      display: flex;
+      width: fit-content;
+      gap: 5px;
+
+      &::after {
+        content: none;
+      }
     }
   }
 
@@ -184,46 +201,6 @@
   }
 
   // Link colors, size
-  a,
-  .su-link {
-    color: $chemh-color-digital-blue;
-    text-decoration: underline;
-
-    &:hover,
-    &:active,
-    &:focus {
-      color: $su-color-black;
-      text-decoration: none;
-
-      &:after {
-        color: $su-color-black;
-      }
-    }
-
-    &:after {
-      color: $chemh-color-digital-blue;
-    }
-
-    &.su-link--external,
-    &.mailto svg {
-      fill: $chemh-color-digital-blue;
-
-
-      &:hover,
-      &:active,
-      &:focus {
-
-        &:after {
-          background-color: $su-color-black;
-        }
-      }
-
-      &:after {
-        background-color: $chemh-color-digital-blue;
-      }
-    }
-  }
-
   .su-local-footer__action-links {
     a {
       color: $chemh-color-digital-blue;
@@ -233,33 +210,9 @@
       &:hover,
       &:active,
       &:focus {
-        color: $su-color-black;
-        text-decoration: none;
-      }
-    }
-  }
-
-  a,
-  .su-link--external {
-
-    &.su-button,
-    &.su-button,
-    &.su-button--big {
-      color: $chemh-color-digital-blue;
-      fill: $chemh-color-digital-blue;
-
-      &:hover,
-      &:active,
-      &:focus {
-        fill: $chemh-color-digital-blue;
-
         &:after {
-          background-color: $su-color-black;
+          background-color: $chemh-color-digital-blue;
         }
-      }
-
-      &:after {
-        background-color: $chemh-color-digital-blue;
       }
     }
   }
@@ -294,18 +247,19 @@ nav[aria-label^='footer'] {
     text-decoration: underline;
 
     &:hover,
-    &:active,
     &:focus {
-      color: $su-color-black;
-      text-decoration: none;
-
-      &:after {
-        background-color: $su-color-black;
-      }
+      background-color: $chemh-color-hover-blue;
+      color: $chemh-color-digital-blue;
+      text-decoration: underline;
     }
 
     &:after {
       background-color: $chemh-color-digital-blue;
+    }
+
+    &:active {
+      color: $chemh-color-red;
+      text-decoration: underline;
     }
   }
 }
