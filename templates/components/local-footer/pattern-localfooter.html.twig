@@ -68,7 +68,7 @@
 {# Sanitize the weblogin text. #}
 {%- set weblogin_text = weblogin_text|render_clean-%}
 {%- if weblogin_text is empty -%}
-  {%- set weblogin_url = 'hello' -%}
+  {%- set weblogin_url = '' -%}
 {%- endif -%}
 
 {# Work with Drupal and format it for this template. #}
@@ -172,7 +172,7 @@
 
           {# Override cell 1 with the logo. #}
           {% block cell1 %}
-            <div class="su-lockup__logo-wrapper hello">
+            <div class="su-lockup__logo-wrapper">
               <img src="{{ site_logo }}" alt="{{ image_alt }}" class="su-lockup__custom-logo" />
               {% if line4 is not empty %}
                 <span class="su-lockup__line4">{{ line4 }}</span>
@@ -316,11 +316,10 @@
   {% if weblogin_url is not empty %}
     <div class="su-local-footer__cell7">
       {# Web login button #}
-        {% include template_path_link with {
-          "modifier_class": "su-link--internal su-button su-button--login",
-          "link_href": weblogin_url,
-          "link_content": weblogin_text|default('Web Login')
-        } only %}
+      <a {{ attributes }} href="{{ weblogin_url }}" class="su-link su-link--internal su-button su-button--login">
+      <span class="material-symbols-outlined">lock</span>
+      {{ weblogin_text|default(' Web Login') }}
+      </a>
     </div>
   {% endif %}
 </div>

@@ -42,12 +42,34 @@
 }
 
 @mixin chemh-button--plain {
+  @include chemh--shadow-system-button;
+
   background: transparent;
-  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.21);
   border-radius: 6px;
   padding: 9px 18px 9px 14px;
 
   &::before {
     background: none;
   }
+
+  &:hover,
+  &:focus {
+    background: $su-color-digital-blue;
+    color: $su-color-white;
+
+    span {
+      text-decoration: none;
+    }
+  }
+
+
+  &:active {
+    background: $chemh-color-true-black;
+    color: $su-color-white;
+
+    span {
+      text-decoration: none;
+    }
+  }
+
 }

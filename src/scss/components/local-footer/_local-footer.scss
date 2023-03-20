@@ -18,6 +18,14 @@
     @include grid-media-max('md') {
       grid-template-columns: 95%;
     }
+
+    a {
+      &:hover,
+      &:focus,
+      &:active {
+        background-color: transparent; // override for general links.
+      }
+    }
   }
 
   .su-signup-form {
@@ -152,6 +160,15 @@
 
     .su-button--login {
       @include chemh-button--plain;
+
+      background: transparent;
+      display: flex;
+      width: fit-content;
+      gap: 5px;
+
+      &::after {
+        content: none;
+      }
     }
   }
 

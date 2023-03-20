@@ -2,6 +2,8 @@
 
 // override default button styles here and add
 // additional button classes as needed.
+// links styled into buttons
+
 .su-button,
 .su-button.su-link,
 [type=button],
@@ -11,6 +13,44 @@
 button  {
   background-color: transparent;
 }
+
+.su-button.su-link:focus,
+.su-button.su-link:hover,
+.su-button:focus,
+.su-button:hover,
+[type=button]:focus,
+[type=button]:hover,
+[type=image]:focus,
+[type=image]:hover,
+[type=reset]:focus,
+[type=reset]:hover,
+[type=submit]:focus,
+[type=submit]:hover,
+button:focus,
+button:hover {
+  @include chemh-button--hover-gradient;
+
+  border-radius: 6px;
+  color: $su-color-white;
+}
+
+// Active links.
+.su-button.su-link:active,
+.su-button:active,
+[type=button]:active,
+[type=image]:active,
+[type=reset]:active,
+[type=submit]:active,
+button:hover {
+  background: $chemh-color-true-black;
+  border-radius: 6px;
+  color: $su-color-white;
+
+  &:after {
+    background-color: $su-color-white;
+  }
+}
+
 
 main,
 footer {
