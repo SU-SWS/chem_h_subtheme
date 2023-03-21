@@ -5,21 +5,7 @@
 // CTA links
 a {
   &.su-link--action {
-    // @include chemh--right-arrow-icon;
-
-    &::after {
-      @extend .material-symbols-outlined;
-
-      content: 'arrow_right_alt';
-    	font-size: 40px;
-    	background:-moz-linear-gradient(270deg,#2a2b81 2.4%,#652561 29.34%,#b32a35 57.3%,#e28b6d 85.26%,#ecaf94);
-        background: -webkit-linear-gradient(270deg,#2a2b81 2.4%,#652561 29.34%,#b32a35 57.3%,#e28b6d 85.26%,#ecaf94);
-        background: linear-gradient(270deg,#2a2b81 2.4%,#652561 29.34%,#b32a35 57.3%,#e28b6d 85.26%,#ecaf94);
-        -webkit-background-clip: text;
-        -moz-background-clip: text;
-        background-clip: text;
-       -webkit-text-fill-color:transparent;
-    }
+    @include chemh--right-arrow-icon;
   }
 }
 
