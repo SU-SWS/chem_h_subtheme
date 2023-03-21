@@ -1,0 +1,10 @@
+@charset "UTF-8";
+
+// Adding margin top for the headings to be full bleed.
+.jumpstart-ui--two-column {
+  &.flex-container {
+    &.centered-container {
+      @include modular-spacing('margin-top', 4);
+    }
+  }
+}
