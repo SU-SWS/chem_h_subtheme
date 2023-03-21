@@ -12,10 +12,17 @@
 }
 
 @mixin chemh--right-arrow-icon {
+
+
   &::after {
-    font-family: Material Symbols Outlined;
-    content: "\e941";
+    @extend .material-symbols-outlined;
+
+    background: clip linear-gradient(270deg, $chemh-color-dark-purple 2.4%, $chemh-color-mid-purple 29.34%, $chemh-color-mid-red 57.3%, $chemh-color-mid-peach 85.26%, $chemh-color-light-peach 100%);
+
+    background-clip: text;
+    content: 'arrow_right_alt';
+    // font-family: Material Symbols Outlined;
+    // content: "\e941";
     mask: none;
-    transition: none;
   }
 }
