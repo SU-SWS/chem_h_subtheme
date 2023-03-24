@@ -21,19 +21,66 @@
   }
 
   // Card position - right side
+  @include grid-media('xl') {
+    .overlay-right.su-hero {
+      border: 4px solid lime;
 
-  @include grid-media-min('xl') {
-    .overlay-right.su-hero .su-hero__card {
-      right: 15%;
+      .su-hero__media {
+        max-width: 65%;
+      }
+
+      .su-hero__card {
+        max-width: 30%;
+        right: 5%;
+      }
     }
   }
 
   @include grid-media-max('lg') {
-    .overlay-right.su-hero .su-hero__card {
-      right: 20%;
+    .overlay-right.su-hero {
+      border: 4px solid orange;
+
+      .su-hero__media {
+        max-width: 60%;
+        background-size: contain;
+      }
+
+      .su-hero__card {
+        max-width: 35%;
+      }
     }
   }
 
+  @include grid-media-max('md') {
+    .overlay-right.su-hero {
+      border: 4px solid pink;
+
+      .su-hero__media {
+        width: 65%;
+      }
+
+      .su-hero__card {
+        width: 30%;
+        right: 5%;
+      }
+    }
+  }
+
+  @include grid-media-max('sm') {
+    .overlay-right.su-hero {
+      border: 4px solid goldenrod;
+
+      .su-hero__media {
+        width: 100%;
+      }
+
+      .su-hero__card {
+        max-width: 100%;
+        right: unset;
+        width: 100%;
+      }
+    }
+  }
 
   .su-hero__card {
     border: 0;
@@ -45,10 +92,11 @@
 
       h2 {
         @include chemh-heading--badge;
+        @include type-a;
 
         color: $su-color-black;
         font-weight: 400;
-        font-size: 60px;
+        // font-size: 60px;
         line-height: 110%;
         letter-spacing: -0.04em;
       }
