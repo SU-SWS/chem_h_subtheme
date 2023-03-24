@@ -1,0 +1,60 @@
+@charset "UTF-8";
+
+// Banner variants.
+// Classes:
+// .chemh-wrapper--banner-homepage
+// .chemh-wrapper--banner-halfpill
+// .chemh-wrapper--banner-wholepill
+
+.chemh-wrapper--banner-homepage {
+  // image size contraint
+  .su-hero .su-hero__media .image,
+  .su-hero .su-hero__media .media,
+  .su-hero .su-hero__media>article,
+  .su-hero .su-hero__media>div {
+    height: auto;
+    max-width: 850px;
+  }
+
+  .su-hero__media {
+    background: $su-color-white; // removes the dark grey bg on banner images.
+  }
+
+  // Card position - right side
+
+  @include grid-media-min('xl') {
+    .overlay-right.su-hero .su-hero__card {
+      right: 15%;
+    }
+  }
+
+  @include grid-media-max('lg') {
+    .overlay-right.su-hero .su-hero__card {
+      right: 20%;
+    }
+  }
+
+
+  .su-hero__card {
+    border: 0;
+    box-shadow: none;
+    max-width: 557px;
+
+    .su-card__contents {
+      padding: 0;
+
+      h2 {
+        @include chemh-heading--badge;
+
+        color: $su-color-black;
+        font-weight: 400;
+        font-size: 60px;
+        line-height: 110%;
+        letter-spacing: -0.04em;
+      }
+
+    }
+  }
+
+}
+
