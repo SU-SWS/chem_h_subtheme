@@ -1,0 +1,9 @@
+@charset "UTF-8";
+
+@mixin chemh--side-nav-hover {
+  background: $chemh-color-true-black;
+  color: $su-color-white;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
+
