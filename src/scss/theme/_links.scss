@@ -53,3 +53,24 @@ a {
   }
 }
 
+// Icon alignment for CTA links
+a {
+  &.su-link--action {
+    position: relative;
+
+    &::after {
+      position: absolute;
+      display: block;
+      right: -40px;
+      top: 0px;
+    }
+
+    &:hover,
+    &:focus {
+      &::after {
+        text-decoration: none;
+      }
+    }
+  }
+}
+
