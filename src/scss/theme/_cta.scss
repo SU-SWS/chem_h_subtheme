@@ -2,3 +2,10 @@
 
 // apply cta and link mixins here appropriately to override link styles.
 
+// CTA links
+a {
+  &.su-link--action {
+    @include chemh--right-arrow-icon;
+  }
+}
+

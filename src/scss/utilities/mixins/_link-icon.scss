@@ -13,9 +13,24 @@
 
 @mixin chemh--right-arrow-icon {
   &::after {
-    font-family: Material Symbols Outlined;
-    content: "\e941";
-    mask: none;
-    transition: none;
+    @extend .material-symbols-outlined;
+    @include chemh-icon--gradient;
+
+    content: 'arrow_right_alt';
+    font-size: unset;
+
+    // cliping the gradient
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    // Resets on code from SBT
+    height: unset;
+    width: unset;
+    -webkit-mask: unset;
+    mask: unset;
+    -webkit-mask-size: unset;
+    mask-size: unset;
   }
 }
