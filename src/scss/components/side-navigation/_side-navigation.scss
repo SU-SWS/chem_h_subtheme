@@ -40,11 +40,31 @@
 
       &::after {
         visibility: visible;
-        height: 100%;
-        width: 10.5px;
-        transform: scaleY(1);
+        width: 1em;
         background: transparent url("../../assets/svg/icon_arrow_down_red.svg") no-repeat top / 75%;
         right: 2rem;
+        height: 50px;
+        margin-top: 5px;
+      }
+    }
+  }
+
+  .su-secondary-nav__item--parent {
+    >.su-secondary-nav__link {
+      // @include chemh--shadow-side-nav;
+      // @include chemh--side-nav-hover;
+
+      &::before {
+        background-color: transparent;
+      }
+
+      &::after {
+        visibility: visible;
+        width: 1em;
+        background: transparent url("../../assets/svg/icon_arrow_down_red.svg") no-repeat top / 75%;
+        right: 2rem;
+        height: 50px;
+        margin-top: 5px;
       }
     }
   }
