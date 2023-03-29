@@ -1,0 +1,153 @@
+@charset "UTF-8";
+
+// Banner variants.
+// Classes:
+// .chemh-wrapper--banner-homepage
+// .chemh-wrapper--banner-halfpill
+// .chemh-wrapper--banner-wholepill
+
+.chemh-wrapper--banner-halfpill {
+  // image size contraint
+  .su-hero .su-hero__media .image,
+  .su-hero .su-hero__media .media,
+  .su-hero .su-hero__media>article,
+  .su-hero .su-hero__media>div {
+    height: auto;
+    max-width: 850px;
+  }
+
+  .su-hero__media {
+    background: $su-color-white; // removes the dark grey bg on banner images.
+  }
+
+  .su-link {
+    &.su-button {
+      @include chemh--right-arrow-icon;
+
+      &::after {
+        color: $su-color-black;
+        background-color: transparent;
+        padding-left: 15px;
+      }
+
+      &:hover,
+      &:focus,
+      &:active {
+        &::after {
+          color: $su-color-white;
+          text-decoration: none;
+        }
+
+      }
+
+    }
+  }
+
+  // Card position - right side
+  .overlay-right {
+    &.su-hero {
+      .su-hero__media {
+        img {
+          border-top-right-radius: 300px;
+          border-bottom-right-radius: 300px;
+        }
+      }
+
+      @include grid-media('xl') {
+        &.su-hero {
+
+          .su-hero__media {
+            max-width: 65%;
+          }
+
+          .su-hero__card {
+            max-width: 30%;
+            right: 5%;
+          }
+        }
+      }
+
+      @include grid-media-max('lg') {
+        .su-hero__media {
+          max-width: 60%;
+          background-size: contain;
+        }
+
+        .su-hero__card {
+          max-width: 35%;
+        }
+      }
+
+      @include grid-media-max('md') {
+        .su-hero__media {
+          width: 65%;
+        }
+
+        .su-hero__card {
+          width: 30%;
+          right: 5%;
+        }
+      }
+
+      @include grid-media-max('sm') {
+        .su-hero__media {
+          max-width: unset;
+          width: 100%;
+        }
+
+        .su-hero__card {
+          max-width: 100%;
+          padding: 3.0rem;
+          right: unset;
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  // Card position - right side
+  .overlay-left {
+    &.su-hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas:
+      "card image";
+
+      .su-hero__card {
+        grid-area: card;
+      }
+
+      .su-hero__media {
+        grid-area: image;
+
+        img {
+          border-top-left-radius: 300px;
+          border-bottom-left-radius: 300px;
+        }
+      }
+    }
+  }
+
+  .su-hero__card {
+    border: 0;
+    box-shadow: none;
+    max-width: 557px;
+
+    .su-card__contents {
+      padding: 0;
+
+      h2 {
+        @include chemh-heading--badge;
+        @include type-a;
+
+        color: $su-color-black;
+        font-weight: 400;
+        // font-size: 60px;
+        line-height: 110%;
+        letter-spacing: -0.04em;
+      }
+    }
+  }
+
+}
+
