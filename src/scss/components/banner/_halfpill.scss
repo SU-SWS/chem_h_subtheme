@@ -109,7 +109,9 @@
   .overlay-left {
     &.su-hero {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      // grid-template-columns: 1fr 1fr;
+      // grid-template-columns: minmax(20px, auto) 1fr 1fr;
+      grid-template-columns: minmax(200px,1fr) minmax(850px,1fr);
       grid-template-areas:
       "card image";
 
