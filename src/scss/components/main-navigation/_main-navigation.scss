@@ -90,10 +90,20 @@
     // top menu hovers
     .su-multi-menu__menu {
       .su-multi-menu__link {
+
+        &::before {
+          width: 4px;
+        }
+
         &:hover,
         &:focus {
           &::before {
-            background-color: $chemh-color-red;
+            @include chemh-main-nav--gradient;
+
+            transform: none;
+            visibility: visible;
+            height: 0.25em;
+            top: 77.5px; // move it lower.  must match the open menu as well
           }
 
           span {
@@ -107,7 +117,7 @@
 
   &.su-multi-menu--dropdowns {
     .su-multi-menu__menu-lv2 {
-      top: 78px; // moving the menu lower
+      top: 77.5px; // moving the menu lower
     }
 
     // Removing line on arrow.
@@ -147,7 +157,7 @@
                 @include chemh-main-nav--gradient;
 
                 height: 0.25em;
-                top: 78px; // move it lower.  must match the open menu 'to
+                top: 77.5px; // move it lower.  must match the open menu 'to
               }
             }
           }
@@ -157,14 +167,6 @@
             >.su-nav-toggle {
               &::before {
                 background: transparent url("../../assets/svg/icon_arrow_down_red.svg") no-repeat center / 50%;
-              }
-            }
-          }
-
-          &.su-multi-menu__item--expanded {
-            a {
-              &::before {
-                // background: none;
               }
             }
           }
@@ -262,15 +264,18 @@
 }
 
 @include grid-media-min('lg') {
-  .su-multi-menu .su-multi-menu__menu-lv2>.su-multi-menu__item>.su-multi-menu__link,
-  .su-multi-menu .su-multi-menu__menu-lv3>.su-multi-menu__item>.su-multi-menu__link,
-  .su-multi-menu .su-multi-menu__menu-lv4>.su-multi-menu__item>.su-multi-menu__link,
-  .su-multi-menu .su-multi-menu__menu-lv5>.su-multi-menu__item>.su-multi-menu__link {
-    padding-bottom: 1.4rem;
-    padding-top: 1.4rem;
-  }
-
   .su-multi-menu {
+    .su-multi-menu__menu-lv2,
+    .su-multi-menu__menu-lv3,
+    .su-multi-menu__menu-lv4 {
+      >.su-multi-menu__item {
+        >.su-multi-menu__link {
+          padding-bottom: 1.4rem;
+          padding-top: 1.4rem;
+        }
+      }
+    }
+
     .su-multi-menu__menu {
       .su-multi-menu__link  {
         border-bottom: none;
@@ -286,7 +291,7 @@
       background-color: $chemh-color-true-black;
 
       .su-multi-menu__link {
-        border-bottom: 1px solid #5A635F;
+        border-bottom: 1px solid $chemh-color-mid-sand;
 
         &:focus,
         &:hover {

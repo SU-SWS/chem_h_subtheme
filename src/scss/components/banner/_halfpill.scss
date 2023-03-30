@@ -7,7 +7,7 @@
 // .chemh-wrapper--banner-wholepill
 
 .chemh-wrapper--banner-halfpill {
-  // image size contraint
+  // image size constraint
   .su-hero .su-hero__media .image,
   .su-hero .su-hero__media .media,
   .su-hero .su-hero__media>article,
@@ -105,22 +105,27 @@
     }
   }
 
-  // Card position - right side
+  // Card position - left side
   .overlay-left {
+    align-items: baseline;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-areas: "card media";
+
     &.su-hero {
-      display: grid;
-      // grid-template-columns: 1fr 1fr;
-      // grid-template-columns: minmax(20px, auto) 1fr 1fr;
-      grid-template-columns: minmax(200px,1fr) minmax(850px,1fr);
-      grid-template-areas:
-      "card image";
 
       .su-hero__card {
         grid-area: card;
+        grid-column: 1/2;
       }
 
       .su-hero__media {
-        grid-area: image;
+        grid-area: media;
+        grid-column: 2/2;
+        max-width: unset;
+        width: unset;
+        right: 0;
+        width: 850px;
 
         img {
           border-top-left-radius: 300px;
@@ -133,7 +138,7 @@
   .su-hero__card {
     border: 0;
     box-shadow: none;
-    max-width: 557px;
+    // max-width: 557px;
 
     .su-card__contents {
       padding: 0;
