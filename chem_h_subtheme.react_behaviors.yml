@@ -38,13 +38,4 @@ banner_variant_info:  # part of the key after the :
         chemh-wrapper--banner-homepage: Homepage variant
         chemh-wrapper--banner-halfpill: Halfpill variant
         chemh-wrapper--banner-wholepill: Wholepill  variant
-    banner_button_style:
-      type: select
-      title: 'Banner Button Style'
-      description: Select the button color for displaying this banner.
-#      default_value: su-wrapper--button-red
-      options:
-        su-wrapper--button-purple: Purple (Pantone 269C Purple  HEX 512D6D)
-        su-wrapper--button-teal: Teal (Pantone 2461C Teal  HEX 259591)
-        su-wrapper--button-red: Stanford Red ( HEX 8C1515)
 

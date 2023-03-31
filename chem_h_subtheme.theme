@@ -139,7 +139,6 @@ function chem_h_subtheme_preprocess_banner(&$variables) {
   $paragraph = $variables['content']['#paragraph'];
 
   // Add button color style class to card wrapper.
-  $variables['attributes']['class'][] = $paragraph->getBehaviorSetting('react_paragraphs:banner_variant_info', 'banner_button_style', 'su-wrapper--button-red');
   $variables['attributes']['class'][] = $paragraph->getBehaviorSetting('react_paragraphs:banner_variant_info', 'banner_style', 'chemh-wrapper--banner-default');
 }
 
