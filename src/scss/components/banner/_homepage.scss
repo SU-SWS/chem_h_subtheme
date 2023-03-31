@@ -7,17 +7,29 @@
 // .chemh-wrapper--banner-wholepill
 
 .chemh-wrapper--banner-homepage {
-  // image size contraint
-  .su-hero .su-hero__media .image,
-  .su-hero .su-hero__media .media,
-  .su-hero .su-hero__media>article,
-  .su-hero .su-hero__media>div {
-    height: auto;
-    max-width: 850px;
-  }
+  max-width: 1600px;
 
-  .su-hero__media {
-    background: $su-color-white; // removes the dark grey bg on banner images.
+  .su-hero {
+    min-height: 640px;
+    justify-content: space-evenly;
+
+    @include grid-media-max('lg') {
+      justify-content: start;
+    }
+
+    .su-hero__media {
+      // removes the dark grey bg on banner images.
+      background: $su-color-white;
+
+      .image,
+      .media,
+      >article,
+      >div {
+        // image size contraint
+        height: auto;
+        max-width: 850px;
+      }
+    }
   }
 
   .su-link {
@@ -44,19 +56,18 @@
   }
 
   // Card position - right side
-
   .overlay-right {
     &.su-hero {
       @include grid-media('xl') {
         &.su-hero {
 
           .su-hero__media {
-            max-width: 65%;
+            max-width: 60%;
           }
 
           .su-hero__card {
             max-width: 30%;
-            right: 5%;
+            right: 10%;
           }
         }
       }
@@ -113,7 +124,6 @@
 
         color: $su-color-black;
         font-weight: 400;
-        // font-size: 60px;
         line-height: 110%;
         letter-spacing: -0.04em;
       }
