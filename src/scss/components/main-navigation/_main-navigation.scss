@@ -273,6 +273,10 @@
           padding-bottom: 1.4rem;
           padding-top: 1.4rem;
 
+          &::before {
+            background: $chemh-color-true-black;
+          }
+
           &:hover,
           &:visited,
           &:active {
@@ -280,6 +284,21 @@
               height: 100%;
               top: unset;
               background: $chemh-color-red;
+            }
+          }
+        }
+
+        &.su-multi-menu__item--current,
+        &.su-multi-menu__item--active-trail {
+          >.su-multi-menu__link {
+            &::before {
+              background: $chemh-color-true-black;
+            }
+
+            &:hover {
+              &::before {
+                background: $chemh-color-red;
+              }
             }
           }
         }
