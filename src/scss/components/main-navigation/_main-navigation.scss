@@ -272,6 +272,16 @@
         >.su-multi-menu__link {
           padding-bottom: 1.4rem;
           padding-top: 1.4rem;
+
+          &:hover,
+          &:visited,
+          &:active {
+            &::before {
+              height: 100%;
+              top: unset;
+              background: $chemh-color-true-black;
+            }
+          }
         }
       }
     }

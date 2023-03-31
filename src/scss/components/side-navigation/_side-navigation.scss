@@ -103,6 +103,18 @@ ul {
       }
     }
   }
+
+  // Adding padding
+  &.su-secondary-nav__menu {
+    &.su-secondary-nav__menu-lv3 {
+      a {
+        &.su-secondary-nav__link {
+          padding-left: 6.5rem;
+        }
+      }
+    }
+  }
+
 }
 
 .su-secondary-nav {
