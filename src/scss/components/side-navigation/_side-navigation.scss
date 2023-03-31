@@ -1,0 +1,137 @@
+@charset "UTF-8";
+
+// Side navigation menus
+
+.su-secondary-nav--light {
+  .su-secondary-nav__link {
+    color: $su-color-black;
+  }
+
+  a {
+    &.su-secondary-nav__link {
+      &:active,
+      &:hover,
+      &:focus {
+        &::before,
+        &::after {
+          background-color: transparent;
+        }
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        visibility: hidden;
+        z-index: 1;
+      }
+
+    }
+  }
+
+  .su-secondary-nav__item--current {
+    >.su-secondary-nav__link {
+      @include chemh--shadow-side-nav;
+      @include chemh--side-nav-hover;
+
+      &::before {
+        background-color: transparent;
+      }
+    }
+  }
+
+  .su-secondary-nav__item--parent {
+    >.su-secondary-nav__link {
+      &::before {
+        background-color: transparent;
+      }
+
+      &::after {
+        visibility: visible;
+        width: 1em;
+        background: transparent url("../../assets/svg/icon_arrow_down_red.svg") no-repeat top / 75%;
+        right: 0;
+        height: 50px;
+        top: 10px;
+        transform: rotate(-90deg);
+      }
+    }
+  }
+
+  .su-secondary-nav__item--active-trail {
+    >.su-secondary-nav__link {
+      &::after {
+        right: 2rem;
+        margin-top: 20px;
+        transform: none;
+      }
+    }
+  }
+}
+
+a {
+  &.su-secondary-nav__link {
+    font-size: 2.3rem;
+    padding: 2rem 4.8rem 2rem 2.4rem;
+
+    &:hover,
+    &:active,
+    &:focus {
+      @include chemh--shadow-side-nav;
+      @include chemh--side-nav-hover;
+    }
+  }
+}
+
+ul {
+  &.su-secondary-nav__menu {
+    &.su-secondary-nav__menu-lv2,
+    &.su-secondary-nav__menu-lv3,
+    &.su-secondary-nav__menu-lv4 {
+      padding-left: 0; // align the menu items so black hovers are flush left.
+
+      a {
+        color: $su-color-stone;
+        font-size: 2.3rem;
+        padding: 2rem 1.5rem 2rem 4.8rem;
+
+        &:hover,
+        &:active,
+        &:focus {
+          background-color: $chemh-color-true-black;
+          color: $su-color-white;
+        }
+      }
+    }
+  }
+
+  // Adding padding
+  &.su-secondary-nav__menu {
+    &.su-secondary-nav__menu-lv3 {
+      a {
+        &.su-secondary-nav__link {
+          padding-left: 6.5rem;
+        }
+      }
+    }
+  }
+
+  &.su-secondary-nav__menu {
+    &.su-secondary-nav__menu-lv4 {
+      a {
+        &.su-secondary-nav__link {
+          padding-left: 8.5rem;
+        }
+      }
+    }
+  }
+
+}
+
+.su-secondary-nav {
+  >.su-secondary-nav__menu {
+    >.su-secondary-nav__item {
+      border-top: none;
+      line-height: 1.2em;
+    }
+  }
+}

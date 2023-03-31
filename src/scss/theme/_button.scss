@@ -107,12 +107,8 @@ footer {
   }
 }
 
-.su-button {
-  &:hover,
-  &:focus,
-  &:active {
-    // background-color: transparent;
-  }
+#back-to-top {
+  background-color: $chemh-color-red;
 }
 
 // Card & Banner buttons
@@ -142,3 +138,5 @@ footer {
     }
   }
 }
+
+
