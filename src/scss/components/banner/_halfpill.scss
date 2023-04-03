@@ -7,7 +7,10 @@
 // .chemh-wrapper--banner-wholepill
 
 .chemh-wrapper--banner-halfpill {
-  max-width: 1800px;
+  @include grid-media-min('lg') {
+    max-width: 1800px;
+  }
+
 
   .su-hero__media {
     // removes the dark grey bg on banner images.
@@ -29,10 +32,12 @@
     // max-width: 557px;
 
     .su-card__contents {
+      // h2 badge
+      @include chemh-heading--badge;
+
       padding: 0;
 
       h2 {
-        @include chemh-heading--badge;
         @include type-a;
 
         color: $su-color-black;
@@ -40,6 +45,20 @@
         // font-size: 60px;
         line-height: 110%;
         letter-spacing: -0.04em;
+      }
+
+      .bullet {
+        padding-left: 0.6em;
+        margin-bottom: 0;
+
+        &::before {
+          content: "\2022";
+          display: inline-block;
+          display: inline-block;
+          color: $chemh-color-digital-blue;
+          padding-right: 0.5em;
+          font-size: 1.5em;
+        }
       }
     }
   }
