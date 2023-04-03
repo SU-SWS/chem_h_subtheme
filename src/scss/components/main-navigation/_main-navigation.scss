@@ -267,7 +267,9 @@
   .su-multi-menu {
     .su-multi-menu__menu-lv2,
     .su-multi-menu__menu-lv3,
-    .su-multi-menu__menu-lv4 {
+    .su-multi-menu__menu-lv4,
+    .su-multi-menu__menu-lv5,
+    .su-multi-menu__menu-lv6 {
       >.su-multi-menu__item {
         >.su-multi-menu__link {
           padding-bottom: 1.4rem;
@@ -280,6 +282,8 @@
           &:hover,
           &:visited,
           &:active {
+            text-decoration: none;
+
             &::before {
               height: 100%;
               top: unset;
@@ -308,6 +312,23 @@
     .su-multi-menu__menu {
       .su-multi-menu__link  {
         border-bottom: none;
+      }
+    }
+
+    // Fix for deeply nested menus.
+    .su-multi-menu__menu-lv5,
+    .su-multi-menu__menu-lv6 {
+      >.su-multi-menu__item {
+        >.su-multi-menu__link {
+          &:hover,
+          &:visited,
+          &:active {
+
+            &::before {
+              left: -15px;
+            }
+          }
+        }
       }
     }
   }
