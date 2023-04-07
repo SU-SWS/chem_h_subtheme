@@ -44,11 +44,11 @@
 .search {
 
   .views-row {
-    border-bottom: 1px solid $chemh-color-light-grey;
+    // border-bottom: 1px solid $chemh-color-light-grey;
 
-    div:last-child {
-      border: none;
-    }
+    // div:last-child {
+    //   border: none;
+    // }
 
     h2 {
       line-height: 100%;
@@ -59,9 +59,9 @@
       }
     }
 
-    span.field-content {
-      display: block;
-      padding-bottom: 1em;
-    }
+    // span.field-content {
+    //   display: block;
+    //   padding-bottom: 1em;
+    // }
   }
 }

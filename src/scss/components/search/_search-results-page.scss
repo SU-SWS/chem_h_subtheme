@@ -45,6 +45,11 @@
         
         &.views-field-changed  {
           order: 2;
+          display: flex;
+
+          span.views-label-changed {
+            margin-right: 10px;
+          }
         }
       }
     }
