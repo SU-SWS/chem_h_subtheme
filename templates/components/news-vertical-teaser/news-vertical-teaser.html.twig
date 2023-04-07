@@ -38,6 +38,9 @@
 
 {% set news_url = news_url|render|striptags("<drupal-render-placeholder>")|trim %}
 
+{% set news_vertical_teaser_image = news_vertical_teaser_image|merge({'#image_style': 'large'}) %}
+
+
 <article{{ attributes.addClass(classes) }}>
   {%- if news_url is not empty -%}
     <a {{ news_url_attributes.addClass('su-news-vertical-teaser__link') }} href="{{ news_url }}">
@@ -47,19 +50,36 @@
       {{- news_vertical_teaser_image -}}
     </div>
   </figure>
-  <div class="su-card__contents">
-    <div class="news-vertical-teaser__topics">{{ news_topics }}</div>
-  </div>
-  <div class="su-news-header">
-    <h2 class="su-link su-card__link {{ news_url_link_type }}">
-      {{- news_vertical_teaser_headline -}}
-    </h2>
-  </div>
   {%- if news_url is not empty -%}
     </a>
   {%- endif -%}
 
-  {%- if news_footer is not empty -%}
-    <div class="news-vertical-teaser__footer">{{ news_footer }}</div>
+  <div class="su-card__contents">
+    <div class="news-vertical-teaser__topics">{{ news_topics }}</div>
+
+    <div class="su-news-header">
+    {%- if news_url is not empty -%}
+      <a {{ news_url_attributes.addClass('su-news-vertical-teaser__link') }} href="{{ news_url }}">
+    {%- endif -%}
+      <h2 class="su-link su-card__link">
+        {{- news_vertical_teaser_headline -}}
+      </h2>
+      {%- if news_url is not empty -%}
+      </a>
+    {%- endif -%}
+    </div>
+  </div>
+
+
+  {%- if news_url_link_type is not empty -%}
+    <div class="news-vertical-teaser__footer">
+      <div class="su-link--external-box">
+        <a href="{{ news_url }}">
+        <span class="material-symbols-outlined">
+          arrow_outward
+        </span>
+        </a>
+      </div>
+    </div>
   {%- endif -%}
 </article>

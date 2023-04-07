@@ -16,7 +16,90 @@
 
     .field-media-image {
 
-      background-color: lime;
     }
+  }
+
+  .news-vertical-teaser__topics {
+    padding-bottom: 1.7rem;
+
+    a {
+      @include type_f;
+
+      color: $chemh-color-dusk;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+  }
+
+  &.su-card {
+    .su-card__contents {
+      padding: 3.8rem 3.8rem 0 3.8rem;
+    }
+  }
+
+  .su-news-vertical-teaser__link {
+    &.su-link {
+      text-decoration: none;
+    }
+  }
+
+  .su-card__link {
+    @include type_d;
+
+    color: $su-color-black;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      color: $chemh-color-digital-blue;
+      text-decoration: underline;
+    }
+
+    &:active {
+      color: $su-color-black;
+      text-decoration: underline;
+    }
+  }
+
+  .news-vertical-teaser__footer {
+    .su-link--external-box {
+      height: 50px;
+      width: 50px;
+
+      a {
+        span.material-symbols-outlined {
+          position: absolute;
+          right: 0;
+          bottom: 0;
+          padding: 1.3rem;
+          color: $su-color-white;
+          background-color: $chemh-color-dusk;
+        }
+
+        &:hover,
+        &:focus,
+        &:active {
+          span {
+            background-color: $chemh-color-red;
+          }
+        }
+      }
+    }
+  }
+
+  // Removing the external icon to move it to the
+  // lower right corner of news card.
+  a {
+    &.su-link--external {
+      &::after {
+        display: none;
+      }
+    }
+  }
+}
+
+.vertical-cards.stanford-news--cards {
+  .grid-container-3 {
+    grid-template-columns: repeat(3,fit-content(461px));
   }
 }
