@@ -1,0 +1,22 @@
+@charset "UTF-8";
+
+.su-news-vertical-teaser {
+  border-bottom-left-radius: 3rem;
+
+  .su-media__wrapper {
+    >* {
+      &::after {
+        @include chemh-news-card--gradient;
+
+        content: '';
+        height: 0.25em;
+        display: block;
+      }
+    }
+
+    .field-media-image {
+
+      background-color: lime;
+    }
+  }
+}

@@ -90,6 +90,16 @@ allpages:
   version: VERSION
   css:
    theme:
-     dist/css/chem_h_subtheme.css: {minified: true }
+     dist/css/chem_h_subtheme.css: { minified: true }
   js:
     dist/js/scripts.js: { scope: footer }
+
+fontawesome:
+  version: 5.15.4
+  remote: https://use.fontawesome.com/releases/v5.15.4/css/all.css
+  license:
+    name: FontAwesome
+    url: http://fontawesome.io/license/
+  css:
+    base:
+      //use.fontawesome.com/releases/v5.15.4/css/all.css: {}

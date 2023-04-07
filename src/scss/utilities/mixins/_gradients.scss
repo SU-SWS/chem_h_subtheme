@@ -27,3 +27,7 @@
 @mixin chemh-button--hover-gradient {
   background: linear-gradient(270deg, $chemh-color-light-peach 4.94%, $chemh-color-mid-red 45.61%, $chemh-color-dark-blue 73.57%, $chemh-color-light-blue 95%);
 }
+
+@mixin chemh-news-card--gradient {
+  background: linear-gradient(270deg, #2A2B81 2.4%, #652561 29.34%, #AC2436 57.3%, #E28B6D 85.26%, #E9A286 100%);
+}
