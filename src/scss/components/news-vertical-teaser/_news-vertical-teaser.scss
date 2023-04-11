@@ -33,6 +33,10 @@
   }
 
   &.su-card {
+    @include chemh--shadow-system-button--big;
+    border: none;
+    height: 100%;
+
     .su-card__contents {
       padding: 3.8rem 3.8rem 0 3.8rem;
     }
@@ -100,5 +104,9 @@
 .vertical-cards.stanford-news--cards {
   .grid-container-3 {
     grid-template-columns: repeat(3,fit-content(461px));
+
+    .ds-entity--stanford-news {
+      height: 100%;
+    }
   }
 }

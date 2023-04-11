@@ -30,8 +30,6 @@ button:focus,
 button:hover {
   @include chemh-button--hover-gradient;
 
-  border-radius: 6px;
-  color: $su-color-white;
 }
 
 // Active links.
