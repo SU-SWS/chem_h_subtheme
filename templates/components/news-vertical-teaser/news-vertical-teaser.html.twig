@@ -30,6 +30,7 @@
   {%- set news_url = news_source -%}
   {%- set classes = classes|merge(['su-news-external']) -%}
   {%- set news_url_link_type = "su-link--external" -%}
+  {%- set news_ext_url_link_box = "true" -%}
 {%- endif %}
 
 {%- if news_url_attributes is empty -%}
@@ -71,15 +72,24 @@
   </div>
 
 
-  {%- if news_url_link_type is not empty -%}
+
     <div class="news-vertical-teaser__footer">
       <div class="su-link--external-box">
-        <a href="{{ news_url }}">
+        <a {{ news_url_attributes.addClass('su-news-vertical-teaser__link') }} href="{{ news_url }}">
+
+        {%- if news_source is not empty -%}
+        <span class="material-symbols-outlined">
+          arrow_right_alt
+        </span>
+        {%- endif -%}
+
+        {%- if news_ext_url_link_box is not empty -%}
         <span class="material-symbols-outlined">
           arrow_outward
         </span>
+        {%- endif -%}
         </a>
       </div>
     </div>
-  {%- endif -%}
+
 </article>
