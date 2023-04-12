@@ -137,4 +137,21 @@ footer {
   }
 }
 
+// Filter by menu buttons
+.filter-menu {
+  .topics__collapsable-menu {
+    @include chemh-button--plain;
 
+    padding: 20px 18px;
+
+    &:hover,
+    &:focus,
+    &:active {
+      .su-link--jump {
+        &::after {
+          background-color: $su-color-white;
+        }
+      }
+    }
+  }
+}

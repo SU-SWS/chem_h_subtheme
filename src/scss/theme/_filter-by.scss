@@ -1,0 +1,21 @@
+@charset "UTF-8";
+
+// override default filter-by styles here
+
+.filter-menu {
+  border: none;
+  padding: 0 0 4.75rem 4.75rem;
+
+  .menu {
+    display: none; // Menu starts collapsed
+  }
+
+  .topics__collapsable-menu.show+.menu {
+    display: block; // Menu visisble with click.
+  }
+
+  .topics__collapsable-menu.show {
+    @include modular-spacing('margin-bottom', 2);
+  }
+}
+

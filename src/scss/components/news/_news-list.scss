@@ -71,4 +71,14 @@
       padding: 40px 0 0 40px;
     }
   }
+
+  // Adding spacing when loading more news articles
+  // but not the inital load.
+  .views-infinite-scroll-content-wrapper {
+    > div {
+      &:not(:first-of-type) {
+        padding-top: 40px;
+      }
+    }
+  }
 }
