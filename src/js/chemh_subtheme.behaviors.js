@@ -15,12 +15,11 @@
 
 
     (function ($) {
-
+      const menuSearchButton = $('<button>', {class: 'menu-search-button', 'id': 'search-button-toggle'}).html('').click(() => {
+        $('#block-chem-h-subtheme-search form').toggleClass('show-form');
+      })
+      $('.su-multi-menu--dropdowns').append(menuSearchButton)
       $('.su-brand-bar,.su-masthead').wrapAll('<div class="fixed-header">');
-
-      // Moving around classes for header display
-      var sdss_logo_classes = $('#block-sdss-subtheme-branding').attr('class');
-      $('.fixed-header').addClass(sdss_logo_classes);
 
     })(jQuery);
   },
