@@ -12,26 +12,29 @@
   margin-top: 0;
 }
 
-.block--page-title,
+// .block--page-title,
 .node-stanford-page-title {
   background: $chemh-color-true-black;
   position: relative; /* child absolute */
 
+  h1 {
+    color: $su-color-white;
+  }
 
-    &::before,
-    &::after {
-      content: "";
-      position: absolute;
-      /* fill vertically */
-      top: 0;
-      bottom: 0;
-      width: 9600px;
-      right: 100%;
-      background: $chemh-color-true-black;
-    }
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    /* fill vertically */
+    top: 0;
+    bottom: 0;
+    width: 9600px;
+    right: 100%;
+    background: $chemh-color-true-black;
+  }
 
-    &::after {
-      left: 100%;
-      background: $chemh-color-true-black;
-    }
+  &::after {
+    left: 100%;
+    background: $chemh-color-true-black;
+  }
 }
