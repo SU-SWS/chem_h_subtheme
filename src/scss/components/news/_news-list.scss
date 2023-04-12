@@ -9,12 +9,36 @@
       flex-flow: row wrap;
       gap: 50px;
 
+      &.grid-container-3 {
+        > li {
+          width: 461px;
+          height: 100%;
+
+          // Adding extra spacing for the news list
+          .news-vertical-teaser__footer {
+            .su-link--external-box {
+              height: 50px;
+              width: 50px;
+            }
+          }
+        }
+      }
+
       .su-news-list {
         overflow: unset;
 
         > .su-card {
           height: 100%;
           width: 461px;
+        }
+      }
+
+      // Unset display for nested list.
+      .su-card__contents {
+        .news-vertical-teaser__topics {
+          .su-list-unstyled {
+            display: unset;
+          }
         }
       }
 
