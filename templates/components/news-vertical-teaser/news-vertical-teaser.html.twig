@@ -39,9 +39,6 @@
 
 {% set news_url = news_url|render|striptags("<drupal-render-placeholder>")|trim %}
 
-{% set news_vertical_teaser_image = news_vertical_teaser_image|merge({'#image_style': 'large'}) %}
-
-
 <article{{ attributes.addClass(classes) }}>
   {%- if news_url is not empty -%}
     <a {{ news_url_attributes.addClass('su-news-vertical-teaser__link') }} href="{{ news_url }}">

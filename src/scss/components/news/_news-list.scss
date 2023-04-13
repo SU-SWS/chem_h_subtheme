@@ -1,90 +1,21 @@
 @charset "UTF-8";
 
-.page-news-and-events-news,
-.section-news {
-  .stanford-news {
-    .su-list-unstyled {
-      display: flex;
-      justify-content: space-around;
-      flex-flow: row wrap;
-      gap: 50px;
 
-      &.grid-container-3 {
-        > li {
-          width: 461px;
-          height: 100%;
+.stanford-news {
+  .js-pager__items {
+    .pager__item {
+      .button {
+        @include chemh-button--gradient;
 
-          // Adding extra spacing for the news list
-          .news-vertical-teaser__footer {
-            .su-link--external-box {
-              height: 50px;
-              width: 50px;
-            }
-          }
+        &:hover,
+        &:active,
+        &:focus {
+          @include chemh-button--hover-gradient;
+
         }
-      }
-
-      .su-news-list {
-        overflow: unset;
-
-        > .su-card {
-          height: 100%;
-          width: 461px;
-        }
-      }
-
-      // Unset display for nested list.
-      .su-card__contents {
-        .news-vertical-teaser__topics {
-          .su-list-unstyled {
-            display: unset;
-          }
-        }
-      }
-
-      // Removing extra spacing for the news list
-      .news-vertical-teaser__footer {
-        .su-link--external-box {
-          height: unset;
-          width: unset;
-        }
-      }
-    }
-
-    .js-pager__items {
-      .pager__item {
-        .button {
-          @include chemh-button--gradient;
-
-          &:hover,
-          &:active,
-          &:focus {
-            @include chemh-button--hover-gradient;
-
-          }
-        }
-      }
-    }
-
-    // Edit content button.
-    .su-news-edit-article {
-      padding: 40px 0 0 40px;
-    }
-  }
-
-  // Adding spacing when loading more news articles
-  // but not the inital load.
-  .views-infinite-scroll-content-wrapper {
-    > div {
-      &:not(:first-of-type) {
-        padding-top: 40px;
       }
     }
   }
 }
 
-.su-news-list {
-  .su-news-article {
-    padding-top: 0;
-  }
-}
+
