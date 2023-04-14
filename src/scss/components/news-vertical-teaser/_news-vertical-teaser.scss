@@ -49,7 +49,11 @@
     @include chemh--shadow-system-button--big;
     border: none;
     height: 100%;
-    max-width: 461px;
+    width: 461px;
+
+    @media (max-width: 1550px) {
+      margin-bottom: 45px;
+    }
 
     .su-card__contents {
       padding: 3.8rem 3.8rem 0 3.8rem;
@@ -119,11 +123,11 @@
   .grid-container-3 {
     grid-template-columns: repeat(3,fit-content(461px));
 
-    @include grid-media-max('md') {
+    @media (max-width: 1550px) {
       display: block;
 
       &.su-list-unstyled>li {
-        margin-bottom: 45px;
+        @include centered-column;
       }
     }
 
@@ -132,3 +136,15 @@
     }
   }
 }
+
+.ptype-stanford-entity[data-react-columns="12"] {
+  .su-entity-item {
+    @media (max-width: 1550px) {
+      display: block;
+
+      &.su-list-unstyled>li {
+        @include centered-column;
+      }
+    }
+  }
+  }

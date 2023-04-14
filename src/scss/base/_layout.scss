@@ -16,7 +16,9 @@
     &.ptype-stanford-lists,
     &.ptype-stanford-entity,
     &.ptype-stanford-gallery {
-      max-width: $chemh-site-max-width;
+      @media (min-width: 1550px) {
+        max-width: $chemh-site-max-width;
+      }
 
       @include grid-media-only('lg') {
         max-width: 880px;
