@@ -1,0 +1,31 @@
+@charset "UTF-8";
+
+main {
+  [type=button],
+  [type=submit] {
+    &.button--primary,
+    &.button {
+      color: $su-color-white;
+      background-color: $chemh-color-red;
+
+      &:hover,
+      &:focus,
+      &:active {
+        background: $su-color-black;
+        border-radius: unset;
+        color: $su-color-white;
+        text-decoration: none;
+      }
+    }
+  }
+
+  a {
+    &.button {
+      &:focus,
+      &:hover {
+        background-color: transparent;
+        text-decoration: none;
+      }
+    }
+  }
+}

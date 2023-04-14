@@ -12,8 +12,11 @@
 [type=submit],
 button  {
   background-color: transparent;
+  text-decoration: underline;
 }
 
+.su-button--big.su-link:focus,
+.su-button--big.su-link:hover,
 .su-button.su-link:focus,
 .su-button.su-link:hover,
 .su-button:focus,
@@ -32,6 +35,7 @@ button:hover {
 
   border-radius: 6px;
   color: $su-color-white;
+  text-decoration: none;
 }
 
 // Active links.
@@ -60,10 +64,13 @@ footer {
     @include chemh-button--gradient;
     @include modular-spacing('padding', 0);
 
+    text-decoration: underline;
+
     &:hover,
     &:focus,
     &:active {
       color: $su-color-white;
+      text-decoration: none;
     }
   }
 
@@ -95,15 +102,28 @@ footer {
   .su-button--big {
     @include chemh-button--gradient;
 
+    border-radius: 6px;
+    text-decoration: underline;
+
     &:hover,
     &:focus,
     &:active {
-      // background-color: transparent
+      @include chemh-button--hover-gradient;
+
+      color: $su-color-white;
+      text-decoration: none;
     }
   }
+}
 
-  .su-button--secondary {
-    box-shadow: 0 0 0 2px $chemh-color-purple;
+// Big Button extra icon color.
+a {
+  &.su-link--external {
+    &.su-button--big {
+      &::after {
+        background-color: $su-color-black;
+      }
+    }
   }
 }
 
@@ -112,6 +132,7 @@ footer {
 }
 
 // Card & Banner buttons
+// TEST AND THEN REMOVE CODE
 .su-wrapper--button-purple {
   .su-button,
   .su-card__button {
