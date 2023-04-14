@@ -26,9 +26,11 @@
     >section:last-of-type {
       // Grid setup.
       display: grid;
-      grid-template-columns: 310px 1fr 60px;
-      grid-template-areas: "lockup main-nav search"
-      "search-field search-field search-field";
+      grid-template-columns: 310px 1fr;
+      grid-template-areas: "lockup main-nav"
+      // grid-template-areas: "lockup main-nav search"
+      "search-field search-field";
+      // "search-field search-field search-field";
       align-items: center;
 
       padding-bottom: 1rem;
