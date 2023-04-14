@@ -14,10 +14,6 @@
         display: block;
       }
     }
-
-    .field-media-image {
-      // aspect-ratio: 16/9;
-    }
   }
 
   .news-vertical-teaser__topics {
@@ -29,6 +25,23 @@
       color: $chemh-color-dusk;
       text-decoration: none;
       text-transform: uppercase;
+    }
+
+    .su-list-unstyled {
+      > li {
+        display: inline-block;
+
+        &::after {
+          content:',';
+          padding-right: 5px;
+        }
+      }
+
+      >li:last-of-type {
+        &::after {
+          content:'';
+        }
+      }
     }
   }
 
