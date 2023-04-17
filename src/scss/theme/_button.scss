@@ -30,8 +30,6 @@ button:focus,
 button:hover {
   @include chemh-button--hover-gradient;
 
-  border-radius: 6px;
-  color: $su-color-white;
 }
 
 // Active links.
@@ -139,4 +137,10 @@ footer {
   }
 }
 
-
+// System buttons. Making plain
+.topics__collapsable-menu ,
+.su-alert__dismiss-button {
+  &::before {
+    content: none;
+  }
+}

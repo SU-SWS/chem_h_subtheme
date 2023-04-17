@@ -30,7 +30,7 @@
 
   .su-secondary-nav__item--current {
     >.su-secondary-nav__link {
-      @include chemh--shadow-side-nav;
+      @include chemh--shadow-system-button--big;
       @include chemh--side-nav-hover;
 
       &::before {
@@ -76,7 +76,7 @@ a {
     &:hover,
     &:active,
     &:focus {
-      @include chemh--shadow-side-nav;
+      @include chemh--shadow-system-button--big;
       @include chemh--side-nav-hover;
     }
   }

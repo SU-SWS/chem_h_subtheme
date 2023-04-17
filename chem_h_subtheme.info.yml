@@ -8,6 +8,10 @@ base theme: stanford_basic
 libraries:
   - chem_h_subtheme/allpages
 
+components:
+  namespaces:
+    chemh_subtheme: templates/components
+
 regions:
   page_top: 'Page top'
   header: Header

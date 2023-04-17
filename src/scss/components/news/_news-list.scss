@@ -1,0 +1,21 @@
+@charset "UTF-8";
+
+
+.stanford-news {
+  .js-pager__items {
+    .pager__item {
+      .button {
+        @include chemh-button--gradient;
+
+        &:hover,
+        &:active,
+        &:focus {
+          @include chemh-button--hover-gradient;
+
+        }
+      }
+    }
+  }
+}
+
+
