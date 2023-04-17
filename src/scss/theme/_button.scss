@@ -6,11 +6,15 @@
 
 .su-button,
 .su-button.su-link,
+.su-button--big,
+.su-button--big.su-link,
 [type=button],
 [type=image],
 [type=reset],
 [type=submit],
 button  {
+  @include chemh--shadow-system-button--big;
+
   background-color: transparent;
   text-decoration: underline;
 }
