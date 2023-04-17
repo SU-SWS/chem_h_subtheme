@@ -160,4 +160,10 @@ a {
   }
 }
 
-
+// System buttons. Making plain
+.topics__collapsable-menu ,
+.su-alert__dismiss-button {
+  &::before {
+    content: none;
+  }
+}

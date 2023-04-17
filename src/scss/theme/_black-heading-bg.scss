@@ -14,7 +14,7 @@
 
 .block--page-title,
 .node-stanford-page-title {
-  background: $chemh-color-true-black;
+  background: $chemh-color-true-black url("../../assets/png/header-big-000-tall.png") no-repeat center / 50%;
   position: relative; /* child absolute */
 
   h1 {

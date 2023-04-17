@@ -1,5 +1,38 @@
 @charset "UTF-8";
 
+// Grid min width changes.
+.centered-container {
+  max-width: $chemh-site-max-width;
+}
+
+.su-page-components {
+  div[data-react-columns="12"] {
+    &.ptype-stanford-card,
+    &.ptype-stanford-wysiwyg,
+    &.ptype-stanford-media-caption,
+    &.ptype-stanford-cta-list,
+    &.ptype-stanford-stories,
+    &.ptype-stanford-image-cta,
+    &.ptype-stanford-lists,
+    &.ptype-stanford-entity,
+    &.ptype-stanford-gallery {
+      @media (min-width: 1550px) {
+        max-width: $chemh-site-max-width;
+      }
+
+      @include grid-media-only('lg') {
+        max-width: 880px;
+      }
+    }
+
+    &.ptype-stanford-card {
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
+
 // Adding margin top for the headings to be full bleed.
 .jumpstart-ui--two-column {
   &.flex-container {
