@@ -52,7 +52,7 @@
     width: 461px;
 
     @media (max-width: 1550px) {
-      margin-bottom: 45px;
+      margin-bottom: 4.5rem;
     }
 
     .su-card__contents {
@@ -147,4 +147,10 @@
       }
     }
   }
+}
+
+@media (max-width: 1550px) {
+  .ds-entity--stanford-page .su-card {
+    margin-bottom: 4.5rem;
   }
+}
