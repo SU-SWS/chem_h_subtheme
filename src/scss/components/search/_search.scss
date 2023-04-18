@@ -14,6 +14,7 @@
   right: 2.5rem !important;
   opacity: 1;
   position: absolute;
+  box-shadow: none !important;
 
   &:hover,
   &:focus {
@@ -42,6 +43,7 @@
     height: 35px;
     width: 35px;
     background-size: 35px 35px;
+    box-shadow: none;
 
     &:hover,
     &:focus {
@@ -49,7 +51,6 @@
       height: 35px;
       width: 35px;
       background-size: 35px 35px;
-      -webkit-box-shadow: none;
       box-shadow: none;
     }
 
@@ -58,6 +59,7 @@
       height: 35px;
       width: 35px;
       background-size: 35px 35px;
+      box-shadow: none;
     }
   }
 }
