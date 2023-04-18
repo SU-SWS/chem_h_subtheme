@@ -16,6 +16,7 @@ button  {
   @include chemh--shadow-system-button--big;
 
   background-color: transparent;
+  border-radius: 6px;
   text-decoration: underline;
 }
 
@@ -86,20 +87,6 @@ footer {
   }
 }
 
-// Background overrides for authoring.
-.contextual .trigger {
-  &::before {
-    content: none;
-  }
-
-  &:hover,
-  &:focus,
-  &:active {
-    background-repeat: no-repeat;
-    background-position: center;
-  }
-}
-
 // WYSIWYG BUTTONS
 .su-wysiwyg-text {
   .su-button,
@@ -164,10 +151,3 @@ a {
   }
 }
 
-// System buttons. Making plain
-.topics__collapsable-menu ,
-.su-alert__dismiss-button {
-  &::before {
-    content: none;
-  }
-}
