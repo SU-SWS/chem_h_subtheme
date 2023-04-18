@@ -122,6 +122,25 @@ a {
   background-color: $chemh-color-red;
 }
 
+.filter-menu {
+  .topics__collapsable-menu {
+    box-shadow: none;
+    border-radius: 0;
+
+    &:focus {
+      background: none;
+    }
+  }
+}
+
+.su-events-details {
+  .su-event-cta {
+    a {
+      color: unset;
+    }
+  }
+}
+
 // Card & Banner buttons
 // TEST AND THEN REMOVE CODE
 .su-wrapper--button-purple {
@@ -150,15 +169,3 @@ a {
     }
   }
 }
-
-.filter-menu {
-  .topics__collapsable-menu {
-    box-shadow: none;
-    border-radius: 0;
-
-    &:focus {
-      background: none;
-    }
-  }
-}
-
