@@ -10,6 +10,7 @@ libraries:
 
 components:
   namespaces:
+    chemh: templates
     chemh_subtheme: templates/components
 
 regions:
@@ -21,6 +22,3 @@ regions:
   content: Content
   footer: Footer
   page_bottom: 'Page bottom'
-components:
-  namespaces:
-    chemh: templates
