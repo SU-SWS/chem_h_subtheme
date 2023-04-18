@@ -53,16 +53,16 @@ a {
   }
 }
 
-// Icon alignment for CTA links
+// Icon alignment for CTA links.
 a {
   &.su-link--action {
     position: relative;
+    text-decoration: none;
 
     &::after {
-      position: absolute;
-      display: block;
-      right: -40px;
-      top: 0px;
+      position: relative;
+      display: inline-block;
+      top: 2px;
     }
 
     &:hover,
@@ -71,6 +71,42 @@ a {
         text-decoration: none;
       }
     }
+
+    // Action link with a mailto
+    &.mailto {
+      text-decoration: none;
+
+      &:hover,
+      &:focus {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+// Mailto icon change.
+a {
+ &.mailto {
+   &.su-button,
+   &.su-button--big {
+    &:hover,
+    &:focus,
+    &:active {
+      svg {
+        fill: $su-color-white;
+      }
+    }
+
+    svg {
+      fill: $su-color-black;
+
+      &:hover,
+      &:focus,
+      &:active {
+        fill: $su-color-white;
+      }
+    }
+   }
   }
 }
 

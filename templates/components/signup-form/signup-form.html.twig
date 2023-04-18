@@ -27,8 +27,6 @@
     <input type="email" id="{{ signup_form_field_email_id|default('signup-email') }}" aria-label="{{ signup_form_field_email_aria_label|default('email address') }}" name="{{ signup_form_field_email_name|default('signup_email') }}" placeholder="{{ signup_form_field_email_placeholder|default('email address') }}" {{ signup_form_field_email_required|default('required') }} />
     {# Add any additional fields or markup to this form using this variable. #}
     {{ signup_form_fields }}
-    <span class="gradient-wrapper">
-      <input type="submit" id="{{ signup_form_field_submit_id|default('signup-submit') }}" name="{{ signup_form_field_submit_name|default('submit') }}" value ="{{ signup_form_field_submit_value|default('Sign-up') }}" />
-    </span>
+      <input type="submit" class="signup--button" id="{{ signup_form_field_submit_id|default('signup-submit') }}" name="{{ signup_form_field_submit_name|default('submit') }}" value ="{{ signup_form_field_submit_value|default('Sign-up') }}" />
   </form>
 </div>

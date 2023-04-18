@@ -6,14 +6,22 @@
 
 .su-button,
 .su-button.su-link,
+.su-button--big,
+.su-button--big.su-link,
 [type=button],
 [type=image],
 [type=reset],
 [type=submit],
 button  {
+  @include chemh--shadow-system-button--big;
+
   background-color: transparent;
+  border-radius: 6px;
+  text-decoration: underline;
 }
 
+.su-button--big.su-link:focus,
+.su-button--big.su-link:hover,
 .su-button.su-link:focus,
 .su-button.su-link:hover,
 .su-button:focus,
@@ -30,6 +38,9 @@ button:focus,
 button:hover {
   @include chemh-button--hover-gradient;
 
+  border-radius: 6px;
+  color: $su-color-white;
+  text-decoration: none;
 }
 
 // Active links.
@@ -58,10 +69,13 @@ footer {
     @include chemh-button--gradient;
     @include modular-spacing('padding', 0);
 
+    text-decoration: underline;
+
     &:hover,
     &:focus,
     &:active {
       color: $su-color-white;
+      text-decoration: none;
     }
   }
 
@@ -73,35 +87,34 @@ footer {
   }
 }
 
-// Background overrides for authoring.
-.contextual .trigger {
-  &::before {
-    content: none;
-  }
-
-  &:hover,
-  &:focus,
-  &:active {
-    background-repeat: no-repeat;
-    background-position: center;
-  }
-}
-
 // WYSIWYG BUTTONS
 .su-wysiwyg-text {
   .su-button,
   .su-button--big {
     @include chemh-button--gradient;
 
+    border-radius: 6px;
+    text-decoration: underline;
+
     &:hover,
     &:focus,
     &:active {
-      // background-color: transparent
+      @include chemh-button--hover-gradient;
+
+      color: $su-color-white;
+      text-decoration: none;
     }
   }
+}
 
-  .su-button--secondary {
-    box-shadow: 0 0 0 2px $chemh-color-purple;
+// Big Button extra icon color.
+a {
+  &.su-link--external {
+    &.su-button--big {
+      &::after {
+        background-color: $su-color-black;
+      }
+    }
   }
 }
 
@@ -109,7 +122,31 @@ footer {
   background-color: $chemh-color-red;
 }
 
+.filter-menu {
+  .topics__collapsable-menu {
+    box-shadow: none;
+    border-radius: 0;
+
+    &:focus {
+      background: none;
+    }
+  }
+}
+
+.su-events-details {
+  .su-event-cta {
+    a {
+      color: unset;
+
+      &:hover {
+        background-color: unset;
+      }
+    }
+  }
+}
+
 // Card & Banner buttons
+// TEST AND THEN REMOVE CODE
 .su-wrapper--button-purple {
   .su-button,
   .su-card__button {
@@ -134,13 +171,5 @@ footer {
     a {
       @include chemh-button--gradient;
     }
-  }
-}
-
-// System buttons. Making plain
-.topics__collapsable-menu ,
-.su-alert__dismiss-button {
-  &::before {
-    content: none;
   }
 }

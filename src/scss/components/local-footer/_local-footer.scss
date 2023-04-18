@@ -59,18 +59,14 @@
         width: 65%;
       }
 
-      .gradient-wrapper {
-        @include chemh-button--gradient;
+      .signup--button {
+        @include chemh-button--plain;
 
         &:hover,
         &:active,
         &:focus {
 
-          input {
-            @include chemh-button--hover-gradient;
-            color: #fff;
-            margin: 4px;
-          }
+
         }
       }
     }
