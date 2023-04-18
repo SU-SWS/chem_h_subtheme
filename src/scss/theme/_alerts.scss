@@ -66,4 +66,13 @@
       }
     }
   }
+
+  .su-alert__dismiss {
+    .su-alert__dismiss-button {
+      box-shadow: none;
+      &:focus {
+        background: none;
+      }
+    }
+  }
 }
