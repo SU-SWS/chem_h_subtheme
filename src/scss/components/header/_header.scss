@@ -28,35 +28,18 @@
       display: grid;
       grid-template-columns: 310px 1fr;
       grid-template-areas: "lockup main-nav"
-      // grid-template-areas: "lockup main-nav search"
       "search-field search-field";
-      // "search-field search-field search-field";
       align-items: center;
-
-      // padding-bottom: 1rem;
 
       .su-lockup {
         grid-area: lockup;
         margin-bottom: 3.4rem;
       }
 
-      // #chemh-button--search-link {
-      //   grid-area: search;
-      //   width: 24px;
-      //   height: 24px;
-      //   top: 30px;
-      //   transform: scaleX(-1);
-      //   right: 0;
-      // }
-
       .su-multi-menu {
         grid-area: main-nav;
       }
     }
-
-    // nav+.su-site-search, ul li .su-site-search {
-    //   display: none; // need to hide extra search that we use for mobile.
-    // }
   }
 
   // Header color outside in the margins.
