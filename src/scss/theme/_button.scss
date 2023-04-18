@@ -137,6 +137,10 @@ a {
   .su-event-cta {
     a {
       color: unset;
+
+      &:hover {
+        background-color: unset;
+      }
     }
   }
 }
