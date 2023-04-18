@@ -1,0 +1,74 @@
+@charset "UTF-8";
+
+main {
+  [type=button],
+  [type=submit] {
+    &.button--primary,
+    &.button {
+      color: $su-color-white;
+      background-color: $chemh-color-red;
+      border-radius: unset;
+
+      &:hover,
+      &:focus,
+      &:active {
+        background: $su-color-black;
+        border-radius: unset;
+        color: $su-color-white;
+        text-decoration: none;
+      }
+    }
+  }
+
+  a {
+    &.button {
+      &:focus,
+      &:hover {
+        background-color: transparent;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+nav {
+  &.toolbar-lining {
+    .toolbar-icon {
+      box-shadow: none;
+
+      &:hover,
+      &:focus,
+      &:active  {
+        background: #f0f0f0;
+
+        &::before {
+          background-color: transparent;
+        }
+      }
+    }
+  }
+}
+
+// System buttons. Making plain
+.topics__collapsable-menu,
+.su-alert__dismiss-button {
+  &::before {
+    content: none;
+  }
+}
+
+// Background overrides for authoring.
+.contextual .trigger {
+  &::before {
+    content: none;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: $su-color-black;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 13px;
+  }
+}

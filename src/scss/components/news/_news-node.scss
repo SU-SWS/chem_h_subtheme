@@ -14,7 +14,19 @@
   }
 
   // Related news cards in footer.
-  .stanford-news--cards.stanford-news--cards-any {
-    margin-bottom: 125px;
+  .stanford-news--cards {
+    &.stanford-news--cards-any {
+      margin-bottom: 125px;
+
+      @media (max-width: 1550px) {
+        ul {
+          &.su-list-unstyled {
+            &.grid-container-3 {
+              display: block;
+            }
+          }
+        }
+      }
+    }
   }
 }

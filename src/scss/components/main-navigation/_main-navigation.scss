@@ -76,7 +76,6 @@
               background: transparent url("../../assets/svg/icon_expand_more_red.svg") no-repeat center / 50%;
             }
           }
-
         }
       }
     }
@@ -346,7 +345,14 @@
         }
       }
     }
-  }
 
+    .su-multi-menu__nav-toggle {
+      box-shadow: none;
+
+      &:focus {
+        background: transparent;
+      }
+    }
+  }
 }
 
