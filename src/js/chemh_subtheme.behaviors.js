@@ -13,9 +13,7 @@
   attach (context, settings) {
     // console.log("Attached.");
 
-
     (function ($) {
-      // const menuSearchButton = $('<button>', {class: 'menu-search-button su-sr-only-text', 'id': 'search-button-toggle', 'aria-expanded': 'false', 'aria-label': 'Expand search form'}).html('');
       const menuSearchButton = $('<button>', {class: 'menu-search-button', 'id': 'search-button-toggle', 'aria-expanded': 'false', 'aria-label': 'Expand search form'});
       menuSearchButton.click(() => {
         menuSearchButton.attr('aria-expanded', menuSearchButton.attr('aria-expanded') === 'false');
@@ -23,10 +21,8 @@
         // menuSearchButton.text(menuSearchButton.text() === 'Expand search form' ? 'Collapse search form' : 'Expand search form');
         menuSearchButton.toggleClass('menu-search-button-expanded');
         $('#block-chem-h-subtheme-search form').toggleClass('show-form');
-      })
-      $('.su-multi-menu--dropdowns').append(menuSearchButton)
-      $('.su-brand-bar,.su-masthead').wrapAll('<div class="fixed-header">');
-
+      });
+      $('.su-multi-menu--dropdowns').append(menuSearchButton);
     })(jQuery);
   },
 

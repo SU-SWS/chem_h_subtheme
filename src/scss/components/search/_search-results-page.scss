@@ -1,82 +1,6 @@
 @charset "UTF-8";
 
 .page-search {
-
-  @include grid-media-min('lg') {
-    .su-multi-menu {
-      display: flex;
-    }
-
-    .su-multi-menu__item:last-child {
-      margin-right: 36px !important;
-    }
-
-    .menu-search-button {
-      background: url("../../assets/svg/icon_search_black.svg") no-repeat 0 0;
-      align-self: center;
-      padding: 1rem 1rem 1.15rem;
-      -webkit-box-shadow: none;
-      box-shadow: none;
-      height: 35px;
-      width: 35px;
-      background-size: 35px 35px;
-
-      &:hover,
-      &:focus {
-        background: url("../../assets/svg/icon_search_red.svg") no-repeat 0 0;
-        height: 35px;
-        width: 35px;
-        background-size: 35px 35px;
-      }
-
-      &.menu-search-button-expanded {
-        background: url("../../assets/svg/icon_close_red.svg") no-repeat 0 0;
-        height: 35px;
-        width: 35px;
-        background-size: 35px 35px;
-      }
-    }
-
-    // .header-search {
-    //   .show-form {
-    //     padding: 1rem 0rem;
-
-    //     // .su-site-search__submit {
-    //     //   top: 3.6rem;
-    //     // }
-    //   }
-
-    //   form:not(.show-form) {
-    //     display: none;
-    //   }
-    // }
-  }
-
-  .su-multi-menu {
-
-    .su-mobile-site-search {
-      .search-results {
-        width: auto;
-      }
-
-      .su-site-search__submit {
-        // background: url("#{$su-image-path}/icon-search.svg") no-repeat 0 0;
-        background: url("../../assets/svg/icon_search_red.svg") no-repeat 0 0;
-        
-        // &:hover {
-        //   // background: url("#{$su-image-path}/icon-search.svg") no-repeat 0 0;
-        //   background: url("../../assets/svg/icon_search_red.svg") no-repeat 0 0;
-        // }
-      }
-    }
-
-    @include grid-media-max('md') {
-      .menu-search-button {
-        display: none;
-      }
-    }
-  }
-
   .page-content {
     .block-chem-h-subtheme-pagetitle {
       h1 {
@@ -85,14 +9,14 @@
     }
 
     .block-chem-h-subtheme-search-form {
-      @include responsive-spacing('padding-top', 4);
-      @include responsive-spacing('padding-bottom', 4);
+      @include responsive-spacing('padding-top', 0);
+      @include responsive-spacing('padding-bottom', 0);
     }
 
-    @include grid-media-max('lg') {
-      .block-chem-h-subtheme-search-form {
-        max-width: calc(100% - 160px);
-        width: calc(100% - 160px);
+    @include grid-media-min('md') {
+      .block-chem-h-subtheme-search-form,
+      .block-chem-h-subtheme-content {
+        max-width: 1000px;
       }
     }
 
@@ -116,28 +40,22 @@
         width: calc(100% - 40px);
       }
     }
-    
-    .search-results-page {
-
-      .su-site-search__input {
-        @include type-c;
-        border: 0.2rem solid $chemh-color-true-black;
-        padding: 3rem 3rem;
-      }
-      
-      .su-site-search__submit {
-        // background: url("../../assets/svg/icon_search_red.svg") no-repeat 0 0;
-        // top: 2.4rem;
-        // right: 3rem;
-
-        &::before {
-          content: none;
-        }
-      }
-    }
   
     .view {
       &.search, &.results {
+        .views-row {
+          h2 {
+            line-height: 100%;
+            font-weight: 700;
+            letter-spacing: -1px;
+            margin-bottom: 2rem;
+      
+            a {
+              font-size: 0.6em;
+              text-decoration: underline;
+            }
+          }
+        }
         
         @include grid-media-min('md') {
           .views-row {
@@ -172,62 +90,6 @@
           }
         }
       }
-    }
-  }
-
-}
-
-.su-site-search {
-
-  &.header-search {
-    max-width: 50%;
-
-    .show-form {
-      // padding: 1rem 0rem;
-
-      // .su-site-search__submit {
-      //   top: 3.6rem;
-      // }
-    }
-
-    form:not(.show-form) {
-      display: none;
-    }
-  }
-
-  form {
-    width: auto !important;
-    padding: 2rem 0rem;
-  }
-
-  .su-site-search__input {
-    @include type-c;
-    border: 0.2rem solid $chemh-color-true-black !important;
-    padding: 3rem 3rem !important;
-  }
-  
-  .su-site-search__submit {
-    background: url("../../assets/svg/icon_search_red.svg") no-repeat 0 0;
-    height: 45px;
-    width: 45px;
-    background-size: 45px 45px;
-    top: 3.7rem;
-    right: 2.5rem;
-    opacity: 1;
-  
-    &:hover,
-    &:focus {
-      background: url("../../assets/svg/icon_search_red.svg") no-repeat 0 0;
-      height: 45px;
-      width: 45px;
-      background-size: 45px 45px;
-      top: 3.7rem;
-      right: 2.5rem;
-      border-radius: unset;
-    }
-  
-    &::before {
-      content: none;
     }
   }
 }
