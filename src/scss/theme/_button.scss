@@ -151,3 +151,13 @@ a {
   }
 }
 
+.filter-menu {
+  .topics__collapsable-menu {
+    box-shadow: none;
+    border-radius: 0;
+
+    &:focus {
+      background: none;
+    }
+  }
+}

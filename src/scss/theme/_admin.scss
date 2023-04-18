@@ -7,6 +7,7 @@ main {
     &.button {
       color: $su-color-white;
       background-color: $chemh-color-red;
+      border-radius: unset;
 
       &:hover,
       &:focus,
@@ -63,6 +64,7 @@ nav {
   &:hover,
   &:focus,
   &:active {
+    background-color: $su-color-black;
     background-repeat: no-repeat;
     background-position: center;
     border-radius: 13px;
