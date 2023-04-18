@@ -16,20 +16,45 @@
   .su-site-search {
     grid-area: search-field;
 
+    &.header-search {
+      background: $chemh-color-true-black;
+      position: relative; /* child absolute */
+
+
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        /* fill vertically */
+        top: 0;
+        bottom: 0;
+        width: 9600px;
+        right: 100%;
+        background: $chemh-color-true-black;
+      }
+
+      &::after {
+        left: 100%;
+        background: $chemh-color-true-black;
+      }
+
+    }
+    // background-color: black;
+
     // form {
     //   display: none;
     // }
   }
 
-  .su-site-search__submit {
-    background: url("#{$su-image-path}/magnifying-glass-24px.svg") no-repeat 0 0;
+  // .su-site-search__submit {
+  //   background: url("#{$su-image-path}/magnifying-glass-24px.svg") no-repeat 0 0;
 
-    &:hover,
-    &:active,
-    &:focus {
-      background: url("#{$su-image-path}/magnifying-glass-24px.svg") no-repeat 0 0;
-    }
-  }
+  //   &:hover,
+  //   &:active,
+  //   &:focus {
+  //     background: url("#{$su-image-path}/magnifying-glass-24px.svg") no-repeat 0 0;
+  //   }
+  // }
 
 }
 

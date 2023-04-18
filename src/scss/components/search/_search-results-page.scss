@@ -12,38 +12,44 @@
     }
 
     .menu-search-button {
-      background: url("#{$su-image-path}/magnifying-glass-24px.svg") no-repeat 0 0;
+      background: url("../../assets/svg/icon_search_black.svg") no-repeat 0 0;
       align-self: center;
-      -webkit-transform: scaleX(-1);
-      transform: scaleX(-1);
       padding: 1rem 1rem 1.15rem;
       -webkit-box-shadow: none;
       box-shadow: none;
-      background-size: cover;
+      height: 35px;
+      width: 35px;
+      background-size: 35px 35px;
 
       &:hover,
       &:focus {
-        background: url("#{$su-image-path}/icon-search.svg") no-repeat 0 0;
+        background: url("../../assets/svg/icon_search_red.svg") no-repeat 0 0;
+        height: 35px;
+        width: 35px;
+        background-size: 35px 35px;
       }
 
       &.menu-search-button-expanded {
         background: url("../../assets/svg/icon_close_red.svg") no-repeat 0 0;
+        height: 35px;
+        width: 35px;
+        background-size: 35px 35px;
       }
     }
 
-    .header-search {
-      .show-form {
-        padding: 1rem 0rem;
+    // .header-search {
+    //   .show-form {
+    //     padding: 1rem 0rem;
 
-        .su-site-search__submit {
-          top: 3.6rem;
-        }
-      }
+    //     // .su-site-search__submit {
+    //     //   top: 3.6rem;
+    //     // }
+    //   }
 
-      form:not(.show-form) {
-        display: none;
-      }
-    }
+    //   form:not(.show-form) {
+    //     display: none;
+    //   }
+    // }
   }
 
   .su-multi-menu {
@@ -54,18 +60,15 @@
       }
 
       .su-site-search__submit {
-        background: url("#{$su-image-path}/icon-search.svg") no-repeat 0 0;
-        -webkit-transform: scaleX(-1);
-        transform: scaleX(-1);
+        // background: url("#{$su-image-path}/icon-search.svg") no-repeat 0 0;
+        background: url("../../assets/svg/icon_search_red.svg") no-repeat 0 0;
         
-        &:hover {
-          background: url("#{$su-image-path}/icon-search.svg") no-repeat 0 0;
-          -webkit-transform: scaleX(-1);
-          transform: scaleX(-1);
-        }
+        // &:hover {
+        //   // background: url("#{$su-image-path}/icon-search.svg") no-repeat 0 0;
+        //   background: url("../../assets/svg/icon_search_red.svg") no-repeat 0 0;
+        // }
       }
     }
-
 
     @include grid-media-max('md') {
       .menu-search-button {
@@ -123,15 +126,9 @@
       }
       
       .su-site-search__submit {
-        background: url("#{$su-image-path}/icon-search.svg") no-repeat 0 0;
-        -webkit-transform: scaleX(-1);
-        transform: scaleX(-1);
-        top: 2.4rem;
-        right: 3rem;
-
-        // &:hover {
-        //   background: transparent url("#{$su-image-path}/icon-search.svg") no-repeat 0 0;
-        // }
+        // background: url("../../assets/svg/icon_search_red.svg") no-repeat 0 0;
+        // top: 2.4rem;
+        // right: 3rem;
 
         &::before {
           content: none;
@@ -186,21 +183,21 @@
     max-width: 50%;
 
     .show-form {
-      padding: 1rem 0rem;
+      // padding: 1rem 0rem;
 
-      .su-site-search__submit {
-        top: 3.6rem;
-      }
+      // .su-site-search__submit {
+      //   top: 3.6rem;
+      // }
     }
 
     form:not(.show-form) {
-      // background: url("#{$su-image-path}/close-black.svg") no-repeat 0 0;
       display: none;
     }
   }
 
   form {
     width: auto !important;
+    padding: 2rem 0rem;
   }
 
   .su-site-search__input {
@@ -210,17 +207,22 @@
   }
   
   .su-site-search__submit {
-    background: url("#{$su-image-path}/icon-search.svg") no-repeat 0 0;
-    -webkit-transform: scaleX(-1);
-    transform: scaleX(-1);
-    top: 2.4rem;
-    right: 3rem;
-    opacity: .6;
+    background: url("../../assets/svg/icon_search_red.svg") no-repeat 0 0;
+    height: 45px;
+    width: 45px;
+    background-size: 45px 45px;
+    top: 3.7rem;
+    right: 2.5rem;
+    opacity: 1;
   
     &:hover,
     &:focus {
-      background: transparent url("#{$su-image-path}/icon-search.svg") no-repeat 0 0;
-      opacity: 1;
+      background: url("../../assets/svg/icon_search_red.svg") no-repeat 0 0;
+      height: 45px;
+      width: 45px;
+      background-size: 45px 45px;
+      top: 3.7rem;
+      right: 2.5rem;
       border-radius: unset;
     }
   
