@@ -1,2 +1,2 @@
 // Theme code.
-import './chemh_subtheme.behaviors.js';
+import './chem_h_subtheme.behaviors.js';

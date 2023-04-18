@@ -42,7 +42,7 @@
 }
 
 @mixin chemh-button--plain {
-  @include chemh--shadow-system-button;
+  @include chemh--shadow-system-button--big;
 
   background: transparent;
   border-radius: 6px;

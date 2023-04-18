@@ -30,6 +30,7 @@
       grid-template-areas: "lockup main-nav"
       "search-field search-field";
       align-items: center;
+      max-width: $chemh-site-max-width;
 
       .su-lockup {
         grid-area: lockup;

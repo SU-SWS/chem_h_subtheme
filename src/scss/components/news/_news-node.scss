@@ -1,0 +1,20 @@
+@charset "UTF-8";
+
+
+.stanford-news-vertical-teaser-term {
+  >h2 {
+    @include chemh-heading--badge;
+
+    margin-bottom: 6.6rem;
+    text-align: left;
+  }
+
+  .more-link {
+    @include chemh--right-arrow-icon;
+  }
+
+  // Related news cards in footer.
+  .stanford-news--cards.stanford-news--cards-any {
+    margin-bottom: 125px;
+  }
+}

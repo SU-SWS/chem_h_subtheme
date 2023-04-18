@@ -6,12 +6,11 @@ h1, h2, h3, h4, h5 {
 }
 
 h1 {
-  background-color: $chemh-color-true-black;
   font-weight: $su-font-black;
   font-size: 5.5rem;
   line-height: 110%;
   /* identical to box height, or 61px */
-  color: $su-color-white;
+  color: $su-color-black;
   letter-spacing: -0.03em;
 }
 

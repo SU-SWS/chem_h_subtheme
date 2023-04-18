@@ -89,6 +89,15 @@ function chem_h_subtheme_theme_suggestions_form_alter(array &$suggestions, array
  */
 function chem_h_subtheme_preprocess_ds_entity_view(&$variables) {
 
+  // Changing out the image size for the news vertical teaser.
+  if (
+    $variables['content']['#entity_type'] == 'node' &&
+    $variables['content']['#bundle'] == 'stanford_news' &&
+    isset($variables['content']['#fields']['news_vertical_teaser_image']['su_news_featured_media'][0]['#stanford_media_image_style'])
+  ) {
+    $variables['content']['#fields']['news_vertical_teaser_image']['su_news_featured_media'][0]['#stanford_media_image_style'] = 'cta_596x397';
+  }
+
   // if not running on a paragraph, exit out.
   if (!isset($variables['content']['#paragraph'])) {
     return;
