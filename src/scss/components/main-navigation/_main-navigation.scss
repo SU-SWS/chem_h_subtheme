@@ -86,12 +86,8 @@
 .su-multi-menu {
 
   @include grid-media-min('lg') {
-    // flex, margin-right for search
+    // flex for search button
     display: flex;
-
-    .su-multi-menu__item:last-child {
-      margin-right: 36px !important;
-    }
 
     // top menu hovers
     .su-multi-menu__menu {

@@ -48,10 +48,10 @@
             line-height: 100%;
             font-weight: 700;
             letter-spacing: -1px;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
       
             a {
-              font-size: 0.6em;
+              font-size: 28px;
               text-decoration: underline;
             }
           }
@@ -71,12 +71,21 @@
       
           &.views-field-search-api-excerpt  {
             order: 3;
+            grid-column: span 2;
+            @include type-d;
+            // margin-bottom: 1rem;
           }
           
           &.views-field-changed  {
             order: 2;
             display: flex;
             font-style: italic;
+            font-size: 20px;
+            margin-top: 2rem;
+
+            @include grid-media-min('sm') {
+              margin-top: 1rem;
+            }
   
             span.views-label-changed {
               margin-right: 10px;
