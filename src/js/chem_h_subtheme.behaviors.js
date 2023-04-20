@@ -25,6 +25,10 @@
       });
       $('.su-multi-menu--dropdowns').append(menuSearchButton).closest('header').append(form);
 
+      // add search key to search results page input
+      let queryParam = new URLSearchParams(window.location.search);
+      const searchResultsForm = $('#block-chem-h-subtheme-search-form .su-site-search__input');
+      searchResultsForm.val(queryParam.get('key'));
     })(jQuery);
   },
 
