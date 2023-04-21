@@ -30,11 +30,11 @@
       grid-template-areas: "lockup main-nav"
       "search-field search-field";
       align-items: center;
+      padding-bottom: 1rem;
       max-width: $chemh-site-max-width;
 
       .su-lockup {
         grid-area: lockup;
-        margin-bottom: 3.4rem;
       }
 
       .su-multi-menu {
