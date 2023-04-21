@@ -26,9 +26,9 @@
     >section:last-of-type {
       // Grid setup.
       display: grid;
-      grid-template-columns: 310px 1fr 60px;
-      grid-template-areas: "lockup main-nav search"
-      "search-field search-field search-field";
+      grid-template-columns: 310px 1fr;
+      grid-template-areas: "lockup main-nav"
+      "search-field search-field";
       align-items: center;
       padding-bottom: 1rem;
       max-width: $chemh-site-max-width;
@@ -37,24 +37,9 @@
         grid-area: lockup;
       }
 
-
-
-      #chemh-button--search-link {
-        grid-area: search;
-        width: 24px;
-        height: 24px;
-        top: 30px;
-        transform: scaleX(-1);
-        right: 0;
-      }
-
       .su-multi-menu {
         grid-area: main-nav;
       }
-    }
-
-    nav+.su-site-search, ul li .su-site-search {
-      display: none; // need to hide extra search that we use for mobile.
     }
   }
 

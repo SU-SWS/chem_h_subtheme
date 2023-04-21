@@ -10,6 +10,7 @@ libraries:
 
 components:
   namespaces:
+    chemh: templates
     chemh_subtheme: templates/components
 
 regions:

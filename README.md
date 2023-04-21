@@ -1,5 +1,5 @@
 # [ChEM-H Subtheme](https://github.com/SU-SWS/chem_h_subtheme)
-##### Version: 8.x-1.0-dev
+##### Version: 9.x-1.0-dev
 
 Changelog: [Changelog.txt](CHANGELOG.txt)
 
