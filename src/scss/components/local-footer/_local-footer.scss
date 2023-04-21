@@ -61,13 +61,6 @@
 
       .signup--button {
         @include chemh-button--plain;
-
-        &:hover,
-        &:active,
-        &:focus {
-
-
-        }
       }
     }
   }
@@ -83,7 +76,6 @@
   .su-lockup__line5 {
     color: $chemh-color-true-black;
   }
-
 
   // Link column setup
   .su-local-footer__columns {

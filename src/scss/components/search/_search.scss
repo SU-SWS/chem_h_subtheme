@@ -81,12 +81,12 @@
     .show-form {
       width: auto;
     }
-    
+
     form:not(.show-form) {
       display: none;
     }
   }
-  
+
   form {
     padding: 3rem 0rem;
 
@@ -96,7 +96,6 @@
       padding: 3rem;
     }
   }
-  
 }
 
 @include grid-media-min('lg') {
