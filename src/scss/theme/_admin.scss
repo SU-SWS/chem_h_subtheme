@@ -73,10 +73,12 @@ nav {
   }
 }
 
-.simplesamlphp-auth-login-link {
-  &.su-button {
-    @include chemh-button--plain;
+a {
+  &.simplesamlphp-auth-login-link {
+    &.su-button {
+      @include chemh-button--plain;
 
-    background-color: $su-color-white;
+      background-color: $su-color-white;
+    }
   }
 }
