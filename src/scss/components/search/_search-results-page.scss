@@ -40,7 +40,7 @@
         width: calc(100% - 40px);
       }
     }
-  
+
     .view {
       &.search, &.results {
         .views-row {
@@ -49,33 +49,33 @@
             font-weight: 700;
             letter-spacing: -1px;
             margin-bottom: 1.5rem;
-      
+
             a {
               font-size: 28px;
               text-decoration: underline;
             }
           }
         }
-        
+
         @include grid-media-min('md') {
           .views-row {
             display: grid;
             grid-template-columns: 2fr 1fr;
           }
         }
-      
+
         .views-field {
           &.views-field-title {
             order: 1;
           }
-      
+
           &.views-field-search-api-excerpt  {
             order: 3;
             grid-column: span 2;
             @include type-d;
             // margin-bottom: 1rem;
           }
-          
+
           &.views-field-changed  {
             order: 2;
             display: flex;
@@ -86,7 +86,7 @@
             @include grid-media-min('sm') {
               margin-top: 1rem;
             }
-  
+
             span.views-label-changed {
               margin-right: 10px;
             }

@@ -72,3 +72,11 @@ nav {
     border-radius: 13px;
   }
 }
+
+.simplesamlphp-auth-login-link {
+  &.su-button {
+    @include chemh-button--plain;
+
+    background-color: $su-color-white;
+  }
+}
