@@ -1,0 +1,104 @@
+@charset "UTF-8";
+
+.page-search {
+  .page-content {
+    .block-chem-h-subtheme-pagetitle {
+      h1 {
+        margin-top: 0;
+      }
+    }
+
+    .block-chem-h-subtheme-search-form {
+      @include responsive-spacing('padding-top', 0);
+      @include responsive-spacing('padding-bottom', 0);
+    }
+
+    @include grid-media-min('md') {
+      .block-chem-h-subtheme-search-form,
+      .block-chem-h-subtheme-content {
+        max-width: 1000px;
+      }
+    }
+
+    @include grid-media-max('md') {
+      .block-chem-h-subtheme-search-form {
+        max-width: calc(100% - 100px);
+        width: calc(100% - 100px);
+      }
+    }
+
+    @include grid-media-max('sm') {
+      .block-chem-h-subtheme-search-form {
+        max-width: calc(100% - 60px);
+        width: calc(100% - 60px);
+      }
+    }
+
+    @include grid-media-max('xs') {
+      .block-chem-h-subtheme-search-form {
+        max-width: calc(100% - 40px);
+        width: calc(100% - 40px);
+      }
+    }
+
+    .view {
+      &.search, &.results {
+        .views-row {
+          h2 {
+            line-height: 100%;
+            font-weight: 700;
+            letter-spacing: -1px;
+            margin-bottom: 1.5rem;
+
+            a {
+              font-size: 28px;
+              text-decoration: underline;
+            }
+          }
+        }
+
+        @include grid-media-min('md') {
+          .views-row {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+          }
+        }
+
+        .views-field {
+          &.views-field-title {
+            order: 1;
+          }
+
+          &.views-field-search-api-excerpt  {
+            order: 3;
+            grid-column: span 2;
+            @include type-d;
+            // margin-bottom: 1rem;
+          }
+
+          &.views-field-changed  {
+            order: 2;
+            display: flex;
+            font-style: italic;
+            font-size: 20px;
+            margin-top: 2rem;
+
+            @include grid-media-min('sm') {
+              margin-top: 1rem;
+            }
+
+            span.views-label-changed {
+              margin-right: 10px;
+            }
+          }
+
+          @include grid-media-min('md') {
+            &.views-field-changed {
+              justify-content: flex-end;
+            }
+          }
+        }
+      }
+    }
+  }
+}
