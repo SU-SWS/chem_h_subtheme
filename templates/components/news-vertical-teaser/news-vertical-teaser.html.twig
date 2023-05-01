@@ -74,14 +74,16 @@
       <div class="su-link--external-box">
         <a {{ news_url_attributes.addClass('su-news-vertical-teaser__link') }} href="{{ news_url }}">
 
+        <span class="visually-hidden">{{- news_vertical_teaser_headline -}}</span>
+
         {%- if news_source is not empty -%}
-        <span class="material-symbols-outlined">
+        <span class="material-symbols-outlined" aria-hidden="true">
           arrow_right_alt
         </span>
         {%- endif -%}
 
         {%- if news_ext_url_link_box is not empty -%}
-        <span class="material-symbols-outlined">
+        <span class="material-symbols-outlined" aria-hidden="true">
           arrow_outward
         </span>
         {%- endif -%}

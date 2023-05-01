@@ -150,12 +150,21 @@
       @include chemh-button--plain;
 
       background: transparent;
+      color: $su-color-black;
       display: flex;
       width: fit-content;
       gap: 5px;
 
       &::after {
         content: none;
+      }
+
+      span.material-symbols-outlined {
+        text-decoration: none;
+      }
+
+      .su-button--login-text {
+        text-decoration: underline;
       }
     }
   }
