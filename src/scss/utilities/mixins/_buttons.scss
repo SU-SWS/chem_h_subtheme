@@ -29,7 +29,8 @@
     inset: 0;
     padding: 2px;
     border-radius: 6px;
-    background: linear-gradient(270deg, $chemh-color-light-peach 4.94%, $chemh-color-mid-red 45.61%, $chemh-color-dark-blue 73.57%, $chemh-color-light-blue 95%);
+    //changed for the hover color. was the $chemh-color-light-peach
+    background: linear-gradient(270deg, $chemh-color-hover-peach 4.94%, $chemh-color-mid-red 45.61%, $chemh-color-dark-blue 73.57%, $chemh-color-light-blue 95%);
     -webkit-mask:
       linear-gradient(#fff 0 0) content-box,
       linear-gradient(#fff 0 0);
