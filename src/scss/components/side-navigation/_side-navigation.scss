@@ -48,11 +48,18 @@
       &::after {
         visibility: visible;
         width: 1em;
-        background: transparent url("../../assets/svg/icon_arrow_down_red.svg") no-repeat top / 75%;
+        background: transparent url("../../assets/svg/icon_arrow_closed_red.svg") no-repeat top / 75%;
         right: 0;
         height: 50px;
         top: 10px;
         transform: rotate(-90deg);
+      }
+
+      &:hover {
+        &::after {
+          background: transparent url("../../assets/svg/icon_arrow_closed_hover_red.svg") no-repeat top / 75%;
+          transform: rotate(-90deg);
+        }
       }
     }
   }
@@ -63,6 +70,14 @@
         right: 2rem;
         margin-top: 20px;
         transform: none;
+        background: transparent url("../../assets/svg/icon_arrow_open_red.svg") no-repeat top / 75%;
+      }
+
+      &:hover {
+        &::after {
+          background: transparent url("../../assets/svg/icon_arrow_open_red.svg") no-repeat top / 75%;
+          transform: none;
+        }
       }
     }
   }
