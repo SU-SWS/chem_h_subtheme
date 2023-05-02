@@ -261,7 +261,8 @@
 
           &:hover,
           &:visited,
-          &:active {
+          &:active,
+          &:focus {
             text-decoration: none;
 
             &::before {
