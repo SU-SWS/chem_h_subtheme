@@ -14,8 +14,12 @@
 
 .block--page-title,
 .node-stanford-page-title {
-  background: $chemh-color-true-black url("../../assets/png/header-big-000-tall.png") no-repeat center / 50%;
+  background: $chemh-color-true-black url("../../assets/png/header-sm-000--cropped.png") no-repeat center/cover;
   position: relative; /* child absolute */
+
+  @include grid-media-max('md') {
+    background: $chemh-color-true-black url("../../assets/png/header-000-mobile--cropped.png") no-repeat center/cover;
+  }
 
   h1 {
     color: $su-color-white;
