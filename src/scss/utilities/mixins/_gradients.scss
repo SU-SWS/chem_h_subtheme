@@ -24,7 +24,7 @@
 }
 
 @mixin chemh-button--hover-gradient {
-  background: linear-gradient(270deg, $chemh-color-light-peach 4.94%, $chemh-color-mid-red 45.61%, $chemh-color-dark-blue 73.57%, $chemh-color-light-blue 95%);
+  background: linear-gradient(270deg, $chemh-color-hover-peach 4.94%, $chemh-color-mid-red 45.61%, $chemh-color-dark-blue 73.57%, $chemh-color-light-blue 95%);
   background-color: $su-color-black;
   border-radius: 6px;
   color: $su-color-white;
@@ -32,5 +32,5 @@
 }
 
 @mixin chemh-news-card--gradient {
-  background: linear-gradient(270deg, #2A2B81 2.4%, #652561 29.34%, #AC2436 57.3%, #E28B6D 85.26%, #E9A286 100%);
+  background: linear-gradient(270deg, $chemh-color-dark-purple 2.4%, $chemh-color-mid-purple 29.34%, $chemh-color-mid-red 57.3%, $chemh-color-mid-peach 85.26%, $chemh-color-light-peach 100%);
 }
