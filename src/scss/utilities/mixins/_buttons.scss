@@ -41,6 +41,23 @@
     -webkit-mask-composite: xor;
     mask-composite: exclude;
   }
+
+  &:active {
+    background: $chemh-color-true-black;
+    color: $su-color-white;
+
+    &:hover {
+      background: $chemh-color-true-black;
+    }
+
+    span {
+      text-decoration: none;
+    }
+
+    &::before {
+      background: $chemh-color-true-black;
+    }
+  }
 }
 
 @mixin chemh-button--plain {
@@ -64,7 +81,6 @@
       text-decoration: none;
     }
   }
-
 
   &:active {
     background: $chemh-color-true-black;

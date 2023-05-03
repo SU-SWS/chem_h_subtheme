@@ -43,6 +43,16 @@ a {
 }
 
 // Button link color override
+// a {
+//   &.su-button,
+//   &.su-button--big,
+//   &.su-link {
+//     &:after {
+//       background-color: $su-color-black;
+//     }
+//   }
+// }
+
 a {
   &.su-button,
   &.su-button--big {
@@ -50,7 +60,30 @@ a {
       background-color: $su-color-black;
     }
   }
+
+  &.su-link {
+    &.su-button {
+      &:after {
+        background-color: $su-color-black;
+      }
+    }
+
+    &.su-button--big {
+      &:after {
+        background-color: $su-color-black;
+      }
+    }
+  }
 }
+
+// .su-button {
+//   &.su-link {
+//     &::after {
+//       background-color: $su-color-black;
+//     }
+//   }
+// }
+
 
 // Icon alignment for CTA links.
 a {

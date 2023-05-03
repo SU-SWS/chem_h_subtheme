@@ -46,6 +46,8 @@ button:hover {
 // Active links.
 .su-button.su-link:active,
 .su-button:active,
+.su-button--big.su-link:active,
+.su-button--big:active,
 [type=button]:active,
 [type=image]:active,
 [type=reset]:active,
@@ -59,6 +61,25 @@ button:hover {
     background-color: $su-color-white;
   }
 }
+// .su-button.su-link:active,
+// .su-button:active,
+// [type=button]:active,
+// [type=image]:active,
+// [type=reset]:active,
+// [type=submit]:active,
+// button:active {
+//   background: $chemh-color-true-black;
+//   border-radius: 6px;
+//   color: $su-color-white;
+
+//   &::before {
+//     background: $chemh-color-true-black;
+//   }
+
+//   &:after {
+//     background-color: $su-color-white;
+//   }
+// }
 
 
 main,
@@ -72,8 +93,8 @@ footer {
     text-decoration: underline;
 
     &:hover,
-    &:focus,
-    &:active {
+    &:focus {
+    // &:active {
       color: $su-color-white;
       text-decoration: none;
     }
@@ -97,23 +118,12 @@ footer {
     text-decoration: underline;
 
     &:hover,
-    &:focus,
-    &:active {
+    &:focus {
+    // &:active {
       @include chemh-button--hover-gradient;
 
       color: $su-color-white;
       text-decoration: none;
-    }
-  }
-}
-
-// Big Button extra icon color.
-a {
-  &.su-link--external {
-    &.su-button--big {
-      &::after {
-        background-color: $su-color-black;
-      }
     }
   }
 }
