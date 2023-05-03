@@ -16,6 +16,8 @@
 //}
 
 @mixin chemh-button--gradient {
+  @include chemh--right-arrow-icon-plain;
+  @include chemh--no-animation-icon;
   background-color: transparent;
   color: $su-color-black;
   display: inline-block;

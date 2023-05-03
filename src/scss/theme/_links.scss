@@ -42,13 +42,12 @@ a {
   }
 }
 
-// External link color override
+// Button link color override
 a {
-  &.su-link--external {
-    &.su-button {
-      &:after {
-        background-color: $su-color-black;
-      }
+  &.su-button,
+  &.su-button--big {
+    &:after {
+      background-color: $su-color-black;
     }
   }
 }
@@ -62,7 +61,7 @@ a {
     &::after {
       position: relative;
       display: inline-block;
-      top: 2px;
+      top: 4px;
     }
 
     &:hover,
