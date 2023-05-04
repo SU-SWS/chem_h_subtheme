@@ -90,6 +90,7 @@ a {
   &.su-link--action {
     position: relative;
     text-decoration: none;
+    color: $su-color-black;
 
     &::after {
       position: relative;
@@ -98,7 +99,10 @@ a {
     }
 
     &:hover,
-    &:focus {
+    &:focus,
+    &:active {
+      color: $chemh-color-digital-blue;
+
       &::after {
         text-decoration: none;
       }
