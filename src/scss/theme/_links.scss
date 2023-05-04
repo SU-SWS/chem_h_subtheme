@@ -5,7 +5,7 @@
   &:hover,
   &:focus {
     &::after {
-      background-color: $chemh-color-digital-blue;
+      background-color: $su-color-cardinal-red-dark;
     }
   }
 }
@@ -17,8 +17,11 @@ a.su-link {
 
   &:hover,
   &:focus {
-    color: $chemh-color-digital-blue;
-    background-color: $chemh-color-hover-blue;
+    color: $su-color-cardinal-red-dark;
+
+    &::after {
+      background-color: $su-color-cardinal-red-dark;
+    }
   }
 
   &:after {
@@ -79,6 +82,21 @@ a {
       &:hover,
       &:focus {
         text-decoration: underline;
+      }
+    }
+  }
+
+  &.mailto {
+    svg {
+      fill: $chemh-color-digital-blue;
+
+      &:hover,
+      &:focus {
+        fill: $su-color-cardinal-red-dark;
+
+        &::after {
+          fill: $su-color-cardinal-red-dark;
+        }
       }
     }
   }

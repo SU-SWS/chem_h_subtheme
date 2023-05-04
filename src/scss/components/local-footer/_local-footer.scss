@@ -207,8 +207,10 @@
       &:hover,
       &:active,
       &:focus {
+        color: $su-color-cardinal-red-dark;
+
         &:after {
-          background-color: $chemh-color-digital-blue;
+          background-color: $su-color-cardinal-red-dark;
         }
       }
     }
@@ -239,15 +241,19 @@
 nav[aria-label^='footer'] {
   a,
   a.su-link--external,
-  a.su-link {
+  a.su-link,
+  .su-local-footer__action-links {
     color: $chemh-color-digital-blue;
     text-decoration: underline;
 
     &:hover,
     &:focus {
-      background-color: $chemh-color-hover-blue;
-      color: $chemh-color-digital-blue;
+      color: $su-color-cardinal-red-dark;
       text-decoration: underline;
+
+      &:after {
+        background-color: $su-color-cardinal-red-dark;
+      }
     }
 
     &:after {
