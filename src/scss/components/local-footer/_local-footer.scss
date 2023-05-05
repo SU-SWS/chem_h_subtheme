@@ -247,7 +247,8 @@ nav[aria-label^='footer'] {
     text-decoration: underline;
 
     &:hover,
-    &:focus {
+    &:focus,
+    &:active {
       color: $su-color-cardinal-red-dark;
       text-decoration: underline;
 
