@@ -48,7 +48,7 @@
       &::after {
         visibility: visible;
         width: 1em;
-        background: transparent url("../../assets/svg/icon_arrow_closed_red.svg") no-repeat top / 75%;
+        background: transparent url("../../assets/svg/icon_secondary_nav_caret.svg") no-repeat top / 50%;
         right: 0;
         height: 50px;
         top: 10px;
@@ -57,8 +57,18 @@
 
       &:hover {
         &::after {
-          background: transparent url("../../assets/svg/icon_arrow_closed_hover_red.svg") no-repeat top / 75%;
+          // background: transparent url("../../assets/svg/icon_secondary_nav_caret.svg") no-repeat top / 50%;
+          // transform: rotate(-90deg);
+          background-image: url("../../assets/svg/icon_secondary_nav_caret.svg");
+          background-position-x: center;
+          background-position-y: top;
+          background-size: 100%;
+          background-repeat-x: no-repeat;
+          background-repeat-y: no-repeat;
+          background-color: transparent;
+          -webkit-transform: rotate(-90deg);
           transform: rotate(-90deg);
+          background-size: 12px 5.5px;
         }
       }
     }
@@ -68,14 +78,13 @@
     >.su-secondary-nav__link {
       &::after {
         right: 2rem;
-        margin-top: 20px;
         transform: none;
-        background: transparent url("../../assets/svg/icon_arrow_open_red.svg") no-repeat top / 75%;
+        background: transparent url("../../assets/svg/icon_secondary_nav_caret.svg") no-repeat top / 50%;
       }
 
       &:hover {
         &::after {
-          background: transparent url("../../assets/svg/icon_arrow_open_red.svg") no-repeat top / 75%;
+          background: transparent url("../../assets/svg/icon_secondary_nav_caret.svg") no-repeat top / 50%;
           transform: none;
         }
       }
