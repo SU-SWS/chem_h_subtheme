@@ -60,6 +60,7 @@ a {
 // Icon alignment for CTA links.
 a {
   &.su-link--action {
+    color: $su-color-black;
     position: relative;
     text-decoration: none;
 
@@ -71,6 +72,8 @@ a {
 
     &:hover,
     &:focus {
+      color: $chemh-color-digital-blue;
+
       &::after {
         text-decoration: none;
       }
