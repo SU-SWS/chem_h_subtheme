@@ -35,22 +35,38 @@
       // Carets and toggles and carrots.
       @include grid-media-min('lg') {
         >.su-nav-toggle {
+          top: calc(19% - 0px);
+          overflow: visible;
+          width: 18px;
+          height: 18px;
+          padding: 17px;
+          border-radius: 17px;
+          border: 1px solid transparent;
+          margin-right: 5px;
+
         // What the up and down caret look like.
           &[aria-expanded=true] {
+            // border: 1px solid $su-color-black;
+
             &::before {
-              background: transparent url("../../assets/svg/icon_arrow_down_red.svg") no-repeat center / 50%;
+              background: transparent url("../../assets/svg/icon_primary_nav_caret_red.svg") no-repeat center / 40%;
             }
           }
 
           // Top nav.
           &::before {
-            background: transparent url("../../assets/svg/icon_arrow_down_stone.svg") no-repeat center / 50%;
+            // sand colored caret
+            background: transparent url("../../assets/svg/icon_primary_nav_caret.svg") no-repeat center / 40%;
+            position: absolute;
+            display: block;
           }
 
           &:focus,
           &:hover {
+            border: 1px solid $su-color-black;
+
             &::before {
-              background: transparent url("../../assets/svg/icon_arrow_down_red.svg") no-repeat center / 50%;
+              background: transparent url("../../assets/svg/icon_primary_nav_caret_red.svg") no-repeat center / 40%;
             }
           }
         }
@@ -60,6 +76,8 @@
           // What the up and down caret look like.
           &[aria-expanded=true] {
             &:focus {
+              // border: 1px solid $su-color-black;
+
               &::before {
                 background: transparent url("../../assets/svg/icon_expand_more_red.svg") no-repeat center / 50%;
               }
@@ -126,11 +144,11 @@
     .su-multi-menu__menu {
       >.su-multi-menu__item--parent {
         >.su-nav-toggle {
+
           &:hover,
           &:focus,
           &:active {
             &[aria-expanded=false] {
-              border: 0;
             }
           }
 
@@ -138,7 +156,7 @@
             &:active,
             &:focus,
             &:hover {
-              border: 0;
+              // border: 1px solid;
             }
           }
         }
@@ -168,7 +186,7 @@
             // Active arrow red.
             >.su-nav-toggle {
               &::before {
-                background: transparent url("../../assets/svg/icon_arrow_down_red.svg") no-repeat center / 50%;
+                background: transparent url("../../assets/svg/icon_arrow_down_red.svg") no-repeat center / 40%;
               }
             }
           }
