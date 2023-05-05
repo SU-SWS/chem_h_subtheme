@@ -1,13 +1,7 @@
-{% set attributes = attributes.addClass('su-site-search search-results search-results-page') %}
-
-{% include "@basic-dist/decanter/components/site-search/site-search.twig" with
-  {
-    "attributes": attributes|without('class', 'role'),
-    "modifier_class": attributes.class,
-    "action": elements.content['#action'],
-    "method": "get",
-    "search_label": "Search this site"|t,
-    "placeholder": "Search ..."|t,
-    "search_input_name": "key",
-  }
-%}
+<div class="su-site-search search-results search-results-page" role="search">
+ <form {{ attributes }}>
+  <label class="su-site-search__sr-label" for="search-results-key">Search ...</label>
+  <input type="text" id="search-results-key" name="search-results-key" class="su-site-search__input" placeholder="Search ..." maxlength="128">
+  <button type="submit" name="search" class="su-site-search__submit su-sr-only-text">Submit Search</button>
+ </form>
+</div>
