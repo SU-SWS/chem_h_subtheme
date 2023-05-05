@@ -3,7 +3,8 @@
 // text links.
 .su-link--external {
   &:hover,
-  &:focus {
+  &:focus,
+  &:active {
     &::after {
       background-color: $su-color-cardinal-red-dark;
     }
@@ -29,7 +30,7 @@ a.su-link {
   }
 
   &:active {
-    color: $chemh-color-red;
+    color: $su-color-cardinal-red-dark;
   }
 }
 
