@@ -20,6 +20,8 @@ button  {
   text-decoration: underline;
 }
 
+.su-button--big:focus,
+.su-button--big:hover,
 .su-button--big.su-link:focus,
 .su-button--big.su-link:hover,
 .su-button.su-link:focus,
@@ -46,14 +48,20 @@ button:hover {
 // Active links.
 .su-button.su-link:active,
 .su-button:active,
+.su-button--big.su-link:active,
+.su-button--big:active,
 [type=button]:active,
 [type=image]:active,
 [type=reset]:active,
 [type=submit]:active,
 button:hover {
-  background: $chemh-color-true-black;
+  background: $chemh-color-true-black;;
   border-radius: 6px;
   color: $su-color-white;
+  
+  &::before {
+    background: $su-color-black;
+  }
 
   &:after {
     background-color: $su-color-white;
@@ -65,6 +73,8 @@ main,
 footer {
   .su-button.su-link,
   .su-button,
+  .su-button--big.su-link,
+  .su-button--big,
   button {
     @include chemh-button--gradient;
     @include modular-spacing('padding', 0);
@@ -85,24 +95,65 @@ footer {
     color: $su-color-black;
     display: inline-block;
   }
-}
 
-// WYSIWYG BUTTONS
-.su-wysiwyg-text {
+  // Button icons
   .su-button,
   .su-button--big {
-    @include chemh-button--gradient;
 
-    border-radius: 6px;
-    text-decoration: underline;
+    &.su-link--external {
+      &::after {
+        margin-left: 1.8rem;
+      }
+    }
+  }
 
-    &:hover,
-    &:focus,
-    &:active {
-      @include chemh-button--hover-gradient;
+  .su-button {
+    &:not(.su-link--external) {
+      &::after {
+        content: "";
+        background: url("../../assets/svg/icon_east_black.svg") no-repeat 0 0;
+        height: 18px;
+        width: 23px;
+        background-size: 23px 23px;
+        box-shadow: none;
+        display: inline-block;
+        position: relative;
+        margin-left: 1.8rem;
+      }
+  
+      &:hover,
+      &:focus,
+      &:active {
+        &::after {
+          background: url("../../assets/svg/icon_east_white.svg") no-repeat 0 0;
+          background-size: 23px 23px;
+        }
+      }
+    }
+  }
 
-      color: $su-color-white;
-      text-decoration: none;
+  .su-button--big {
+    &:not(.su-link--external) {
+      &::after {
+        content: "";
+        background: url("../../assets/svg/icon_east_black_big.svg") no-repeat 0 0;
+        height: 26px;
+        width: 36px;
+        background-size: 33px 33px;
+        box-shadow: none;
+        display: inline-block;
+        position: relative;
+        margin-left: 1.8rem;
+      }
+  
+      &:hover,
+      &:focus,
+      &:active {
+        &::after {
+          background: url("../../assets/svg/icon_east_white_big.svg") no-repeat 0 0;
+          background-size: 33px 33px;
+        }
+      }
     }
   }
 }
