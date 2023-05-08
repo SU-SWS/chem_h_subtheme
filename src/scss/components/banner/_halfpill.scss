@@ -61,28 +61,6 @@
     }
   }
 
-  .su-link {
-    &.su-button {
-      @include chemh--right-arrow-icon;
-
-      &::after {
-        color: $su-color-black;
-        background-color: transparent;
-        padding-left: 15px;
-      }
-
-      &:hover,
-      &:focus,
-      &:active {
-        &::after {
-          color: $su-color-white;
-          text-decoration: none;
-        }
-
-      }
-    }
-  }
-
   // Card position - right side
   .overlay-right {
     &.su-hero {
