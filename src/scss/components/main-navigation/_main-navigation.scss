@@ -1,5 +1,19 @@
 @charset "UTF-8";
 
+.su-multi-menu.su-multi-menu--dropdowns {
+  .su-multi-menu__menu {
+    >.su-multi-menu__item--parent {
+      >.su-nav-toggle {
+        &[aria-expanded=true]:active,
+        &[aria-expanded=true]:focus {
+          border: 1px solid $su-color-black;
+        }
+      }
+    }
+  }
+}
+
+
 // Removing the main navigation animations
 .su-multi-menu {
   .su-multi-menu__menu {
@@ -245,6 +259,7 @@
           >.su-multi-menu__link {
             &::after {
               border-right: 0;
+              margin-left: unset;
             }
 
             >.su-nav-toggle {
