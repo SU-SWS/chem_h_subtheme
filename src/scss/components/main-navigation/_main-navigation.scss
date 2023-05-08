@@ -24,6 +24,20 @@
 }
 
 .su-multi-menu.su-multi-menu--dropdowns {
+  @include grid-media-min('lg') {
+    .su-multi-menu__menu-lv1 {
+      >.su-multi-menu__item--parent {
+        >.su-nav-toggle {
+          top: 1rem;
+        }
+      }
+      >.su-multi-menu__item.su-multi-menu__item--expanded {
+        >a:before {
+          height: 8px;
+        }
+      }
+    }
+  }
   .su-multi-menu__menu {
     >.su-multi-menu__item--parent {
       // Removed animations
@@ -92,6 +106,8 @@
     // top menu hovers
     .su-multi-menu__menu {
       .su-multi-menu__link {
+        padding-top: 0.4rem;
+        padding-bottom: 5rem;
 
         &::before {
           width: 4px;
@@ -105,7 +121,6 @@
             transform: none;
             visibility: visible;
             height: 0.25em;
-            top: 77.5px; // move it lower.  must match the open menu as well
           }
 
           span {
@@ -119,7 +134,7 @@
 
   &.su-multi-menu--dropdowns {
     .su-multi-menu__menu-lv2 {
-      top: 77.5px; // moving the menu lower
+      top: 75px; // moving the menu lower
     }
 
     // Removing line on arrow.
@@ -159,7 +174,6 @@
                 @include chemh-main-nav--gradient;
 
                 height: 0.25em;
-                top: 77.5px; // move it lower.  must match the open menu 'to
               }
             }
           }
@@ -222,6 +236,7 @@
             min-width: 300px;
             border-radius: 0 0 20px 20px;
             border-top: 4px solid $chemh-color-red;
+            overflow: hidden;
           }
 
           >.su-multi-menu__link {
