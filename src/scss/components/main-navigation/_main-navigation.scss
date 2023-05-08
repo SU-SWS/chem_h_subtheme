@@ -235,7 +235,7 @@
       @include grid-media-min('lg') {
         >.su-multi-menu__item--parent {
           >.su-multi-menu__menu {
-            @include chemh--shadow-custom-button-hover;
+            @include chemh--shadow-main-menu;
 
             min-width: 300px;
             border-radius: 0 0 20px 20px;
