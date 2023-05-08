@@ -29,9 +29,7 @@
       grid-template-columns: 310px 1fr;
       grid-template-areas: "lockup main-nav"
       "search-field search-field";
-      // align-items: center;
       align-items: end;
-      // padding-bottom: 0.6rem;
       padding-bottom: 0;
       max-width: $chemh-site-max-width;
 

@@ -121,7 +121,6 @@
             transform: none;
             visibility: visible;
             height: 0.25em;
-            // top: 77.5px; // move it lower.  must match the open menu as well
           }
 
           span {
@@ -175,7 +174,6 @@
                 @include chemh-main-nav--gradient;
 
                 height: 0.25em;
-                // top: 77.5px; // move it lower.  must match the open menu 'to
               }
             }
           }
