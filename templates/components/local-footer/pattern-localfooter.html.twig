@@ -317,9 +317,9 @@
   {% if weblogin_url is not empty %}
     <div class="su-local-footer__cell7">
       {# Web login button #}
-      <a {{ attributes }} href="{{ weblogin_url }}" class="su-link su-link--internal su-button su-button--login">
-      <span class="material-symbols-outlined">lock</span>
-      {{ weblogin_text|default(' Web Login') }}
+      <a {{ attributes }} href="{{ weblogin_url }}" class="su-link su-link--internal su-button--login">
+      <span class="material-symbols-outlined"  aria-hidden="true">lock</span>
+      <span class="su-button--login-text">{{ weblogin_text|default(' Web Login') }}</span>
       </a>
     </div>
   {% endif %}
