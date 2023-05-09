@@ -8,7 +8,7 @@
 
   // Whole card hover and active
   &:hover {
-    @include chemh--shadow-custom-button-hover;
+    @include chemh--shadow-news-card-hover;
 
     .su-card__link {
       color: $chemh-color-digital-blue;
