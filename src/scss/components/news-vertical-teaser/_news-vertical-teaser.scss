@@ -6,8 +6,11 @@
   border-bottom-left-radius: 6rem;
   position: relative;
 
-  // Whole card hover and active
-  &:hover {
+  // Whole card hover and focus
+  &:hover,
+  &:focus,
+  &:focus-within,
+  &:active {
     @include chemh--shadow-news-card-hover;
 
     .su-card__link {
@@ -29,6 +32,14 @@
           }
         }
       }
+    }
+  }
+
+  // Whole card active has headline black
+  &:active {
+    .su-card__link {
+      color: $chemh-color-true-black;
+      text-decoration: underline;
     }
   }
 
