@@ -20,3 +20,7 @@
 @mixin chemh--shadow-system-button--small {
   box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.21);
 }
+
+@mixin chemh--shadow-news-card-hover {
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.4);
+}
