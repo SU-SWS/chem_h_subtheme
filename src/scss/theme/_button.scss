@@ -17,7 +17,7 @@ button  {
 
   background-color: transparent;
   border-radius: 6px;
-  text-decoration: underline;
+  // text-decoration: underline;
 }
 
 .su-button--big:focus,
@@ -79,8 +79,6 @@ footer {
     @include chemh-button--gradient;
     @include modular-spacing('padding', 0);
 
-    text-decoration: underline;
-
     &:hover,
     &:focus,
     &:active {
@@ -91,7 +89,6 @@ footer {
 
   [type=button],
   [type=submit] {
-    // background-color: transparent;
     color: $su-color-black;
     display: inline-block;
   }
