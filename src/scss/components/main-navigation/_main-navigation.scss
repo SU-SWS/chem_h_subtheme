@@ -109,7 +109,12 @@
         .su-nav-toggle {
           // What the up and down caret look like.
           &[aria-expanded=true] {
-            &:focus {
+            &::before {
+              background: transparent url("../../assets/svg/icon_expand_more_red.svg") no-repeat center / 50%;
+            }
+
+            &:focus,
+            &:active {
 
               &::before {
                 background: transparent url("../../assets/svg/icon_expand_more_red.svg") no-repeat center / 50%;
@@ -357,6 +362,17 @@
             background-color: $chemh-color-red;
             transform: none;
             transition: none;
+          }
+        }
+      }
+
+      // Fix to the focus on the mobile.
+      .su-nav-toggle {
+        &[aria-expanded=false] {
+          &:focus {
+            &::before {
+              transform: rotate(180deg);
+            }
           }
         }
       }
