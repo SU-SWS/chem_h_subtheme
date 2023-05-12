@@ -114,6 +114,12 @@ footer {
   }
 
   .su-button {
+    &.su-link--external {
+      &::after {
+        height: 12px;
+        width: 12px;
+      }
+    }
     
     &:not(.su-link--external) {
       &::after {
