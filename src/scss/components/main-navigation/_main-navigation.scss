@@ -178,6 +178,8 @@
     // Removing line on arrow.
     .su-multi-menu__menu {
       >.su-multi-menu__item--parent {
+        margin: 0 30px 0 0;
+
         >.su-nav-toggle {
 
           &:hover,
@@ -201,6 +203,8 @@
 
     .su-multi-menu__menu-lv1 {
       >.su-multi-menu__item {
+        margin: 0 30px 0 0;
+
         &.su-multi-menu__item--current,
         &.su-multi-menu__item--active-trail {
           >.su-multi-menu__link {
