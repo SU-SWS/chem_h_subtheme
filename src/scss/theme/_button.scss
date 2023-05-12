@@ -17,7 +17,11 @@ button  {
 
   background-color: transparent;
   border-radius: 6px;
-  // text-decoration: underline;
+  font-weight: 600;
+}
+
+.su-button--secondary {
+  font-weight: 600;
 }
 
 .su-button--big:focus,
