@@ -49,6 +49,13 @@
       .su-multi-menu {
         grid-area: main-nav;
       }
+
+      @media (max-width: 1400px) {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas: "lockup lockup lockup"
+        "main-nav search-field search-field";
+      }
     }
   }
 
