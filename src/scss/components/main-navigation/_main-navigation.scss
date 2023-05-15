@@ -131,6 +131,14 @@
               background: transparent url("../../assets/svg/icon_expand_more_red.svg") no-repeat center / 50%;
             }
           }
+
+          &:hover {
+            &::before {
+              background: transparent url("../../assets/svg/icon_expand_more_red.svg") no-repeat center / 50%;
+              transform: rotate(180deg);
+            }
+          }
+
         }
       }
     }
