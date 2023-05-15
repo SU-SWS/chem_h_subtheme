@@ -159,3 +159,11 @@ ul.su-secondary-nav__menu > li {
   margin-bottom: 0.3rem;
   margin-top: 0.3rem;
 }
+
+ul.su-secondary-nav__menu.su-secondary-nav__menu-lv2 a {
+  margin-top: 0.3rem;
+
+  &:hover {
+    margin-top: 0.3rem;
+  }
+}
