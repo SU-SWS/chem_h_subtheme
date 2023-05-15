@@ -126,8 +126,7 @@
             background: transparent url("../../assets/svg/icon_expand_more_white.svg") no-repeat center / 50%;
           }
 
-          &:focus,
-          &:hover {
+          &:focus {
             &::before {
               background: transparent url("../../assets/svg/icon_expand_more_red.svg") no-repeat center / 50%;
             }
