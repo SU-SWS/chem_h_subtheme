@@ -62,12 +62,13 @@ a {
   &.su-link--action {
     color: $su-color-black;
     position: relative;
-    text-decoration: none;
+    font-weight: 400;
+    text-decoration: underline;
 
     &::after {
       position: relative;
       display: inline-block;
-      top: 4px;
+      top: 6px;
     }
 
     &:hover,
@@ -76,16 +77,6 @@ a {
 
       &::after {
         text-decoration: none;
-      }
-    }
-
-    // Action link with a mailto
-    &.mailto {
-      text-decoration: none;
-
-      &:hover,
-      &:focus {
-        text-decoration: underline;
       }
     }
   }
@@ -135,4 +126,40 @@ a {
 // More news link
 .more-link {
   padding-top: 40px;
+}
+
+// Link icon sizes for callout, intro, and quote text
+.su-callout-text,
+.su-intro-text {
+  a {
+    &.su-link--external {
+      &::after {
+        height: 14px;
+        width: 14px;
+      }
+    }
+    &.mailto {
+      svg {
+        height: 26px;
+        width: 28px;
+      }
+    }
+  }
+}
+
+.su-quote-text {
+  a {
+    &.su-link--external {
+      &::after {
+        height: 18px;
+        width: 18px;
+      }
+    }
+    &.mailto {
+      svg {
+        height: 33px;
+        width: 39px;
+      }
+    }
+  }
 }
