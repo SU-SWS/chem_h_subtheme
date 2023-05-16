@@ -9,6 +9,7 @@
 .chemh-wrapper--banner-halfpill {
   @include grid-media-min('lg') {
     max-width: 1800px;
+    margin: 0 auto;
   }
 
   .su-hero__media {
