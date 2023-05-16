@@ -136,3 +136,40 @@ a {
 .more-link {
   padding-top: 40px;
 }
+
+// News list overrides.
+.su-news-list {
+  .su-news-list__header {
+    a {
+      &.su-link--external {
+        &::after {
+          background-color: $su-color-black;
+        }
+
+        &:hover,
+        &:focus {
+          color: $chemh-color-digital-blue;
+
+          &::after {
+            background-color: $chemh-color-digital-blue;
+          }
+
+          h2 {
+            color: $chemh-color-digital-blue;
+          }
+        }
+      }
+
+      &:hover,
+      &:focus {
+        color: $chemh-color-digital-blue;
+
+        h2 {
+          color: $chemh-color-digital-blue;
+        }
+      }
+    }
+  }
+}
+
+
