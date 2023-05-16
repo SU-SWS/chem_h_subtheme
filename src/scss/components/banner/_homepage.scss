@@ -8,6 +8,24 @@
 
 .chemh-wrapper--banner-homepage {
   max-width: 1600px;
+  margin: 0 auto;
+  width: calc(100% - 40px);
+
+  @include grid-media-min('sm') {
+    width: calc(100% - 60px);
+  }
+
+  @include grid-media-min('md') {
+    width: calc(100% - 100px);
+  }
+
+  @include grid-media-min('lg') {
+    width: calc(100% - 160px);
+  }
+
+  @include grid-media-min('xl') {
+    width: calc(100% - 200px);
+  }
 
   .su-hero {
     min-height: 640px;
@@ -28,6 +46,11 @@
         // image size contraint
         height: auto;
         max-width: 850px;
+
+        @include grid-media-min('lg') {
+          margin-right: 2rem;
+        }
+
       }
     }
   }
