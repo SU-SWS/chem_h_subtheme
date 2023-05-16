@@ -17,7 +17,11 @@ button  {
 
   background-color: transparent;
   border-radius: 6px;
-  text-decoration: underline;
+  font-weight: 600;
+}
+
+.su-button--secondary {
+  font-weight: 600;
 }
 
 .su-button--big:focus,
@@ -79,8 +83,6 @@ footer {
     @include chemh-button--gradient;
     @include modular-spacing('padding', 0);
 
-    text-decoration: underline;
-
     &:hover,
     &:focus,
     &:active {
@@ -91,7 +93,6 @@ footer {
 
   [type=button],
   [type=submit] {
-    // background-color: transparent;
     color: $su-color-black;
     display: inline-block;
   }
@@ -99,15 +100,27 @@ footer {
   // Button icons
   .su-button,
   .su-button--big {
+    &.mailto {
+      svg {
+        margin-left: 1rem;
+      }
+    }
 
     &.su-link--external {
       &::after {
-        margin-left: 1.8rem;
+        margin-left: 1rem;
       }
     }
   }
 
   .su-button {
+    &.su-link--external {
+      &::after {
+        height: 12px;
+        width: 12px;
+      }
+    }
+    
     &:not(.su-link--external) {
       &::after {
         content: "";
@@ -120,7 +133,7 @@ footer {
         position: relative;
         margin-left: 1.8rem;
       }
-  
+      
       &:hover,
       &:focus,
       &:active {
@@ -129,10 +142,19 @@ footer {
           background-size: 23px 23px;
         }
       }
+
+      &.mailto,
+      &.simplesamlphp-auth-login-link {
+        &::after {
+          content: none;
+        }
+      }
+
     }
   }
 
   .su-button--big {
+    
     &:not(.su-link--external) {
       &::after {
         content: "";
@@ -145,13 +167,24 @@ footer {
         position: relative;
         margin-left: 1.8rem;
       }
-  
+      
       &:hover,
       &:focus,
       &:active {
         &::after {
           background: url("../../assets/svg/icon_east_white_big.svg") no-repeat 0 0;
           background-size: 33px 33px;
+        }
+      }
+
+      &.mailto {
+        svg {
+          height: 26px;
+          width: 30px;
+        }
+
+        &::after {
+          content: none;
         }
       }
     }
