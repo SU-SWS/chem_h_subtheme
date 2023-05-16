@@ -113,6 +113,10 @@
               background: transparent url("../../assets/svg/icon_expand_more_red.svg") no-repeat center / 50%;
             }
 
+            &:hover {
+              transform: rotate(180deg);
+            }
+
             &:focus,
             &:active {
 
