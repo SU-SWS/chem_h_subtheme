@@ -1,19 +1,5 @@
 @charset "UTF-8";
 
-.su-multi-menu.su-multi-menu--dropdowns {
-  .su-multi-menu__menu {
-    >.su-multi-menu__item--parent {
-      >.su-nav-toggle {
-        &[aria-expanded=true]:active,
-        &[aria-expanded=true]:focus {
-          border: 1px solid $su-color-black;
-        }
-      }
-    }
-  }
-}
-
-
 // Removing the main navigation animations
 .su-multi-menu {
   .su-multi-menu__menu {
@@ -39,6 +25,19 @@
 
 .su-multi-menu.su-multi-menu--dropdowns {
   @include grid-media-min('lg') {
+
+    // Circle set up.
+    .su-multi-menu__menu {
+      >.su-multi-menu__item--parent {
+        >.su-nav-toggle {
+          &[aria-expanded=true]:active,
+          &[aria-expanded=true]:focus {
+            border: 1px solid $su-color-black;
+          }
+        }
+      }
+    }
+
     .su-multi-menu__menu-lv1 {
       >.su-multi-menu__item--parent {
         >.su-nav-toggle {
@@ -52,6 +51,7 @@
       }
     }
   }
+
   .su-multi-menu__menu {
     >.su-multi-menu__item--parent {
       // Removed animations
@@ -109,8 +109,16 @@
         .su-nav-toggle {
           // What the up and down caret look like.
           &[aria-expanded=true] {
-            &:focus {
-              // border: 1px solid $su-color-black;
+            &::before {
+              background: transparent url("../../assets/svg/icon_expand_more_red.svg") no-repeat center / 50%;
+            }
+
+            &:hover {
+              transform: rotate(180deg);
+            }
+
+            &:focus,
+            &:active {
 
               &::before {
                 background: transparent url("../../assets/svg/icon_expand_more_red.svg") no-repeat center / 50%;
@@ -122,12 +130,19 @@
             background: transparent url("../../assets/svg/icon_expand_more_white.svg") no-repeat center / 50%;
           }
 
-          &:focus,
-          &:hover {
+          &:focus {
             &::before {
               background: transparent url("../../assets/svg/icon_expand_more_red.svg") no-repeat center / 50%;
             }
           }
+
+          &:hover {
+            &::before {
+              background: transparent url("../../assets/svg/icon_expand_more_red.svg") no-repeat center / 50%;
+              transform: rotate(180deg);
+            }
+          }
+
         }
       }
     }
@@ -157,6 +172,7 @@
             @include chemh-main-nav--gradient;
 
             transform: none;
+            transition: none;
             visibility: visible;
             height: 0.25em;
           }
@@ -164,7 +180,6 @@
           span {
             color: $chemh-color-red;
           }
-
         }
       }
     }
@@ -174,30 +189,6 @@
     .su-multi-menu__menu-lv2 {
       top: 75px; // moving the menu lower
     }
-
-    // Removing line on arrow.
-    .su-multi-menu__menu {
-      >.su-multi-menu__item--parent {
-        >.su-nav-toggle {
-
-          &:hover,
-          &:focus,
-          &:active {
-            &[aria-expanded=false] {
-            }
-          }
-
-          &[aria-expanded=true] {
-            &:active,
-            &:focus,
-            &:hover {
-              // border: 1px solid;
-            }
-          }
-        }
-      }
-    }
-
 
     .su-multi-menu__menu-lv1 {
       >.su-multi-menu__item {
@@ -344,12 +335,6 @@
       }
     }
 
-    .su-multi-menu__menu {
-      .su-multi-menu__link  {
-        border-bottom: none;
-      }
-    }
-
     // Fix for deeply nested menus.
     .su-multi-menu__menu-lv5,
     .su-multi-menu__menu-lv6 {
@@ -378,10 +363,27 @@
       .su-multi-menu__link {
         border-bottom: 1px solid $chemh-color-mid-sand;
 
+        &:active,
         &:focus,
         &:hover {
+          transform: none;
+          transition: none;
+
           &::before {
             background-color: $chemh-color-red;
+            transform: none;
+            transition: none;
+          }
+        }
+      }
+
+      // Fix to the focus on the mobile.
+      .su-nav-toggle {
+        &[aria-expanded=false] {
+          &:focus {
+            &::before {
+              transform: rotate(180deg);
+            }
           }
         }
       }
@@ -401,7 +403,19 @@
       &:focus {
         background: transparent;
       }
+
+      &:active,
+      &:focus,
+      &:hover {
+        transform: none;
+        transition: none;
+
+        &::before {
+          transform: none;
+          transition: none;
+        }
+      }
     }
   }
-}
 
+}

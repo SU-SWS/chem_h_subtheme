@@ -89,6 +89,10 @@
 
     .su-local-footer__cell2 {
       grid-area: B;
+
+      @include grid-media-max('md') {
+        padding-top: 0;
+      }
     }
 
     .su-local-footer__cell3 {
