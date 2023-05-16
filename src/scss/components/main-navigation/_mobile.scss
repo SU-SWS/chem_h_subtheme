@@ -1,18 +1,91 @@
+@charset "UTF-8";
+//
+// Main Navigation
+//
+// The primary site navigation that is usually in the header region of a website.
+// It is a horizontal menu bar on larger breakpoints, while on smaller breakpoints,
+// it changes into a vertical menu and can be expanded or collapsed by a toggle button.
+//
+// The following Javascript events are dispatched:
+// - `openNav` - fires when a mobile nav is opened - dispatched on `.su-main-nav`
+// - `closeNav` - fires when a mobile nav is closed - dispatched on `.su-main-nav`
+// - `openSubnav` - fires when a subnav is opened - dispatched on `li.su-main-nav__item--parent`
+// - `closeSubnav` - fires when a subnav is closed - dispatched on `li.su-main-nav__item--parent`
+//
+// The Main Navigation component is implemented to be accessible. For more information on building
+// accessible site navigation, please see
+// <a href="https://github.com/SU-SWS/decanter/wiki/About-the-Main-Nav-Component">About the Main Nav Component</a>
+// on Decanter's wiki.
+//
+//**Modifier classes for the Main Nav:**
+// - .su-main-nav--light          - Light colored theme
+// - .su-main-nav--dark           - Light on dark theme (for use on dark background colors).
+// Note: The dark background color in below example is just for demo. The actual background is transparent.
+// - .su-main-nav--mobile-search  - Include search form inside the mobile nav
+// - .su-main-nav--center         - Center both the desktop and mobile nav
+// - .su-main-nav--right          - Right justify both the desktop and mobile nav
+//
+//**Modifier classes for the hamburger toggle button:**
+// - .su-main-nav__toggle--center - Center only the toggle
+// - .su-main-nav__toggle--right - Right justify only the toggle
+//
+// .su-main-nav--light          - Light colored theme
+// .su-main-nav--dark           - Light on dark theme (for use on dark background colors).
+// The dark background color in below example is just for demo. The actual background is transparent.
+// .su-main-nav--mobile-search  - Include search form inside the mobile nav
+// .su-main-nav--center         - Center both the desktop and mobile nav
+// .su-main-nav--right          - Right justify both the desktop and mobile nav
+//
+// Markup: templates/components/main-nav/main-nav.twig
+//
+// Style guide: Composite.Main Navigation
+//
+
+.su-main-nav {
+
+  .su-main-nav__item--parent {
+
+    &.su-main-nav__item--expanded {
+      @extend %nav-item--parent-expanded;
+
+      // @include grid-media('lg') {
+      //   > a {
+      //     &::after {
+      //       background: url("../../assets/svg/caret-down-black.svg") no-repeat 0 0;
+      //       background-size: 100%;
+      //       transform: rotate(180deg);
+      //     }
+
+      //     &::before {
+      //       background-color: color(h-border--expanded, $su-nav-colors);
+      //     }
+
+      //     &:hover::before {
+      //       background-color: color(h-border--hover, $su-nav-colors);
+      //     }
+
+      //     &:active::before {
+      //       background-color: color(h-border--active, $su-nav-colors);
+      //     }
+      //   }
+      // }
+    }
+  }
+
+}
 
 .su-main-nav__toggle {
-  $_su-main-nav-color-map: $su-nav-colors;
 
-  @media screen and (min-width: 1401px) {
-    @include fancy-hover(color(h-border--hover, $su-nav-colors), color(h-border--active, $su-nav-colors));
-    @include padding(0 0 2rem);
-    @include margin(0);
+  @media (max-width: 1400px) {
+    border: 3px solid pink;
+
     display: flex;
     flex-direction: column-reverse;
     align-items: center;
     outline: none;
     width: 40px;
     background-color: transparent;
-    color: color(h-link, $su-nav-colors);
+    color: $su-color-black;
     font-size: 1.6rem;
     line-height: 0.7;
 
@@ -21,7 +94,6 @@
       display: inline-block;
       width: 30px;
       height: 26px;
-      background: url("#{$su-image-path}/hamburger-black.svg") no-repeat 3px 0;
       content: "";
     }
 
@@ -29,21 +101,21 @@
       &::before {
         visibility: visible;
         transform: scaleX(1);
-        background-color: color(h-border--expanded, $su-nav-colors);
+        background-color: transparent;
       }
 
       &::after {
         width: 22px;
-        background: url("#{$su-image-path}/close-black.svg") no-repeat 3px 0;
+        // background: url("../../assets/svg/close-black.svg") no-repeat 3px 0;
         background-size: 16px 16px;
       }
 
       &:hover::before {
-        background-color: color(h-border--hover, $su-nav-colors);
+        background-color: transparent;
       }
 
       &:active::before {
-        background-color: color(h-border--active, $su-nav-colors);
+        background-color: transparent;
       }
     }
 
@@ -51,7 +123,7 @@
     &:active,
     &:focus {
       background-color: transparent;
-      color: color(h-link, $su-nav-colors);
+      color: $su-color-black;
       box-shadow: none;
     }
 
@@ -63,14 +135,6 @@
       position: absolute;
     }
 
-    // Toggle button variants
-    &--center {
-      @include margin(null auto);
-    }
-
-    &--right {
-      @include margin(null 0 null auto);
-    }
   }
 
   @include grid-media-only('md') {
@@ -83,3 +147,4 @@
     display: none;
   }
 }
+
