@@ -64,3 +64,28 @@
     position: relative; /* child absolute */
   }
 }
+
+@media only screen and (min-width: 992px) and (max-width: 1400px) {
+  .su-masthead {
+    //chemh-masthead
+    >section:last-of-type {
+      // Grid setup.
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-areas: "lockup lockup lockup"
+      "main-nav search-field search-field";
+
+      .su-lockup {
+        margin: 0 auto;
+        margin-bottom: 0.5em;
+      }
+
+      .su-multi-menu.su-multi-menu--right {
+        .su-multi-menu__menu-lv1,
+        >ul {
+          justify-content: center;
+        }
+      }
+    }
+  }
+}

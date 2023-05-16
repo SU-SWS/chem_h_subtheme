@@ -423,20 +423,25 @@
 
 // 1400px and smaller adjustments to the wrapping
 // of the main navigation.
-@media (min-width: 992px) {
-  button.menu-search-button {
-    margin-left: 20px;
-  }
-}
-
 @media (max-width: 1400px) {
+  button.menu-search-button {
+    margin-left: 10px;
+  }
+
   .su-multi-menu.su-multi-menu--dropdowns {
     .su-multi-menu__menu-lv1 {
       >.su-multi-menu__item,
       >.su-multi-menu__item--parent {
-        margin: 0 15px 0 0;
+        margin: 0 10px 0 0;
+      }
+    }
+
+    .su-multi-menu__menu {
+      >.su-multi-menu__item--parent {
+        >.su-nav-toggle {
+          marign-right: 0;
+        }
       }
     }
   }
 }
-
