@@ -28,7 +28,8 @@
   }
 
   h1 {
+    @include centered-column;
+
     color: $su-color-white;
-    // margin-left: calc(100%-200px); <-- needs a dynamic margin-left here
   }
 }
