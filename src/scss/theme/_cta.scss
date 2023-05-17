@@ -5,7 +5,12 @@
 // CTA links
 a {
   &.su-link--action {
-    @include chemh--right-arrow-icon;
+    &:not(.mailto) {
+      @include chemh--right-arrow-icon;
+      &::after {
+        font-size: 25px;
+      }
+    }
 
     &.su-link--external {
       // translate right instead of default diagonal movement
