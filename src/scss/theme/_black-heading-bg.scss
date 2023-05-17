@@ -1,5 +1,13 @@
 @charset "UTF-8";
 
+// Hiding the overflow-x for mobile.
+// Otherwise the black headers blow out the sides.
+@include grid-media-max('md') {
+  body {
+    overflow-x: hidden;
+  }
+}
+
 // Header color outside in the margins.
 .node-stanford-page-su-page-banner {
   margin-bottom: 0;
