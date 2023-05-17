@@ -172,4 +172,19 @@ a {
   }
 }
 
+// Filter-by menu overides.
+@include grid-media-max('lg') {
+  nav {
+    &.filter-menu {
+      button {
+        &::before {
+          background: none;
+          padding: unset;
+          border-radius: unset;
+        }
+      }
+    }
+  }
+}
+
 
