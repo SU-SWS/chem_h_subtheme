@@ -93,6 +93,10 @@
       margin-bottom: 4.5rem;
     }
 
+    @include grid-media-max('md') {
+      width: 100%;
+    }
+
     .su-card__contents {
       padding: 3.8rem 3.8rem 0 3.8rem;
     }

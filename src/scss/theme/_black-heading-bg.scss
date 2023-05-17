@@ -17,28 +17,20 @@
   background: $chemh-color-true-black url("../../assets/png/header-sm-000--cropped.png") no-repeat center/cover;
   position: relative; /* child absolute */
 
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  overflow-x: hidden;
+
   @include grid-media-max('md') {
     background: $chemh-color-true-black url("../../assets/png/header-000-mobile--cropped.png") no-repeat center/cover;
   }
 
   h1 {
+    @include centered-column;
+    @include responsive-spacing('margin-bottom', 3);
+
     color: $su-color-white;
-  }
-
-  &::before,
-  &::after {
-    content: "";
-    position: absolute;
-    /* fill vertically */
-    top: 0;
-    bottom: 0;
-    width: 9600px;
-    right: 100%;
-    background: $chemh-color-true-black;
-  }
-
-  &::after {
-    left: 100%;
-    background: $chemh-color-true-black;
   }
 }
