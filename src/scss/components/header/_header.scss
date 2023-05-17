@@ -17,6 +17,12 @@
       background-color: transparent; // override for general links.
     }
   }
+
+  .su-lockup--option-none {
+    .su-lockup__custom-logo {
+      max-width: 281px;
+    }
+  }
 }
 
 @include grid-media-min('lg') {
@@ -26,12 +32,14 @@
     >section:last-of-type {
       // Grid setup.
       display: grid;
-      grid-template-columns: 310px 1fr;
+      grid-template-columns: 281px 1fr;
       grid-template-areas: "lockup main-nav"
       "search-field search-field";
       align-items: end;
       padding-bottom: 0;
       max-width: $chemh-site-max-width;
+      margin: 0 auto;
+      width: calc(100% - 50px);
 
       .su-lockup {
         grid-area: lockup;
@@ -41,11 +49,44 @@
       .su-multi-menu {
         grid-area: main-nav;
       }
+
+      @media (max-width: 1400px) {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas: "lockup lockup lockup"
+        "main-nav search-field search-field";
+      }
     }
   }
 
   // Header color outside in the margins.
   section {
     position: relative; /* child absolute */
+  }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1450px) {
+  .su-masthead {
+    //chemh-masthead
+    >section:last-of-type {
+      // Grid setup.
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-areas: "lockup lockup lockup"
+      "main-nav search-field search-field";
+
+      .su-lockup {
+        margin: 0 auto;
+        margin-bottom: 0.5em;
+        width: 281px;
+      }
+
+      .su-multi-menu.su-multi-menu--right {
+        .su-multi-menu__menu-lv1,
+        >ul {
+          justify-content: center;
+        }
+      }
+    }
   }
 }
