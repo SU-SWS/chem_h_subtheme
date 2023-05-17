@@ -29,6 +29,7 @@
 
   h1 {
     @include centered-column;
+    @include responsive-spacing('margin-bottom', 3);
 
     color: $su-color-white;
   }
