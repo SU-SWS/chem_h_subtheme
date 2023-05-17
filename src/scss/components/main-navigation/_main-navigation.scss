@@ -430,16 +430,22 @@
 
   .su-multi-menu.su-multi-menu--dropdowns {
     .su-multi-menu__menu-lv1 {
-      >.su-multi-menu__item,
+      // When there is no down caret.
+      >.su-multi-menu__item {
+        margin: 0 20px 0 0;
+      }
+    }
+
+    .su-multi-menu__menu-lv1 {
       >.su-multi-menu__item--parent {
-        margin: 0;
+        margin: 0 10px 0 0;
       }
     }
 
     .su-multi-menu__menu {
       >.su-multi-menu__item--parent {
         >.su-nav-toggle {
-          marign-right: 0;
+          margin-right: 0;
         }
       }
     }
