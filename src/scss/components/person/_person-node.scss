@@ -1,9 +1,32 @@
 @charset "UTF-8";
 
-// Person photo
+// Person header
 
 .content {
   .layout--section-person-header {
+
+    padding-top: 6.5rem;
+    padding-bottom: 3.1rem;
+    margin-top: 0;
+    background: #000 url(../../assets/png/header-sm-000--cropped.png) no-repeat 50%/cover;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    overflow-x: hidden;
+
+    .su-quote__body {
+      color: $su-color-white;
+      
+      .su-person-name h1 {
+        @include chemh-heading--badge;
+        @include type-a;
+        color: $su-color-white;
+      }
+
+    }
+
     .su-quote__media.flex-2-of-12 {
 
       .media-entity-wrapper {
