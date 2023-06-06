@@ -4,7 +4,6 @@
 
 .content {
   .layout--section-person-header {
-
     padding-top: 6.5rem;
     padding-bottom: 3.1rem;
     margin-top: 0;
@@ -14,39 +13,47 @@
     left: 50%;
     -webkit-transform: translateX(-50%);
     transform: translateX(-50%);
-    overflow-x: hidden;
 
-    .su-quote__body {
-      color: $su-color-white;
-      
-      .su-person-name h1 {
-        @include chemh-heading--badge;
-        @include type-a;
+    .su-quote {
+      overflow: visible;
+
+      .su-quote__body {
         color: $su-color-white;
+        
+        .su-person-name h1 {
+          @include chemh-heading--badge;
+          @include type-a;
+          color: $su-color-white;
+        }
+  
+        .su-quote__bio {
+          @include type-e;
+        }
+  
       }
+  
+      .su-quote__media.flex-2-of-12 {
+        width: 0;
 
-    }
-
-    .su-quote__media.flex-2-of-12 {
-
-      .media-entity-wrapper {
-        >* {
-          &::after {
-            @include chemh-news-card--gradient;
-    
-            content: '';
-            height: 0.25em;
-            display: block;
+        .media-entity-wrapper {
+          >* {
+            &::after {
+              @include chemh-news-card--gradient;
+      
+              content: '';
+              height: 0.25em;
+              display: block;
+            }
+          }
+  
+          .field-media-image {
+            border-radius: 0;
+            border-top-right-radius: 40px;
+            position: relative;
+            top: 6rem;
           }
         }
-
-        .field-media-image {
-          border-radius: 0;
-          border-top-right-radius: 40px;
-        }
       }
-
     }
-
   }
 }
