@@ -219,11 +219,17 @@ a {
 
 .su-events-details {
   .su-event-cta {
-    a {
-      color: unset;
-
-      &:hover {
-        background-color: unset;
+    &.su-button {
+      a {
+        &::after {
+          display: none;
+        }
+        
+        color: unset;
+  
+        &:hover {
+          background-color: unset;
+        }
       }
     }
   }
