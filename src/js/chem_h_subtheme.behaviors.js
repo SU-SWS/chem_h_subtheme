@@ -29,6 +29,9 @@
       let queryParam = new URLSearchParams(window.location.search);
       const searchResultsForm = $('#block-chem-h-subtheme-search-form .su-site-search__input');
       searchResultsForm.val(queryParam.get('key'));
+
+      // Person node header profile button
+      $('.su-quote__bio', context).append($('.su-person-profile-link', context).detach());
     })(jQuery);
   },
 
