@@ -73,17 +73,7 @@
       .su-quote__media {
         width: 0;
 
-        .media-entity-wrapper {
-          >* {
-            &::after {
-              @include chemh-news-card--gradient;
-      
-              content: '';
-              height: 0.25em;
-              display: block;
-            }
-          }
-  
+        .media-entity-wrapper {  
           .field-media-image {
             border-radius: 0;
             border-top-right-radius: 40px;
@@ -93,6 +83,14 @@
 
             @include grid-media-min('lg') {
               margin-top: 0;
+            }
+
+            &::after {
+              @include chemh-news-card--gradient;
+
+              content: '';
+              height: 0.25em;
+              display: block;
             }
           }
         }

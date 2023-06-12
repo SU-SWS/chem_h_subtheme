@@ -1,0 +1,70 @@
+@charset "UTF-8";
+
+// Person teasers
+.ds-entity--stanford-person {
+  .su-card {
+    background-color: $su-color-black;
+
+    .media-entity-wrapper {
+      .field-media-image {
+        // border-radius: 0;
+        // border-top-right-radius: 40px;
+        // position: relative;
+        // top: 5rem;
+        // margin-top: -1rem;
+    
+        // @include grid-media-min('lg') {
+        //   margin-top: 0;
+        // }
+  
+        &::after {
+          @include chemh-news-card--gradient;
+  
+          content: '';
+          height: 0.25em;
+          display: block;
+        }
+    
+        img {
+          border-radius: 0;
+          border-top-right-radius: 40px;
+        }
+      }
+    }
+
+    .su-card__contents {
+      text-align: start;
+      
+      .stanford-person {
+        &.node-title {
+          a {
+            @include type-f;
+            color: $su-color-white;
+          }
+        }
+      }
+
+      .su-person-short-title {
+        color: $su-color-white;
+        font-style: italic;
+        font-weight: 300;
+      }
+    }
+  }
+}
+
+// Person lists
+
+// .stanford-people-grid {
+//   .field-media-image {
+//     border-radius: 0;
+//     border-top-right-radius: 40px;
+//     position: relative;
+//     top: 5rem;
+//     margin-top: -1rem;
+
+//     @include grid-media-min('lg') {
+//       margin-top: 0;
+//     }
+//   }
+// }
