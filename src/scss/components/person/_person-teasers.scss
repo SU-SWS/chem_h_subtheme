@@ -4,18 +4,16 @@
 .ds-entity--stanford-person {
   .su-card {
     background-color: $su-color-black;
+    margin-top: 5rem;
+
+    .su-person-photo {
+      padding-bottom: 0;
+    }
 
     .media-entity-wrapper {
       .field-media-image {
-        // border-radius: 0;
-        // border-top-right-radius: 40px;
-        // position: relative;
-        // top: 5rem;
-        // margin-top: -1rem;
-    
-        // @include grid-media-min('lg') {
-        //   margin-top: 0;
-        // }
+        position: relative;
+        bottom: 5rem;
   
         &::after {
           @include chemh-news-card--gradient;
@@ -34,13 +32,18 @@
 
     .su-card__contents {
       text-align: start;
+      padding-top: 0;
+      position: relative;
+      bottom: 2rem;
+      padding-bottom: 2rem;
       
-      .stanford-person {
-        &.node-title {
-          a {
-            @include type-f;
-            color: $su-color-white;
-          }
+      h2 {
+        margin-bottom: 0.5rem;
+
+        a {
+          // @include type-f;
+          font-size: 0.8em;
+          color: $su-color-white;
         }
       }
 
