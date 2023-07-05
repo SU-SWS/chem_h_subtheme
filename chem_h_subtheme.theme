@@ -5,10 +5,20 @@
  */
 
 /**
+ * Implements hook_preprocess().
+ */
+function chem_h_subtheme_preprocess(&$variables, $hook) {
+  if ($hook === 'pattern_news-vertical-teaser') {
+    $variables['use'] = '@chemh_subtheme/news-vertical-teaser/news-vertical-teaser.html.twig';
+  }
+}
+
+/**
  * Prepares variables for the html.html.twig template.
  */
 function chem_h_subtheme_preprocess_html(&$variables) {
-  $variables['stanford_basic_path'] = drupal_get_path('theme', 'stanford_basic');
+  $variables['stanford_basic_path'] = \Drupal::service('extension.list.theme')
+    ->getPath('stanford_basic');
 
   $twittercard = [
     '#tag' => 'meta',
