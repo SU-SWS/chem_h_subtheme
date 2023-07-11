@@ -55,16 +55,59 @@
     }
   }
 
-  .news-vertical-teaser__topics {
-    padding-bottom: 1.7rem;
+  &.su-card {
+    .su-card__contents {
+      .news-vertical-teaser__topics {
+        padding-bottom: 1.7rem;
 
-    a {
-      @include type_f;
+        a {
+          @include type_f;
+          color: $chemh-color-dusk;
+          text-decoration: none;
+          text-transform: uppercase;
+          font-weight: 600;
+        }
 
-      color: $chemh-color-dusk;
-      text-decoration: none;
-      text-transform: uppercase;
+      }
     }
+
+    .su-link {
+      font-size: unset;
+      letter-spacing: unset;
+      color: unset;
+      display: unset;
+      font-weight: unset;
+    }
+
+    .su-card__link {
+      @include type_d;
+  
+      color: $su-color-black;
+      text-decoration: none;
+  
+      &:hover,
+      &:focus {
+        color: $chemh-color-digital-blue;
+        text-decoration: underline;
+      }
+  
+      &:active {
+        color: $su-color-black;
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .news-vertical-teaser__topics {
+    // padding-bottom: 1.7rem;
+
+    // a {
+    //   @include type_f;
+
+    //   color: $chemh-color-dusk;
+    //   text-decoration: none;
+    //   text-transform: uppercase;
+    // }
 
     .su-list-unstyled {
       > li {
@@ -118,23 +161,23 @@
     text-decoration: none;
   }
 
-  .su-card__link {
-    @include type_d;
+  // .su-card__link {
+  //   @include type_d;
 
-    color: $su-color-black;
-    text-decoration: none;
+  //   color: $su-color-black;
+  //   text-decoration: none;
 
-    &:hover,
-    &:focus {
-      color: $chemh-color-digital-blue;
-      text-decoration: underline;
-    }
+  //   &:hover,
+  //   &:focus {
+  //     color: $chemh-color-digital-blue;
+  //     text-decoration: underline;
+  //   }
 
-    &:active {
-      color: $su-color-black;
-      text-decoration: underline;
-    }
-  }
+  //   &:active {
+  //     color: $su-color-black;
+  //     text-decoration: underline;
+  //   }
+  // }
 
   .news-vertical-teaser__footer {
     .su-link--external-box {
