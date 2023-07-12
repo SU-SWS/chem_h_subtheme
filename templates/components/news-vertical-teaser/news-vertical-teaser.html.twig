@@ -59,7 +59,7 @@
     {%- if news_url is not empty -%}
       <a {{ news_url_attributes.addClass('su-news-vertical-teaser__link') }} href="{{ news_url }}">
     {%- endif -%}
-      <h2 class="su-card__link">
+      <h2 class="su-link su-card__link">
         {{- news_vertical_teaser_headline -}}
       </h2>
       {%- if news_url is not empty -%}
@@ -68,27 +68,14 @@
     </div>
   </div>
 
+  <div class="news-vertical-teaser__footer">
+    <div class="su-link--external-box">
+      <a {{ news_url_attributes.addClass('su-news-vertical-teaser__link') }} href="{{ news_url }}" aria-hidden="true">
 
+      <span class="visually-hidden">{{- news_vertical_teaser_headline -}}</span>
 
-    <div class="news-vertical-teaser__footer">
-      <div class="su-link--external-box">
-        <a {{ news_url_attributes.addClass('su-news-vertical-teaser__link') }} href="{{ news_url }}" aria-hidden="true">
-
-        <span class="visually-hidden">{{- news_vertical_teaser_headline -}}</span>
-
-        {%- if news_source is not empty -%}
-        <span class="material-symbols-outlined" aria-hidden="true">
-          arrow_right_alt
-        </span>
-        {%- endif -%}
-
-        {%- if news_ext_url_link_box is not empty -%}
-        <span class="material-symbols-outlined" aria-hidden="true">
-          arrow_outward
-        </span>
-        {%- endif -%}
-        </a>
-      </div>
+      </a>
     </div>
+  </div>
 
 </article>

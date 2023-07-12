@@ -84,6 +84,9 @@
   
       color: $su-color-black;
       text-decoration: none;
+      font-weight: 600;
+      margin-left: 0;
+      margin-right: 0;
   
       &:hover,
       &:focus {
@@ -180,27 +183,112 @@
   // }
 
   .news-vertical-teaser__footer {
+    margin: 0;
+
     .su-link--external-box {
       height: 50px;
       width: 50px;
 
       a {
-        span.material-symbols-outlined {
-          position: absolute;
-          right: 0;
-          bottom: 0;
-          padding: 1.3rem;
-          color: $su-color-white;
-          background-color: $chemh-color-dusk;
+
+        &.su-link--external {
+          &::after {
+            content: "";
+            height: 13px;
+            width: 23px;
+            background-size: 23px 23px;
+            display: inline-block;
+            background-color: $su-color-white;
+            margin: 0;
+            left: 5px;
+            position: relative;
+          }
+
+          &:hover,
+          &:focus,
+          &:active {
+            &::after {
+              transform: unset;
+              -webkit-transform: unset;
+            }
+          }
         }
+
+        &:not(.su-link--external) {
+          &::after {
+            content: "";
+            background: url("../../assets/svg/icon_east_white.svg") no-repeat 0 0;
+            height: 16px;
+            width: 23px;
+            background-size: 23px 19px;
+            display: inline-block;
+          }
+        }
+
+        // &::after {
+        //   content: "";
+        //   background: url("../../assets/svg/icon_east_white.svg") no-repeat 0 0;
+        //   height: 18px;
+        //   width: 23px;
+        //   background-size: 23px 23px;
+        //   display: inline-block;
+        // }
+
+        // &.su-link--external {
+        //   &::after {
+        //     rotate: -45deg;
+        //   }
+        // }
+
+        // &:not(.su-link--external) {
+        //   &::after {
+        //     background: url("../../assets/svg/icon_east_white.svg") no-repeat 0 0;
+        //   }
+        // }
+
+        // @include chemh--right-arrow-icon;
+
+        // content: "";
+        // background: url("../../assets/svg/icon_east_white.svg") no-repeat 0 0;
+        // height: 18px;
+        // width: 23px;
+        // background-size: 23px 23px;
+        // box-shadow: none;
+        // display: inline-block;
+        // position: relative;
+        // margin-left: 1.8rem;
+
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        padding: 1.3rem;
+        color: $su-color-white;
+        background-color: $chemh-color-dusk;
+        -webkit-box-shadow: unset;
+        box-shadow: unset;
 
         &:hover,
         &:focus,
         &:active {
-          span {
-            background-color: $chemh-color-red;
-          }
+          background-color: $chemh-color-red;
         }
+
+        // span.material-symbols-outlined {
+        //   position: absolute;
+        //   right: 0;
+        //   bottom: 0;
+        //   padding: 1.3rem;
+        //   color: $su-color-white;
+        //   background-color: $chemh-color-dusk;
+        // }
+
+        // &:hover,
+        // &:focus,
+        // &:active {
+        //   span {
+        //     background-color: $chemh-color-red;
+        //   }
+        // }
       }
     }
   }
