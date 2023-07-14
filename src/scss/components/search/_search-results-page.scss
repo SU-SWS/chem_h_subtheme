@@ -73,15 +73,14 @@
             order: 3;
             grid-column: span 2;
             @include type-d;
-            // margin-bottom: 1rem;
           }
 
           &.views-field-changed  {
             order: 2;
             display: flex;
-            font-style: italic;
             font-size: 20px;
             margin-top: 2rem;
+            font-weight: 300;
 
             @include grid-media-min('sm') {
               margin-top: 1rem;
