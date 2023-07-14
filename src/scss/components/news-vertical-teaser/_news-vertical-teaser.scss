@@ -80,10 +80,6 @@
 
     .su-link {
       font-size: unset;
-      // letter-spacing: unset;
-      // color: unset;
-      // display: unset;
-      // font-weight: unset;
     }
 
     .su-card__link {
@@ -110,16 +106,6 @@
   }
 
   .news-vertical-teaser__topics {
-    // padding-bottom: 1.7rem;
-
-    // a {
-    //   @include type_f;
-
-    //   color: $chemh-color-dusk;
-    //   text-decoration: none;
-    //   text-transform: uppercase;
-    // }
-
     .su-list-unstyled {
       > li {
         display: inline-block;
@@ -141,7 +127,6 @@
   &.su-card {
     border: none;
     height: 100%;
-    //width: 461px;
 
     @media (max-width: 1550px) {
       margin-bottom: 4.5rem;
@@ -176,24 +161,6 @@
     text-decoration: none;
   }
 
-  // .su-card__link {
-  //   @include type_d;
-
-  //   color: $su-color-black;
-  //   text-decoration: none;
-
-  //   &:hover,
-  //   &:focus {
-  //     color: $chemh-color-digital-blue;
-  //     text-decoration: underline;
-  //   }
-
-  //   &:active {
-  //     color: $su-color-black;
-  //     text-decoration: underline;
-  //   }
-  // }
-
   .news-vertical-teaser__footer {
     margin: 0;
 
@@ -202,33 +169,21 @@
       width: 50px;
 
       a {
-
         &.su-link--external {
+          padding-top: 1.3rem;
 
           &::after {
             content: "";
             background: url("../../assets/svg/icon_arrow_up_right.svg") no-repeat 0 0;
-            // @include link-icon(arrow-up-right, 18px, right);
-            // background: url("../../../../../../../profiles/custom/stanford_profile/themes/stanford_basic/dist/assets/svg/arrow-up-right.svg") no-repeat 0 0;
-            height: 24px;
+            height: 21px;
             width: 27px;
-            background-size: 26px 18px;
+            background-size: 27px 16px;
             display: inline-block;
-            // background-color: $su-color-white;
             margin: 0;
-            // left: 5px;
             position: relative;
-            top: 3px;
+            top: 2px;
             mask: unset;
             mask-size: unset;
-            // mask-image: none;
-            // mask-mode: match-source;
-            // mask-repeat: repeat;
-            // mask-position: center;
-            // mask-clip: border-box;
-            // mask-origin: border-box;
-            // mask-size: auto;
-            // mask-composite: add;
           }
 
           &:hover,
@@ -249,6 +204,8 @@
             width: 27px;
             background-size: 26px 24px;
             display: inline-block;
+            position: relative;
+            top: 1px;
           }
 
           &:hover,
@@ -261,43 +218,10 @@
           }
         }
 
-        // &::after {
-        //   content: "";
-        //   background: url("../../assets/svg/icon_east_white.svg") no-repeat 0 0;
-        //   height: 18px;
-        //   width: 23px;
-        //   background-size: 23px 23px;
-        //   display: inline-block;
-        // }
-
-        // &.su-link--external {
-        //   &::after {
-        //     rotate: -45deg;
-        //   }
-        // }
-
-        // &:not(.su-link--external) {
-        //   &::after {
-        //     background: url("../../assets/svg/icon_east_white.svg") no-repeat 0 0;
-        //   }
-        // }
-
-        // @include chemh--right-arrow-icon;
-
-        // content: "";
-        // background: url("../../assets/svg/icon_east_white.svg") no-repeat 0 0;
-        // height: 18px;
-        // width: 23px;
-        // background-size: 23px 23px;
-        // box-shadow: none;
-        // display: inline-block;
-        // position: relative;
-        // margin-left: 1.8rem;
-
         position: absolute;
         right: 0;
         bottom: 0;
-        padding: 1.3rem;
+        padding: 1rem;
         color: $su-color-white;
         background-color: $chemh-color-dusk;
         -webkit-box-shadow: unset;
@@ -308,23 +232,6 @@
         &:active {
           background-color: $chemh-color-red;
         }
-
-        // span.material-symbols-outlined {
-        //   position: absolute;
-        //   right: 0;
-        //   bottom: 0;
-        //   padding: 1.3rem;
-        //   color: $su-color-white;
-        //   background-color: $chemh-color-dusk;
-        // }
-
-        // &:hover,
-        // &:focus,
-        // &:active {
-        //   span {
-        //     background-color: $chemh-color-red;
-        //   }
-        // }
       }
     }
   }
