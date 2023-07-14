@@ -82,9 +82,9 @@
         a {
           background-color: $chemh-color-red;
 
-          &::after {
+          .su-link--icon,
+          .su-link--icon--external {
             border-bottom: 2px solid white;
-            position: relative;
           }
         }
       }
@@ -167,59 +167,10 @@
       width: 50px;
 
       a {
-        &.su-link--external {
-          padding-top: 1.3rem;
-
-          &::after {
-            content: "";
-            background: url("../../assets/svg/icon_arrow_up_right.svg") no-repeat 0 0;
-            height: 21px;
-            width: 27px;
-            background-size: 27px 16px;
-            display: inline-block;
-            margin: 0;
-            position: relative;
-            top: 2px;
-            mask: unset;
-            mask-size: unset;
-          }
-
-          &:hover,
-          &:focus,
-          &:active {
-            &::after {
-              transform: unset;
-              -webkit-transform: unset;
-            }
-          }
-        }
-
-        &:not(.su-link--external) {
-          &::after {
-            content: "";
-            background: url("../../assets/svg/icon_east_white.svg") no-repeat 0 0;
-            height: 24px;
-            width: 27px;
-            background-size: 26px 24px;
-            display: inline-block;
-            position: relative;
-            top: 1px;
-          }
-
-          &:hover,
-          &:focus,
-          &:active {
-            &::after {
-              border-bottom: 2px solid white;
-              position: relative;
-            }
-          }
-        }
-
         position: absolute;
         right: 0;
         bottom: 0;
-        padding: 1rem;
+        padding: 1.3rem;
         color: $su-color-white;
         background-color: $chemh-color-dusk;
         -webkit-box-shadow: unset;

@@ -74,6 +74,17 @@
 
       <span class="visually-hidden">{{- news_vertical_teaser_headline -}}</span>
 
+      {%- if news_source is not empty and news_ext_url_link_box is empty -%}
+      <span class="su-link--icon" aria-hidden="true">
+        <i class="fas fa-arrow-right"></i>
+      </span>
+      {%- endif -%}
+
+      {%- if news_ext_url_link_box is not empty -%}
+      <span class="su-link--icon--external" aria-hidden="true">
+        <i class="fas fa-arrow-right" style="rotate: -45deg;"></i>
+      </span>
+      {%- endif -%}
       </a>
     </div>
   </div>
