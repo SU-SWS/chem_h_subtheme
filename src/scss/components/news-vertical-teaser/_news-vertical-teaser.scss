@@ -27,8 +27,11 @@
       .su-link--external-box {
 
         a {
-          span.material-symbols-outlined {
-            background-color: $chemh-color-red;
+          background-color: $chemh-color-red;
+
+          &::after {
+            border-bottom: 2px solid white;
+            position: relative;
           }
         }
       }
@@ -56,6 +59,10 @@
   }
 
   &.su-card {
+    .su-media__wrapper {
+      margin-bottom: 0;
+    }
+    
     .su-card__contents {
       .news-vertical-teaser__topics {
         padding-bottom: 1.7rem;
@@ -73,10 +80,10 @@
 
     .su-link {
       font-size: unset;
-      letter-spacing: unset;
-      color: unset;
-      display: unset;
-      font-weight: unset;
+      // letter-spacing: unset;
+      // color: unset;
+      // display: unset;
+      // font-weight: unset;
     }
 
     .su-card__link {
@@ -87,6 +94,7 @@
       font-weight: 600;
       margin-left: 0;
       margin-right: 0;
+      margin-bottom: 1rem;
   
       &:hover,
       &:focus {
@@ -145,6 +153,10 @@
 
     .su-card__contents {
       padding: 3.8rem 3.8rem 0 3.8rem;
+
+      &:not(.su-card--icon) {
+        padding-top: 3.8rem;
+      }
     }
 
     a {
@@ -192,16 +204,31 @@
       a {
 
         &.su-link--external {
+
           &::after {
             content: "";
-            height: 13px;
-            width: 23px;
-            background-size: 23px 23px;
+            background: url("../../assets/svg/icon_arrow_up_right.svg") no-repeat 0 0;
+            // @include link-icon(arrow-up-right, 18px, right);
+            // background: url("../../../../../../../profiles/custom/stanford_profile/themes/stanford_basic/dist/assets/svg/arrow-up-right.svg") no-repeat 0 0;
+            height: 24px;
+            width: 27px;
+            background-size: 26px 18px;
             display: inline-block;
-            background-color: $su-color-white;
+            // background-color: $su-color-white;
             margin: 0;
-            left: 5px;
+            // left: 5px;
             position: relative;
+            top: 3px;
+            mask: unset;
+            mask-size: unset;
+            // mask-image: none;
+            // mask-mode: match-source;
+            // mask-repeat: repeat;
+            // mask-position: center;
+            // mask-clip: border-box;
+            // mask-origin: border-box;
+            // mask-size: auto;
+            // mask-composite: add;
           }
 
           &:hover,
@@ -218,10 +245,19 @@
           &::after {
             content: "";
             background: url("../../assets/svg/icon_east_white.svg") no-repeat 0 0;
-            height: 16px;
-            width: 23px;
-            background-size: 23px 19px;
+            height: 24px;
+            width: 27px;
+            background-size: 26px 24px;
             display: inline-block;
+          }
+
+          &:hover,
+          &:focus,
+          &:active {
+            &::after {
+              border-bottom: 2px solid white;
+              position: relative;
+            }
           }
         }
 
