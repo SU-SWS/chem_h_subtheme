@@ -14,6 +14,7 @@
     @include chemh--shadow-news-card-hover;
 
     .su-card__link {
+      display: block;
       color: $chemh-color-digital-blue;
       text-decoration: underline;
     }
@@ -28,11 +29,6 @@
 
         a {
           background-color: $chemh-color-red;
-
-          &::after {
-            border-bottom: 2px solid white;
-            position: relative;
-          }
         }
       }
     }
@@ -190,6 +186,7 @@
           &:focus,
           &:active {
             &::after {
+              border-bottom: 2px solid white;
               transform: unset;
               -webkit-transform: unset;
             }
