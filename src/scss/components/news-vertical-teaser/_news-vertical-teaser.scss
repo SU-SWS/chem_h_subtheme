@@ -6,6 +6,46 @@
   border-bottom-left-radius: 6rem;
   position: relative;
 
+  // Whole card hover and focus
+  &:hover,
+  &:focus,
+  &:focus-within,
+  &:active {
+    @include chemh--shadow-news-card-hover;
+
+    .su-card__link {
+      display: block;
+      color: $chemh-color-digital-blue;
+      text-decoration: underline;
+    }
+
+    .su-card .su-media__wrapper img,
+    .su-card .su-media__wrapper img {
+      transform: none;
+    }
+
+    .news-vertical-teaser__footer {
+      .su-link--external-box {
+
+        a {
+          background-color: $chemh-color-red;
+        }
+      }
+    }
+  }
+
+  .su-media__wrapper {
+    >* {
+      &::after {
+        @include chemh-news-card--gradient;
+
+        content: '';
+        height: 0.25em;
+        display: block;
+      }
+    }
+  }
+
   &.su-card {
     .su-media__wrapper {
       margin-bottom: 0;
@@ -54,51 +94,6 @@
       &:active {
         color: $su-color-black;
         text-decoration: underline;
-      }
-    }
-  }
-
-  // Whole card hover and focus
-  &:hover,
-  &:focus,
-  &:focus-within,
-  &:active {
-    @include chemh--shadow-news-card-hover;
-
-    .su-card__link {
-      display: block;
-      color: $chemh-color-digital-blue;
-      text-decoration: underline;
-    }
-
-    .su-card .su-media__wrapper img,
-    .su-card .su-media__wrapper img {
-      transform: none;
-    }
-
-    .news-vertical-teaser__footer {
-      .su-link--external-box {
-
-        a {
-          background-color: $chemh-color-red;
-
-          .su-link--icon,
-          .su-link--icon--external {
-            border-bottom: 2px solid white;
-          }
-        }
-      }
-    }
-  }
-
-  .su-media__wrapper {
-    >* {
-      &::after {
-        @include chemh-news-card--gradient;
-
-        content: '';
-        height: 0.25em;
-        display: block;
       }
     }
   }
@@ -180,6 +175,11 @@
         &:focus,
         &:active {
           background-color: $chemh-color-red;
+          
+          .su-link--icon,
+          .su-link--icon--external {
+            border-bottom: 2px solid white;
+          }
         }
       }
     }
