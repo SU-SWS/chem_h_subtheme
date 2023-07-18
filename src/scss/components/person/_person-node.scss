@@ -25,14 +25,17 @@
           display: flex;
           flex-direction: column;
 
-          .order-last {
+          h1 {
             @include chemh-heading--badge;
             @include type-a;
             color: $su-color-white;
-            order: 2;
-
+            
             &::before {
               margin-bottom: 2rem;
+            }
+            
+            &.order-last {
+              order: 2;
             }
           }
 
@@ -42,7 +45,6 @@
             margin-bottom: 2rem;
             opacity: .9;
           }
-
         }
   
         .su-quote__bio {
