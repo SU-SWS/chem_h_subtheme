@@ -1,7 +1,9 @@
 @charset "UTF-8";
 
 .ptype-stanford-lists,
-.ptype-stanford-entity {
+.paragraph--type--stanford-lists,
+.ptype-stanford-entity,
+.paragraph--type--stanford-entity {
   .su-list-headline,
   .su-entity-headline {
     margin-bottom: 10rem;

@@ -68,27 +68,25 @@
     </div>
   </div>
 
+  <div class="news-vertical-teaser__footer">
+    <div class="su-link--external-box">
+      <a {{ news_url_attributes.addClass('su-news-vertical-teaser__link') }} href="{{ news_url }}" aria-hidden="true">
 
+      <span class="visually-hidden">{{- news_vertical_teaser_headline -}}</span>
 
-    <div class="news-vertical-teaser__footer">
-      <div class="su-link--external-box">
-        <a {{ news_url_attributes.addClass('su-news-vertical-teaser__link') }} href="{{ news_url }}" aria-hidden="true">
+      {%- if news_source is not empty and news_ext_url_link_box is empty -%}
+      <span class="su-link--icon" aria-hidden="true">
+        <i class="fas fa-arrow-right"></i>
+      </span>
+      {%- endif -%}
 
-        <span class="visually-hidden">{{- news_vertical_teaser_headline -}}</span>
-
-        {%- if news_source is not empty -%}
-        <span class="material-symbols-outlined" aria-hidden="true">
-          arrow_right_alt
-        </span>
-        {%- endif -%}
-
-        {%- if news_ext_url_link_box is not empty -%}
-        <span class="material-symbols-outlined" aria-hidden="true">
-          arrow_outward
-        </span>
-        {%- endif -%}
-        </a>
-      </div>
+      {%- if news_ext_url_link_box is not empty -%}
+      <span class="su-link--icon--external" aria-hidden="true">
+        <i class="fas fa-arrow-right" style="rotate: -45deg;"></i>
+      </span>
+      {%- endif -%}
+      </a>
     </div>
+  </div>
 
 </article>
