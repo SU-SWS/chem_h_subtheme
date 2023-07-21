@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 // Person teasers
-.ds-entity--stanford-person {
+.paragraph--type--stanford-entity {  
   .su-card {
     background-color: $su-color-black;
     margin-top: 5rem;
@@ -10,23 +10,21 @@
       padding-bottom: 0;
     }
 
-    .media-entity-wrapper {
-      .field-media-image {
-        position: relative;
-        bottom: 5rem;
+    .field-media-image {
+      position: relative;
+      bottom: 5rem;
+
+      &::after {
+        @include chemh-news-card--gradient;
+
+        content: '';
+        height: 0.25em;
+        display: block;
+      }
   
-        &::after {
-          @include chemh-news-card--gradient;
-  
-          content: '';
-          height: 0.25em;
-          display: block;
-        }
-    
-        img {
-          border-radius: 0;
-          border-top-right-radius: 40px;
-        }
+      img {
+        border-radius: 0;
+        border-top-right-radius: 40px;
       }
     }
 
@@ -54,20 +52,24 @@
       }
     }
   }
+
+  // One teaser
+  @include grid-media-min('sm') {
+    .su-entity-item>div:first-child:last-child .ds-entity--stanford-person .su-card {
+      .su-person-photo {
+        padding-bottom: 30px;
+    
+        .field-media-image {
+          bottom: 0;
+        }
+      }
+  
+      .su-card__contents {
+        bottom: 0;
+        padding-top: unset;
+        padding-bottom: unset;
+      }
+    }
+  }
 }
 
-// Person lists
-
-// .stanford-people-grid {
-//   .field-media-image {
-//     border-radius: 0;
-//     border-top-right-radius: 40px;
-//     position: relative;
-//     top: 5rem;
-//     margin-top: -1rem;
-
-//     @include grid-media-min('lg') {
-//       margin-top: 0;
-//     }
-//   }
-// }
