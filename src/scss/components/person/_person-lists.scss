@@ -2,9 +2,50 @@
 
 // Person lists
 .stanford-people-grid {
-  .views-field-title {
-    h2 {
-      letter-spacing: -.016em;
+  li {
+    // justify-items: center;
+    background-color: #2e2d29;
+    padding: 3.6rem;
+    margin-right: 1.4rem;
+
+    .views-field-title {
+      a {
+        &:hover,
+        &:focus,
+        &:active {
+          color: $su-color-white;
+        }
+
+        .field-media-image {
+          position: relative;
+          // bottom: 5rem;
+    
+          &::after {
+            @include chemh-news-card--gradient;
+    
+            content: '';
+            height: 0.25em;
+            display: block;
+            // width: 14rem;
+          }
+    
+          img {
+            border-radius: 0;
+            border-top-right-radius: 40px;
+          }
+        }
+      }
+  
+      h2 {
+        letter-spacing: -.016em;
+        color: $su-color-white;
+      }
+    }
+
+    .views-field-su-person-short-title {
+      color: $su-color-white;
+      font-style: italic;
+      font-weight: 300;
     }
   }
 }
