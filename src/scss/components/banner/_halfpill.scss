@@ -8,7 +8,7 @@
 
 .chemh-wrapper--banner-halfpill {
   @include grid-media-min('lg') {
-    max-width: 1800px;
+    max-width: 2500px;
     margin: 0 auto;
   }
 
@@ -128,8 +128,34 @@
   .overlay-left {
     align-items: baseline;
     display: grid;
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: 25%, 75%;
     grid-template-areas: "card media";
+    column-gap: 100px;
+
+    @include grid-media('lg') {
+      border: 2px solid orange;
+      grid-template-columns: 40% 60%;
+      column-gap: 5%;
+    }
+
+    @include grid-media('xl') {
+      border: 2px solid Lime;
+      grid-template-columns: 40% 60%;
+    }
+
+    @include grid-media-min('2xl') {
+      border: 2px solid  red;
+      grid-template-columns: 50% 50%;
+    }
+
+    @media (min-width: 2500px) {
+      .su-hero__media {
+        img {
+          border-top-right-radius: 20px;
+          border-bottom-right-radius: 20px
+        }
+      }
+    }
 
     @include grid-media-max('sm') {
       display: block;
@@ -150,6 +176,7 @@
 
       .su-hero__card {
         grid-area: card;
+        justify-self: end;
       }
 
       .su-hero__media {
