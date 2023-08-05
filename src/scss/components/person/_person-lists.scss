@@ -3,16 +3,15 @@
 // Person lists
 .stanford-people-grid {
   li {
-    // justify-items: center;
     background-color: #2e2d29;
-    padding: 0 3.6rem;
-    // padding-bottom: 0;
-    // padding-top: 0;
+    padding-left: 3.6rem;
+    padding-right: 3.6rem;
+    padding-top: 0;
+    padding-bottom: 4rem;
     margin-bottom: 2rem;
     margin-top: 2rem;
     position: relative;
     top: 0;
-    // margin-right: 1.4rem;
 
 
     .views-field-title {
@@ -28,7 +27,12 @@
 
         .field-media-image {
           position: relative;
-          // bottom: 5rem;
+          padding-bottom: 2rem;
+
+          @media only screen and (max-width: 767px) and (min-width: 400px)  {
+            padding-right: 6rem;
+            padding-left: 6rem;
+          }
     
           &::after {
             @include chemh-news-card--gradient;
@@ -36,12 +40,12 @@
             content: '';
             height: 0.25em;
             display: block;
-            // width: 14rem;
           }
     
           img {
             border-radius: 0;
             border-top-right-radius: 40px;
+            width: 100%;
           }
         }
       }
@@ -66,17 +70,3 @@
     }
   }
 }
-
-// .stanford-people-grid {
-//   .field-media-image {
-//     border-radius: 0;
-//     border-top-right-radius: 40px;
-//     position: relative;
-//     top: 5rem;
-//     margin-top: -1rem;
-
-//     @include grid-media-min('lg') {
-//       margin-top: 0;
-//     }
-//   }
-// }

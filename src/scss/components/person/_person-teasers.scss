@@ -8,23 +8,22 @@
     .su-card {
       container-type: inline-size;
       background-color: $su-color-black;
-      // margin-top: 5rem;
       margin-top: 2rem;
       border: none;
   
       .su-person-photo {
-        padding: 0 3.6rem;
+        padding: 0 3.6rem 1rem 3.6rem;
       }
 
       @container (min-width: 400px) {
         .su-person-photo {
-          padding: 0;
+          padding-left: 0;
+          padding-right: 0;
         }
       }
   
       .field-media-image {
         position: relative;
-        // bottom: 5rem;
         bottom: 2rem;
   
         &::after {
@@ -44,16 +43,12 @@
       .su-card__contents {
         text-align: start;
         padding-top: 0;
-        // position: relative;
-        // bottom: 2rem;
-        // padding-bottom: 2rem;
         padding-bottom: 5rem;
         
         h2 {
           margin-bottom: 0.5rem;
   
           a {
-            // @include type-f;
             font-size: 0.8em;
             color: $su-color-white;
           }
@@ -73,7 +68,6 @@
   @include grid-media-min('sm') {
     .su-entity-item>div:first-child:last-child .ds-entity--stanford-person .su-card {
       .su-person-photo {
-        // padding-bottom: 30px;
         padding: 0;
     
         .field-media-image {
@@ -89,4 +83,3 @@
     }
   }
 }
-
