@@ -3,5 +3,7 @@
 .su-wysiwyg-text {
     h2 {
         @include chemh-heading--badge;
+
+        width: fit-content;
     }
 }
