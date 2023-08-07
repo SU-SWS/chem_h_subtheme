@@ -48,8 +48,7 @@ var webpackConfig = {
   devtool: 'source-map',
   // What build?
   entry: {
-    "chem_h_subtheme":  path.resolve(srcSass, "config/index.scss"),
-    "scripts":       path.resolve(srcJS,   "scripts.js"),
+    "chem_h_subtheme":  path.resolve(srcSass, "config/index.scss")
   },
   // Where put build?
   output: {

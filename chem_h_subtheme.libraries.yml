@@ -92,7 +92,7 @@ allpages:
    theme:
      dist/css/chem_h_subtheme.css: { minified: true }
   js:
-    dist/js/scripts.js: { scope: footer }
+    src/js/chem_h_subtheme.behaviors.js: { }
 
 fontawesome:
   version: 5.15.4
