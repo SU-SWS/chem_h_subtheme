@@ -6,6 +6,14 @@
 }
 
 .su-page-components {
+  div {
+    &.ptype-stanford-card {
+      img {
+        width: 100%;
+      }
+    }
+  }
+  
   div[data-react-columns="12"] {
     &.ptype-stanford-card,
     &.ptype-stanford-wysiwyg,
