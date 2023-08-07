@@ -34,9 +34,6 @@
       $('.su-quote__bio', context).append($('.su-person-profile-link', context).detach());
 
       // Square image for Person lists
-      // $('.stanford-people-grid img', context).each(function(){
-      //   $(this).first().attr('src', $(this).first().attr('src').replace(/styles\/.*\/public/g, 'styles/square_1900/public'));
-      // })
       $('.stanford-people-grid img', context).each(function(){
         $(this).first().attr('src', $(this).first().attr('src').replace(/styles\/.*\/public/g, 'styles/large_square/public')).removeAttr('height width');
       })
