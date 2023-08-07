@@ -156,3 +156,41 @@ function chem_h_subtheme_preprocess_banner(&$variables) {
   $variables['attributes']['class'][] = $paragraph->getBehaviorSetting('react_paragraphs:banner_variant_info', 'banner_style', 'chemh-wrapper--banner-default');
 }
 
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function chem_h_subtheme_preprocess_field__node__title__stanford_person(&$variables) {
+  /** @var \Drupal\node\NodeInterface $node */
+  $node = $variables['element']['#object'];
+  $type_terms = [];
+  $term_storage = \Drupal::entityTypeManager()->getStorage('taxonomy_term');
+  if ($node->hasField('su_person_type_group') && !$node->get('su_person_type_group')
+      ->isEmpty()) {
+    /** @var \Drupal\Core\Field\Plugin\Field\FieldType\EntityReferenceItem $field_item */
+    foreach ($node->get('su_person_type_group') as $field_item) {
+      try {
+        $term_id = $field_item->get('target_id')->getString();
+        $type_terms[] = $term_storage->load($term_id)->label();
+      }
+      catch (\Throwable $e) {
+        continue;
+      }
+    }
+  }
+  $terms_to_display = 1;
+
+  if ($type_terms && $variables['items'][0]['content']['#tag'] == 'h1') {
+    $variables['items'][0]['content']['#attributes']['class'][] = 'order-last';
+    $variables['items'][0]['content'] = [
+      'title' => $variables['items'][0]['content'],
+      'type' => [
+        '#type' => 'html_tag',
+        '#tag' => 'div',
+        '#attributes' => [
+          'class' => ['chem-h-person-type', 'order-first'],
+        ],
+        '#value' => implode(', ', array_slice($type_terms, 0, $terms_to_display)),
+      ],
+    ];
+  }
+}

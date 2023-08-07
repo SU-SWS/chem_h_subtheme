@@ -29,6 +29,14 @@
       let queryParam = new URLSearchParams(window.location.search);
       const searchResultsForm = $('#block-chem-h-subtheme-search-form .su-site-search__input');
       searchResultsForm.val(queryParam.get('key'));
+
+      // Person node header profile button
+      $('.su-quote__bio', context).append($('.su-person-profile-link', context).detach());
+
+      // Square image for Person lists
+      $('.stanford-people-grid img', context).each(function(){
+        $(this).first().attr('src', $(this).first().attr('src').replace(/styles\/.*\/public/g, 'styles/large_square/public')).removeAttr('height width');
+      })
     })(jQuery);
   },
 
