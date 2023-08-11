@@ -62,24 +62,16 @@
       }
     }
   } 
-   
+}
 
-  // One teaser
-  @include grid-media-min('sm') {
-    .su-entity-item>div:first-child:last-child .ds-entity--stanford-person .su-card {
-      .su-person-photo {
-        padding: 0;
-    
-        .field-media-image {
-          bottom: 0;
-        }
-      }
-  
-      .su-card__contents {
-        bottom: 0;
-        padding-top: unset;
-        padding-bottom: unset;
-      }
+// Individual teaser in one column layout
+@include grid-media-min('sm') {
+  .layout--layout-paragraphs-one-column .paragraph--type--stanford-entity .su-entity-item>div:first-child:last-child .ds-entity--stanford-person .su-card {
+    display: block;
+
+    .su-person-photo {
+      width: unset;
+      margin: 0 auto;
     }
   }
 }
