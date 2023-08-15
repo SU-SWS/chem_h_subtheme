@@ -4,6 +4,7 @@
 // additional button classes as needed.
 // links styled into buttons
 
+.stanford-news-vertical-teaser-term .more-link a,
 .su-button,
 .su-button.su-link,
 .su-button--big,
@@ -32,6 +33,8 @@ button  {
 .su-button.su-link:hover,
 .su-button:focus,
 .su-button:hover,
+.stanford-news-vertical-teaser-term .more-link a:focus,
+.stanford-news-vertical-teaser-term .more-link a:hover,
 [type=button]:focus,
 [type=button]:hover,
 [type=image]:focus,
@@ -50,6 +53,7 @@ button:hover {
 }
 
 // Active links.
+.stanford-news-vertical-teaser-term .more-link a,
 .su-button.su-link:active,
 .su-button:active,
 .su-button--big.su-link:active,
@@ -75,6 +79,7 @@ button:hover {
 
 main,
 footer {
+  .stanford-news-vertical-teaser-term .more-link a,
   .su-button.su-link,
   .su-button,
   .su-button--big.su-link,
@@ -113,6 +118,7 @@ footer {
     }
   }
 
+  .stanford-news-vertical-teaser-term .more-link a,
   .su-button {
     &.su-link--external {
       &::after {
