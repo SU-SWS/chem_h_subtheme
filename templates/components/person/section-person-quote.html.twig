@@ -1,0 +1,35 @@
+{#
+/**
+ * Header Quote Section for the Person content type.
+ */
+#}
+
+{%- set attributes = attributes.addClass(['layout--section-person-header']) -%}
+{%- set quote_attributes = create_attribute() -%}
+
+<div {{ attributes }}>
+  <div {{ quote_attributes.addClass(['su-quote', 'centered-container', 'flex-container']) }}>
+    <section class="su-quote__body flex-lg-7-of-12">
+      {%- if content.quote_name|render is not empty -%}
+      <div {{ region_attributes.quote_name.addClass(['su-quote__name']) }}>
+        {{- content.quote_name -}}
+      </div>
+      {%- endif -%}
+      {%- if content.quote_long_title|render is not empty -%}
+      <div {{ region_attributes.quote_long_title.addClass(['su-quote__bio']) }}>
+        {{- content.quote_long_title -}}
+      </div>
+      {%- endif -%}
+    </section>
+    <div class="flex-lg-4-of-12">
+      <div {{ region_attributes.quote_media.addClass(['su-quote__media', 'flex-2-of-12']) }}>
+        {{- content.quote_media -}}
+      </div>
+    </div>
+    {%- if content.content|render is not empty -%}
+    <div {{ region_attributes.content.addClass(['su-quote__content']) }}>
+      {{- content.content -}}
+    </div>
+    {%- endif -%}
+  </div>
+</div>
