@@ -2,9 +2,9 @@
 
 .su-event-card {
   @include chemh--shadow-custom-button-default;
-
   border-bottom-left-radius: 6rem;
-  position: relative;
+  padding-top: 0;
+  // position: relative;
 
   // Whole card hover and focus
   &:hover,
@@ -13,47 +13,70 @@
   &:active {
     @include chemh--shadow-news-card-hover;
 
-    .su-card__link {
-      display: block;
-      color: $chemh-color-digital-blue;
-      text-decoration: underline;
-    }
+    // .su-card__link {
+      // display: block;
+      // color: $chemh-color-digital-blue;
+      // text-decoration: underline;
+    // }
 
-    .su-card .su-media__wrapper img,
-    .su-card .su-media__wrapper img {
-      transform: none;
-    }
+    // .su-card .su-media__wrapper img,
+    // .su-card .su-media__wrapper img {
+    //   transform: none;
+    // }
 
-    .news-vertical-teaser__footer {
-      .su-link--external-box {
+    .su-event-card__footer {
+      // .su-link--external-box {
 
-        a {
-          background-color: $chemh-color-red;
-        }
+      a {
+        background-color: $chemh-color-red;
       }
-    }
+      }
+    // }
   }
 
-  .su-media__wrapper {
-    >* {
-      &::after {
-        @include chemh-news-card--gradient;
+  // .su-media__wrapper {
+  //   >* {
+  //     &::after {
+  //       @include chemh-news-card--gradient;
 
-        content: '';
-        height: 0.25em;
-        display: block;
-      }
-    }
-  }
+  //       content: '';
+  //       height: 0.25em;
+  //       display: block;
+  //     }
+  //   }
+  // }
 
   &.su-card {
-    .su-media__wrapper {
-      margin-bottom: 0;
+    // .su-media__wrapper {
+    //   margin-bottom: 0;
+    // }
+
+    .su-event-list-item__date {
+      background: black;
+      width: fit-content;
+      padding: 0.8rem 3rem;
+      max-width: unset;
+
+      .su-event-list-item__date__seperator {
+        color: #fff;
+        font-weight: 900;
+        margin-right: 2rem;
+        margin-left: 2rem;
+      }
+
+      .su-event-start-month,
+      .su-event-start-date,
+      .su-event-end-month,
+      .su-event-end-date {
+        font-weight: 400;
+        color: #fff;
+      }
     }
     
-    .su-card__contents {
-      .news-vertical-teaser__topics {
-        padding-bottom: 1.7rem;
+    .su-event-list-item__details {
+      .event-list-item__type {
+        display: block;
+        padding-bottom: 1rem;
 
         a {
           @include type_f;
@@ -61,6 +84,18 @@
           text-decoration: none;
           text-transform: uppercase;
           font-weight: 600;
+        }
+      }
+
+      h2 {
+        a {
+          &:hover,
+          &:focus,
+          &:focus-within,
+          &:active {
+            color: $chemh-color-digital-blue;
+          }
+
         }
       }
     }
@@ -154,20 +189,20 @@
     text-decoration: none;
   }
 
-  .news-vertical-teaser__footer {
-    margin: 0;
+  .su-event-card__footer {
+    margin-top: 2rem;
 
-    .su-link--external-box {
-      height: 50px;
-      width: 50px;
+    // .su-link--external-box {
+    //   height: 50px;
+    //   width: 50px;
 
       a {
         position: absolute;
         right: 0;
         bottom: 0;
         padding: 1.3rem;
-        color: $su-color-white;
         background-color: $chemh-color-dusk;
+        color: $su-color-white;
         -webkit-box-shadow: unset;
         box-shadow: unset;
 
@@ -179,14 +214,15 @@
           .su-link--icon,
           .su-link--icon--external {
             border-bottom: 2px solid white;
+            color: $su-color-white;
           }
         }
       }
-    }
+    // }
   }
 
   // Removing the external icon to move it to the
-  // lower right corner of news card.
+  // lower right corner of event card.
   a {
     &.su-link--external {
       &::after {

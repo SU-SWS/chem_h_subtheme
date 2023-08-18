@@ -39,14 +39,14 @@
 
 <div {{ attributes }}>
   <div class="su-event-list-item__date">
-      <div class="su-date-stacked su-date-stacked--no-background" aria-hidden="true">
-        <span class="su-event-start-month">{{ start_month }}</span>
-        <span class="su-event-start-date">{{ start_date }}</span>
+    <div class="su-date-stacked su-date-stacked--no-background" aria-hidden="true">
+      <span class="su-event-start-month">{{ start_month }}</span>
+      <span class="su-event-start-date">{{ start_date }}</span>
     </div>
 
     {# Seperator and end date should be conditional #}
     {%- if start_date != end_date or start_month != end_month %}
-      <span class="su-event-list-item__date__seperator" aria-hidden="true">&ndash; to &ndash;</span>
+      <span class="su-event-list-item__date__seperator" aria-hidden="true">&#8212;</span>
 
       <div class="su-date-stacked su-date-stacked--no-background" aria-hidden="true">
         <span class="su-event-end-month">{{ end_month }}</span>
@@ -148,7 +148,7 @@
     </div>
   </div>
   
-  <div class="event-card__footer">
+  <div class="su-event-card__footer">
     <a {{ link_attributes }} href="{{ url|render_clean }}" aria-hidden="true">
 
       {%- if not is_external -%}
