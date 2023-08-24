@@ -24,7 +24,7 @@
       $('.su-quote__bio', context).append($('.su-person-profile-link', context).detach());
 
       // Square image for Person lists
-      $('.stanford-people-grid img').each(function () {
+      $('.stanford-people-grid img, .taxonomy-term-pages.people-terms img').each(function () {
         const newImgSrc = $(this).attr('src').replace(/styles\/.*\/public/g, 'styles/large_square/public');
         $(this).attr('src', newImgSrc)
           .removeAttr('height')
