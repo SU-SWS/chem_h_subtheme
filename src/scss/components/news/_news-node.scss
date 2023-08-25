@@ -3,15 +3,18 @@
 .news.node {
   .header-spacer {
     // height: 32rem;
-    height: 34rem;
+    // height: 34rem;
+    height: 40rem;
     // background: $su-color-black url(../../assets/png/header-sm-000--cropped.png) no-repeat 50%/cover;
     background-color: $su-color-black;
+    box-shadow: 0 3px 6px rgba(0,0,0,.13), 0 3px 6px rgba(0,0,0,.1);
   }
 
   .layout--section-news-header {
     position: relative;
     // top: -36rem;
-    top: -38.2rem;
+    // top: -38.2rem;
+    top: -41rem;
     background: $su-color-white;;
     max-width: 80%;
     margin: 0 auto;
@@ -24,7 +27,8 @@
         max-width: 100%;
   
         .su-news-title {
-          margin-bottom: 2rem;
+          margin-bottom: 4rem;
+          // margin-bottom: 2rem;
           // margin-bottom: 3rem;
           // @include responsive-spacing('margin-bottom', 3);
   
@@ -44,6 +48,10 @@
             padding-bottom: 6rem;
             margin-bottom: 0;
             text-align: center;
+
+            @include grid-media-max('md') {
+              font-size: 4.5rem;
+            }
 
             @include grid-media-max('sm') {
               font-size: 4rem;
