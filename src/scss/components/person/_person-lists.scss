@@ -1,7 +1,8 @@
 @charset "UTF-8";
 
 // Person lists
-.stanford-people-grid {
+.stanford-people-grid,
+.taxonomy-term-pages.people-terms {
   li {
     background-color: #2e2d29;
     padding-left: 3.6rem;
@@ -50,9 +51,11 @@
         }
       }
   
-      h2 {
+      h2,
+      h3 {
         letter-spacing: -.016em;
         color: $su-color-white;
+        line-height: 1.4;
       }
     }
 
