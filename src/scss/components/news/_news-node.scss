@@ -147,7 +147,15 @@
   }
 
   .more-link {
-    @include chemh--right-arrow-icon;
+    a {
+      @include chemh-button--gradient;
+
+      &:focus,
+      &:hover {
+        background-color: $chemh-color-hover-peach;
+      }
+
+    }
   }
 
   // Related news cards in footer.
