@@ -1,0 +1,90 @@
+@charset "UTF-8";
+
+.node.event {
+  .section-editorial-content {
+    // background: $su-color-black url(../assets/png/header-sm-000--cropped.png) no-repeat 50%/cover;
+    background: $su-color-black url(../../assets/png/header-sm-000--cropped.png) no-repeat 50%/cover;
+    // background: $su-color-black;
+    max-width: 100%;
+    width: 100%;
+    padding-bottom: 0;
+    // box-shadow: 0 3px 6px rgba(0,0,0,.13), 0 3px 6px rgba(0,0,0,.1);
+
+    .su-event-type {
+      text-align: center;
+
+      a {
+        color: $su-color-white;
+        text-transform: uppercase;
+        letter-spacing: .3rem;
+        margin-bottom: 2rem;
+        opacity: .9;
+      }
+    }
+
+    .su-event-headline {
+      width: 100%;
+      max-width: 100%;
+      text-align: center;
+
+      h1 {
+        @include chemh-heading--badge;
+        @include responsive-spacing('margin-bottom', 3);
+
+        color: $su-color-white;
+
+        &::before {
+          // margin-right: auto;
+          // margin-left: auto;
+          margin: 3rem auto;
+        }
+      }
+    }
+
+    .su-event-subheadline {
+      width: 75%;
+      max-width: 100%;
+      text-align: center;
+      background: white;
+      margin: 0 auto;
+
+      &::before {
+        @include chemh-main-nav--gradient;
+
+        content: '';
+        height: 1rem;
+        display: block;
+      }
+
+      h2 {
+        @include responsive-spacing('padding-top', 0);
+        @include responsive-spacing('padding-bottom', 0);
+
+        margin-bottom: 0;
+      }
+    }
+
+    .node-stanford-event-su-event-dek {
+      width: 75%;
+      max-width: 100%;
+      text-align: center;
+      background: white;
+      margin: 0 auto;
+
+      .su-event-dek {
+        font-family: Source Serif Pro,Helvetica Neue,Helvetica,Arial,sans-serif;
+        font-style: italic;
+        font-size: 3rem;
+        margin: 0 auto;
+      }
+    }
+
+    .su-event-sponsor {
+      width: 75%;
+      max-width: 100%;
+      text-align: center;
+      background: white;
+      margin: 0 auto;
+    }
+  }
+}
