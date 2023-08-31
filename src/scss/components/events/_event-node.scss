@@ -2,13 +2,15 @@
 
 .node.event {
   .section-editorial-content {
-    // background: $su-color-black url(../assets/png/header-sm-000--cropped.png) no-repeat 50%/cover;
-    background: $su-color-black url(../../assets/png/header-sm-000--cropped.png) no-repeat 50%/cover;
-    // background: $su-color-black;
+    background: $su-color-black url(../../assets/png/header-sm-000--cropped.png) no-repeat 5%/cover;
     max-width: 100%;
     width: 100%;
     padding-bottom: 0;
     // box-shadow: 0 3px 6px rgba(0,0,0,.13), 0 3px 6px rgba(0,0,0,.1);
+
+    @include grid-media-min('2xl') {
+      background: $su-color-black url(../../assets/png/header-sm-000--cropped.png) no-repeat 50%/cover;
+    }
 
     .su-event-type {
       text-align: center;
@@ -42,11 +44,14 @@
     }
 
     .su-event-subheadline {
-      width: 75%;
       max-width: 100%;
       text-align: center;
       background: white;
       margin: 0 auto;
+      
+      @include grid-media-min('sm') {
+        width: 70%;
+      }
 
       &::before {
         @include chemh-main-nav--gradient;
@@ -57,22 +62,30 @@
       }
 
       h2 {
-        @include responsive-spacing('padding-top', 0);
-        @include responsive-spacing('padding-bottom', 0);
+        @include responsive-spacing('padding-top', 1);
+        // @include responsive-spacing('padding-bottom', 0);
+        @include type-b;
 
         margin-bottom: 0;
       }
     }
 
     .node-stanford-event-su-event-dek {
-      width: 75%;
+      // width: 70%;
       max-width: 100%;
       text-align: center;
       background: white;
       margin: 0 auto;
 
+      @include grid-media-min('sm') {
+        width: 70%;
+      }
+
       .su-event-dek {
-        font-family: Source Serif Pro,Helvetica Neue,Helvetica,Arial,sans-serif;
+        @include responsive-spacing('padding-top', 0);
+        // @include responsive-spacing('padding-bottom', 0);
+
+        font-family: Source Serif\ 4,Helvetica Neue,Helvetica,Arial,sans-serif;
         font-style: italic;
         font-size: 3rem;
         margin: 0 auto;
@@ -80,11 +93,18 @@
     }
 
     .su-event-sponsor {
-      width: 75%;
+      @include responsive-spacing('padding-top', 0);
+      // @include responsive-spacing('padding-bottom', 0);
+
+      // width: 70%;
       max-width: 100%;
       text-align: center;
       background: white;
       margin: 0 auto;
+
+      @include grid-media-min('sm') {
+        width: 70%;
+      }
     }
   }
 }
