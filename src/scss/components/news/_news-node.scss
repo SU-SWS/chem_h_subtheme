@@ -2,22 +2,21 @@
 
 .news.node {
   .header-spacer {
-    // height: 32rem;
-    // height: 34rem;
     height: 40rem;
-    // background: $su-color-black url(../../assets/png/header-sm-000--cropped.png) no-repeat 50%/cover;
-    background-color: $su-color-black;
+    // background: $su-color-black-true url(../../assets/png/header-sm-000--cropped.png) no-repeat 50%/cover;
+    background-color: $su-color-black-true;
     box-shadow: 0 3px 6px rgba(0,0,0,.13), 0 3px 6px rgba(0,0,0,.1);
   }
 
   .layout--section-news-header {
     position: relative;
-    // top: -36rem;
-    // top: -38.2rem;
     top: -41rem;
     background: $su-color-white;;
-    max-width: 80%;
     margin: 0 auto;
+
+    @include grid-media-min('sm') {
+      max-width: 70%;
+    }
 
     .section-header {
       max-width: 100%;
@@ -28,9 +27,6 @@
   
         .su-news-title {
           margin-bottom: 4rem;
-          // margin-bottom: 2rem;
-          // margin-bottom: 3rem;
-          // @include responsive-spacing('margin-bottom', 3);
   
           &::after {
             @include chemh-main-nav--gradient;
@@ -42,9 +38,8 @@
           
           h1 {
             color: $su-color-white;
-            background: $su-color-black;
-            // background: $su-color-black url(../../assets/png/header-sm-000--cropped.png) no-repeat 50%/cover;
-            // padding-bottom: 4rem;
+            // background: $su-color-black-true url(../../assets/png/header-sm-000--cropped.png) no-repeat 50%/cover;
+            background: $su-color-black-true;
             padding-bottom: 6rem;
             margin-bottom: 0;
             text-align: center;
@@ -60,9 +55,7 @@
         }
   
         .su-news-dek {
-          // @include type-c;
-  
-          font-family: Source Serif Pro,Helvetica Neue,Helvetica,Arial,sans-serif;
+          font-family: Source Serif\ 4,Helvetica Neue,Helvetica,Arial,sans-serif;
           font-style: italic;
           font-size: 3rem;
           margin-left: auto;
