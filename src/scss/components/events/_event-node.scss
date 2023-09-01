@@ -63,7 +63,6 @@
 
       h2 {
         @include responsive-spacing('padding-top', 1);
-        // @include responsive-spacing('padding-bottom', 0);
         @include type-b;
 
         margin-bottom: 0;
@@ -71,7 +70,6 @@
     }
 
     .node-stanford-event-su-event-dek {
-      // width: 70%;
       max-width: 100%;
       text-align: center;
       background: white;
@@ -83,7 +81,6 @@
 
       .su-event-dek {
         @include responsive-spacing('padding-top', 0);
-        // @include responsive-spacing('padding-bottom', 0);
 
         font-family: Source Serif\ 4,Helvetica Neue,Helvetica,Arial,sans-serif;
         font-style: italic;
@@ -94,9 +91,7 @@
 
     .su-event-sponsor {
       @include responsive-spacing('padding-top', 0);
-      // @include responsive-spacing('padding-bottom', 0);
 
-      // width: 70%;
       max-width: 100%;
       text-align: center;
       background: white;
@@ -104,6 +99,20 @@
 
       @include grid-media-min('sm') {
         width: 70%;
+      }
+    }
+  }
+
+  .section-event-more-block {
+    .more-link {
+      a {
+        @include chemh-button--gradient;
+  
+        &:focus,
+        &:hover {
+          background-color: $chemh-color-hover-peach;
+        }
+  
       }
     }
   }

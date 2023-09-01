@@ -8,6 +8,7 @@
 .su-button.su-link,
 .su-button--big,
 .su-button--big.su-link,
+.node.event .more-link a,
 [type=button],
 [type=image],
 [type=reset],
@@ -32,6 +33,8 @@ button  {
 .su-button.su-link:hover,
 .su-button:focus,
 .su-button:hover,
+.node.event .more-link a:focus,
+.node.event .more-link a:hover,
 [type=button]:focus,
 [type=button]:hover,
 [type=image]:focus,
@@ -54,6 +57,7 @@ button:hover {
 .su-button:active,
 .su-button--big.su-link:active,
 .su-button--big:active,
+.node.event .more-link a,
 [type=button]:active,
 [type=image]:active,
 [type=reset]:active,
@@ -79,6 +83,7 @@ footer {
   .su-button,
   .su-button--big.su-link,
   .su-button--big,
+  .node.event .more-link a,
   button {
     @include chemh-button--gradient;
     @include modular-spacing('padding', 0);
@@ -113,7 +118,8 @@ footer {
     }
   }
 
-  .su-button {
+  .su-button,
+  .node.event .more-link a {
     &.su-link--external {
       &::after {
         height: 12px;
