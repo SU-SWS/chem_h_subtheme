@@ -11,7 +11,7 @@ $card-circle--width: 140px;
           @include grid-media-min('sm') {
             max-width: $card-circle--width;
             min-width: $card-circle--width;
-            @include modular-spacing('margin', null 1 2 1);
+            @include responsive-spacing('margin', null 1 2 1);
 
             img {
               border-radius: 50%;
@@ -21,15 +21,15 @@ $card-circle--width: 140px;
         }
 
         .su-card__contents {
+          //@apply pt-0;
 
           h2 {
-            @include modular-spacing('margin-bottom', -1);
+            @include responsive-spacing('margin-bottom', -1);
           }
 
           .su-card__link,
           .su-card__button {
-            // @TODO: After we add a template around the main text paragraphs, before the link, redo this to be margin-bottom on that new wrapper
-            @include modular-spacing('margin-top', 3);
+            @include responsive-spacing('margin-top', 3);
           }
         }
       }
@@ -37,15 +37,16 @@ $card-circle--width: 140px;
       &.su-card-wrapper--border-regular {
         .su-card {
           & > .image {
-
+            margin-left: 0;
+            margin-bottom: 0;
           }
 
           .su-card__contents {
-
+            padding: 0;
           }
 
           .su-card__button {
-
+            margin-bottom: 0;
           }
         }
       }
