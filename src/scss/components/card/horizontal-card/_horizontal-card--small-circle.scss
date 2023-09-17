@@ -30,10 +30,10 @@ $card-circle--width: 220px;
       }
 
       .su-card__contents {
-        //@apply pt-0;
 
         h2 {
           @include responsive-spacing('margin-bottom', -1);
+          @include chemh-heading--badge;
 
           color: $su-color-white;
           max-width: 80%;
@@ -65,14 +65,18 @@ $card-circle--width: 220px;
   }
 
   // Link colors.
-  .su-wrapper--button-purple .su-button a,
-  .su-wrapper--button-purple .su-card__button a {
-    color: $su-color-white;
+  .su-wrapper--button-purple,
+  .su-wrapper--button-purple {
+    .su-button,
+    .su-card__button {
+      a {
+        color: $su-color-white;
+      }
+    }
   }
 
   .su-button:not(.su-link--external):after,
   .su-button:not(.su-link--external):after {
-    content: "";
     background: url(../../assets/svg/icon_east_white.svg) no-repeat 0 0;
   }
 }
