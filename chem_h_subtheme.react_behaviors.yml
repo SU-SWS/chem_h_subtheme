@@ -23,14 +23,6 @@ card_variant_info:  # part of the key after the :
       options:
         su-card-wrapper--border-none: Minimal (no border)
         su-card-wrapper--border-regular: Border and Drop Shadow
-    card_orientation_style:
-      type: select
-      title: 'Card Orientation Style'
-      description: Select the card orientation style for displaying this card.
-#      default_value: su-card-wrapper--border-regular
-      options:
-        su-card-wrapper--default: Default
-        su-horizontal-card-wrapper--small-circle: Horizontal with fullpill background
 banner_variant_info:  # part of the key after the :
   id: banner_type
   label: 'Banner Paragraphs Type'
@@ -44,6 +36,7 @@ banner_variant_info:  # part of the key after the :
 #      default_value: chemh-wrapper--banner-default
       options:
         chemh-wrapper--banner-default: Default variant
+        chemh-wrapper--banner-fullpill: Fullpill variant
         chemh-wrapper--banner-halfpill: Halfpill variant
         chemh-wrapper--banner-homepage: Homepage variant
 

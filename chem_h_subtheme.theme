@@ -136,35 +136,6 @@ function chem_h_subtheme_preprocess_card(&$variables) {
   // Add card type class to card wrapper. 3rd variable provides the default card type.
   $card_info['card_type'] = $paragraph->getBehaviorSetting('react_paragraphs:card_variant_info', 'card_type', 'su-card-wrapper--default');
   $variables['attributes']['class'][] = $card_info['card_type'];
-
-  $imageCount = $paragraph->get('su_card_media')->count();
-
-  // Check for media in a card then set classes.
-  if (!$imageCount) {
-    return;
-  }
-
-  // All horizontal
-  $card_info['card_orientation_style'] = $paragraph->getBehaviorSetting('react_paragraphs:card_variant_info', 'card_orientation_style', 'su-horizontal-card-wrapper--large-rectangle');
-  $variables['attributes']['class'][] = $card_info['card_orientation_style'];
-
-  // Small circle image
-  if ($card_info['card_orientation_style'] === 'su-horizontal-card-wrapper--small-circle') {
-    // Set responsive image style for circle.
-    $variables['content']['#fields']['card_image']['su_card_media'][0]['#stanford_media_image_style'] = 'responsive_1_1';
-    return;
-  }
-
-  // Horizontal rectangle image
-  if ($card_info['card_orientation_style'] === 'su-horizontal-card-wrapper--large-rectangle') {
-    // Add image position class to card wrapper.
-    $card_info['horizontal_card_image_position'] = $paragraph->getBehaviorSetting('react_paragraphs:card_variant_info', 'horizontal_card_image_position');
-    $variables['attributes']['class'][] = $card_info['horizontal_card_image_position'];
-
-    // Set responsive image style for rectangle.
-    $variables['content']['#fields']['card_image']['su_card_media'][0]['#stanford_media_image_style'] = 'card_2_1';
-  }
-  // End card check
 }
 
 /**
