@@ -5,6 +5,9 @@ $banner-circle--sm-image-width: 150px;
 
 
 .chemh-wrapper--banner-fullpill {
+  max-width: calc(100vw - 200px);
+  margin: 0 auto;
+
   .su-hero {
     background: $su-color-black url("../../assets/svg/fullpill-bg.svg") no-repeat 100% / 200%;
     border-radius: 300px;
