@@ -1,19 +1,27 @@
 @charset "UTF-8";
 
 $banner-circle--image-width: 200px;
+$banner-circle--sm-image-width: 150px;
 
 
 .chemh-wrapper--banner-fullpill {
   .su-hero {
-    background: $su-color-black url("../../assets/svg/fullpill-bg.svg") no-repeat 100% / 100%;
+    background: $su-color-black url("../../assets/svg/fullpill-bg.svg") no-repeat 100% / 200%;
     border-radius: 300px;
     color: $su-color-white;
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
+    min-height: 400px;
 
     @include grid-media-max('md') {
+      background: $su-color-black url("../../assets/svg/fullpill-bg.svg") no-repeat 100% / 205%;
+
       @include modular-spacing('padding', 3);
+    }
+
+    @include grid-media-max('sm') {
+      background-size: cover;
     }
 
     @include modular-spacing('padding-top', 5);
@@ -39,6 +47,11 @@ $banner-circle--image-width: 200px;
         margin-right: auto;
         object-fit: cover;
         padding: 0;
+
+        @include grid-media-max('sm') {
+          width: $banner-circle--sm-image-width;
+          height: $banner-circle--sm-image-width;
+        }
       }
     }
 
@@ -73,8 +86,11 @@ $banner-circle--image-width: 200px;
           h2 {
             @include responsive-spacing('margin-bottom', -1);
             @include chemh-heading--badge;
+            @include type-a;
 
             color: $su-color-white;
+            font-family: $su-font-sans;
+
           }
 
           .su-card__link,
