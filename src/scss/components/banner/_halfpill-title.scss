@@ -1,0 +1,174 @@
+@charset "UTF-8";
+
+// Banner variants.
+// Classes:
+// .chemh-wrapper--banner-homepage
+// .chemh-wrapper--banner-halfpill
+// .chemh-wrapper--banner-wholepill
+
+.su-page-banner {
+  background: #000 url(../../assets/png/header-sm-000--cropped.png) no-repeat 50%/cover;
+
+  .chemh-wrapper--banner-halfpill {
+    @include grid-media-min('lg') {
+      max-width: 1800px;
+      margin: 0 auto;
+    }
+
+    .su-hero__media {
+      // removes the dark grey bg on banner images.
+      background: $su-color-white;
+
+      .image,
+      .media,
+      >article,
+      >div {
+        // image size contraint
+        max-width: 850px;
+      }
+    }
+
+    .su-hero__card {
+      background: transparent;
+      border: 0;
+      box-shadow: none;
+      // max-width: 557px;
+
+      .su-card__contents {
+        // h2 badge
+        @include chemh-heading--badge;
+
+        color: $su-color-white;
+        padding: 0;
+
+        h2 {
+          @include type-a;
+
+          color: $su-color-white;
+          line-height: 110%;
+          letter-spacing: -0.04em;
+        }
+
+        .bullet {
+          padding-left: 0.6em;
+          margin-bottom: 0;
+
+          &::before {
+            content: "\2022";
+            display: inline-block;
+            display: inline-block;
+            color: $chemh-color-digital-blue;
+            padding-right: 0.5em;
+            font-size: 1.5em;
+          }
+        }
+      }
+    }
+
+    // Card position - right side
+    .overlay-right {
+      &.su-hero {
+        .su-hero__media {
+          img {
+            border-top-right-radius: 300px;
+            border-bottom-right-radius: 300px;
+          }
+        }
+
+        @include grid-media('xl') {
+          &.su-hero {
+
+            .su-hero__media {
+              max-width: 60%;
+            }
+
+            .su-hero__card {
+              max-width: 30%;
+              right: 5%;
+            }
+          }
+        }
+
+        @include grid-media-max('lg') {
+          .su-hero__media {
+            max-width: 50%;
+            background-size: contain;
+          }
+
+          .su-hero__card {
+            max-width: 40%;
+          }
+        }
+
+        @include grid-media-max('md') {
+          .su-hero__media {
+            width: 50%;
+          }
+
+          .su-hero__card {
+            width: 40%;
+            right: 5%;
+          }
+        }
+
+        @include grid-media-max('sm') {
+          .su-hero__media {
+            padding-right: 30px;
+            max-width: unset;
+            width: 100%;
+          }
+
+          .su-hero__card {
+            max-width: 100%;
+            padding: 3.0rem;
+            right: unset;
+            width: 100%;
+          }
+        }
+      }
+    }
+
+    // Card position - left side
+    .overlay-left {
+      align-items: baseline;
+      display: grid;
+      grid-template-columns: repeat(2,1fr);
+      grid-template-areas: "card media";
+
+      @include grid-media-max('sm') {
+        display: block;
+        padding: 0 0 30px 30px;
+
+        .su-hero__media {
+          padding-bottom: 10px;
+        }
+      }
+
+      @include grid-media-max('md') {
+        grid-template-columns: 40% 1fr;
+        grid-template-areas: "card media";
+        gap: 10%;
+      }
+
+      &.su-hero {
+
+        .su-hero__card {
+          grid-area: card;
+        }
+
+        .su-hero__media {
+          background-color: transparent;
+          grid-area: media;
+          max-width: unset;
+          width: unset;
+          right: 0;
+
+          img {
+            border-top-left-radius: 300px;
+            border-bottom-left-radius: 300px;
+          }
+        }
+      }
+    }
+  }
+}

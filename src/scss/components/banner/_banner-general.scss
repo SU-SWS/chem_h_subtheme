@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+// Link colors.
+.su-page-banner {
+
+    div {
+        .su-card__button {
+            .su-link.su-button {
+                background-color: $su-color-black;
+                color: $su-color-white;
+            }
+        }
+    }
+
+    .su-button:not(.su-link--external):after,
+    .su-button:not(.su-link--external):after {
+        background: url(../../assets/svg/icon_east_white.svg) no-repeat 0 0;
+    }
+}

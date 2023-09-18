@@ -38,4 +38,5 @@ banner_variant_info:  # part of the key after the :
         chemh-wrapper--banner-default: Default variant
         chemh-wrapper--banner-halfpill: Halfpill variant
         chemh-wrapper--banner-homepage: Homepage variant
+        chemh-wrapper--banner-halfpill-title: Title variant
 
