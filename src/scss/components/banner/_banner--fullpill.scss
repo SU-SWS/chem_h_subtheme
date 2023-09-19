@@ -27,8 +27,8 @@ $banner-circle--sm-image-width: 150px;
       background-size: cover;
     }
 
-    @include modular-spacing('padding-top', 5);
-    @include modular-spacing('padding-bottom', 6);
+    @include modular-spacing('padding-top', 3);
+    @include modular-spacing('padding-bottom', 3);
 
 
 
@@ -111,6 +111,7 @@ $banner-circle--sm-image-width: 150px;
     .su-button,
     .su-card__button {
       a {
+        background-color: $su-color-black;
         color: $su-color-white;
       }
     }
