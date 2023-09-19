@@ -5,11 +5,12 @@
 // .chemh-wrapper--banner-homepage
 // .chemh-wrapper--banner-halfpill
 // .chemh-wrapper--banner-wholepill
+//chemh-wrapper--banner-halfpill-title:
 
 .su-page-banner {
   background: #000 url(../../assets/png/header-sm-000--cropped.png) no-repeat 50%/cover;
 
-  .chemh-wrapper--banner-halfpill {
+  .chemh-wrapper--banner-halfpill-title {
     @include grid-media-min('lg') {
       max-width: 1800px;
       margin: 0 auto;
@@ -41,7 +42,7 @@
         color: $su-color-white;
         padding: 0;
 
-        h2 {
+        h1 {
           @include type-a;
 
           color: $su-color-white;

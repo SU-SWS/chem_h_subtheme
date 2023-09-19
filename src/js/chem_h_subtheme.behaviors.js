@@ -30,6 +30,9 @@
           .removeAttr('height')
           .removeAttr('width');
       });
+
+      // Heading change for the halfpill title banner.
+      $('.chemh-wrapper--banner-halfpill-title h2').contents().unwrap().wrap('<h1/>');
     }
   };
 
