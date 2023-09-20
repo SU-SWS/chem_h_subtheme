@@ -3,15 +3,19 @@
 .news.node {
   .header-spacer {
     height: 40rem;
-    // background: $su-color-black-true url(../../assets/png/header-sm-000--cropped.png) no-repeat 50%/cover;
-    background-color: $su-color-black-true;
+    background: $su-color-black-true url(../../assets/png/header-sm-000--cropped.png) no-repeat 5%/cover;
+    // background-color: $su-color-black-true;
     box-shadow: 0 3px 6px rgba(0,0,0,.13), 0 3px 6px rgba(0,0,0,.1);
+
+    @include grid-media-min('2xl') {
+      background: $su-color-black-true url(../../assets/png/header-sm-000--cropped.png) no-repeat 50%/cover;
+    }
   }
 
   .layout--section-news-header {
     position: relative;
     top: -41rem;
-    background: $su-color-white;;
+    // background: $su-color-white;
     margin: 0 auto;
 
     @include grid-media-min('sm') {
@@ -26,7 +30,7 @@
         max-width: 100%;
   
         .su-news-title {
-          margin-bottom: 4rem;
+          // margin-bottom: 4rem;
   
           &::after {
             @include chemh-main-nav--gradient;
@@ -39,7 +43,8 @@
           h1 {
             color: $su-color-white;
             // background: $su-color-black-true url(../../assets/png/header-sm-000--cropped.png) no-repeat 50%/cover;
-            background: $su-color-black-true;
+            // background: $su-color-black-true;
+            background: transparent;
             padding-bottom: 6rem;
             margin-bottom: 0;
             text-align: center;
@@ -54,17 +59,28 @@
           }
         }
   
-        .su-news-dek {
-          font-family: Source Serif\ 4,Helvetica Neue,Helvetica,Arial,sans-serif;
-          font-style: italic;
-          font-size: 3rem;
-          margin-left: auto;
-          margin-right: auto;
-          border-bottom: 1px solid $su-color-black-true;
-          padding-bottom: 1.5rem;
+        .node-stanford-news-su-news-dek {
+          @include responsive-spacing('padding-top', 2);
 
-          @include grid-media-max('sm') {
-            max-width: calc(83.33333% - 3.33333px);
+          // padding-top: 3rem;
+          background: $su-color-white;
+
+          .su-news-dek {
+            // font-family: Source Serif\ 4,Helvetica Neue,Helvetica,Arial,sans-serif;
+            font-family: $su-font-serif;
+            font-style: italic;
+            font-size: 3rem;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 0;
+            border-bottom: 1px solid $su-color-black-true;
+            // @include responsive-spacing('padding-bottom', 2);
+            @include responsive-spacing('padding-bottom', 1);
+            // padding-bottom: 1.5rem;
+  
+            @include grid-media-max('sm') {
+              max-width: calc(83.33333% - 3.33333px);
+            }
           }
         }
       }
@@ -72,7 +88,10 @@
   
     .byline-social-media-wrapper {
       @include responsive-spacing('margin-bottom', 2);
+      // @include responsive-spacing('padding-top', 2);
+      @include responsive-spacing('padding-top', 1);
 
+      background: $su-color-white;
       width: 100%;
       max-width: 100%;
   
