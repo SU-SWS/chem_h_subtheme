@@ -19,18 +19,17 @@ $banner-circle--sm-image-width: 150px;
 
     @include grid-media-max('md') {
       background: $su-color-black url("../../assets/svg/fullpill-bg.svg") no-repeat 100% / 205%;
+      flex-direction: column;
 
       @include modular-spacing('padding', 3);
     }
 
-    @include grid-media-max('sm') {
+    @include grid-media-max('md') {
       background-size: cover;
     }
 
     @include modular-spacing('padding-top', 3);
     @include modular-spacing('padding-bottom', 3);
-
-
 
     .su-hero__media {
       background: transparent;
@@ -38,7 +37,10 @@ $banner-circle--sm-image-width: 150px;
       min-height: unset;
       position: unset;
       height: unset;
-      width: unset;
+
+      @include grid-media-max('sm') {
+        aspect-ratio: unset;
+      }
 
       img { // Image display has been set to media image style - Medium (220)
         @include modular-spacing('margin-bottom', -2);
@@ -50,6 +52,10 @@ $banner-circle--sm-image-width: 150px;
         margin-right: auto;
         object-fit: cover;
         padding: 0;
+
+        @include grid-media-min('lg') {
+          margin-left: unset;
+        }
 
         @include grid-media-max('sm') {
           width: $banner-circle--sm-image-width;
@@ -81,7 +87,6 @@ $banner-circle--sm-image-width: 150px;
               border-radius: 50%;
             }
           }
-
         }
 
         .su-card__contents {
@@ -93,7 +98,6 @@ $banner-circle--sm-image-width: 150px;
 
             color: $su-color-white;
             font-family: $su-font-sans;
-
           }
 
           .su-card__link,
@@ -102,7 +106,6 @@ $banner-circle--sm-image-width: 150px;
           }
         }
       }
-
     }
   }
 
@@ -123,7 +126,6 @@ $banner-circle--sm-image-width: 150px;
   }
 }
 
-
 // when on a page with a sidebar nav, needs adjustments:
 .jumpstart-ui--two-column.centered-container {
   .flex-lg-9-of-12.main-region {
@@ -132,8 +134,8 @@ $banner-circle--sm-image-width: 150px;
       @include modular-spacing('padding-bottom', 5);
 
       .su-card__contents {
-        // @apply mx-auto;
         max-width: 90%;
+
         @include grid-media-min('lg') {
           max-width: 80%;
         }
