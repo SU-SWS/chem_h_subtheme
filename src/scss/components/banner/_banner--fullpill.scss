@@ -106,6 +106,10 @@ $banner-circle--sm-image-width: 150px;
           .su-card__link,
           .su-card__button {
             @include responsive-spacing('margin-top', 3);
+
+            @include grid-media-max('md') {
+              text-align: center;
+            }
           }
         }
       }
