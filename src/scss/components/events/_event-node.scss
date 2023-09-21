@@ -8,7 +8,6 @@
     max-width: 100%;
     width: 100%;
     padding-bottom: 0;
-    // box-shadow: 0 3px 6px rgba(0,0,0,.13), 0 3px 6px rgba(0,0,0,.1);
 
     @include grid-media-min('2xl') {
       background: $su-color-black url(../../assets/png/header-sm-000--cropped.png) no-repeat 50%/cover;
@@ -38,8 +37,6 @@
         color: $su-color-white;
 
         &::before {
-          // margin-right: auto;
-          // margin-left: auto;
           margin: 3rem auto;
         }
       }
@@ -72,7 +69,6 @@
         @include grid-media-min('sm') {
           text-align: start;
           margin-left: 3.2rem;
-          // margin-left: 10rem;
         }
 
         @include grid-media-min('md') {
@@ -103,7 +99,6 @@
       .su-event-dek {
         @include responsive-spacing('padding-top', 0);
         
-        // font-family: Source Serif\ 4,Helvetica Neue,Helvetica,Arial,sans-serif;
         font-family: $su-font-serif;
         font-style: italic;
         font-size: 3rem;
