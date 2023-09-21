@@ -2,6 +2,8 @@
 
 .node.event {
   .section-editorial-content {
+    @include responsive-spacing('padding-top', 3);
+
     background: $su-color-black url(../../assets/png/header-sm-000--cropped.png) no-repeat 5%/cover;
     max-width: 100%;
     width: 100%;
@@ -66,6 +68,25 @@
         @include type-b;
 
         margin-bottom: 0;
+
+        @include grid-media-min('sm') {
+          text-align: start;
+          margin-left: 3.2rem;
+          // margin-left: 10rem;
+        }
+
+        @include grid-media-min('md') {
+          margin-left: 5rem;
+        }
+
+        @include grid-media-min('lg') {
+          margin-left: 8rem;
+        }
+
+        @include grid-media-min('xl') {
+          margin-left: 10rem;
+        }
+
       }
     }
 
@@ -81,11 +102,38 @@
 
       .su-event-dek {
         @include responsive-spacing('padding-top', 0);
-
-        font-family: Source Serif\ 4,Helvetica Neue,Helvetica,Arial,sans-serif;
+        
+        // font-family: Source Serif\ 4,Helvetica Neue,Helvetica,Arial,sans-serif;
+        font-family: $su-font-serif;
         font-style: italic;
         font-size: 3rem;
         margin: 0 auto;
+        
+        @include grid-media-min('sm') {
+          @include responsive-spacing('padding-bottom', 0);
+
+          text-align: start;
+          border-bottom: 1px solid rgb(0, 0, 0);
+          width: auto;
+          max-width: 100%;
+          margin-left: 3.2rem;
+          margin-right: 3.2rem;
+        }
+
+        @include grid-media-min('md') {
+          margin-left: 5rem;
+          margin-right: 5rem;
+        }
+
+        @include grid-media-min('lg') {
+          margin-left: 8rem;
+          margin-right: 8rem;
+        }
+
+        @include grid-media-min('xl') {
+          margin-left: 10rem;
+          margin-right: 10rem;
+        }
       }
     }
 
@@ -99,6 +147,40 @@
 
       @include grid-media-min('sm') {
         width: 70%;
+      }
+
+      div {
+        @include grid-media-min('sm') {
+          text-align: start;
+          margin-left: 3.2rem;
+        }
+
+        @include grid-media-min('md') {
+          margin-left: 5rem;
+        }
+
+        @include grid-media-min('lg') {
+          margin-left: 8rem;
+        }
+
+        @include grid-media-min('xl') {
+          margin-left: 10rem;
+        }
+      }
+      
+    }
+  }
+
+  .su-events-details {
+    @include grid-media-min('sm') {
+      .details-wrapper {
+        border: 0;
+        box-shadow: none;
+        padding: 0;
+  
+        .details {
+          width: 100%;
+        }
       }
     }
   }
