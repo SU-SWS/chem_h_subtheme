@@ -42,6 +42,11 @@
         color: $su-color-white;
         padding: 0;
 
+        @include grid-media-max('sm') {
+          padding: 3rem 0 0 0;
+          width: 400px;
+        }
+
         h1 {
           @include type-a;
 
@@ -68,11 +73,19 @@
 
     // Card position - right side
     .overlay-right {
+
       &.su-hero {
         .su-hero__media {
+          background-color: transparent;
+
           img {
             border-top-right-radius: 300px;
             border-bottom-right-radius: 300px;
+
+            @media (min-width: 2500px) {
+              border-top-left-radius: 20px;
+              border-bottom-left-radius: 20px;
+            }
           }
         }
 
@@ -167,6 +180,11 @@
           img {
             border-top-left-radius: 300px;
             border-bottom-left-radius: 300px;
+
+            @media (min-width: 2500px) {
+              border-top-right-radius: 20px;
+              border-bottom-right-radius: 20px;
+            }
           }
         }
       }
