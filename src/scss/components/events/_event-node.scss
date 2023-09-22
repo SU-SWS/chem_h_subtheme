@@ -16,11 +16,12 @@
     .su-event-type {
       text-align: center;
 
-      a {
+      a,
+      p {
         color: $su-color-white;
         text-transform: uppercase;
         letter-spacing: .3rem;
-        margin-bottom: 2rem;
+        margin-bottom: .5rem;
         opacity: .9;
       }
     }

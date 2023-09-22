@@ -30,6 +30,9 @@
           .removeAttr('height')
           .removeAttr('width');
       });
+
+      // Replace <a> tag for event node event type taxonomy with <p>
+      $('.node.event .section-editorial-content .su-event-type a').contents().unwrap().wrap('<p/>');
     }
   };
 
