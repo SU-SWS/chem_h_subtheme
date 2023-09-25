@@ -30,6 +30,9 @@
           .removeAttr('height')
           .removeAttr('width');
       });
+
+      // Replace <a> tag for event node event type taxonomy with <p>
+      $('.news.node .layout--section-news-header .su-news-topics a').contents().unwrap().wrap('<p/>');
     }
   };
 

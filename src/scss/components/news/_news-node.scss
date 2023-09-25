@@ -2,7 +2,7 @@
 
 .news.node {
   .header-spacer {
-    height: 40rem;
+    height: 48rem;
     background: $su-color-black-true url(../../assets/png/header-sm-000--cropped.png) no-repeat 5%/cover;
     box-shadow: 0 3px 6px rgba(0,0,0,.13), 0 3px 6px rgba(0,0,0,.1);
 
@@ -13,7 +13,9 @@
 
   .layout--section-news-header {
     position: relative;
-    top: -41rem;
+    // top: -41rem;
+    // top: -46.5rem;
+    top: -54rem;
     margin: 0 auto;
 
     @include grid-media-min('sm') {
@@ -26,6 +28,37 @@
   
       .main-region {
         max-width: 100%;
+
+        .su-news-topics {
+          @include type-e;
+
+          text-align: center;
+          color: $su-color-white;
+          opacity: .9;
+
+          a,
+          p {
+            display: inline-block;
+            color: $su-color-white;
+            text-transform: uppercase;
+            letter-spacing: .3rem;
+            margin-bottom: .5rem;
+            margin-left: .5rem;
+
+            &:first-child {
+              margin-left: 0;
+            }
+
+            
+            // &:last-child {
+            //   display: block;
+            // }
+            // &:nth-child(even) {
+            //   display: block;
+            // }
+          }
+
+        }
   
         .su-news-title {
   
@@ -38,6 +71,8 @@
           }
           
           h1 {
+            @include chemh-heading--badge;
+
             color: $su-color-white;
             background: transparent;
             padding-bottom: 6rem;
@@ -50,6 +85,10 @@
 
             @include grid-media-max('sm') {
               font-size: 4rem;
+            }
+
+            &::before {
+              margin: 3rem auto;
             }
           }
         }
@@ -78,12 +117,17 @@
     }
   
     .byline-social-media-wrapper {
-      @include responsive-spacing('margin-bottom', 2);
+      // @include responsive-spacing('margin-bottom', 2);
+      // @include responsive-spacing('margin-bottom', -8);
       @include responsive-spacing('padding-top', 1);
+      @include responsive-spacing('padding-bottom', 8);
 
       background: $su-color-white;
       width: 100%;
       max-width: 100%;
+      margin-bottom: -9rem;
+      // margin-bottom: -16rem;
+      // margin-bottom: -22rem;
   
       div.flex-10-of-12 {
         justify-content: space-between;
@@ -92,6 +136,11 @@
           max-width: calc(83.33333% - 3.33333px);
         }
       }
+    }
+
+    .section-banner-media {
+      padding-top: 5rem;
+      // padding-top: 11rem;
     }
 
     .section-components {
