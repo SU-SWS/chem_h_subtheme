@@ -30,9 +30,13 @@
           .removeAttr('height')
           .removeAttr('width');
       });
-
+      
       // Heading change for the halfpill title banner.
       $('.chemh-wrapper--banner-halfpill-title h2').contents().unwrap().wrap('<h1/>');
+
+      // Replace <a> tag for event node event type taxonomy with <p>
+      $('.node.event .section-editorial-content .su-event-type a').contents().unwrap().wrap('<p/>');
+
     }
   };
 

@@ -4,7 +4,6 @@
 
 h1 {
   font-weight: $su-font-black;
-  font-size: 5.5rem;
   line-height: 110%;
   /* identical to box height, or 61px */
   color: $su-color-black;
@@ -12,8 +11,8 @@ h1 {
 }
 
 h2 {
+  @include type-a;
   font-weight: $su-font-black;
-  font-size: 5rem;
   line-height: 110%;
   /* identical to box height, or 55px */
   letter-spacing: -0.05em;
@@ -21,8 +20,8 @@ h2 {
 }
 
 h3 {
+  @include type-b;
   font-weight: $su-font-bold;
-  font-size: 3.5rem;
   line-height: 5.2rem;
   /* identical to box height, or 149% */
   letter-spacing: -1.5px;
@@ -30,8 +29,8 @@ h3 {
 }
 
 h4 {
+  @include type-c;
   font-weight: $su-font-bold;
-  font-size: 2.8rem;
   line-height: 3.8rem;
   /* identical to box height, or 136% */
   letter-spacing: -1px;
@@ -39,8 +38,8 @@ h4 {
 }
 
 h5 {
+  @include type-c;
   font-weight: $su-font-bold;
-  font-size: 2.8rem;
   line-height: 3.8rem;
   /* identical to box height, or 136% */
   letter-spacing: -1px;
