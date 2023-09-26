@@ -38,7 +38,7 @@
       $('.node.event .section-editorial-content .su-event-type a').contents().unwrap().wrap('<p/>');
       
       // Replace <a> tag for news node news topics taxonomy with <p>
-      $('.news.node .layout--section-news-header .su-news-topics a').contents().unwrap().wrap('<p/>');
+      $('.news.node .layout--section-news-header .section-header .su-news-topics a').contents().unwrap().wrap('<p/>');
 
     }
   };

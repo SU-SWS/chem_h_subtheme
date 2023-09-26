@@ -17,6 +17,7 @@
     // top: -46.5rem;
     top: -54rem;
     margin: 0 auto;
+    margin-bottom: -54rem;
 
     @include grid-media-min('sm') {
       max-width: 70%;
@@ -120,14 +121,17 @@
       // @include responsive-spacing('margin-bottom', 2);
       // @include responsive-spacing('margin-bottom', -8);
       @include responsive-spacing('padding-top', 1);
-      @include responsive-spacing('padding-bottom', 8);
+      // @include responsive-spacing('padding-bottom', 10);
+      padding-bottom: 24rem;
+      // padding-bottom: 30rem;
 
       background: $su-color-white;
       width: 100%;
       max-width: 100%;
-      margin-bottom: -9rem;
+      // margin-bottom: -9rem;
       // margin-bottom: -16rem;
-      // margin-bottom: -22rem;
+      margin-bottom: -26rem;
+      // margin-bottom: -30rem;
   
       div.flex-10-of-12 {
         justify-content: space-between;
@@ -139,8 +143,10 @@
     }
 
     .section-banner-media {
-      padding-top: 5rem;
-      // padding-top: 11rem;
+      .su-news-banner {
+        padding-top: 6rem;
+        // padding-top: 10rem;
+      }
     }
 
     .section-components {
