@@ -1,7 +1,9 @@
 @charset "UTF-8";
 
 // Banner Roll Up
-@import 'banner-general';
-@import 'halfpill';
-@import 'halfpill-title';
-@import 'homepage';
+
+@import 'banner--halfpill';
+@import 'banner--fullpill';
+@import 'banner--general';
+@import 'banner--homepage';
+@import 'banner--halfpill-title';
