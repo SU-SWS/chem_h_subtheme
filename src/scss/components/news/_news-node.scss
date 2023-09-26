@@ -51,7 +51,6 @@
         }
   
         .su-news-title {
-  
           &::after {
             @include chemh-main-nav--gradient;
     
@@ -89,6 +88,8 @@
           background: $su-color-white;
 
           .su-news-dek {
+            @include responsive-spacing('padding-bottom', 1);
+
             font-family: $su-font-serif;
             font-style: italic;
             font-size: 3rem;
@@ -96,7 +97,6 @@
             margin-right: auto;
             margin-bottom: 0;
             border-bottom: 1px solid $su-color-black-true;
-            @include responsive-spacing('padding-bottom', 1);
   
             @include grid-media-max('sm') {
               max-width: calc(83.33333% - 3.33333px);
@@ -136,36 +136,26 @@
 
       .main-region {
         @include grid-media-min('sm') {
-          -webkit-box-flex: 0;
-          -ms-flex: 0 0 calc(83.33333% - 3.33333px);
           flex: 0 0 calc(83.33333% - 3.33333px);
           max-width: calc(83.33333% - 3.33333px);
         }
 
         @include grid-media-min('md') {
-          -webkit-box-flex: 0;
-          -ms-flex: 0 0 calc(83.33333% - 3.33333px);
           flex: 0 0 calc(83.33333% - 3.33333px);
           max-width: calc(83.33333% - 3.33333px);
         }
 
         @include grid-media-min('lg') {
-          -webkit-box-flex: 0;
-          -ms-flex: 0 0 calc(83.33333% - 6px);
           flex: 0 0 calc(83.33333% - 6px);
           max-width: calc(83.33333% - 6px);
         }
 
         @include grid-media-min('xl') {
-          -webkit-box-flex: 0;
-          -ms-flex: 0 0 calc(83.33333% - 6.66667px);
           flex: 0 0 calc(83.33333% - 6.66667px);
           max-width: calc(83.33333% - 6.66667px);      
         }
 
         @include grid-media-min('xxl') {
-          -webkit-box-flex: 0;
-          -ms-flex: 0 0 calc(83.33333% - 8px);
           flex: 0 0 calc(83.33333% - 8px);
           max-width: calc(83.33333% - 8px);
         }
