@@ -9,6 +9,7 @@
 .su-button--big,
 .su-button--big.su-link,
 .stanford-news-vertical-teaser-term .more-link a,
+.node.event .more-link a,
 [type=button],
 [type=image],
 [type=reset],
@@ -35,6 +36,8 @@ button {
 .su-button:hover,
 .stanford-news-vertical-teaser-term .more-link a:focus,
 .stanford-news-vertical-teaser-term .more-link a:hover,
+.node.event .more-link a:focus,
+.node.event .more-link a:hover,
 [type=button]:focus,
 [type=button]:hover,
 [type=image]:focus,
@@ -58,6 +61,7 @@ button:hover {
 .su-button--big.su-link:active,
 .su-button--big:active,
 .stanford-news-vertical-teaser-term .more-link a:active,
+.node.event .more-link a,
 [type=button]:active,
 [type=image]:active,
 [type=reset]:active,
@@ -76,7 +80,6 @@ button:hover {
   }
 }
 
-
 main,
 footer {
   .su-button.su-link,
@@ -84,6 +87,7 @@ footer {
   .su-button--big.su-link,
   .su-button--big,
   .stanford-news-vertical-teaser-term .more-link a,
+  .node.event .more-link a,
   button {
     @include chemh-button--gradient;
     @include modular-spacing('padding', 0);
@@ -120,6 +124,7 @@ footer {
 
   .su-button,
   .stanford-news-vertical-teaser-term .more-link a {
+  .node.event .more-link a {
     &.su-link--external {
       &::after {
         height: 12px;
@@ -225,11 +230,17 @@ a {
 
 .su-events-details {
   .su-event-cta {
-    a {
-      color: unset;
-
-      &:hover {
-        background-color: unset;
+    &.su-button {
+      a {
+        &::after {
+          display: none;
+        }
+        
+        color: unset;
+  
+        &:hover {
+          background-color: unset;
+        }
       }
     }
   }

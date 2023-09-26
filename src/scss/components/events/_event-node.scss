@@ -1,0 +1,197 @@
+@charset "UTF-8";
+
+.node.event {
+  .section-editorial-content {
+    @include responsive-spacing('padding-top', 3);
+
+    background: $su-color-black url(../../assets/png/header-sm-000--cropped.png) no-repeat 5%/cover;
+    max-width: 100%;
+    width: 100%;
+    padding-bottom: 0;
+
+    @include grid-media-min('2xl') {
+      background: $su-color-black url(../../assets/png/header-sm-000--cropped.png) no-repeat 50%/cover;
+    }
+
+    .su-event-type {
+      text-align: center;
+
+      a,
+      p {
+        color: $su-color-white;
+        text-transform: uppercase;
+        letter-spacing: .3rem;
+        margin-bottom: .5rem;
+        opacity: .9;
+      }
+    }
+
+    .su-event-headline {
+      width: 100%;
+      max-width: 100%;
+      text-align: center;
+
+      h1 {
+        @include chemh-heading--badge;
+        @include responsive-spacing('margin-bottom', 3);
+
+        color: $su-color-white;
+
+        &::before {
+          margin: 3rem auto;
+        }
+      }
+    }
+
+    .su-event-subheadline {
+      max-width: 100%;
+      text-align: center;
+      background: white;
+      margin: 0 auto;
+      
+      @include grid-media-min('sm') {
+        width: 70%;
+      }
+
+      &::before {
+        @include chemh-main-nav--gradient;
+
+        content: '';
+        height: 1rem;
+        display: block;
+      }
+
+      h2 {
+        @include responsive-spacing('padding-top', 1);
+        @include type-b;
+
+        margin-bottom: 0;
+
+        @include grid-media-min('sm') {
+          text-align: start;
+          margin-left: 3.2rem;
+        }
+
+        @include grid-media-min('md') {
+          margin-left: 5rem;
+        }
+
+        @include grid-media-min('lg') {
+          margin-left: 8rem;
+        }
+
+        @include grid-media-min('xl') {
+          margin-left: 10rem;
+        }
+
+      }
+    }
+
+    .node-stanford-event-su-event-dek {
+      max-width: 100%;
+      text-align: center;
+      background: white;
+      margin: 0 auto;
+
+      @include grid-media-min('sm') {
+        width: 70%;
+      }
+
+      .su-event-dek {
+        @include responsive-spacing('padding-top', 0);
+        
+        font-family: $su-font-serif;
+        font-style: italic;
+        font-size: 3rem;
+        margin: 0 auto;
+        
+        @include grid-media-min('sm') {
+          @include responsive-spacing('padding-bottom', 0);
+
+          text-align: start;
+          border-bottom: 1px solid rgb(0, 0, 0);
+          width: auto;
+          max-width: 100%;
+          margin-left: 3.2rem;
+          margin-right: 3.2rem;
+        }
+
+        @include grid-media-min('md') {
+          margin-left: 5rem;
+          margin-right: 5rem;
+        }
+
+        @include grid-media-min('lg') {
+          margin-left: 8rem;
+          margin-right: 8rem;
+        }
+
+        @include grid-media-min('xl') {
+          margin-left: 10rem;
+          margin-right: 10rem;
+        }
+      }
+    }
+
+    .su-event-sponsor {
+      @include responsive-spacing('padding-top', 0);
+
+      max-width: 100%;
+      text-align: center;
+      background: white;
+      margin: 0 auto;
+
+      @include grid-media-min('sm') {
+        width: 70%;
+      }
+
+      div {
+        @include grid-media-min('sm') {
+          text-align: start;
+          margin-left: 3.2rem;
+        }
+
+        @include grid-media-min('md') {
+          margin-left: 5rem;
+        }
+
+        @include grid-media-min('lg') {
+          margin-left: 8rem;
+        }
+
+        @include grid-media-min('xl') {
+          margin-left: 10rem;
+        }
+      }
+      
+    }
+  }
+
+  .su-events-details {
+    @include grid-media-min('sm') {
+      .details-wrapper {
+        border: 0;
+        box-shadow: none;
+        padding: 0;
+  
+        .details {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .section-event-more-block {
+    .more-link {
+      a {
+        @include chemh-button--gradient;
+  
+        &:focus,
+        &:hover {
+          background-color: $chemh-color-hover-peach;
+        }
+  
+      }
+    }
+  }
+}

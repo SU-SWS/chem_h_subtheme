@@ -1,0 +1,123 @@
+@charset "UTF-8";
+
+.su-event-card {
+  @include chemh--shadow-custom-button-default;
+  border-bottom-left-radius: 6rem;
+  padding-top: 0;
+
+  // Whole card hover and focus
+  &:hover,
+  &:focus,
+  &:focus-within,
+  &:active {
+    @include chemh--shadow-news-card-hover;
+
+    .su-event-card__footer {
+      a {
+        background-color: $chemh-color-red;
+      }
+    }
+  }
+
+  &.su-card {
+    .su-event-list-item__date {
+      background: black;
+      width: fit-content;
+      padding: 0.8rem 3rem;
+      max-width: unset;
+
+      .su-event-list-item__date__seperator {
+        color: #fff;
+        font-weight: 900;
+        margin-right: 2rem;
+        margin-left: 2rem;
+      }
+
+      .su-event-start-month,
+      .su-event-start-date,
+      .su-event-end-month,
+      .su-event-end-date {
+        font-weight: 400;
+        color: #fff;
+      }
+    }
+    
+    .su-event-list-item__details {
+      .event-list-item__type {
+        display: block;
+        padding-bottom: 1rem;
+
+        a {
+          @include type_f;
+          color: $chemh-color-dusk;
+          text-decoration: none;
+          text-transform: uppercase;
+          font-weight: 600;
+        }
+      }
+
+      h2 {
+        a {
+          &:hover,
+          &:focus,
+          &:focus-within,
+          &:active {
+            color: $chemh-color-digital-blue;
+          }
+
+        }
+      }
+    }
+  }
+
+  &.su-card {
+    position: relative;
+    border: none;
+    height: 100%;
+
+    @media (max-width: 1550px) {
+      margin-bottom: 4.5rem;
+    }
+
+    @include grid-media-max('md') {
+      width: 100%;
+    }
+  }
+
+  .su-event-card__footer {
+    margin-top: 2rem;
+
+    a {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      padding: 1.3rem;
+      background-color: $chemh-color-dusk;
+      color: $su-color-white;
+      -webkit-box-shadow: unset;
+      box-shadow: unset;
+
+      &:hover,
+      &:focus,
+      &:active {
+        background-color: $chemh-color-red;
+        
+        .su-link--icon,
+        .su-link--icon--external {
+          border-bottom: 2px solid white;
+          color: $su-color-white;
+        }
+      }
+    }
+  }
+
+  // Removing the external icon to move it to the
+  // lower right corner of event card.
+  a {
+    &.su-link--external {
+      &::after {
+        display: none;
+      }
+    }
+  }
+}
