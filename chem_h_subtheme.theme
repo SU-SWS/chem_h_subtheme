@@ -136,13 +136,6 @@ function chem_h_subtheme_preprocess_card(&$variables) {
   // Add card type class to card wrapper. 3rd variable provides the default card type.
   $card_info['card_type'] = $paragraph->getBehaviorSetting('react_paragraphs:card_variant_info', 'card_type', 'su-card-wrapper--default');
   $variables['attributes']['class'][] = $card_info['card_type'];
-
-  $imageCount = $paragraph->get('su_card_media')->count();
-
-  // Check for media in a card then set classes.
-  if (!$imageCount) {
-    return;
-  }
 }
 
 /**

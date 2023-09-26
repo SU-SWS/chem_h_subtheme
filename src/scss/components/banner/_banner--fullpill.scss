@@ -1,0 +1,155 @@
+@charset "UTF-8";
+
+$banner-circle--image-width: 200px;
+$banner-circle--sm-image-width: 150px;
+
+
+.chemh-wrapper--banner-fullpill {
+  margin: 0 auto;
+
+  @include grid-media-min('sm') {
+    max-width: calc(100vw - 200px);
+  }
+
+  .su-hero {
+    background: $su-color-black url("../../assets/svg/fullpill-bg.svg") no-repeat 100% / 200%;
+    border-radius: 300px;
+    color: $su-color-white;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 400px;
+
+    @include grid-media-max('md') {
+      background: $su-color-black url("../../assets/svg/fullpill-bg.svg") no-repeat 100% / 205%;
+      flex-direction: column;
+      background-size: cover;
+
+      @include modular-spacing('padding', 3);
+    }
+
+    @include grid-media-max('lg') {
+      flex-direction: column;
+    }
+
+    @include modular-spacing('padding-top', 3);
+    @include modular-spacing('padding-bottom', 3);
+
+    .su-hero__media {
+      background: transparent;
+      margin-left: 5%;
+      min-height: unset;
+      position: unset;
+      height: unset;
+      width: 275px;
+
+      @include grid-media-max('sm') {
+        aspect-ratio: unset;
+        margin: 0 auto;
+      }
+
+      img { // Image display has been set to media image style - Medium (220)
+        @include modular-spacing('margin-bottom', -2);
+
+        border-radius: 50%;
+        width: $banner-circle--image-width;
+        height: $banner-circle--image-width;
+        margin-left: auto;
+        margin-right: auto;
+        object-fit: cover;
+        padding: 0;
+
+        @include grid-media-min('lg') {
+          margin-left: unset;
+        }
+
+        @include grid-media-max('sm') {
+          width: $banner-circle--sm-image-width;
+          height: $banner-circle--sm-image-width;
+        }
+      }
+    }
+
+    .su-card {
+      &.su-hero__card {
+        background: transparent;
+        border: none;
+        bottom: unset;
+        box-shadow: none;
+        left: unset;
+        margin-top: unset;
+        margin-bottom: unset;
+        max-width: 980px;
+        top: unset;
+
+        & > .image {
+          @include grid-media-min('sm') {
+            max-width: $banner-circle--image-width;
+            min-width: $banner-circle--image-width;
+
+            margin-left: 50px;
+
+            img {
+              border-radius: 50%;
+            }
+          }
+        }
+
+        .su-card__contents {
+
+          h2 {
+            @include responsive-spacing('margin-bottom', -1);
+            @include chemh-heading--badge;
+            @include type-a;
+
+            color: $su-color-white;
+            font-family: $su-font-sans;
+          }
+
+          .su-card__link,
+          .su-card__button {
+            @include responsive-spacing('margin-top', 3);
+
+            @include grid-media-max('md') {
+              text-align: center;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // Link colors.
+  div {
+    .su-button,
+    .su-card__button {
+      a {
+        background-color: $su-color-black;
+        color: $su-color-white;
+      }
+    }
+  }
+
+  .su-button:not(.su-link--external):after,
+  .su-button:not(.su-link--external):after {
+    background: url(../../assets/svg/icon_east_white.svg) no-repeat 0 0;
+  }
+}
+
+// when on a page with a sidebar nav, needs adjustments:
+.jumpstart-ui--two-column.centered-container {
+  .flex-lg-9-of-12.main-region {
+    .su-hero {
+      // when on a sidebar-nav page, needs less bottom spacing
+      @include modular-spacing('padding-bottom', 5);
+
+      .su-card__contents {
+        max-width: 90%;
+
+        @include grid-media-min('lg') {
+          max-width: 80%;
+        }
+      }
+    }
+  }
+}
