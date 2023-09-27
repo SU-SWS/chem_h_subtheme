@@ -244,14 +244,25 @@ a {
 // Button Grid
 .chemh-button-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
   grid-auto-rows: 1fr;
-  gap: 3rem;
+  gap: 2rem;
 
-  a.su-button--big {
+  @include grid-media-min('sm') {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 4rem;
+  }
+
+  @include grid-media-min('lg') {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 5rem;
+  }
+  
+  a {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    text-align: start;
+    margin: 0;
 
     &::after {
       margin-left: .2rem;
