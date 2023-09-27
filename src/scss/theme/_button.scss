@@ -241,6 +241,24 @@ a {
   }
 }
 
+// Button Grid
+.chemh-button-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-auto-rows: 1fr;
+
+  a.su-button--big {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &::after {
+      margin-left: .2rem;
+      flex-shrink: 0;
+    }
+  }
+}
+
 // Card & Banner buttons
 // TEST AND THEN REMOVE CODE
 .su-wrapper--button-purple {
