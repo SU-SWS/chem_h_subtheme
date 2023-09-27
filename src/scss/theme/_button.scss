@@ -257,7 +257,9 @@ a {
     gap: 5rem;
   }
   
-  a {
+  a.su-button,
+  a.su-button--big,
+  a.su-button--secondary {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -265,7 +267,7 @@ a {
     margin: 0;
 
     &::after {
-      margin-left: .2rem;
+      margin-left: .5rem;
       flex-shrink: 0;
     }
   }
