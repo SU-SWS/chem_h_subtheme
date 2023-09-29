@@ -30,13 +30,16 @@
           .removeAttr('height')
           .removeAttr('width');
       });
-      
+
       // Heading change for the halfpill title banner.
       $('.chemh-wrapper--banner-halfpill-title h2').contents().unwrap().wrap('<h1/>');
 
+      // Bckground color needed on only the Halfpill title banner.
+      $('.chemh-wrapper--banner-halfpill-title').parents().find('.su-page-banner').addClass('su-page-banner--title');
+
       // Replace <a> tag for event node event type taxonomy with <p>
       $('.node.event .section-editorial-content .su-event-type a').contents().unwrap().wrap('<p/>');
-      
+
       // Replace <a> tag for news node news topics taxonomy with <p>
       $('.news.node .layout--section-news-header .section-header .su-news-topics a').contents().unwrap().wrap('<p/>');
 
