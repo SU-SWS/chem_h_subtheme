@@ -1,6 +1,170 @@
 @charset "UTF-8";
 
+.news.node {
+  .header-spacer {
+    height: 48rem;
+    background: $su-color-black-true url(../../assets/png/header-sm-000--cropped.png) no-repeat 5%/cover;
+    box-shadow: 0 3px 6px rgba(0,0,0,.13), 0 3px 6px rgba(0,0,0,.1);
 
+    @include grid-media-min('2xl') {
+      background: $su-color-black-true url(../../assets/png/header-sm-000--cropped.png) no-repeat 50%/cover;
+    }
+  }
+
+  .layout--section-news-header {
+    position: relative;
+    top: -54rem;
+    margin: 0 auto;
+    margin-bottom: -54rem;
+
+    @include grid-media-min('sm') {
+      max-width: 70%;
+    }
+
+    .section-header {
+      max-width: 100%;
+      width: 100%;
+  
+      .main-region {
+        max-width: 100%;
+
+        .su-news-topics {
+          @include type-e;
+
+          text-align: center;
+          color: $su-color-white;
+          opacity: .9;
+
+          a,
+          p {
+            display: inline-block;
+            color: $su-color-white;
+            text-transform: uppercase;
+            letter-spacing: .3rem;
+            margin-bottom: .5rem;
+            margin-left: .5rem;
+
+            &:first-child {
+              margin-left: 0;
+            }
+          }
+        }
+  
+        .su-news-title {
+          &::after {
+            @include chemh-main-nav--gradient;
+    
+            content: '';
+            height: 1rem;
+            display: block;
+          }
+          
+          h1 {
+            @include chemh-heading--badge;
+
+            color: $su-color-white;
+            background: transparent;
+            padding-bottom: 6rem;
+            margin-bottom: 0;
+            text-align: center;
+
+            @include grid-media-max('md') {
+              font-size: 4.5rem;
+            }
+
+            @include grid-media-max('sm') {
+              font-size: 4rem;
+            }
+
+            &::before {
+              margin: 3rem auto;
+            }
+          }
+        }
+  
+        .node-stanford-news-su-news-dek {
+          @include responsive-spacing('padding-top', 2);
+
+          background: $su-color-white;
+
+          .su-news-dek {
+            @include responsive-spacing('padding-bottom', 1);
+
+            font-family: $su-font-serif;
+            font-style: italic;
+            font-size: 3rem;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 0;
+            border-bottom: 1px solid $su-color-black-true;
+  
+            @include grid-media-max('sm') {
+              max-width: calc(83.33333% - 3.33333px);
+            }
+          }
+        }
+      }
+    }
+  
+    .byline-social-media-wrapper {
+      @include responsive-spacing('padding-top', 1);
+      
+      background: $su-color-white;
+      width: 100%;
+      max-width: 100%;
+      margin-bottom: -26rem;
+      padding-bottom: 24rem;
+  
+      div.flex-10-of-12 {
+        justify-content: space-between;
+
+        @include grid-media-max('sm') {
+          max-width: calc(83.33333% - 3.33333px);
+        }
+      }
+    }
+
+    .section-banner-media {
+      .su-news-banner {
+        padding-top: 6rem;
+      }
+    }
+
+    .section-components {
+      max-width: 100%;
+      width: 100%;
+
+      .main-region {
+        @include grid-media-min('sm') {
+          flex: 0 0 calc(83.33333% - 3.33333px);
+          max-width: calc(83.33333% - 3.33333px);
+        }
+
+        @include grid-media-min('md') {
+          flex: 0 0 calc(83.33333% - 3.33333px);
+          max-width: calc(83.33333% - 3.33333px);
+        }
+
+        @include grid-media-min('lg') {
+          flex: 0 0 calc(83.33333% - 6px);
+          max-width: calc(83.33333% - 6px);
+        }
+
+        @include grid-media-min('xl') {
+          flex: 0 0 calc(83.33333% - 6.66667px);
+          max-width: calc(83.33333% - 6.66667px);      
+        }
+
+        @include grid-media-min('xxl') {
+          flex: 0 0 calc(83.33333% - 8px);
+          max-width: calc(83.33333% - 8px);
+        }
+      }
+    }
+  }
+}
+
+// More News section
 .stanford-news-vertical-teaser-term {
   >h2 {
     @include chemh-heading--badge;
@@ -10,7 +174,14 @@
   }
 
   .more-link {
-    @include chemh--right-arrow-icon;
+    a {
+      @include chemh-button--gradient;
+
+      &:focus,
+      &:hover {
+        background-color: $chemh-color-hover-peach;
+      }
+    }
   }
 
   // Related news cards in footer.
