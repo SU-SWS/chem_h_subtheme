@@ -8,12 +8,13 @@
 .su-button.su-link,
 .su-button--big,
 .su-button--big.su-link,
+.stanford-news-vertical-teaser-term .more-link a,
 .node.event .more-link a,
 [type=button],
 [type=image],
 [type=reset],
 [type=submit],
-button  {
+button {
   @include chemh--shadow-system-button--big;
 
   background-color: transparent;
@@ -33,6 +34,8 @@ button  {
 .su-button.su-link:hover,
 .su-button:focus,
 .su-button:hover,
+.stanford-news-vertical-teaser-term .more-link a:focus,
+.stanford-news-vertical-teaser-term .more-link a:hover,
 .node.event .more-link a:focus,
 .node.event .more-link a:hover,
 [type=button]:focus,
@@ -57,6 +60,7 @@ button:hover {
 .su-button:active,
 .su-button--big.su-link:active,
 .su-button--big:active,
+.stanford-news-vertical-teaser-term .more-link a:active,
 .node.event .more-link a,
 [type=button]:active,
 [type=image]:active,
@@ -76,13 +80,13 @@ button:hover {
   }
 }
 
-
 main,
 footer {
   .su-button.su-link,
   .su-button,
   .su-button--big.su-link,
   .su-button--big,
+  .stanford-news-vertical-teaser-term .more-link a,
   .node.event .more-link a,
   button {
     @include chemh-button--gradient;
@@ -119,6 +123,7 @@ footer {
   }
 
   .su-button,
+  .stanford-news-vertical-teaser-term .more-link a,
   .node.event .more-link a {
     &.su-link--external {
       &::after {
