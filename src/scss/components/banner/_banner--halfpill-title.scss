@@ -69,32 +69,22 @@
             &:not(.su-link--external)::after {
               background: url(../../assets/svg/icon_east_white.svg) no-repeat 0 0;
             }
-
-            // :not(.su-link-external) {
-            //   ::after {
-            //     background: url(../../assets/svg/icon_east_white.svg) no-repeat 0 0;
-            //   }
-            // }
           }
-
-          // .su-button:not(.su-link--external)::after {
-          //   background: url(../../assets/svg/icon_east_white.svg) no-repeat 0 0;
-          // }
         }
 
-        // .bullet {
-        //   padding-left: 0.6em;
-        //   margin-bottom: 0;
+        .bullet {
+          padding-left: 0.6em;
+          margin-bottom: 0;
 
-        //   &::before {
-        //     content: "\2022";
-        //     display: inline-block;
-        //     display: inline-block;
-        //     color: $chemh-color-digital-blue;
-        //     padding-right: 0.5em;
-        //     font-size: 1.5em;
-        //   }
-        // }
+          &::before {
+            content: "\2022";
+            display: inline-block;
+            display: inline-block;
+            color: $chemh-color-digital-blue;
+            padding-right: 0.5em;
+            font-size: 1.5em;
+          }
+        }
       }
     }
 
