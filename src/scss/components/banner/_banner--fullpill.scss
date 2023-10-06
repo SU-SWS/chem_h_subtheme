@@ -126,13 +126,18 @@ $banner-circle--sm-image-width: 150px;
       a {
         background-color: $su-color-black;
         color: $su-color-white;
+
+        &.su-link--external {
+          &::after {
+            background-color: $su-color-white;
+          }
+        }
+
+        &:not(.su-link--external)::after {
+          background: url(../../assets/svg/icon_east_white.svg) no-repeat 0 0;
+        }
       }
     }
-  }
-
-  .su-button:not(.su-link--external):after,
-  .su-button:not(.su-link--external):after {
-    background: url(../../assets/svg/icon_east_white.svg) no-repeat 0 0;
   }
 }
 

@@ -155,10 +155,15 @@ footer {
       }
 
       &.mailto,
-      &.simplesamlphp-auth-login-link {
+      &.simplesamlphp-auth-login-link,
+      &.samlauth-login {
         &::after {
           content: none;
         }
+      }
+
+      &.samlauth-login {
+        color: $su-color-white;
       }
 
     }
