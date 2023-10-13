@@ -205,6 +205,8 @@
 
       &.su-list-unstyled>li {
         @include centered-column;
+
+        margin-bottom: 4.5rem;
       }
     }
 
