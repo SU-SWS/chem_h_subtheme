@@ -64,7 +64,7 @@
       }
 
       h2 {
-        @include responsive-spacing('padding-top', 1);
+        @include responsive-spacing('padding-top', 3);
         @include type-b;
 
         margin-bottom: 0;
@@ -102,8 +102,6 @@
       .su-event-dek {
         @include responsive-spacing('padding-top', 0);
         
-        font-family: $su-font-serif;
-        font-style: italic;
         font-size: 3rem;
         margin: 0 auto;
         
