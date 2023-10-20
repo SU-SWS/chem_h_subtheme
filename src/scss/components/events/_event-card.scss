@@ -27,6 +27,10 @@
       max-width: unset;
 
       .su-event-list-item__date__seperator {
+        @include grid-media-max('sm') {
+          min-width: auto;
+        }
+
         color: #fff;
         font-weight: 900;
         margin-right: 2rem;
