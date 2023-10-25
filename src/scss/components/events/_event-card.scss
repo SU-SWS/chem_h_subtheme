@@ -1,44 +1,65 @@
 @charset "UTF-8";
 
+.ds-entity--stanford-event {
+  container-type: inline-size;
+}
+
 .su-event-card {
   @include chemh--shadow-custom-button-default;
   border-bottom-left-radius: 6rem;
   padding-top: 0;
-
+  
   // Whole card hover and focus
   &:hover,
   &:focus,
   &:focus-within,
   &:active {
     @include chemh--shadow-news-card-hover;
-
+    
     .su-event-card__footer {
       a {
         background-color: $chemh-color-red;
       }
     }
   }
-
+  
   &.su-card {
+    
     .su-event-list-item__date {
       background: black;
       width: fit-content;
       padding: 0.8rem 3rem;
       max-width: unset;
-
+      
       .su-event-list-item__date__seperator {
+        @include grid-media-max('sm') {
+          min-width: auto;
+        }
+        
         color: #fff;
         font-weight: 900;
         margin-right: 2rem;
         margin-left: 2rem;
       }
-
+      
       .su-event-start-month,
       .su-event-start-date,
       .su-event-end-month,
       .su-event-end-date {
         font-weight: 400;
         color: #fff;
+      }
+    }
+
+    @container (max-width: 270px) {
+      .su-event-list-item__date {
+        padding: 0.8rem 1rem;
+        font-size: 1.6rem;
+
+        .su-event-list-item__date__seperator {
+          margin-right: 1rem;
+          margin-left: 1rem;
+        }
       }
     }
     
