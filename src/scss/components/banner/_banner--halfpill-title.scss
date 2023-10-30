@@ -36,18 +36,17 @@
       // max-width: 557px;
 
       .su-card__contents {
-        // h2 badge
-        @include chemh-heading--badge;
-
+        
         color: $su-color-white;
         padding: 0;
-
+        
         @include grid-media-max('sm') {
           padding: 3rem 0 0 0;
           width: 400px;
         }
-
+        
         h1 {
+          @include chemh-heading--badge;
           @include type-a;
 
           color: $su-color-white;
