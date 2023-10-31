@@ -99,9 +99,7 @@
         width: 70%;
       }
 
-      .su-event-dek {
-        @include responsive-spacing('padding-top', 0);
-        
+      .su-event-dek {        
         font-size: 3rem;
         margin: 0 auto;
         
@@ -134,14 +132,15 @@
     }
 
     .su-event-sponsor {
-      @include responsive-spacing('padding-top', 0);
-
+      
       max-width: 100%;
       text-align: center;
       background: white;
       margin: 0 auto;
-
+      
       @include grid-media-min('sm') {
+        @include responsive-spacing('padding-top', 0);
+        
         width: 70%;
       }
 
