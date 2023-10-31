@@ -102,6 +102,7 @@
       .su-event-dek {        
         font-size: 3rem;
         margin: 0 auto;
+        padding-top: .2rem;
         
         @include grid-media-min('sm') {
           @include responsive-spacing('padding-bottom', 0);
