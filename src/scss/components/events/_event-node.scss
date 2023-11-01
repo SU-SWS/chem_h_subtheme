@@ -138,7 +138,7 @@
       text-align: center;
       background: white;
       margin: 0 auto;
-      
+
       @include grid-media-min('sm') {
         @include responsive-spacing('padding-top', 0);
         
