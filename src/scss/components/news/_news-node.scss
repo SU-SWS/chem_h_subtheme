@@ -162,7 +162,9 @@
 
     // More News section
     .section-supporting-content {
-      width: 100%;
+      @include grid-media-min('sm') {
+        width: 100%;
+      }
 
       .stanford-news-vertical-teaser-term {
         >h2 {
@@ -170,6 +172,28 @@
       
           margin-bottom: 6.6rem;
           text-align: left;
+        }
+
+        .stanford-news--cards {
+          ul {
+            &.grid-container-3 {
+              @include grid-media-max('md') {
+                gap: 3rem;
+              }
+
+              .ds-entity--stanford-news {
+                container-type: inline-size;
+
+                @container (max-width: 200px) {
+                  .su-card {
+                    .su-card__contents {
+                      padding: 2rem 2rem 0;
+                    }
+                  }
+                }
+              }
+            }
+          }
         }
       
         .more-link {
