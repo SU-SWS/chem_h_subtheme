@@ -5,9 +5,9 @@ $banner-circle--sm-image-width: 150px;
 
 
 .chemh-wrapper--banner-fullpill {
-  margin: 0 auto;
-
-  @include grid-media-min('sm') {
+  
+  @include grid-media-min('md') {
+    margin: 0 auto;
     max-width: calc(100vw - 200px);
   }
 
@@ -20,17 +20,23 @@ $banner-circle--sm-image-width: 150px;
     align-items: center;
     min-height: 400px;
 
+    @include grid-media-max('lg') {
+      flex-direction: column;
+    }
+    
     @include grid-media-max('md') {
       background: $su-color-black url("../../assets/svg/fullpill-bg.svg") no-repeat 100% / 205%;
       flex-direction: column;
       background-size: cover;
-
+      
       @include modular-spacing('padding', 3);
     }
-
-    @include grid-media-max('lg') {
-      flex-direction: column;
+    
+    @include grid-media-max('sm') {
+      border-radius: unset;
+      background: $su-color-black;
     }
+
 
     @include modular-spacing('padding-top', 3);
     @include modular-spacing('padding-bottom', 3);
@@ -44,8 +50,7 @@ $banner-circle--sm-image-width: 150px;
       width: 275px;
 
       @include grid-media-max('sm') {
-        aspect-ratio: unset;
-        margin: 0 auto;
+        display: none;
       }
 
       img { // Image display has been set to media image style - Medium (220)
