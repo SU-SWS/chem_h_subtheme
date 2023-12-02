@@ -92,4 +92,4 @@ allpages:
    theme:
      dist/css/chem_h_subtheme.css: {minified: true }
   js:
-    dist/js/scripts.js: { scope: footer }
+    src/js/chemhsubtheme.behaviors.js: { scope: footer }
