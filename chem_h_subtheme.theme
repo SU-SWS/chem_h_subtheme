@@ -8,7 +8,7 @@
  * Prepares variables for the html.html.twig template.
  */
 function chem_h_subtheme_preprocess_html(&$variables) {
-  $variables['stanford_basic_path'] = drupal_get_path('theme', 'stanford_basic');
+  \Drupal::service('extension.list.theme')->getPath('stanford_basic');
 
   $twittercard = [
     '#tag' => 'meta',
@@ -58,7 +58,7 @@ function chem_h_subtheme_preprocess_html(&$variables) {
     ],
   ];
 
-  // Is front page variable 
+  // Is front page variable
   // set the front variable to add meta tags to on the homepage.
   if (\Drupal::service('path.matcher')->isFrontPage()) {
     $variables['page']['#attached']['html_head'][] = [$twittercard, 'twitter:card'];
@@ -128,7 +128,7 @@ function chem_h_subtheme_preprocess_card(&$variables) {
   // Check for media in a card then set classes.
   if (!$imageCount) {
     return;
-  }  
+  }
 }
 
 /**
