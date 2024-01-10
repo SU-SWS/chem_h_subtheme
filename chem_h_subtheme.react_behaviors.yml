@@ -6,15 +6,6 @@ card_variant_info:  # part of the key after the :
   bundles:
     - paragraphs_type|stanford_card
   config:
-    card_button_style:
-      type: select
-      title: 'Card Button Style'
-      description: Select the button color for displaying this card.
-#      default_value: su-card-wrapper--border-regular
-      options:
-        su-wrapper--button-purple: Purple (Pantone 269C Purple  HEX 512D6D)
-        su-wrapper--button-teal: Teal (Pantone 2461C Teal  HEX 259591)
-        su-wrapper--button-red: Stanford Red ( HEX 8C1515)
     card_border_style:
       type: select
       title: 'Card Border Style'

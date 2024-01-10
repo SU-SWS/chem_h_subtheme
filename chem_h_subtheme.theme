@@ -128,9 +128,6 @@ function chem_h_subtheme_preprocess_card(&$variables) {
   // Add border style class to card wrapper.
   $variables['attributes']['class'][] = $paragraph->getBehaviorSetting('react_paragraphs:card_variant_info', 'card_border_style', 'su-card-wrapper--border-regular');
 
-  // Add button color style class to card wrapper.
-  $variables['attributes']['class'][] = $paragraph->getBehaviorSetting('react_paragraphs:card_variant_info', 'card_button_style', 'su-wrapper--button-red');
-
   $card_info = [];
 
   // Add card type class to card wrapper. 3rd variable provides the default card type.

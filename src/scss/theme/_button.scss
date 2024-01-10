@@ -282,32 +282,3 @@ a {
     }
   }
 }
-
-// Card & Banner buttons
-// TEST AND THEN REMOVE CODE
-.su-wrapper--button-purple {
-  .su-button,
-  .su-card__button {
-    a {
-      @include chemh-button--gradient;
-    }
-  }
-}
-
-.su-wrapper--button-teal {
-  .su-button,
-  .su-card__button  {
-    a {
-      @include chemh-button--gradient;
-    }
-  }
-}
-
-.su-wrapper--button-red {
-  .su-button,
-  .su-card__button  {
-    a {
-      @include chemh-button--gradient;
-    }
-  }
-}
