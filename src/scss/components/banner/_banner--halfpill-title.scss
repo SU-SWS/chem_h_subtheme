@@ -12,7 +12,7 @@
 
   .chemh-wrapper--banner-halfpill-title {
     @include grid-media-min('lg') {
-      max-width: 1800px;
+      max-width: 2000px;
       margin: 0 auto;
     }
 
@@ -36,15 +36,15 @@
       // max-width: 557px;
 
       .su-card__contents {
-        
+
         color: $su-color-white;
         padding: 0;
-        
+
         @include grid-media-max('sm') {
           padding: 3rem 0 0 0;
           width: 400px;
         }
-        
+
         h1 {
           @include chemh-heading--badge;
           @include type-a;
