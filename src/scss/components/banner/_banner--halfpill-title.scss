@@ -12,7 +12,7 @@
 
   .chemh-wrapper--banner-halfpill-title {
     @include grid-media-min('lg') {
-      max-width: 1800px;
+      max-width: 2000px;
       margin: 0 auto;
     }
 
@@ -33,20 +33,18 @@
       background: transparent;
       border: 0;
       box-shadow: none;
-      // max-width: 557px;
 
       .su-card__contents {
-        
+
         color: $su-color-white;
         padding: 0;
-        
+
         @include grid-media-max('sm') {
           padding: 3rem 0 0 0;
           width: 400px;
         }
-        
+
         h1 {
-          @include chemh-heading--badge;
           @include type-a;
 
           color: $su-color-white;
@@ -93,115 +91,15 @@
       &.su-hero {
         .su-hero__media {
           background-color: transparent;
-
-          img {
-            border-top-right-radius: 300px;
-            border-bottom-right-radius: 300px;
-
-            @media (min-width: 2500px) {
-              border-top-left-radius: 20px;
-              border-bottom-left-radius: 20px;
-            }
-          }
-        }
-
-        @include grid-media('xl') {
-          &.su-hero {
-
-            .su-hero__media {
-              max-width: 60%;
-            }
-
-            .su-hero__card {
-              max-width: 30%;
-              right: 5%;
-            }
-          }
-        }
-
-        @include grid-media-max('lg') {
-          .su-hero__media {
-            max-width: 50%;
-            background-size: contain;
-          }
-
-          .su-hero__card {
-            max-width: 40%;
-          }
-        }
-
-        @include grid-media-max('md') {
-          .su-hero__media {
-            width: 50%;
-          }
-
-          .su-hero__card {
-            width: 40%;
-            right: 5%;
-          }
-        }
-
-        @include grid-media-max('sm') {
-          .su-hero__media {
-            padding-right: 30px;
-            max-width: unset;
-            width: 100%;
-          }
-
-          .su-hero__card {
-            max-width: 100%;
-            padding: 3.0rem;
-            right: unset;
-            width: 100%;
-          }
         }
       }
     }
 
     // Card position - left side
     .overlay-left {
-      align-items: baseline;
-      display: grid;
-      grid-template-columns: repeat(2,1fr);
-      grid-template-areas: "card media";
-
-      @include grid-media-max('sm') {
-        display: block;
-        padding: 0 0 30px 30px;
-
-        .su-hero__media {
-          padding-bottom: 10px;
-        }
-      }
-
-      @include grid-media-max('md') {
-        grid-template-columns: 40% 1fr;
-        grid-template-areas: "card media";
-        gap: 10%;
-      }
-
       &.su-hero {
-
-        .su-hero__card {
-          grid-area: card;
-        }
-
         .su-hero__media {
           background-color: transparent;
-          grid-area: media;
-          max-width: unset;
-          width: unset;
-          right: 0;
-
-          img {
-            border-top-left-radius: 300px;
-            border-bottom-left-radius: 300px;
-
-            @media (min-width: 2500px) {
-              border-top-right-radius: 20px;
-              border-bottom-right-radius: 20px;
-            }
-          }
         }
       }
     }
