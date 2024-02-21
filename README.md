@@ -1,5 +1,5 @@
 # [ChEM-H Subtheme](https://github.com/SU-SWS/chem_h_subtheme)
-##### Version: 2.2.3
+##### Version: 2.2.4
 
 Changelog: [Changelog.txt](CHANGELOG.txt)
 
@@ -12,13 +12,12 @@ https://chemh.stanford.edu
 
 Features
 ---
-Custom masthead
-Interesting banner variants
-Customized News and People node pages
-Customized teasers
-Custom search treatment
-Custom footer
-
+- Custom masthead
+- Interesting banner variants
+- Customized News and People node pages
+- Customized teasers
+- Custom search treatment
+- Custom footer
 
 Configuration
 ---
