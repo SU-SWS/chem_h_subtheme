@@ -4,8 +4,8 @@ const Webpack = require("webpack");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const FixStyleOnlyEntriesPlugin = require("webpack-fix-style-only-entries");
-const autoprefixer = require('autoprefixer')({ grid: true });
 const FileManagerPlugin = require('filemanager-webpack-plugin');
+const autoprefixer = require('autoprefixer')({ grid: true });
 
 const config = {
   isProd: process.env.NODE_ENV === "production",
@@ -16,7 +16,7 @@ const config = {
 
 var webpackConfig = {
   entry: {
-    'chem_h_subtheme': path.resolve('src/scss/config/index.scss')
+    "chem_h_subtheme": "./src/scss/config/index.scss",
   },
   output: {
     path: config.distFolder,
@@ -45,14 +45,6 @@ var webpackConfig = {
         },
       },
       {
-        // test: /\.js$/,
-        exclude: /node_modules/,
-        options: {
-          enableHmr: false
-        },
-        loader: 'drupal-behaviors-loader'
-      },
-      {
         test: /\.(sa|sc|c)ss$/,
         use: [
           config.isProd ? { loader: MiniCssExtractPlugin.loader } : 'style-loader',
@@ -72,6 +64,13 @@ var webpackConfig = {
       {
         test: /\.(png|jpg|gif|svg)$/i,
         type: "asset"
+      },
+      {
+        test: /\.(woff|woff2|eot|ttf)$/i,
+        type: "asset",
+        generator: {
+          filename: '../assets/fonts/[name][ext][query]'
+        }
       }
     ]
   },
