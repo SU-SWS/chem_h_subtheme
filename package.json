@@ -7,9 +7,9 @@
     "watch": "NODE_ENV=production webpack --watch",
     "build": "NODE_ENV=production webpack"
   },
-    "author": "",
-    "license": "ISC",
-    "dependencies": {
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
     "@babel/core": "^7.22.1",
     "@babel/polyfill": "^7.12.1",
     "@babel/preset-env": "^7.22.4",
