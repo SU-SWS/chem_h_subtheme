@@ -12,10 +12,17 @@
     @include grid-media-min('2xl') {
       background: $su-color-black url(../../assets/png/header-sm-000--cropped.png) no-repeat 50%/cover;
     }
-
+    
     .su-event-type,
     .node-stanford-event-title {
+      justify-content: center;
       text-align: center;
+
+      div {
+        &::after {
+          color: $su-color-white;
+        }
+      }
 
       a,
       p,
@@ -25,6 +32,20 @@
         letter-spacing: .3rem;
         margin-bottom: .5rem;
         opacity: .9;
+        display: inline-block;
+      }
+    }
+
+    .su-event-label-past {
+      border-right: 1px solid $su-color-white;
+      padding-right: 10px;
+    }
+
+    // Past Events label if no event types are added
+    .node-stanford-event-title {
+      .su-event-label-past {
+        border: none;
+        padding-right: unset;
       }
     }
 
