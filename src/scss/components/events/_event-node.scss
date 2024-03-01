@@ -4,15 +4,15 @@
   .section-editorial-content {
     @include responsive-spacing('padding-top', 3);
 
-    background: $su-color-black url(../../assets/png/header-sm-000--cropped.png) no-repeat 5%/cover;
+    background: $su-color-black-true url(../../assets/png/header-sm-000--cropped.png) no-repeat 5%/cover;
     max-width: 100%;
     width: 100%;
     padding-bottom: 0;
 
     @include grid-media-min('2xl') {
-      background: $su-color-black url(../../assets/png/header-sm-000--cropped.png) no-repeat 50%/cover;
+      background: $su-color-black-true url(../../assets/png/header-sm-000--cropped.png) no-repeat 50%/cover;
     }
-    
+
     .su-event-type,
     .node-stanford-event-title {
       justify-content: center;
