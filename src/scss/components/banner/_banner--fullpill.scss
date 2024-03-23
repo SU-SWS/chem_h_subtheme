@@ -98,11 +98,16 @@ $banner-circle--sm-image-width: 150px;
         }
 
         .su-card__contents {
-
           h2 {
+            @include type-a;
+          }
+
+          h2,
+          h3,
+          h4,
+          .su-font-splash {
             @include responsive-spacing('margin-bottom', -1);
             @include chemh-heading--badge;
-            @include type-a;
 
             color: $su-color-white;
             font-family: $su-font-sans;

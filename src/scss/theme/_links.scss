@@ -145,7 +145,8 @@ a {
             background-color: $chemh-color-digital-blue;
           }
 
-          h2 {
+          h2,
+          h3 {
             color: $chemh-color-digital-blue;
           }
         }
@@ -155,7 +156,8 @@ a {
       &:focus {
         color: $chemh-color-digital-blue;
 
-        h2 {
+        h2,
+        h3 {
           color: $chemh-color-digital-blue;
         }
       }

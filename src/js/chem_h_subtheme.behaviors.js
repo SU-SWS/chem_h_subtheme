@@ -33,6 +33,9 @@
 
       // Heading change for the halfpill title banner.
       $('.chemh-wrapper--banner-halfpill-title h2').contents().unwrap().wrap('<h1/>');
+      $('.chemh-wrapper--banner-halfpill-title h3').contents().unwrap().wrap('<h1/>');
+      $('.chemh-wrapper--banner-halfpill-title h4').contents().unwrap().wrap('<h1/>');
+      $('.chemh-wrapper--banner-halfpill-title .su-font-splash').contents().unwrap().wrap('<h1/>');
 
       // Bckground color needed on only the Halfpill title banner.
       $('.chemh-wrapper--banner-halfpill-title').parents().find('.su-page-banner').addClass('su-page-banner--title');
