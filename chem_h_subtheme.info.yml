@@ -2,7 +2,7 @@ name: ChEM-H Subtheme
 type: theme
 description: 'ChEM-H Subtheme.'
 package: Stanford
-version: 2.2.7
+version: 2.2.8
 core_version_requirement: ^9 || ^10
 base theme: stanford_basic
 libraries:
