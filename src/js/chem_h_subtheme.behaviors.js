@@ -32,7 +32,11 @@
       });
 
       // Heading change for the halfpill title banner.
-      $('.chemh-wrapper--banner-halfpill-title h2').contents().unwrap().wrap('<h1/>');
+      const halfpillBannerHeadings = $('.chemh-wrapper--banner-halfpill-title h2, .chemh-wrapper--banner-halfpill-title h3, .chemh-wrapper--banner-halfpill-title h4, .chemh-wrapper--banner-halfpill-title .su-font-splash');
+
+      $(halfpillBannerHeadings).each(function(index, element) {
+        $(this).contents().unwrap().wrap('<h1/>');
+      });
 
       // Bckground color needed on only the Halfpill title banner.
       $('.chemh-wrapper--banner-halfpill-title').parents().find('.su-page-banner').addClass('su-page-banner--title');

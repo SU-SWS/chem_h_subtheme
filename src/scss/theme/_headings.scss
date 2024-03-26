@@ -22,7 +22,6 @@ h2 {
 h3 {
   @include type-b;
   font-weight: $su-font-bold;
-  line-height: 5.2rem;
   /* identical to box height, or 149% */
   letter-spacing: -1.5px;
   color: $chemh-color-true-black;
@@ -31,7 +30,6 @@ h3 {
 h4 {
   @include type-c;
   font-weight: $su-font-bold;
-  line-height: 3.8rem;
   /* identical to box height, or 136% */
   letter-spacing: -1px;
   color: $chemh-color-true-black;
@@ -40,7 +38,6 @@ h4 {
 h5 {
   @include type-c;
   font-weight: $su-font-bold;
-  line-height: 3.8rem;
   /* identical to box height, or 136% */
   letter-spacing: -1px;
   color: $chemh-color-true-black;
