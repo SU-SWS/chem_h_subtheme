@@ -184,3 +184,45 @@ function chem_h_subtheme_preprocess_field__node__title__stanford_person(&$variab
     ];
   }
 }
+
+/**
+ * Implements hook_preprocess_lists().
+ */
+function chem_h_subtheme_preprocess_paragraph__stanford_lists(array &$variables): void {
+  /** @var \Drupal\paragraphs\Entity\Paragraph $paragraph */
+  $paragraph = &$variables['paragraph'];
+  $existing_classes = $variables['attributes']['class'] ?? [];
+  $extra_classes = [
+    $paragraph->getBehaviorSetting('react_paragraphs:lists_variant_info', 'cards_color'),
+    $paragraph->getBehaviorSetting('react_paragraphs:lists_variant_info', 'grid_rows'),
+  ];
+  $variables['attributes']['class'] = array_merge($existing_classes, $extra_classes);
+}
+
+/**
+ * Implements hook_preprocess_entity().
+ */
+function chem_h_subtheme_preprocess_paragraph__stanford_entity(array &$variables): void {
+  /** @var \Drupal\paragraphs\Entity\Paragraph $paragraph */
+  $paragraph = &$variables['paragraph'];
+  $existing_classes = $variables['attributes']['class'] ?? [];
+  $extra_classes = [
+    $paragraph->getBehaviorSetting('react_paragraphs:entity_variant_info', 'cards_color'),
+    $paragraph->getBehaviorSetting('react_paragraphs:entity_variant_info', 'grid_rows'),
+  ];
+  $variables['attributes']['class'] = array_merge($existing_classes, $extra_classes);
+}
+
+/**
+ * Implements hook_preprocess_paragraph__stanford_layout().
+ */
+function chem_h_subtheme_preprocess_paragraph__stanford_layout(array &$variables): void {
+  /** @var \Drupal\paragraphs\Layout\Paragraph $paragraph */
+  $paragraph = &$variables['paragraph'];
+  $existing_classes = $variables['attributes']['class'] ?? [];
+  $extra_classes = [
+    $paragraph->getBehaviorSetting('react_paragraphs:layout_variant_info', 'padding_bottom'),
+    $paragraph->getBehaviorSetting('react_paragraphs:layout_variant_info', 'section_color'),
+  ];
+  $variables['attributes']['class'] = array_merge($existing_classes, $extra_classes);
+}
