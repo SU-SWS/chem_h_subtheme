@@ -43,7 +43,7 @@ layout_variant_info:
       description: Choose the section background color.
       empty_option: Default
       options:
-        chemh-section-color--su-black: Black
+        chemh-section-color--su-black: Dark Grey
         chemh-section-color--light-grey: Light Grey
     padding_bottom:
       type: select
