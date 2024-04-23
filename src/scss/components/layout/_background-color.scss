@@ -1,10 +1,8 @@
 @charset "UTF-8";
 
-
-
-    //  Layout paragraph type section variant styles
-    .chemh-section-color--su-black {
-        color: $su-color-white;
+//  Layout paragraph type section variant styles
+.chemh-section-color--su-black {
+    color: $su-color-white;
 
     // Items needing override
     .su-media__caption,
@@ -19,13 +17,26 @@
     a,
     a.su-link,
     a.su-link--external,
-    a.su-link--external:focus,
-    a.su-link--external:hover,
-    a.su-link:focus,
-    a.su-link:hover,
-    a:focus,
-    a:hover {
+    a.su-link {
+        &:hover,
+        &:focus,
+        &:active {
+            color: $chemh-color-digital-blue;
+
+            &.su-link--external {
+                &::after {
+                    background-color: $chemh-color-digital-blue;
+                }
+             }
+        }
+
         color: $su-color-white;
+
+        &.su-link--external {
+            &::after {
+                background-color: $su-color-white;
+            }
+         }
     }
 
     .su-button {
@@ -112,10 +123,10 @@
                 }
             }
         }
-
     }
+    // End Events
 
-    // New list
+    // News list
     .su-news-list {
         .su-news-list__header {
             .su-link,
@@ -138,10 +149,31 @@
             }
         }
     }
+    // End News
 
+    // Cards
+    .su-card {
+        color: $chemh-color-true-black;
 
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        .su-card__superhead {
+            color: $su-color-black;
+        }
 
+        .su-link.su-card__link.su-link--action {
+            color: $su-color-black;
 
-
+            &:hover,
+            &:focus,
+            &:active {
+                color: $chemh-color-digital-blue;
+            }
+          }
+      }
+    // End cards
 }
 
