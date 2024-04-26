@@ -15,9 +15,8 @@
     }
 
     a,
-    a.su-link,
-    a.su-link--external,
-    a.su-link {
+    .su-link--external,
+    .su-link {
         &:hover,
         &:focus,
         &:active {
@@ -27,7 +26,7 @@
                 &::after {
                     background-color: $chemh-color-digital-blue;
                 }
-             }
+            }
         }
 
         color: $su-color-white;
@@ -36,11 +35,74 @@
             &::after {
                 background-color: $su-color-white;
             }
-         }
+        }
     }
 
-    .su-button {
-        background-color: $su-color-white;
+    a {
+        &.su-button,
+        &.su-button--big {
+            background-color: $su-color-white;
+
+            &.su-link--external.su-link {
+                background-color: $su-color-white;
+
+                &::after {
+                    background-color: $su-color-black;
+                }
+
+                &:hover,
+                &:focus,
+                &:active {
+                    &::after {
+                        background-color: $su-color-white;
+                    }
+                }
+            }
+        }
+
+        &.su-button--secondary {
+            color: $su-color-black;
+
+            &.su-link--external.su-link {
+
+                &::after {
+                    background-color: $su-color-black;
+                }
+
+                &:hover,
+                &:focus,
+                &:active {
+                    color:  $su-color-black;
+
+                    &::after {
+                        background-color: $su-color-black;
+                    }
+                }
+            }
+
+            &.mailto svg {
+                fill: $su-color-black;
+
+                &:hover,
+                &:focus,
+                &:active {
+                    fill:  $su-color-black;
+                }
+            }
+        }
+
+        &.mailto {
+            svg {
+                fill: $su-color-white;
+
+                &:hover,
+                &:focus,
+                &:active {
+                    fill: $chemh-color-digital-blue;
+
+                }
+            }
+        }
     }
 
     // Edit content authoring button
