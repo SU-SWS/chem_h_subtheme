@@ -278,9 +278,16 @@
             background-color: $su-color-white;
 
             .su-card__contents {
-                h2 {
+                h2,
+                h3 {
                     a {
                         color: $su-color-black;
+                        &:hover,
+                        &:focus,
+                        &:active {
+                            color: $chemh-color-digital-blue;
+                            text-decoration: underline;
+                        }
                     }
                 }
                 .su-person-short-title {
@@ -289,7 +296,6 @@
             }
         }
     }
-
 
     .taxonomy-term-pages.people-terms,
     .stanford-people-grid {
@@ -304,6 +310,22 @@
                 h2,
                 h3 {
                     color: $su-color-black;
+                }
+
+                a {
+                    color: $su-color-black;
+
+                    &:hover,
+                    &:focus,
+                    &:active {
+                        color: $chemh-color-digital-blue;
+                        text-decoration: underline;
+
+                        h2,
+                        h3 {
+                            color: $chemh-color-digital-blue;
+                        }
+                    }
                 }
             }
         }
@@ -329,11 +351,15 @@
                 .su-card__button {
                     .su-link {
                         &.su-button {
-                            background-color: $su-color-white;
+                            color: $su-color-white;
 
-                            &::after {
+                            &.su-link--external {
                                 background-color: $su-color-black;
 
+                                &::after {
+                                    background-color: $su-color-white;
+
+                                }
                             }
                         }
                     }
