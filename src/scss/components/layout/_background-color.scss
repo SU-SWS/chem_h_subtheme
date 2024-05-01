@@ -231,6 +231,18 @@
             a {
                 color: $su-color-black;
 
+                &:hover,
+                &:focus,
+                &:active {
+                    color: $chemh-color-digital-blue;
+
+                    &.su-link--external {
+                        &::after {
+                            background-color: $chemh-color-digital-blue;
+                        }
+                    }
+                }
+
                 &.su-link--external {
                     &::after {
                         background-color: $su-color-black;
@@ -243,17 +255,25 @@
                     &:focus,
                     &:active {
                         color: $su-color-white;
+
+                        &.su-link--external {
+                            &::after {
+                                background-color: $su-color-white;
+                            }
+                        }
                     }
                 }
 
-                &:hover,
-                &:focus,
-                &:active {
-                    color: $chemh-color-digital-blue;
+                &.su-button--secondary {
+                    &:hover,
+                    &:focus,
+                    &:active {
+                        color: $su-color-black;
 
-                    &.su-link--external {
-                        &::after {
-                            background-color: $chemh-color-digital-blue;
+                        &.su-link--external {
+                            &::after {
+                                background-color: $su-color-black;
+                            }
                         }
                     }
                 }
