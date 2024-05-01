@@ -1,0 +1,68 @@
+@charset "UTF-8";
+
+
+.content {
+  // Prevent background color overflow
+  overflow-x: clip;
+
+  .paragraph-item {
+    margin-bottom: 0;
+
+    .ptype-stanford-layout {
+      @include responsive-spacing('padding-top', 5);
+      @include responsive-spacing('padding-bottom', 7);
+
+      //  Layout paragraph type section variant styles
+      &.chemh-section-color--light-grey,
+      &.chemh-section-color--su-black {
+        position: relative;
+
+        &::before,
+        &::after {
+          content: "";
+          position: absolute;
+          /* fill vertically */
+          top: 0;
+          bottom: 0;
+          width: 100%;
+          right: 100%;
+          z-index: -1;
+        }
+
+        &::after {
+          left: 100%;
+        }
+      }
+
+      &.chemh-section-pb-none {
+        padding-bottom: 0;
+      }
+
+      &.chemh-section-color--su-black {
+        background-color: $su-color-black;
+
+        &::before,
+        &::after {
+          background: $su-color-black;
+        }
+      }
+
+      &.chemh-section-color--light-grey {
+        background-color: $chemh-color-light-grey;
+
+        &::before,
+        &::after {
+          background: $chemh-color-light-grey;
+        }
+      }
+
+      .su-entity-item {
+        margin-bottom: 0;
+      }
+
+      .su-entity-button {
+        @include responsive-spacing('margin-top', 5);
+      }
+    }
+  }
+}

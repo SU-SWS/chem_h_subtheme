@@ -31,4 +31,24 @@ banner_variant_info:  # part of the key after the :
         chemh-wrapper--banner-halfpill: Halfpill variant
         chemh-wrapper--banner-halfpill-title: Halfpill Title variant
         chemh-wrapper--banner-homepage: Homepage variant
-
+layout_variant_info:
+  id: layout_style
+  label: 'Layout Paragraph Type'
+  bundles:
+    - paragraphs_type|stanford_layout
+  config:
+    section_color:
+      type: select
+      title: Section background color
+      description: Choose the section background color.
+      empty_option: Default
+      options:
+        chemh-section-color--su-black: Dark Grey
+        chemh-section-color--light-grey: Light Grey
+    padding_bottom:
+      type: select
+      title: Section padding bottom
+      description: Choose the section padding bottom.
+      empty_option: Default
+      options:
+        chemh-section-pb-none: None
