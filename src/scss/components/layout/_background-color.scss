@@ -2,469 +2,509 @@
 
 //  Layout paragraph type section variant styles
 .chemh-section-color--su-black {
+  color: $su-color-white;
+
+  // Items needing override
+  .su-media__caption,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: $su-color-white;
+  }
+
+  a,
+  .su-link--external,
+  .su-link,
+  .su-link--action {
     color: $su-color-white;
 
-    // Items needing override
-    .su-media__caption,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        color: $su-color-white;
+    &.su-link--external {
+      &::after {
+        background-color: $su-color-white;
+      }
     }
 
-    a,
-    .su-link--external,
-    .su-link,
-    .su-link--action {
-        color: $su-color-white;
+    &:hover,
+    &:focus,
+    &:active {
+      color: $chemh-color-digital-blue;
 
-        &.su-link--external {
-            &::after {
-                background-color: $su-color-white;
-            }
+      &.su-link--external {
+        &::after {
+          background-color: $chemh-color-digital-blue;
+        }
+      }
+    }
+  }
+
+  a {
+    &.su-button,
+    &.su-button--big {
+      background-color: $su-color-white;
+
+      &.su-link--external.su-link {
+        background-color: $su-color-white;
+
+        &::after {
+          background-color: $su-color-black;
         }
 
         &:hover,
         &:focus,
         &:active {
-            color: $chemh-color-digital-blue;
-
-            &.su-link--external {
-                &::after {
-                    background-color: $chemh-color-digital-blue;
-                }
-            }
+          &::after {
+            background-color: $su-color-white;
+          }
         }
+      }
     }
 
+    &.su-button--secondary {
+      color: $su-color-black;
+
+      &.su-link--external.su-link {
+        &::after {
+          background-color: $su-color-black;
+        }
+
+        &:hover,
+        &:focus,
+        &:active {
+          color: $su-color-black;
+
+          &::after {
+            background-color: $su-color-black;
+          }
+        }
+      }
+
+      &.mailto svg {
+        fill: $su-color-black;
+
+        &:hover,
+        &:focus,
+        &:active {
+          fill: $su-color-black;
+        }
+      }
+    }
+
+    &.mailto {
+      svg {
+        fill: $su-color-white;
+
+        &:hover,
+        &:focus,
+        &:active {
+          fill: $chemh-color-digital-blue;
+        }
+      }
+    }
+  }
+
+  // Edit content authoring button
+  .field-content.su-events-edit-article,
+  .field-content.su-news-edit-article,
+  .field-content.su-people-edit-article {
     a {
+      color: $su-color-black;
+    }
+  }
+
+  // Past Events
+  .su-past-event,
+  .su-event--past-events-text {
+    color: $su-color-white;
+  }
+
+  // Event Default and Card List.
+  .su-event-list-item {
+    .su-event-list-item__details {
+      color: $su-color-white;
+
+      h2,
+      h3 {
+        > a {
+          color: $su-color-white;
+
+          &:hover {
+            text-decoration: underline;
+          }
+          > &::after {
+            color: $su-color-white;
+          }
+        }
+      }
+      .event-list-item__type {
+        a {
+          color: $su-color-white;
+          text-decoration: none;
+
+          &:hover,
+          &:focus,
+          &:active {
+            text-decoration: underline;
+          }
+        }
+      }
+      span::before {
+        color: $su-color-white;
+      }
+    }
+    .su-date-stacked--no-background {
+      color: $su-color-white;
+    }
+
+    .su-event-list-item__date {
+      .su-event-list-item__date__seperator,
+      .su-event-end-month,
+      .su-event-start-month,
+      .su-event-start-date,
+      .su-event-end-date {
+        color: $su-color-white;
+      }
+    }
+    &.su-event-card {
+      .su-event-list-item__details {
+        color: $chemh-color-true-black;
+        h3 > a {
+          color: $chemh-color-true-black;
+        }
+      }
+
+      .views-field-su-event-date-time {
+        span {
+          &::before {
+            color: $chemh-color-true-black;
+          }
+        }
+      }
+    }
+  }
+  // End Events
+
+  // News list
+  .su-news-list {
+    .su-news-list__header {
+      a,
+      .su-link--external {
+        &:hover,
+        &:focus,
+        &:active {
+          h3 {
+            color: $su-color-white;
+            text-decoration: underline;
+          }
+          &::after {
+            background-color: $su-color-white;
+          }
+        }
+
+        &::after {
+          background-color: $su-color-white;
+        }
+      }
+    }
+  }
+  // End News
+
+  // Cards
+  .su-card {
+    color: $chemh-color-true-black;
+
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    .su-card__superhead {
+      color: $su-color-black;
+    }
+
+    .su-card__contents {
+      a {
+        color: $su-color-black;
+
+        &:hover,
+        &:focus,
+        &:active {
+          color: $chemh-color-digital-blue;
+
+          &.su-link--external {
+            &::after {
+              background-color: $chemh-color-digital-blue;
+            }
+          }
+        }
+
+        &.su-link--external {
+          &::after {
+            background-color: $su-color-black;
+          }
+        }
+
         &.su-button,
         &.su-button--big {
-            background-color: $su-color-white;
+          &:hover,
+          &:focus,
+          &:active {
+            color: $su-color-white;
 
-            &.su-link--external.su-link {
+            &.su-link--external {
+              &::after {
                 background-color: $su-color-white;
-
-                &::after {
-                    background-color: $su-color-black;
-                }
-
-                &:hover,
-                &:focus,
-                &:active {
-                    &::after {
-                        background-color: $su-color-white;
-                    }
-                }
+              }
             }
+          }
         }
 
         &.su-button--secondary {
+          &:hover,
+          &:focus,
+          &:active {
             color: $su-color-black;
 
-            &.su-link--external.su-link {
-
-                &::after {
-                    background-color: $su-color-black;
-                }
-
-                &:hover,
-                &:focus,
-                &:active {
-                    color:  $su-color-black;
-
-                    &::after {
-                        background-color: $su-color-black;
-                    }
-                }
+            &.su-link--external {
+              &::after {
+                background-color: $su-color-black;
+              }
             }
-
-            &.mailto svg {
-                fill: $su-color-black;
-
-                &:hover,
-                &:focus,
-                &:active {
-                    fill:  $su-color-black;
-                }
-            }
+          }
         }
 
-        &.mailto {
-            svg {
-                fill: $su-color-white;
-
-                &:hover,
-                &:focus,
-                &:active {
-                    fill: $chemh-color-digital-blue;
-
-                }
-            }
-        }
-    }
-
-    // Edit content authoring button
-    .field-content.su-events-edit-article,
-    .field-content.su-news-edit-article,
-    .field-content.su-people-edit-article {
-        a {
-            color: $su-color-black;
-        }
-    }
-
-    // Past Events
-    .su-past-event,
-    .su-event--past-events-text {
-        color: $su-color-white;
+        &.mailto svg {
+          fill: $su-color-black;
+  
+          &:hover,
+          &:focus,
+          &:active {
+            fill: $su-color-bright-blue;
+          }
+        }        
       }
-
-      // Event Default and Card List.
-    .su-event-list-item {
-        .su-event-list-item__details {
-            color: $su-color-white;
-
-            h2,
-            h3 {
-                > a {
-                    color: $su-color-white;
-
-                    &:hover {
-                        text-decoration: underline;
-                    }
-                    > &::after{
-                        color: $su-color-white;
-                    }
-                }
-
-            }
-            .event-list-item__type {
-                a {
-                    color: $su-color-white;
-                    text-decoration: none;
-
-                    &:hover,
-                    &:focus,
-                    &:active {
-                        text-decoration: underline;
-                    }
-                }
-            }
-            span::before {
-                color: $su-color-white;
-            }
-        }
-        .su-date-stacked--no-background{
-            color: $su-color-white;
-        }
-
-        .su-event-list-item__date {
-            .su-event-list-item__date__seperator,
-            .su-event-end-month,
-            .su-event-start-month,
-            .su-event-start-date,
-            .su-event-end-date {
-                color: $su-color-white;
-
-            }
-        }
-        &.su-event-card {
-            .su-event-list-item__details {
-                color: $chemh-color-true-black;
-                h3 > a {
-                    color: $chemh-color-true-black;
-                }
-            }
-
-            .views-field-su-event-date-time {
-                span {
-                    &::before {
-                        color: $chemh-color-true-black;
-                    }
-                }
-            }
-        }
     }
-    // End Events
 
-    // News list
-    .su-news-list {
-        .su-news-list__header {
-            a,
-            .su-link--external {
-                &:hover,
-                &:focus,
-                &:active {
-                    h3 {
-                        color: $su-color-white;
-                        text-decoration: underline;
-                    }
-                    &::after {
-                        background-color: $su-color-white;
-                    }
-                }
+    .su-link.su-card__link.su-link--action {
+      color: $su-color-black;
 
-                &::after {
-                    background-color: $su-color-white;
-                }
-            }
-        }
+      &:hover,
+      &:focus,
+      &:active {
+        color: $chemh-color-digital-blue;
+      }
     }
-    // End News
+  }
+  // End cards
 
-    // Cards
+  // Person Cards
+  .ds-entity--stanford-person {
     .su-card {
-        color: $chemh-color-true-black;
+      background-color: $su-color-white;
 
+      .su-card__contents {
         h2,
-        h3,
-        h4,
-        h5,
-        h6,
-        .su-card__superhead {
+        h3 {
+          a {
             color: $su-color-black;
-        }
-
-        .su-card__contents {
-            a {
-                color: $su-color-black;
-
-                &:hover,
-                &:focus,
-                &:active {
-                    color: $chemh-color-digital-blue;
-
-                    &.su-link--external {
-                        &::after {
-                            background-color: $chemh-color-digital-blue;
-                        }
-                    }
-                }
-
-                &.su-link--external {
-                    &::after {
-                        background-color: $su-color-black;
-                    }
-                }
-
-                &.su-button,
-                &.su-button--big {
-                    &:hover,
-                    &:focus,
-                    &:active {
-                        color: $su-color-white;
-
-                        &.su-link--external {
-                            &::after {
-                                background-color: $su-color-white;
-                            }
-                        }
-                    }
-                }
-
-                &.su-button--secondary {
-                    &:hover,
-                    &:focus,
-                    &:active {
-                        color: $su-color-black;
-
-                        &.su-link--external {
-                            &::after {
-                                background-color: $su-color-black;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-
-        .su-link.su-card__link.su-link--action {
-            color: $su-color-black;
-
             &:hover,
             &:focus,
             &:active {
-                color: $chemh-color-digital-blue;
+              color: $chemh-color-digital-blue;
+              text-decoration: underline;
             }
           }
+        }
+        .su-person-short-title {
+          color: $su-color-black;
+        }
       }
-    // End cards
-
-    // Person Cards
-    .ds-entity--stanford-person {
-        .su-card {
-            background-color: $su-color-white;
-
-            .su-card__contents {
-                h2,
-                h3 {
-                    a {
-                        color: $su-color-black;
-                        &:hover,
-                        &:focus,
-                        &:active {
-                            color: $chemh-color-digital-blue;
-                            text-decoration: underline;
-                        }
-                    }
-                }
-                .su-person-short-title {
-                    color: $su-color-black;
-                }
-            }
-        }
     }
+  }
 
-    .taxonomy-term-pages.people-terms,
-    .stanford-people-grid {
-        li {
-            background-color: $su-color-white;
+  .taxonomy-term-pages.people-terms,
+  .stanford-people-grid {
+    li {
+      background-color: $su-color-white;
 
-            .views-field-su-person-short-title {
-                color: $su-color-black;
-            }
+      .views-field-su-person-short-title {
+        color: $su-color-black;
+      }
 
-            .views-field-title {
-                h2,
-                h3 {
-                    color: $su-color-black;
-                }
-
-                a {
-                    color: $su-color-black;
-
-                    &:hover,
-                    &:focus,
-                    &:active {
-                        color: $chemh-color-digital-blue;
-                        text-decoration: underline;
-
-                        h2,
-                        h3 {
-                            color: $chemh-color-digital-blue;
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    // End person cards
-
-    // Banners
-    .ptype-stanford-banner {
-
-        .chemh-wrapper--banner-fullpill {
-            .su-hero__card {
-                color: $su-color-white;
-
-                .su-card__superhead {
-                    color: $su-color-white;
-                }
-                .su-card__contents {
-                    h2 {
-                        color: $su-color-white;
-                    }
-                }
-                .su-card__button {
-                    .su-link {
-                        &.su-button {
-                            color: $su-color-white;
-
-                            &.su-link--external {
-                                background-color: $su-color-black;
-
-                                &::after {
-                                    background-color: $su-color-white;
-
-                                }
-                            }
-                        }
-                    }
-                }
-            }
+      .views-field-title {
+        h2,
+        h3 {
+          color: $su-color-black;
         }
 
-        .chemh-wrapper--banner-halfpill,
-        .chemh-wrapper--banner-halfpill-title {
-            .su-hero__card {
-                color: $su-color-white;
+        a {
+          color: $su-color-black;
 
-                .su-card__superhead {
-                    color: $su-color-white;
-                }
+          &:hover,
+          &:focus,
+          &:active {
+            color: $chemh-color-digital-blue;
+            text-decoration: underline;
 
-                .su-card__button {
-                    .su-link {
-                        &.su-button {
-                            background-color: $su-color-white;
-                        }
-                    }
-                }
-
-                .su-card__contents {
-                    h2 {
-                        color: $su-color-white;
-                    }
-                }
-            }
-
-            .su-hero__media {
-                background: $su-color-black;
-            }
-        }
-
-    }
-    // End banners
-
-    // Publications list
-    .stanford-publications {
-        &.view {
-            a {
-                color: $su-color-white;
-
-                &:hover,
-                &:focus,
-                &:active {
-                    color: $chemh-color-digital-blue;
-                }
-            }
-        }
-
-        .views-field-edit-node {
-            .su-button--secondary {
-                color: $su-color-black;
-            }
-        }
-    }
-    // End publications
-
-    // Courses
-    .su-course-vertical-teaser {
-        .su-course-link {
-            a,
             h2,
             h3 {
-                color: $su-color-black;
+              color: $chemh-color-digital-blue;
+            }
+          }
+        }
+      }
+    }
+  }
 
-                &:hover,
-                &:focus,
-                &:active {
-                    color: $chemh-color-digital-blue;
+  // End person cards
 
-                    &::after {
-                        color: $chemh-color-digital-blue;
-                    }
-                }
+  // Banners
+  .ptype-stanford-banner {
+    .chemh-wrapper--banner-fullpill {
+      .su-hero__card {
+        color: $su-color-white;
+
+        .su-card__superhead {
+          color: $su-color-white;
+        }
+        .su-card__contents {
+          h2 {
+            color: $su-color-white;
+          }
+        }
+        .su-card__button {
+          .su-link {
+            &.su-button {
+              color: $su-color-white;
+
+              &.su-link--external {
+                background-color: $su-color-black;
 
                 &::after {
-                    background-color: $su-color-black;
+                  background-color: $su-color-white;
                 }
+              }
             }
+          }
         }
+      }
     }
-    // End courses
-}
 
+    .chemh-wrapper--banner-halfpill,
+    .chemh-wrapper--banner-halfpill-title {
+      .su-hero__card {
+        color: $su-color-white;
+
+        .su-card__superhead {
+          color: $su-color-white;
+        }
+
+        .su-card__button {
+          .su-link {
+            &.su-button {
+              background-color: $su-color-white;
+            }
+          }
+        }
+
+        .su-card__contents {
+          h1,
+          h2,
+          h3,
+          h4,
+          .su-font-splash {
+            color: $su-color-white;
+          }
+        }
+      }
+
+      .su-hero__media {
+        background: $su-color-black;
+      }
+    }
+  }
+  // End banners
+
+  // Publications list
+  .stanford-publications {
+    &.view {
+      a {
+        color: $su-color-white;
+
+        &:hover,
+        &:focus,
+        &:active {
+          color: $chemh-color-digital-blue;
+        }
+      }
+    }
+
+    .views-field-edit-node {
+      .su-button--secondary {
+        color: $su-color-black;
+      }
+    }
+  }
+  // End publications
+
+  // Courses
+  .su-course-vertical-teaser {
+    .su-course-link {
+      a,
+      h2,
+      h3 {
+        color: $su-color-black;
+
+        &:hover,
+        &:focus,
+        &:active {
+          color: $chemh-color-digital-blue;
+
+          &::after {
+            color: $chemh-color-digital-blue;
+          }
+        }
+
+        &::after {
+          background-color: $su-color-black;
+        }
+      }
+    }
+  }
+  // End courses
+
+  // Tables
+  table {
+    tbody th,
+    thead th {
+      color: $su-color-white;
+    }
+  }
+  // End Tables
+
+  // WYSIWYG
+  .su-wysiwyg-text {
+    h2 a,
+    h3 a,
+    h4 a,
+    h5 a {
+      color: $su-color-white;
+
+      &::after {
+        background-color: $su-color-white;
+      }
+
+      &:hover,
+      &:focus,
+      &:active {
+        color: $su-color-bright-blue;
+
+        &::after {
+          background-color: $su-color-bright-blue;
+        }
+      }
+    }
+  }
+
+}
