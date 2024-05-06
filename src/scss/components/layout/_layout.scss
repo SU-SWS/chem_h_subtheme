@@ -54,6 +54,13 @@
         &::after {
           background: $chemh-color-light-grey;
         }
+
+        .chemh-wrapper--banner-halfpill,
+        .chemh-wrapper--banner-halfpill-title {
+          .su-hero__media {
+            background: $chemh-color-light-grey;
+          }
+        }
       }
 
       .su-entity-item {
