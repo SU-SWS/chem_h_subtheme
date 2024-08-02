@@ -39,6 +39,11 @@
 {%- endif -%}
 {% set header_tag = variant == 'h3_header' ? 'h3' : 'h2' %}
 
+{% set url = url|render_clean %}
+{% if not url %}
+  {% set url = page_url %}
+{% endif %}
+
 <div {{ attributes }}>
   <div class="su-event-list-item__date">
     <div class="su-date-stacked su-date-stacked--no-background" aria-hidden="true">
@@ -68,7 +73,7 @@
     {%- if url|render_clean is empty -%}
       {{- headline -}}
     {%- else -%}
-      <{{ header_tag }}><a {{ link_attributes }} href="{{ url|render_clean }}">{{ headline|render_clean }}</a></{{ header_tag }}>
+      <{{ header_tag }}><a {{ link_attributes }} href="{{ url }}" data-foo="bar">{{ headline|render_clean }}</a></{{ header_tag }}>
     {%- endif -%}
 
     {# Event Subheadline  #}
@@ -149,22 +154,22 @@
       {% endif %}
     </div>
   </div>
-  
+
   <div class="su-event-card__footer">
-    <a {{ link_attributes }} href="{{ url|render_clean }}" aria-hidden="true">
+    <a {{ link_attributes }} href="{{ url }}" aria-hidden="true" tabindex="-1">
 
       {%- if not is_external -%}
-      <span class="su-link--icon" aria-hidden="true">
+      <span class="su-link--icon">
           <i class="fas fa-arrow-right"></i>
         </span>
       {%- endif -%}
 
       {%- if is_external -%}
-      <span class="su-link--icon--external" aria-hidden="true">
+      <span class="su-link--icon--external">
           <i class="fas fa-arrow-right" style="rotate: -45deg;"></i>
         </span>
       {%- endif -%}
-    
+
     </a>
   </div>
 
