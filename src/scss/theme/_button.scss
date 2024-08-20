@@ -101,7 +101,8 @@ footer {
   }
 
   [type=button],
-  [type=submit] {
+  [type=submit],
+  [type=reset] {
     color: $su-color-black;
     display: inline-block;
   }
