@@ -70,7 +70,7 @@ button:hover {
   background: $chemh-color-true-black;;
   border-radius: 6px;
   color: $su-color-white;
-  
+
   &::before {
     background: $su-color-black;
   }
@@ -132,7 +132,7 @@ footer {
         width: 12px;
       }
     }
-    
+
     &:not(.su-link--external) {
       &::after {
         content: "";
@@ -145,7 +145,7 @@ footer {
         position: relative;
         margin-left: 1.8rem;
       }
-      
+
       &:hover,
       &:focus,
       &:active {
@@ -171,7 +171,7 @@ footer {
   }
 
   .su-button--big {
-    
+
     &:not(.su-link--external) {
       &::after {
         content: "";
@@ -184,7 +184,7 @@ footer {
         position: relative;
         margin-left: 1.8rem;
       }
-      
+
       &:hover,
       &:focus,
       &:active {
@@ -221,6 +221,7 @@ a {
 
 #back-to-top {
   background-color: $chemh-color-red;
+  color: $su-color-white;
 }
 
 .filter-menu {
@@ -241,9 +242,9 @@ a {
         &::after {
           display: none;
         }
-        
+
         color: unset;
-  
+
         &:hover {
           background-color: unset;
         }
@@ -267,7 +268,7 @@ a {
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 5rem;
   }
-  
+
   a.su-button,
   a.su-button--big,
   a.su-button--secondary {
