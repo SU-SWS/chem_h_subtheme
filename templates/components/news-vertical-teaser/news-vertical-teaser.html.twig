@@ -43,31 +43,22 @@
 <article{{ attributes.addClass(classes) }}>
   {%- if news_url is not empty -%}
     <a {{ news_url_attributes.addClass('su-news-vertical-teaser__link') }} href="{{ news_url }}">
-  {%- endif -%}
-  <figure class="su-media su-media--image su-card__media">
-    <div class="su-media__wrapper">
-      {{- news_vertical_teaser_image -}}
-    </div>
-  </figure>
-  {%- if news_url is not empty -%}
+
+      <figure class="su-media su-media--image su-card__media">
+        <div class="su-media__wrapper">
+          {{- news_vertical_teaser_image -}}
+        </div>
+      </figure>
+      <div class="su-card__contents">
+        <div class="su-news-header">
+          <{{ header_tag }} class="su-link su-card__link">
+            {{- news_vertical_teaser_headline -}}
+          </{{ header_tag }}>
+        </div>
+      </div>
     </a>
   {%- endif -%}
-
-  <div class="su-card__contents">
-    <div class="news-vertical-teaser__topics">{{ news_topics }}</div>
-
-    <div class="su-news-header">
-    {%- if news_url is not empty -%}
-      <a {{ news_url_attributes.addClass('su-news-vertical-teaser__link') }} href="{{ news_url }}">
-    {%- endif -%}
-      <{{ header_tag }} class="su-link su-card__link">
-        {{- news_vertical_teaser_headline -}}
-      </{{ header_tag }}>
-      {%- if news_url is not empty -%}
-      </a>
-    {%- endif -%}
-    </div>
-  </div>
+  <div class="news-vertical-teaser__topics">{{ news_topics }}</div>
 
   <div class="news-vertical-teaser__footer">
     <div class="su-link--external-box">
