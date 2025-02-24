@@ -8,40 +8,40 @@
   @include chemh--shadow-custom-button-default;
   border-bottom-left-radius: 6rem;
   padding-top: 0;
-  
+
   // Whole card hover and focus
   &:hover,
   &:focus,
   &:focus-within,
   &:active {
     @include chemh--shadow-news-card-hover;
-    
+
     .su-event-card__footer {
       a {
         background-color: $chemh-color-red;
       }
     }
   }
-  
+
   &.su-card {
-    
+
     .su-event-list-item__date {
       background: black;
       width: fit-content;
       padding: 0.8rem 3rem;
       max-width: unset;
-      
+
       .su-event-list-item__date__seperator {
         @include grid-media-max('sm') {
           min-width: auto;
         }
-        
+
         color: #fff;
         font-weight: 900;
         margin-right: 2rem;
         margin-left: 2rem;
       }
-      
+
       .su-event-start-month,
       .su-event-start-date,
       .su-event-end-month,
@@ -62,7 +62,7 @@
         }
       }
     }
-    
+
     .su-event-list-item__details {
       .event-list-item__type {
         display: block;
@@ -107,7 +107,7 @@
   }
 
   .su-event-card__footer {
-    margin-top: 2rem;
+    margin-top: 3rem;
 
     a {
       position: absolute;
@@ -123,7 +123,7 @@
       &:focus,
       &:active {
         background-color: $chemh-color-red;
-        
+
         .su-link--icon,
         .su-link--icon--external {
           border-bottom: 2px solid white;
