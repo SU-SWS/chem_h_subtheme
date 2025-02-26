@@ -23,9 +23,27 @@
   }
 }
 
+// Override for no dropdrown menu sites.
+.su-multi-menu {
+  .su-multi-menu__menu-lv1 {
+    >.su-multi-menu__item {
+      >.su-multi-menu__link {
+        color: $su-color-black;
+        font-size: 1.8rem;
+        text-transform: uppercase;
+
+        &:hover,
+        &:active {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+// End overide.
+
 .su-multi-menu.su-multi-menu--dropdowns {
   @include grid-media-min('lg') {
-
     // Circle set up.
     .su-multi-menu__menu {
       >.su-multi-menu__item--parent {
