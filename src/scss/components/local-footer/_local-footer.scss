@@ -237,6 +237,26 @@
     font-size: 2.0rem;
     font-weight: $su-font-semi-bold;
   }
+
+  .su-button {
+    &.ext {
+      &.su-link--external {
+        color: $su-color-black;
+        font-weight: 600;
+        text-decoration: none;
+
+        &:hover,
+        &:focus,
+        &:active {
+          color: $su-color-white;
+
+          &:after {
+            background-color: $su-color-white;
+          }
+        }
+      }
+    }
+  }
 }
 
 nav[aria-label^='footer'] {
