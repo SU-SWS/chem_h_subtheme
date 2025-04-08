@@ -44,6 +44,7 @@
 
       h2,
       h3 {
+        color: $su-color-white;
         font-size: 1.4em;
         margin-bottom: 0.5rem;
 
@@ -56,6 +57,11 @@
       .su-person-short-title {
         color: $su-color-white;
         font-weight: 300;
+
+        a {
+
+          color: $su-color-white;
+        }
       }
     }
   }
