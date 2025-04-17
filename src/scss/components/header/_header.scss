@@ -30,36 +30,38 @@
   .su-masthead {
     //chemh-masthead
     >section:last-of-type {
-      // // Grid setup.
-      // display: grid;
-      // grid-template-columns: 281px 1fr;
-      // grid-template-areas: "utility utility utility"
-      // "lockup main-nav search-field";
-      // align-items: end;
-      // padding-bottom: 0;
-      // max-width: $chemh-site-max-width;
-      // margin: 0 auto;
-      // width: calc(100% - 50px);
+      // Grid setup.
+      display: grid;
+      grid-template-columns: 281px 1fr;
+      grid-template-rows: repeat(2, 1fr);
+      gap: 8px;
 
-      // // .su-lockup {
-      // //   grid-area: lockup;
-      // //   margin-bottom: 3.4rem;
-      // // }
+      align-items: end;
+      padding-bottom: 0;
+      max-width: $chemh-site-max-width;
+      margin: 0 auto;
+      width: calc(100% - 50px);
 
-      // // .su-multi-menu {
-      // //   grid-area: main-nav;
-      // // }
+      .region-header {
+        grid-row: span 2 / span 2;
+      }
 
-      // // .config_pages--type--stanford-basic-site-settings {
-      // //   grid-area: utility;
-      // // }
+      // .region-search {
 
-      // @media (max-width: 1400px) {
-      //   display: grid;
-      //   grid-template-columns: 1fr;
-      //   grid-template-areas: "lockup lockup lockup"
-      //   "main-nav search-field search-field";
       // }
+
+      .region-menu {
+        grid-column-start: 2;
+      }
+
+
+
+      @media (max-width: 1400px) {
+        display: grid;
+        grid-template-columns: 281px 1fr;
+        grid-template-areas: "lockup utility utility"
+          "lockup main-nav main-nav ";
+      }
     }
   }
 
