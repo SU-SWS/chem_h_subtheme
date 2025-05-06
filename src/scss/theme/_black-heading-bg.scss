@@ -34,3 +34,28 @@
     color: $su-color-white;
   }
 }
+
+.stanford-opportunity.node-stanford-page-title {
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-top: 0;
+  margin-left: 0;
+  background: none;
+  position: initial;
+  width: unset;
+  position: initial;
+  left: 0;
+  transform: none;
+  overflow-x: unset;
+
+  @include grid-media-max('md') {
+    background: none;
+  }
+
+  h1 {
+    @include centered-column;
+    @include responsive-spacing('margin-bottom', 3);
+
+    color: $su-color-black;
+  }
+}
