@@ -9,8 +9,24 @@
     margin-bottom: 0;
 
     .ptype-stanford-layout {
-      @include responsive-spacing('padding-top', 5);
-      @include responsive-spacing('padding-bottom', 7);
+      // Override for new Section Options
+      &.chemh-section-color--light-grey,
+      &.chemh-section-color--su-black {
+        .layout-background {
+          @include responsive-spacing('padding-top', 5);
+          @include responsive-spacing('padding-bottom', 7);
+
+          &.bottom-margin-none {
+            margin-bottom: 0;
+          }
+        }
+      }
+
+      &.chemh-section-pb-none {
+        .layout-background {
+          padding-bottom: 0;
+        }
+      }
 
       //  Layout paragraph type section variant styles
       &.chemh-section-color--light-grey,
@@ -32,10 +48,6 @@
         &::after {
           left: 100%;
         }
-      }
-
-      &.chemh-section-pb-none {
-        padding-bottom: 0;
       }
 
       &.chemh-section-color--su-black {
