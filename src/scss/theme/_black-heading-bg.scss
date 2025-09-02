@@ -64,4 +64,23 @@
       color: $su-color-white;
     }
   }
+
+  .su-opp-node-container-wrapper {
+    .main-region {
+      .node-stanford-opportunity-su-opp-cta-url {
+        .su-button {
+          &:hover,
+          &:focus {
+            a {
+              color: $su-color-white;
+            }
+          }
+
+          a {
+            color: $su-color-black;
+          }
+        }
+      }
+    }
+  }
 }
