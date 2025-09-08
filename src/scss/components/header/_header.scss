@@ -25,36 +25,45 @@
   }
 }
 
-@include grid-media-min('lg') {
+@include grid-media-min('md') {
+  .su-masthead .region-search {
+    max-width: 100%;
+  }
 
+  .su-masthead .region-header {
+    flex: unset;
+    max-width: fit-content;
+    align-self: center;
+  }
+}
+
+@include grid-media-min('lg') {
   .su-masthead {
     //chemh-masthead
     >section:last-of-type {
       // Grid setup.
       display: grid;
       grid-template-columns: 281px 1fr;
-      grid-template-areas: "lockup main-nav"
-      "search-field search-field";
+
       align-items: end;
       padding-bottom: 0;
       max-width: $chemh-site-max-width;
       margin: 0 auto;
       width: calc(100% - 50px);
 
-      .su-lockup {
-        grid-area: lockup;
-        margin-bottom: 3.4rem;
+      .region-header {
+        grid-row: span 2 / span 2;
       }
 
-      .su-multi-menu {
-        grid-area: main-nav;
+      .region-menu {
+        grid-column-start: 2;
       }
 
       @media (max-width: 1400px) {
         display: grid;
-        grid-template-columns: 1fr;
-        grid-template-areas: "lockup lockup lockup"
-        "main-nav search-field search-field";
+        grid-template-columns: 281px 1fr;
+        grid-template-areas: "lockup utility utility"
+          "lockup main-nav main-nav ";
       }
     }
   }
@@ -69,17 +78,10 @@
   .su-masthead {
     //chemh-masthead
     >section:last-of-type {
-      // Grid setup.
-      display: grid;
-      grid-template-columns: 1fr;
-      grid-template-areas: "lockup lockup lockup"
-      "main-nav search-field search-field";
-
-      .su-lockup {
-        margin: 0 auto;
-        margin-bottom: 0.5em;
-        width: 281px;
-      }
+      // Switch to flex.
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
 
       .su-multi-menu.su-multi-menu--right {
         .su-multi-menu__menu-lv1,
