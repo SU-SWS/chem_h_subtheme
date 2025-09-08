@@ -34,3 +34,53 @@
     color: $su-color-white;
   }
 }
+
+// Opportunity content type overrides
+.node--stanford-opportunity {
+  .su-opp-title-wrapper {
+    background: $chemh-color-true-black url("../../assets/png/header-sm-000--cropped.png") no-repeat center/cover;
+
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    overflow-x: hidden;
+
+    .node-stanford-page-title {
+      background: none;
+      width: auto;
+
+      h1 {
+        margin: 0;
+      }
+
+      @include grid-media-min('md') {
+        padding-top: 0;
+      }
+    }
+
+    .node-stanford-opportunity-su-opp-icon,
+    .su-opp-summary {
+      color: $su-color-white;
+    }
+  }
+
+  .su-opp-node-container-wrapper {
+    .main-region {
+      .node-stanford-opportunity-su-opp-cta-url {
+        .su-button {
+          &:hover,
+          &:focus {
+            a {
+              color: $su-color-white;
+            }
+          }
+
+          a {
+            color: $su-color-black;
+          }
+        }
+      }
+    }
+  }
+}
