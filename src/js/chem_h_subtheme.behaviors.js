@@ -31,6 +31,23 @@
           .removeAttr('width');
       });
 
+      // Remove link from name and wrap around the whole article card instead.
+      $('.stanford-people-grid article').each(function(){
+        var $copyLink = $(this).find('a').attr('href');
+
+        let link = $("<a>", {
+          href: $copyLink
+        });
+        $(this).wrap(link);
+
+        var $textLink = $(this).find('h3 a').text();
+        var $nameLink = $(this).find('h3 a');
+
+        $nameLink.replaceWith($textLink);
+      });
+
+
+
       // Heading change for the halfpill title banner.
       const halfpillBannerHeadings = $('.chemh-wrapper--banner-halfpill-title h2, .chemh-wrapper--banner-halfpill-title h3, .chemh-wrapper--banner-halfpill-title h4, .chemh-wrapper--banner-halfpill-title .su-font-splash');
 
