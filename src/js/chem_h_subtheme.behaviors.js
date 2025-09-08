@@ -47,6 +47,12 @@
       // Replace <a> tag for news node news topics taxonomy with <p>
       $('.news.node .layout--section-news-header .section-header .su-news-topics a').contents().unwrap().wrap('<p/>');
 
+      // If external link on Opp node, move the class name.
+      $(function() {
+        const oppNodeCTA = $('.node-stanford-opportunity-su-opp-cta-url .su-button .su-link--external')
+        $(oppNodeCTA).parent().addClass('su-link--external');
+        $(oppNodeCTA).removeClass('su-link--external');
+      });
     }
   };
 

@@ -1,0 +1,9 @@
+@charset "UTF-8";
+
+.su-opp-cta-url {
+  &.su-link--external {
+    &::after {
+      background-color: $su-color-black;
+    }
+  }
+}
