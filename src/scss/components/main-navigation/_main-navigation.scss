@@ -178,7 +178,7 @@
     .su-multi-menu__menu {
       .su-multi-menu__link {
         padding-top: 0.4rem;
-        padding-bottom: 5rem;
+        padding-bottom: 2.6rem;
 
         &::before {
           width: 4px;
@@ -205,7 +205,7 @@
 
   &.su-multi-menu--dropdowns {
     .su-multi-menu__menu-lv2 {
-      top: 75px; // moving the menu lower
+      top: 50px; // moving the menu lower
     }
 
     .su-multi-menu__menu-lv1 {
