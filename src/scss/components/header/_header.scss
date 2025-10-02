@@ -50,7 +50,7 @@
       max-width: $chemh-site-max-width;
       margin: 0 auto;
       width: calc(100% - 50px);
-      height: 125px;
+      min-height: 125px;
 
       .region-header {
         grid-row: span 2 / span 2;
@@ -103,6 +103,6 @@
 
 @media only screen and (min-width: 768px) {
   .su-masthead .su-lockup {
-    margin-bottom: 1.8rem;
+    margin-bottom: 2.6rem;
   }
 }
