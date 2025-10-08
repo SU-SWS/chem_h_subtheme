@@ -9,7 +9,7 @@
   }
 }
 
-.su-masthead {
+header.su-masthead {
   a {
     &:hover,
     &:focus,
@@ -25,12 +25,12 @@
   }
 }
 
-@include grid-media-min('md') {
-  .su-masthead .region-search {
+@media screen and (min-width: 1021px) {
+  header.su-masthead .region-search {
     max-width: 100%;
   }
 
-  .su-masthead .region-header {
+  header.su-masthead .region-header {
     flex: unset;
     max-width: fit-content;
     align-self: center;
@@ -38,7 +38,7 @@
 }
 
 @media screen and (min-width: 1021px) {
-  .su-masthead {
+  header.su-masthead {
     //chemh-masthead
     >section:last-of-type {
       // Grid setup.
@@ -76,7 +76,7 @@
 }
 
 @media only screen and (min-width: 1021px) and (max-width: 1450px) {
-  .su-masthead {
+  header.su-masthead {
     //chemh-masthead
     >section:last-of-type {
       // Switch to flex.
@@ -96,13 +96,13 @@
 }
 
 @media only screen and (min-width: 1500px) {
-  .su-masthead .su-lockup {
+  header.su-masthead .su-lockup {
     margin-bottom: 1.9rem;
   }
 }
 
 @media only screen and (min-width: 768px) {
-  .su-masthead .su-lockup {
+  header.su-masthead .su-lockup {
     margin-bottom: 2.6rem;
   }
 }

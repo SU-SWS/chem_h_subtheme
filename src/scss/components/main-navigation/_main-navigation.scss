@@ -1,6 +1,16 @@
 @charset "UTF-8";
 
-$su-breakpoint-lg: 1021px;
+///
+/// @name $su-screen-md
+///
+/// @group variable
+$su-screen-md: 1020px !default;
+
+///
+/// @name $su-screen-lg
+///
+/// @group variable
+$su-screen-lg: 1021px !default;
 
 // Removing the main navigation animations
 nav.su-multi-menu {
@@ -26,30 +36,14 @@ nav.su-multi-menu {
   }
 }
 
-@media only screen and (max-width: 1020px) {
-  .su-masthead {
-    .su-multi-menu {
-      .su-multi-menu__nav-toggle[aria-expanded=true]+.su-multi-menu__menu-lv1 {
-        background: $su-color-black;
-      }
-      >.su-multi-menu__link {
-        color: white;
-      }
-    }
-  }
-}
-
 // Override for no dropdrown menu sites.
 nav.su-multi-menu {
-  ul.su-multi-menu__menu-lv1 {
+  .su-multi-menu__menu-lv1 {
     >.su-multi-menu__item {
       >.su-multi-menu__link {
+        color: $su-color-black;
         font-size: 1.8rem;
         text-transform: uppercase;
-
-        @media only screen and (max-width: 1020px) {
-          color: $su-color-white;
-        }
 
         &:hover,
         &:active {
@@ -62,7 +56,7 @@ nav.su-multi-menu {
 
 // End overide.
 
-nav.su-multi-menu.su-multi-menu--dropdowns {
+.su-multi-menu.su-multi-menu--dropdowns {
   @media screen and (min-width: 1021px) {
 
     // Circle set up.
@@ -148,7 +142,7 @@ nav.su-multi-menu.su-multi-menu--dropdowns {
         }
       }
 
-      @media (max-width: 1020px) {
+            @media screen and (max-width: 1020px) {
         .su-nav-toggle {
 
           // What the up and down caret look like.
@@ -277,13 +271,12 @@ nav.su-multi-menu {
 
       >.su-multi-menu__item {
         >.su-multi-menu__link {
+          color: $su-color-black;
           font-size: 1.8rem;
           text-transform: uppercase;
 
           @media screen and (max-width: 1020px) {
             color: $su-color-white;
-            width: 100%;
-            border-bottom: 1px solid $chemh-color-mid-sand;
 
             &:hover,
             &:focus,
@@ -427,13 +420,13 @@ nav.su-multi-menu {
         &:active,
         &:focus,
         &:hover {
-          // transform: none;
-          // transition: none;
+          transform: none;
+          transition: none;
 
           &::before {
             background-color: $chemh-color-red;
-            // transform: none;
-            // transition: none;
+            transform: none;
+            transition: none;
           }
         }
       }
@@ -487,7 +480,7 @@ nav.su-multi-menu {
     margin-left: 10px;
   }
 
-  nav.su-multi-menu.su-multi-menu--dropdowns {
+  .su-multi-menu.su-multi-menu--dropdowns {
     .su-multi-menu__menu-lv1 {
 
       // When there is no down caret.
