@@ -21,6 +21,10 @@
   .su-lockup--option-none {
     .su-lockup__custom-logo {
       max-width: 281px;
+
+      @media (min-width: 1021px) {
+        margin-bottom: 1.6em;
+      }
     }
   }
 }
@@ -49,7 +53,7 @@
       padding-bottom: 0;
       max-width: $chemh-site-max-width;
       margin: 0 auto;
-      width: calc(100% - 50px);
+      // width: calc(100% - 50px);
 
       .region-header {
         grid-row: span 2 / span 2;

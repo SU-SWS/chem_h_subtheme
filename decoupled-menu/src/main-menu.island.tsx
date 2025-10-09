@@ -41,6 +41,7 @@ const TopList = styled.ul`
 
   @media (min-width: 1021px) {
     display: flex;
+    justify-content: flex-end;
     background: transparent;
     padding: 0;
     font-size: 19px;
@@ -306,7 +307,7 @@ const MenuLink = styled.a<{ isCurrent?: boolean, inTrail?: boolean, level?: numb
   padding: 16px 0 16px 16px;
   transition: all 0.2s ease-in-out;
   border-left: ${({isCurrent}) => isCurrent ? "6px solid #b1040e" : "6px solid transparent"};
-  border-image: ${({ isCurrent }) => isCurrent ? "linear-gradient(360deg,#ecaf94 4.94%,#b32a35 45.61%,#15438a 73.57%,#007c9d) 1" : "transparent"};
+  border-image: ${({ isCurrent }) => isCurrent ? "linear-gradient(300deg,#ecaf94 4.94%,#b32a35 45.61%,#15438a 73.57%,#007c9d) 1" : "transparent"};
   width: 100%;
 
   &:hover, &:focus {
@@ -322,10 +323,14 @@ const MenuLink = styled.a<{ isCurrent?: boolean, inTrail?: boolean, level?: numb
     border-bottom: ${({level, inTrail, isCurrent}) => level === 0 ? (isCurrent ? "6px solid #2e2d29" : (inTrail ? "6px solid #b6b1a9" : "6px solid transparent")) : ""};
     border-left: ${({level, isCurrent}) => level != 0 ? (isCurrent ? "6px solid #b1040e" : "6px solid transparent") : "none"};
     margin-bottom: ${({level, inTrail, isCurrent}) => level === 0 ? (isCurrent ? "-6px" : (inTrail ? "-6px" : "-6px")) : ""};
+    border-image: ${({ isCurrent }) => isCurrent ? "linear-gradient(270deg,#ecaf94 4.94%,#b32a35 45.61%,#15438a 73.57%,#007c9d) 1" : "transparent"};
 
     &:hover, &:focus {
       color: #b1040e;
       border-left: ${({level}) => level != 0 ? "6px solid #2e2d29" : "none"};
+      border-image: linear-gradient(270deg,#ecaf94 4.94%,#b32a35 45.61%,#15438a 73.57%,#007c9d) 1;
+      border-left: ${({level, isCurrent}) => level != 0 ? (isCurrent ? "#b1040e" : "linear-gradient(360deg,#ecaf94 4.94%,#b32a35 45.61%,#15438a 73.57%,#007c9d) 1") : "none"};
+
     }
   }
 `
@@ -356,7 +361,8 @@ const MenuList = styled.ul<{ open?: boolean, level?: number }>`
     position: ${props => props.level === 0 ? "absolute" : "relative"};
     top: 100%;
     background: #fff;
-    border-top: 1px solid #d9d9d9;
+    border-top: 4px solid #b1040e;
+    border-radius: 0 0 20px 20px;
     right: 0;
   }
 `
