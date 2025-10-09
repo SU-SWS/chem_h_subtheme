@@ -114,13 +114,15 @@ const SearchContainer = styled.div`
     background: none;
     color: #b1040e;
     border: 1px solid transparent;
-    border-radius: 999px;
     aspect-ratio: 1;
     padding: 0;
     margin: 0;
+    box-shadow: none;
 
     &:hover, &:focus {
-      border: 1px solid #2e2d29;
+      border: none;
+      background: none;
+      color: #b1040e;
     }
   }
 
@@ -250,7 +252,7 @@ export const MainMenu = ({}) => {
 
 const Button = styled.button`
   color: #fff;
-  background: #b1040e;
+  background: transparent;
   border: none;
   border-bottom: 1px solid transparent;
   padding: 0;
@@ -264,19 +266,20 @@ const Button = styled.button`
 
   &:hover, &:focus {
     box-shadow: none;
-    border-bottom: 1px solid #b1040e;
-    background: #f4f4f4;
-    color: #000;
+    border-bottom: 1px solid transparent;
+    background: transparent;
+    color: #b1040e;
   }
 
   @media (min-width: 1021px) {
     color: #b1040e;
     background: transparent;
-    border-radius: 0;
+    border-radius: 20px;
 
     &:hover, &:focus {
-      border-bottom: 1px solid #2e2d29;
-      color: #2e2d29;
+      border: 1px solid #2e2d29;
+      border-radius: 20px;
+      color: #000;
       background: transparent;
     }
   }
@@ -303,14 +306,14 @@ const MenuLink = styled.a<{ isCurrent?: boolean, inTrail?: boolean, level?: numb
   padding: 16px 0 16px 16px;
   transition: all 0.2s ease-in-out;
   border-left: ${({isCurrent}) => isCurrent ? "6px solid #b1040e" : "6px solid transparent"};
-  border-image: ${({ isCurrent }) => isCurrent ? "linear-gradient(270deg,#ecaf94 4.94%,#b32a35 45.61%,#15438a 73.57%,#007c9d) 1" : "transparent"};
+  border-image: ${({ isCurrent }) => isCurrent ? "linear-gradient(360deg,#ecaf94 4.94%,#b32a35 45.61%,#15438a 73.57%,#007c9d) 1" : "transparent"};
   width: 100%;
 
   &:hover, &:focus {
     text-decoration: underline;
     color: #fff;
     border-left: 6px solid #fff;
-    border-image: linear-gradient(270deg,#ecaf94 4.94%,#b32a35 45.61%,#15438a 73.57%,#007c9d) 1;
+    border-image: linear-gradient(360deg,#ecaf94 4.94%,#b32a35 45.61%,#15438a 73.57%,#007c9d) 1;
   }
 
   @media (min-width: 1021px) {
