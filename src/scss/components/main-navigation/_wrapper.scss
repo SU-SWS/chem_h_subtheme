@@ -47,17 +47,18 @@ header.su-masthead {
       margin-left: calc(50% - 50vw);
       margin-right: calc(50% - 50vw);
 
-      @include grid-media('md') {
+      @media screen and (max-width: 1020px) {
         width: 100%;
         max-width: 100%;
         margin-left: auto;
         margin-right: auto;
+        padding-left: 1em;
       }
     }
 
     > ul,
     .su-multi-menu__nav-toggle[aria-expanded="true"] + .su-multi-menu__menu-lv1 + .su-site-search {
-      @include grid-media-only('md') {
+      @media screen and (max-width: 1020px) {
         width: 40rem;
       }
 

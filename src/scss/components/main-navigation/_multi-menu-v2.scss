@@ -49,14 +49,15 @@ nav.su-multi-menu {
     list-style: none;
     // background-color: color(bg, $su-multi-menu-colors);
 
-    @include grid-media("lg") {
-      // background-color: color(bg, $su-multi-menu-light-colors);
-    }
+    // @include grid-media("lg") {
+    //   // background-color: color(bg, $su-multi-menu-light-colors);
+    // }
 
     // All li elements.
     // -----------------------------------------------------------------------
     .su-multi-menu__item {
       @include margin(null null 0);
+      display: list-item;
     }
 
     // All link elements.
@@ -142,7 +143,7 @@ nav.su-multi-menu {
       }
     }
 
-    @include grid-media("lg") {
+    @media screen and (min-width: 1021px) {
 
       @include padding(null null null 0);
       flex-direction: row;
@@ -338,7 +339,7 @@ nav.su-multi-menu {
     .su-multi-menu__menu-lv1 {
 
       // Top Level Parent Items.
-      @include grid-media("lg") {
+      @media screen and (min-width: 1021px) {
 
         >.su-multi-menu__item {
           display: contents;

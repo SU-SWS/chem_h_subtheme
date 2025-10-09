@@ -17,6 +17,13 @@ function chem_h_subtheme_preprocess(&$variables, $hook) {
 }
 
 /**
+ * Implements hook_preprocess_block().
+ */
+function chem_h_subtheme_preprocess_block(&$variables) {
+  $variables['#attached']['library'][] = 'chem_h_subtheme/decoupled_menu';
+}
+
+/**
  * Prepares variables for the html.html.twig template.
  */
 function chem_h_subtheme_preprocess_html(&$variables) {

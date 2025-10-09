@@ -93,6 +93,10 @@ allpages:
   js:
     src/js/chem_h_subtheme.behaviors.js: { }
 
+decoupled_menu:
+  js:
+    decoupled-menu/dist/islands/main-menu.island.js: { minified: true }
+
 fontawesome:
   version: 5.15.4
   remote: https://use.fontawesome.com/releases/v5.15.4/css/all.css
