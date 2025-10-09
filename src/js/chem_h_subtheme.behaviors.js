@@ -13,7 +13,7 @@
           form.find('.su-site-search__input').focus();
         }
       });
-      $('.su-multi-menu--dropdowns', context).append(menuSearchButton).closest('header').append(form);
+      $('.preact-main-menu', context).append(menuSearchButton).closest('header').append(form);
 
       // add search key to search results page input
       let queryParam = new URLSearchParams(window.location.search);
