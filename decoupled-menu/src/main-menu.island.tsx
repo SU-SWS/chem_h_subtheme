@@ -280,6 +280,8 @@ const Button = styled.button`
     color: #b1040e;
     background: transparent;
     border-radius: 20px;
+    position: relative;
+    top: 6px;
 
     &:hover, &:focus {
       border: 1px solid #2e2d29;
@@ -323,16 +325,18 @@ const MenuLink = styled.a<{ isCurrent?: boolean, inTrail?: boolean, level?: numb
 
   @media (min-width: 1021px) {
     color: #2e2d29;
-    padding: ${({ level }) => level != 0 ? "16px 0 16px 16px" : "1em 0px 2.6em 0"};
+    padding: ${({ level }) => level != 0 ? "16px 0 16px 16px" : "1em 0px 1.6em 0"};
     border-bottom: ${({level, inTrail, isCurrent}) => level === 0 ? (isCurrent ? "6px solid #2e2d29" : (inTrail ? "6px solid #b6b1a9" : "6px solid transparent")) : ""};
     border-left: ${({level, isCurrent}) => level != 0 ? (isCurrent ? "6px solid #b1040e" : "6px solid transparent") : "none"};
     margin-bottom: ${({level, inTrail, isCurrent}) => level === 0 ? (isCurrent ? "-6px" : (inTrail ? "-6px" : "-6px")) : ""};
-    border-image: ${({ isCurrent }) => isCurrent ? "linear-gradient(270deg,#ecaf94 4.94%,#b32a35 45.61%,#15438a 73.57%,#007c9d) 1" : "transparent"};
+    border-left: ${({level, isCurrent}) => level != 0 ? (isCurrent ? "6px solid #b1040e" : "6px solid transparent") : "none"};
+    border-image: ${({level, inTrail, isCurrent}) => level === 0 ? (isCurrent ? "linear-gradient(270deg,#ecaf94 4.94%,#b32a35 45.61%,#15438a 73.57%,#007c9d) 1" : (inTrail ? "linear-gradient(270deg,#ecaf94 4.94%,#b32a35 45.61%,#15438a 73.57%,#007c9d) 1" : "6px solid transparent")) : ""};
 
     &:hover, &:focus {
       color: #b1040e;
       border-left: ${({level}) => level != 0 ? "6px solid #2e2d29" : "none"};
-      border-image: linear-gradient(360deg,#ecaf94 4.94%,#b32a35 45.61%,#15438a 73.57%,#007c9d) 1;
+      border-image: linear-gradient(270deg,#ecaf94 4.94%,#b32a35 45.61%,#15438a 73.57%,#007c9d) 1;
+      border-left: ${({level, isCurrent}) => level != 0 ? (isCurrent ? "6px solid #b1040e" : "6px solid transparent") : "none"};
     }
   }
 `
@@ -389,7 +393,6 @@ const MenuItemDivider = styled.div`
   width: 1px;
   height: 20px;
   margin: 0 6px;
-  background: #766253;
   display: none;
   flex-shrink: 0;
 
