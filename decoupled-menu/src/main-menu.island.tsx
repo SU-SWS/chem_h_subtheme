@@ -22,6 +22,10 @@ const MenuWrapper = styled.div<{ open?: boolean }>`
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
 
+  @media only screen and (min-width: 992px) and (max-width: 1020px) {
+    left: -14vw;
+  }
+
   @media (min-width: 1021px) {
     display: block;
     position: relative;
@@ -48,7 +52,7 @@ const TopList = styled.ul`
     width: 100%;
   }
   @media only screen and (min-width: 1021px) and (max-width: 1450px) {
-    justify-content: flex-end;
+    justify-content: center;
   }
 `
 
@@ -307,7 +311,7 @@ const MenuLink = styled.a<{ isCurrent?: boolean, inTrail?: boolean, level?: numb
   padding: 16px 0 16px 16px;
   transition: all 0.2s ease-in-out;
   border-left: ${({isCurrent}) => isCurrent ? "6px solid #b1040e" : "6px solid transparent"};
-  border-image: ${({ isCurrent }) => isCurrent ? "linear-gradient(300deg,#ecaf94 4.94%,#b32a35 45.61%,#15438a 73.57%,#007c9d) 1" : "transparent"};
+  border-image: ${({ isCurrent }) => isCurrent ? "linear-gradient(360deg,#ecaf94 4.94%,#b32a35 45.61%,#15438a 73.57%,#007c9d) 1" : "transparent"};
   width: 100%;
 
   &:hover, &:focus {
@@ -328,9 +332,7 @@ const MenuLink = styled.a<{ isCurrent?: boolean, inTrail?: boolean, level?: numb
     &:hover, &:focus {
       color: #b1040e;
       border-left: ${({level}) => level != 0 ? "6px solid #2e2d29" : "none"};
-      border-image: linear-gradient(270deg,#ecaf94 4.94%,#b32a35 45.61%,#15438a 73.57%,#007c9d) 1;
-      border-left: ${({level, isCurrent}) => level != 0 ? (isCurrent ? "#b1040e" : "linear-gradient(360deg,#ecaf94 4.94%,#b32a35 45.61%,#15438a 73.57%,#007c9d) 1") : "none"};
-
+      border-image: linear-gradient(360deg,#ecaf94 4.94%,#b32a35 45.61%,#15438a 73.57%,#007c9d) 1;
     }
   }
 `
