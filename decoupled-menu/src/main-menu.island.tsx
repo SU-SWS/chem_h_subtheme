@@ -277,11 +277,11 @@ const Button = styled.button`
   }
 
   @media (min-width: 1021px) {
-    color: #b1040e;
+    color: rgba(127,119,118, 1);
     background: transparent;
     border-radius: 20px;
     position: relative;
-    top: 6px;
+    top: 1px;
 
     &:hover, &:focus {
       border: 1px solid #2e2d29;
@@ -309,6 +309,8 @@ const MenuItemContainer = styled.div<{ level?: number }>`
 const MenuLink = styled.a<{ isCurrent?: boolean, inTrail?: boolean, level?: number }>`
   color: #ffffff;
   font-weight: 600;
+  font-size: 1.8rem;
+  text-transform: ${props => props.level === 0 ? "uppercase" : "none"};
   text-decoration: none;
   padding: 16px 0 16px 16px;
   transition: all 0.2s ease-in-out;
@@ -367,7 +369,7 @@ const MenuList = styled.ul<{ open?: boolean, level?: number }>`
     position: ${props => props.level === 0 ? "absolute" : "relative"};
     top: 100%;
     background: #fff;
-    border-top: 4px solid #b1040e;
+    border-top: ${props => props.level === 0 ? "4px solid #b1040e" : "none"};
     border-radius: 0 0 20px 20px;
     right: 0;
   }
@@ -384,7 +386,7 @@ const ListItem = styled.li<{ level?: number }>`
   }
 
   @media (min-width: 1021px) {
-    border-bottom: ${props => props.level === 0 ? "none" : "1px solid #d9d9d9"};
+    border-bottom: none;
     padding: ${props => props.level > 0 ? "0 10px" : "0"};
   }
 `
