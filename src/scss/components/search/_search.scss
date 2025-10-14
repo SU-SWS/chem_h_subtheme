@@ -101,6 +101,15 @@
   }
 }
 
+.region-search {
+  position: absolute;
+  top: 196px;
+
+  @include grid-media-min('2xl') {
+    top: 120px;
+  }
+}
+
 @media screen and (min-width: 1021px) {
   .su-site-search {
     grid-area: search-field;

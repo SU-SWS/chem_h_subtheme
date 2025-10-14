@@ -202,6 +202,39 @@ export const MainMenu = ({}) => {
 
   if (menuItems.length === 0) return;
 
+  const [searchExpanded, setSearchExpanded] = useState(false);
+
+  const handleMenuSearchClick = () => {
+    setSearchExpanded(prev => !prev);
+    setTimeout(() => {
+      const input = document.querySelector('#block-chem-h-subtheme-search .su-site-search__input') as HTMLInputElement | null;
+      if (searchExpanded && input) {
+        input.focus();
+      }
+    }, 0);
+  };
+
+  useEffect(() => {
+    const form = document.querySelector('#block-chem-h-subtheme-search form');
+    if (form) {
+      if (searchExpanded) {
+        form.classList.add('show-form');
+      } else {
+        form.classList.remove('show-form');
+      }
+    }
+    const button = document.getElementById('search-button-toggle');
+    if (button) {
+      button.setAttribute('aria-expanded', searchExpanded ? 'true' : 'false');
+      button.setAttribute('aria-label', searchExpanded ? 'Collapse search form' : 'Expand search form');
+      if (searchExpanded) {
+        button.classList.add('menu-search-button-expanded');
+      } else {
+        button.classList.remove('menu-search-button-expanded');
+      }
+    }
+  }, [searchExpanded]);
+
   // Remove the default menu.
   const existingMenu = document.getElementsByClassName('su-multi-menu');
   if (existingMenu.length > 0) existingMenu[0].remove();
@@ -238,7 +271,6 @@ export const MainMenu = ({}) => {
               </button>
             </div>
           </form>
-
         </SearchContainer>
         {utilityNavLinks.length > 0 &&
           <UtilityNav>
@@ -251,6 +283,13 @@ export const MainMenu = ({}) => {
           {menuItems.map(item => <MenuItem key={item.id} {...item}/>)}
         </TopList>
       </MenuWrapper>
+      <button
+          className={`menu-search-button${searchExpanded ? ' menu-search-button-expanded' : ''}`}
+          id="search-button-toggle"
+          aria-expanded={searchExpanded}
+          aria-label={searchExpanded ? 'Collapse search form ' : 'Expand search form'}
+          onClick={handleMenuSearchClick}
+        />
     </nav>
   )
 }
