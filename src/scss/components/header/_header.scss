@@ -21,8 +21,22 @@
   .su-lockup--option-none {
     .su-lockup__custom-logo {
       max-width: 281px;
+
+      @media (min-width: 1021px) {
+        margin-bottom: 1.6em;
+      }
+
+      @media (max-width: 1020px) {
+        max-width: 225px;
+      }
+    }
+    // Override for Stanford Basic
+    .su-lockup__cell1 {
+      max-width: unset;
     }
   }
+
+
 }
 
 @include grid-media-min('md') {
@@ -49,7 +63,7 @@
       padding-bottom: 0;
       max-width: $chemh-site-max-width;
       margin: 0 auto;
-      width: calc(100% - 50px);
+      // width: calc(100% - 50px);
 
       .region-header {
         grid-row: span 2 / span 2;
@@ -74,7 +88,7 @@
   }
 }
 
-@media only screen and (min-width: 992px) and (max-width: 1450px) {
+@media only screen and (min-width: 1021px) and (max-width: 1450px) {
   .su-masthead {
     //chemh-masthead
     >section:last-of-type {

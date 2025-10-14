@@ -1,0 +1,539 @@
+import styled from "styled-components";
+import {useWebComponentEvents} from "./hooks/useWebComponentEvents";
+import {createIslandWebComponent} from 'preact-island'
+import {useState, useEffect, useRef, useCallback} from 'preact/hooks';
+import {deserialize} from "./tools/deserialize";
+import {buildMenuTree, MenuContentItem} from "./tools/build-menu-tree";
+import Caret from "./components/caret";
+import Hamburger from "./components/hamburger";
+import Close from "./components/close";
+import MagnifyingGlass from "./components/magnifying-glass";
+import useOutsideClick from "./hooks/useOutsideClick";
+import {useEventListener} from "usehooks-ts";
+
+const islandName = 'main-menu-island'
+
+const MenuWrapper = styled.div<{ open?: boolean }>`
+  display: ${props => props.open ? "block" : "none"};
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+
+  @media only screen and (min-width: 992px) and (max-width: 1020px) {
+    left: -14vw;
+  }
+
+  @media (min-width: 1021px) {
+    display: block;
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+  }
+`
+
+const TopList = styled.ul`
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  background: #2e2d29;
+  padding: 24px;
+  font-size: 18px;
+
+  @media (min-width: 1021px) {
+    display: flex;
+    justify-content: flex-end;
+    background: transparent;
+    padding: 0;
+    font-size: 19px;
+    width: 100%;
+  }
+  @media only screen and (min-width: 1021px) and (max-width: 1450px) {
+    justify-content: center;
+  }
+`
+
+const MobileMenuButton = styled.button`
+  position: absolute;
+  top: -60px;
+  right: 10px;
+  box-shadow: none;
+  background: transparent;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  color: #2e2d29;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.6rem;
+
+  &:hover, &:focus {
+    background: transparent;
+    color: #2e2d29;
+    box-shadow: none;
+  }
+
+  @media (min-width: 1021px) {
+    display: none;
+  }
+`
+
+const SearchContainer = styled.div`
+  padding: 10px 30px 0;
+  margin: 0;
+  background: #2e2d29;
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  label {
+    padding: 0 10px;
+    margin: 0;
+    color: #fff;
+  }
+
+  input {
+    margin: 0;
+    width: 100%;
+    border-radius: 999px;
+    height: 40px;
+    padding: 0 20px;
+    max-width: 100%;
+  }
+
+  button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    color: #b1040e;
+    border: 1px solid transparent;
+    aspect-ratio: 1;
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+
+    &:hover, &:focus {
+      border: none;
+      background: none;
+      color: #b1040e;
+    }
+  }
+
+  @media (min-width: 1021px) {
+    display: none;
+  }
+`
+
+const UtilityNav = styled.ul`
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  list-style: none;
+  margin: 0;
+  background: #2e2d29;
+  padding: 24px 45px;
+  font-size: 18px;
+
+  @media (min-width: 1021px) {
+    display: none;
+  }
+
+  a {
+    color: #fff;
+    font-size: .9em;
+    font-weight: 400;
+    text-decoration: none;
+
+    &:hover, &:focus {
+      text-decoration: underline;
+    }
+  }
+`
+
+export const MainMenu = ({}) => {
+  useWebComponentEvents(islandName)
+  const [menuItems, setMenuItems] = useState<MenuContentItem[]>(window.drupalSettings?.stanford_basic?.decoupledMenuItems || []);
+  const [utilityNavLinks, setNavLinks] = useState<Array<{href: string, title: string}>>([]);
+  const [menuOpen, setMenuOpen] = useState<boolean>(false);
+  const buttonRef = useRef<HTMLButtonElement | null>(null);
+  const navRef = useRef<HTMLElement | null>(null);
+  useOutsideClick(navRef, () => setMenuOpen(false));
+
+  useEffect(() => {
+    const utilityLinkNodes = document.evaluate('//*[contains(@class, \'su-site-header-links\')]//a', document, null, XPathResult.ANY_TYPE, null)
+    let linkNode = null
+    const utilityLinks = []
+    while ((linkNode = utilityLinkNodes.iterateNext())) {
+      utilityLinks.push({
+        href: linkNode.getAttribute('href'),
+        title: linkNode.innerText,
+      })
+    }
+    if (utilityLinks) {
+      setNavLinks(utilityLinks)
+    }
+
+    if (menuItems.length > 0) return;
+    fetch('/jsonapi/menu_items/main')
+      .then(res => res.json())
+      .then(data => setMenuItems(buildMenuTree(deserialize(data)).items || []))
+      .catch(err => console.error(err));
+  }, [])
+
+  const handleEscape = useCallback((event: KeyboardEvent) => {
+    if (event.key === "Escape" && menuOpen) {
+      setMenuOpen(false);
+      buttonRef.current?.focus();
+    }
+  }, [menuOpen]);
+
+  useEventListener("keydown", handleEscape);
+
+  if (menuItems.length === 0) return;
+
+  const [searchExpanded, setSearchExpanded] = useState(false);
+
+  const handleMenuSearchClick = () => {
+    setSearchExpanded(prev => !prev);
+    setTimeout(() => {
+      const input = document.querySelector('#block-chem-h-subtheme-search .su-site-search__input') as HTMLInputElement | null;
+      if (searchExpanded && input) {
+        input.focus();
+      }
+    }, 0);
+  };
+
+  useEffect(() => {
+    const form = document.querySelector('#block-chem-h-subtheme-search form');
+    if (form) {
+      if (searchExpanded) {
+        form.classList.add('show-form');
+      } else {
+        form.classList.remove('show-form');
+      }
+    }
+    const button = document.getElementById('search-button-toggle');
+    if (button) {
+      button.setAttribute('aria-expanded', searchExpanded ? 'true' : 'false');
+      button.setAttribute('aria-label', searchExpanded ? 'Collapse search form' : 'Expand search form');
+      if (searchExpanded) {
+        button.classList.add('menu-search-button-expanded');
+      } else {
+        button.classList.remove('menu-search-button-expanded');
+      }
+    }
+  }, [searchExpanded]);
+
+  // Remove the default menu.
+  const existingMenu = document.getElementsByClassName('su-multi-menu');
+  if (existingMenu.length > 0) existingMenu[0].remove();
+
+  return (
+    <nav
+      ref={navRef}
+      style={{position: "relative"}}
+      className="preact-main-menu"
+    >
+      <MobileMenuButton
+        ref={buttonRef}
+        onClick={() => setMenuOpen(!menuOpen)}
+        aria-expanded={menuOpen}
+      >
+        {menuOpen ? <Close/> : <Hamburger/>}
+        {menuOpen ? "Close" : "Menu"}
+      </MobileMenuButton>
+
+      <MenuWrapper open={menuOpen}>
+        <SearchContainer>
+          <form action="/search" method="get">
+            <label htmlFor="mobile-search-input">Keyword Search</label>
+            <div style={{position: "relative"}}>
+              <input
+                id="mobile-search-input"
+                type="text"
+                placeholder="Search this site"
+                name="key"
+              />
+              <button type="submit">
+                <MagnifyingGlass style={{width: "25px", height: "25px"}}/>
+                <span className="visually-hidden">Submit Search</span>
+              </button>
+            </div>
+          </form>
+        </SearchContainer>
+        {utilityNavLinks.length > 0 &&
+          <UtilityNav>
+            {utilityNavLinks.map(link =>
+              <li><a href={link.href}>{link.title}</a></li>
+            )}
+          </UtilityNav>
+        }
+        <TopList>
+          {menuItems.map(item => <MenuItem key={item.id} {...item}/>)}
+        </TopList>
+      </MenuWrapper>
+      <button
+          className={`menu-search-button${searchExpanded ? ' menu-search-button-expanded' : ''}`}
+          id="search-button-toggle"
+          aria-expanded={searchExpanded}
+          aria-label={searchExpanded ? 'Collapse search form ' : 'Expand search form'}
+          onClick={handleMenuSearchClick}
+        />
+    </nav>
+  )
+}
+
+const Button = styled.button`
+  color: #fff;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid transparent;
+  padding: 0;
+  margin: 0 0 -4px;
+  box-shadow: none;
+  flex-shrink: 0;
+  border-radius: 999px;
+  transition: color 0.2s ease-in-out, background 0.2s ease-in-out, border 0.2s ease-in-out;
+  width: 38px;
+  height: 38px;
+
+  &:hover, &:focus {
+    box-shadow: none;
+    border-bottom: 1px solid transparent;
+    background: transparent;
+    color: #b1040e;
+  }
+
+  @media (min-width: 1021px) {
+    color: rgba(127,119,118, 1);
+    background: transparent;
+    border-radius: 20px;
+    position: relative;
+    top: 1px;
+
+    &:hover, &:focus {
+      border: 1px solid #2e2d29;
+      border-radius: 20px;
+      color: #000;
+      background: transparent;
+    }
+  }
+`
+
+const MenuItemContainer = styled.div<{ level?: number }>`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: ${props => props.level === 0 ? "32px" : "0"};
+  width: 100%;
+
+  @media (min-width: 1021px) {
+    width: ${props => props.level === 0 ? "fit-content" : "100%"};
+    margin-bottom: ${props => props.level === 0 ? "6px" : ""};
+    align-items: baseline;
+  }
+`
+
+const MenuLink = styled.a<{ isCurrent?: boolean, inTrail?: boolean, level?: number }>`
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 1.8rem;
+  text-transform: ${props => props.level === 0 ? "uppercase" : "none"};
+  text-decoration: none;
+  padding: 16px 0 16px 16px;
+  transition: all 0.2s ease-in-out;
+  border-left: ${({isCurrent}) => isCurrent ? "6px solid #b1040e" : "6px solid transparent"};
+  border-image: ${({ isCurrent }) => isCurrent ? "linear-gradient(360deg,#ecaf94 4.94%,#b32a35 45.61%,#15438a 73.57%,#007c9d) 1" : "transparent"};
+  width: 100%;
+
+  &:hover, &:focus {
+    text-decoration: underline;
+    color: #fff;
+    border-left: 6px solid #fff;
+    border-image: linear-gradient(360deg,#ecaf94 4.94%,#b32a35 45.61%,#15438a 73.57%,#007c9d) 1;
+  }
+
+  @media (min-width: 1021px) {
+    color: #2e2d29;
+    padding: ${({ level }) => level != 0 ? "16px 0 16px 16px" : "1em 0px 1.6em 0"};
+    border-bottom: ${({level, inTrail, isCurrent}) => level === 0 ? (isCurrent ? "6px solid #2e2d29" : (inTrail ? "6px solid #b6b1a9" : "6px solid transparent")) : ""};
+    border-left: ${({level, isCurrent}) => level != 0 ? (isCurrent ? "6px solid #b1040e" : "6px solid transparent") : "none"};
+    margin-bottom: ${({level, inTrail, isCurrent}) => level === 0 ? (isCurrent ? "-6px" : (inTrail ? "-6px" : "-6px")) : ""};
+    border-left: ${({level, isCurrent}) => level != 0 ? (isCurrent ? "6px solid #b1040e" : "6px solid transparent") : "none"};
+    border-image: ${({level, inTrail, isCurrent}) => level === 0 ? (isCurrent ? "linear-gradient(270deg,#ecaf94 4.94%,#b32a35 45.61%,#15438a 73.57%,#007c9d) 1" : (inTrail ? "linear-gradient(270deg,#ecaf94 4.94%,#b32a35 45.61%,#15438a 73.57%,#007c9d) 1" : "6px solid transparent")) : ""};
+
+    &:hover, &:focus {
+      color: #b1040e;
+      border-left: ${({level}) => level != 0 ? "6px solid #2e2d29" : "none"};
+      border-image: linear-gradient(270deg,#ecaf94 4.94%,#b32a35 45.61%,#15438a 73.57%,#007c9d) 1;
+      border-left: ${({level, isCurrent}) => level != 0 ? (isCurrent ? "6px solid #b1040e" : "6px solid transparent") : "none"};
+    }
+  }
+`
+
+const NoLink = styled.span<{ level?: number }>`
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 16px 0 16px 16px;
+
+  @media (min-width: 1021px) {
+    color: #b1040e;
+    padding: ${({level}) => level != 0 ? "16px 0 16px 16px" : "16px 0"};
+  }
+`
+
+const MenuList = styled.ul<{ open?: boolean, level?: number }>`
+  display: ${props => props.open ? "block" : "none"};
+  z-index: ${props => props.level + 1};
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-top: 1px solid #53565a;
+  min-width: 300px;
+
+  @media (min-width: 1021px) {
+    box-shadow: ${props => props.level === 0 ? "0 10px 20px rgba(0,0,0,.15),0 6px 6px rgba(0,0,0,.2)" : ""};
+    position: ${props => props.level === 0 ? "absolute" : "relative"};
+    top: 100%;
+    background: #fff;
+    border-top: ${props => props.level === 0 ? "4px solid #b1040e" : "none"};
+    border-radius: 0 0 20px 20px;
+    right: 0;
+  }
+`
+
+const ListItem = styled.li<{ level?: number }>`
+  position: relative;
+  border-bottom: 1px solid #53565a;
+  padding: ${props => props.level > 0 ? "0 0 0 10px" : "0"};
+  margin: 0;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  @media (min-width: 1021px) {
+    border-bottom: none;
+    padding: ${props => props.level > 0 ? "0 10px" : "0"};
+  }
+`
+
+const MenuItemDivider = styled.div`
+  width: 1px;
+  height: 20px;
+  margin: 0 6px;
+  display: none;
+  flex-shrink: 0;
+
+  @media (min-width: 1021px) {
+    display: block;
+  }
+`
+
+const MenuItem = ({id, title, url, items, expanded, level = 0}: {
+  id: string
+  title: string,
+  url: string,
+  items?: MenuContentItem[],
+  expanded?: boolean,
+  level?: number
+}) => {
+  const buttonRef = useRef<HTMLButtonElement | null>(null)
+  const [submenuOpen, setSubmenuOpen] = useState(false)
+  const menuItemRef = useRef<HTMLLIElement | null>(null);
+  useOutsideClick(menuItemRef, () => setSubmenuOpen(false));
+
+  const handleEscape = (event: KeyboardEvent) => {
+    if (event.key === "Escape" && submenuOpen) {
+      setSubmenuOpen(false);
+      if (level === 0) buttonRef.current?.focus();
+    }
+  };
+
+  useEventListener("keydown", handleEscape);
+
+  let linkUrl: URL;
+  let isNoLink = true;
+  let isCurrent, inTrail = false;
+
+  if (url) {
+    isNoLink = false;
+    linkUrl = new URL(url.startsWith('/') ? `${window.location.origin}${url}` : url);
+    isCurrent = linkUrl.pathname === window.location.pathname && linkUrl.host === window.location.host && linkUrl.hash === window.location.hash;
+    inTrail = linkUrl.pathname != "/" && linkUrl.host === window.location.host && url != '/' && window.location.pathname.startsWith(linkUrl.pathname) && !isCurrent;
+  }
+
+  return (
+    <ListItem
+      ref={menuItemRef}
+      level={level}
+    >
+      <MenuItemContainer level={level}>
+        {!isNoLink &&
+          <MenuLink
+            id={id}
+            href={url}
+            aria-current={isCurrent ? "page" : undefined}
+            level={level}
+            isCurrent={isCurrent}
+            inTrail={inTrail}
+          >
+            {title}
+          </MenuLink>
+        }
+        {isNoLink &&
+          <NoLink>{title}</NoLink>
+        }
+
+        {(items && items.length > 0 && expanded) &&
+          <>
+            {level === 0 &&
+              <MenuItemDivider/>
+            }
+            <Button
+              ref={buttonRef}
+              onClick={() => setSubmenuOpen(!submenuOpen)}
+              aria-expanded={submenuOpen}
+              aria-labelledby={id}
+            >
+              <Caret style={{
+                transform: submenuOpen ? "rotate(180deg)" : "",
+                transition: "transform 0.2s ease-in-out",
+                width: "16px",
+              }}
+              />
+            </Button>
+          </>
+        }
+      </MenuItemContainer>
+
+      {(items && items.length > 0 && expanded) &&
+        <MenuList open={submenuOpen} level={level}>
+
+          {items.map(item =>
+            <MenuItem key={item.id} {...item} level={level + 1}/>
+          )}
+        </MenuList>
+      }
+    </ListItem>
+
+  )
+}
+
+
+const island = createIslandWebComponent(islandName, MainMenu)
+island.render({
+  selector: `[data-island="${islandName}"]`,
+})

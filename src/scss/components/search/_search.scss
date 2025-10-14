@@ -35,13 +35,13 @@
   }
 }
 
-@include grid-media-max('md') {
+@media screen and (max-width: 1020px) {
   .menu-search-button {
     display: none;
   }
 }
 
-@include grid-media-min('lg') {
+@media screen and (min-width: 1021px) {
   .menu-search-button {
     background: url("../../assets/svg/icon_search_black.svg") no-repeat 0 0;
     padding: 1rem 1rem 1.15rem;
@@ -50,6 +50,10 @@
     background-size: 35px 35px;
     box-shadow: none;
     margin-left: 36px;
+    position: absolute;
+    right: -35px;
+    top: 10px;
+    margin: 0 10px;
 
     &:hover,
     &:focus {
@@ -97,7 +101,16 @@
   }
 }
 
-@include grid-media-min('lg') {
+.region-search {
+  position: absolute;
+  top: 196px;
+
+  @include grid-media-min('2xl') {
+    top: 120px;
+  }
+}
+
+@media screen and (min-width: 1021px) {
   .su-site-search {
     grid-area: search-field;
 

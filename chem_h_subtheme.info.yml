@@ -7,6 +7,10 @@ core_version_requirement: ^10 || ^11
 base theme: stanford_basic
 libraries:
   - chem_h_subtheme/allpages
+  - chem_h_subtheme/decoupled_menu
+
+libraries-override:
+  stanford_basic/decoupled_menu:  chem_h_subtheme/decoupled_menu
 
 components:
   namespaces:
