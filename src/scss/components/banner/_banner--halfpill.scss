@@ -35,8 +35,6 @@
     margin-left: 0;
 
     .su-card__contents {
-      @include chemh-heading--badge;
-
       padding: 0;
 
       @include grid-media-max('sm') {
@@ -50,10 +48,15 @@
 
       h2 {
         @include type-a;
+        @include chemh-heading--badge;
 
         color: $su-color-black;
         line-height: 110%;
         letter-spacing: -0.04em;
+
+        &:before {
+          margin-bottom: 1.3rem;
+        }
       }
 
       .bullet {
@@ -68,6 +71,10 @@
           padding-right: 0.5em;
           font-size: 1.5em;
         }
+      }
+
+      .su-card__superhead {
+        @include chemh-heading--badge;
       }
     }
   }
