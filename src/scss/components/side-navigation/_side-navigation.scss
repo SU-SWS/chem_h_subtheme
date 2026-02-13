@@ -7,11 +7,15 @@
     color: $su-color-black;
   }
 
+
   a {
     &.su-secondary-nav__link {
+
       &:active,
       &:hover,
       &:focus {
+        text-decoration: none;
+
         &::before,
         &::after {
           background-color: transparent;
@@ -48,18 +52,17 @@
       &::after {
         visibility: visible;
         width: 1em;
-        background: transparent url("../../assets/svg/icon_secondary_nav_caret.svg") no-repeat center / 30%;
-        right: 1rem;
+        color: #E50808;
+        background: transparent;
+        right: 0;
         height: 50px;
-        top: 5px;
-        transform: none;
+        top: 0;
+        transform: rotate(-90deg);
       }
 
       &:hover {
         &::after {
-          background: transparent url("../../assets/svg/icon_secondary_nav_caret.svg") no-repeat center / 30%;
-          transform: none;
-          right: 1rem;
+          color: #E50808;
         }
       }
     }
@@ -68,35 +71,37 @@
   .su-secondary-nav__item--active-trail {
     >.su-secondary-nav__link {
       &::after {
-        right: 2rem;
+        color: #E50808;
         transform: none;
-        background: transparent url("../../assets/svg/icon_secondary_nav_caret.svg") no-repeat center / 30%;
-        top: 5px;
-        transform: rotate(90deg);
-        right: 1rem;
+        top: 15px;
+        right: 1em;
       }
 
       &:hover {
         &::after {
-          background: transparent url("../../assets/svg/icon_secondary_nav_caret.svg") no-repeat center / 30%;
-          transform: rotate(90deg);
-          top: 5px;
+          color: #E50808;
+          transform: none;
+          top: 15px;
+          right: 1em;
         }
       }
     }
   }
 }
 
-a {
-  &.su-secondary-nav__link {
-    font-size: 2.3rem;
-    padding: 2rem 4.8rem 2rem 2.4rem;
+.su-secondary-nav {
+  a {
+    &.su-secondary-nav__link {
+      font-weight: $su-font-semi-bold;
+      font-size: 2.3rem;
+      padding: 2rem 4.8rem 2rem 2.4rem;
 
-    &:hover,
-    &:active,
-    &:focus {
-      @include chemh--shadow-system-button--big;
-      @include chemh--side-nav-hover;
+      &:hover,
+      &:active,
+      &:focus {
+        @include chemh--shadow-system-button--big;
+        @include chemh--side-nav-hover;
+      }
     }
   }
 }
