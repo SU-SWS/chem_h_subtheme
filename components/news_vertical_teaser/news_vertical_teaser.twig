@@ -1,0 +1,88 @@
+{#
+/**
+ * @file
+ * News Vertical Teaser.
+ *
+ * Vertical Teaser for News
+ *
+ * Available variables:
+ * - attributes: For additional HTML attributes not already provided.
+ * - image: Hero image for card
+ * - headline: Title of card
+ * - topics: Topic selected. Dynamically altered vi news-banner.js
+ * - source: The source field.
+ * - url: A url to wrap the image and heading with
+ */
+#}
+
+{% set attributes = attributes.addClass(['su-card', 'su-news-vertical-teaser']) %}
+{% if is_spotlight %}
+  {% set attributes = attributes.addClass("news-spotlight") %}
+{% endif %}
+
+{%- set url_link_type = "su-link--action" -%}
+
+{# If the news source url is set go there instead of the default. #}
+{%- if source -%}
+  {%- set url = source -%}
+  {%- set attributes = attributes.addClass('su-news-external') -%}
+  {%- set url_link_type = "su-link--external" -%}
+{%- endif %}
+
+{% if url starts with "http" %}
+  {% set external_url = true %}
+{% endif %}
+
+
+<article{{ attributes }}>
+  {%- if url -%}
+  <a aria-hidden="true" tabindex="-1" class="su-news-vertical-teaser__link" href="{{ url }}">
+    {%- endif -%}
+    <figure class="su-media su-media--image su-card__media">
+      <div class="su-media__wrapper">
+        {{- image -}}
+      </div>
+    </figure>
+    {%- if url -%}
+  </a>
+  {%- endif -%}
+
+  <div class="su-card__contents">
+    <div class="news-vertical-teaser__topics">{{ topics }}</div>
+
+    <div class="su-news-header">
+
+      <a class="su-news-vertical-teaser__link" href="{{ url }}">
+        <{{ header_tag|default("h2") }} class="su-link su-card__link">
+        {{- headline -}}
+      </{{ header_tag|default("h2") }}>
+
+        </a>
+
+    </div>
+  </div>
+
+  <div class="news-vertical-teaser__footer">
+    <div class="su-link--external-box">
+      <a class="su-news-vertical-teaser__link" href="{{ url }}"
+         aria-hidden="true" tabindex="-1">
+
+          <span
+            class="visually-hidden">{{- news_vertical_teaser_headline -}}</span>
+
+        {%- if not external_url -%}
+          <span class="su-link--icon" aria-hidden="true">
+        <i class="fas fa-arrow-right"></i>
+      </span>
+        {%- endif -%}
+
+        {%- if external_url -%}
+          <span class="su-link--icon--external" aria-hidden="true">
+        <i class="fas fa-arrow-right" style="rotate: -45deg;"></i>
+      </span>
+        {%- endif -%}
+      </a>
+    </div>
+  </div>
+
+</article>
