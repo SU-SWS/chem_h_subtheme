@@ -1,0 +1,19 @@
+{% if node.su_person_short_title|length >= 1 %}
+  {% set body %}
+    <div class="node stanford-person su-person-short-title string label-hidden">
+      {{ node.su_person_short_title.value }}
+    </div>
+  {% endset %}
+{% endif %}
+<div{{ attributes }}>
+  {{ title_prefix }}
+  {{ include("jumpstart_ui:card", {
+    header_tag: "h3",
+    plain: true,
+    image: content.su_person_photo,
+    headline: node.label,
+    headline_url: node.su_person_source.get(0).getUrl().toString() ?: url,
+    body: body
+  }, with_context = false) }}
+  {{ title_suffix }}
+</div>
