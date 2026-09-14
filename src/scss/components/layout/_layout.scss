@@ -9,8 +9,8 @@
     margin-bottom: 0;
 
     .ptype-stanford-layout {
-      @include responsive-spacing('padding-top', 5);
-      @include responsive-spacing('padding-bottom', 7);
+      // @include responsive-spacing('padding-top', 5);
+      // @include responsive-spacing('padding-bottom', 7);
 
       //  Layout paragraph type section variant styles
       &.chemh-section-color--light-grey,
